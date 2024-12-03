@@ -3,13 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
 class Plongeur extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, SoftDeletes;
 
     protected $fillable = [
         'genre',
@@ -41,7 +42,8 @@ class Plongeur extends Authenticatable
         'qualifications',
         'jour_entrainement',
         'cree_par',
-        'club_id '
+        'club_id',
+        'type_club_id'
     ];
 
     protected $guard = "plongeurs";

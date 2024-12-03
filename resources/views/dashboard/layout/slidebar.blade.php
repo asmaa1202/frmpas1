@@ -56,6 +56,16 @@
                             <span class="nav-link-text ps-2">Plongeurs</span>
                         </div>
                     </a>
+
+                    <a class="nav-link" href="{{ route('athletes.index') }}" role="button" data-bs-toggle=""
+                        aria-expanded="false">
+                        <div class="d-flex align-items-center"><span class="nav-link-icon">
+                                <i class="fas fa-user-graduate"></i>
+                            </span>
+                            <span class="nav-link-text ps-2">Athlètes</span>
+                        </div>
+                    </a>
+
                     <a class="nav-link" href="{{ route('carnet_plongee.index') }}" role="button" data-bs-toggle=""
                         aria-expanded="false">
                         <div class="d-flex align-items-center"><span class="nav-link-icon">

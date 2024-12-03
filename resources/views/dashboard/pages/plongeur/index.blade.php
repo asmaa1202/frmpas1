@@ -164,7 +164,7 @@
             try {
                 const btnClose = document.getElementById(`colseModal${id}`);
                 btnClose.click();
-                const response = await axios.delete(`/dashboard/plongeurs/${id}`);
+                const response = await axios.delete(`/club/plongeurs/${id}`);
                 if (response.status === 200) {
                     const notif =
                         `<div class="toast-container position-fixed bottom-0 end-0 p-3">

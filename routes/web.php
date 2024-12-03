@@ -7,6 +7,7 @@ use App\Http\Controllers\Accueil\GalerieController;
 use App\Http\Controllers\Accueil\PlongeeController;
 use App\Http\Controllers\Accueil\SportController;
 use App\Http\Controllers\AdhesionController;
+use App\Http\Controllers\AthleteController;
 use App\Http\Controllers\Auth\PlongeurLoginController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CalendrierController;
@@ -14,6 +15,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\PlongeurController;
 use App\Http\Controllers\CarnetPlongeeDetailsEnteteController;
 use App\Http\Controllers\Club\AdhesionClubController;
+use App\Http\Controllers\Club\AthleteClubController;
 use App\Http\Controllers\Club\PlongeurClubController;
 use App\Http\Controllers\ClubController;
 use App\Http\Controllers\ContactController;
@@ -280,6 +282,15 @@ Route::middleware(['auth', 'role:1'])->group(function () {
     //     return view("dashboard.pages.club");
     // })->name('clubs.index');
 
+    // - Athlète
+    Route::get("/dashboard/athletes", [AthleteController::class, 'index'])->name('athletes.index');
+    Route::get("/dashboard/athletes/ajouter", [AthleteController::class, 'create'])->name('athletes.create');
+    Route::post("/dashboard/athletes", [AthleteController::class, 'store'])->name('athletes.store');
+    Route::get("/dashboard/athletes/modifier/{club}", [AthleteController::class, 'edit'])->name('athletes.edit');
+    Route::post("/dashboard/athletes/modifier/{id}", [AthleteController::class, "update"])->name('athletes.update');
+    Route::delete('/dashboard/athletes/{id}', [AthleteController::class, 'destroy'])->name('athletes.destroy');
+    Route::post('/dashboard/athletes/{id}/toggle-activation', [AthleteController::class, 'toggleActivation'])->name('clubs.toggleActivation');
+    Route::get('/dashboard/document/{id}',[AthleteController::class,'readDocument'])->name('athletes.read.document');
 
     // - clubs
     Route::get("/dashboard/clubs", [ClubController::class, 'index'])->name('clubs.index');
@@ -383,6 +394,14 @@ Route::group(['prefix'=>'club', 'middleware' => ['auth','role:2']],function () {
         Route::post("/plongeurs/modifier/{id}", [PlongeurClubController::class, "update"])->name('club.plongeurs.update');
         Route::delete("/plongeurs/{id}", [PlongeurClubController::class, "destroy"])->name('club.plongeurs.destroy');
         Route::get("/plongeurs/modifier/{id}", [PlongeurClubController::class, 'edit'])->name('club.plongeurs.show');
+
+        // athletes
+        Route::get("/athletes", [AthleteClubController::class, "index"])->name('club.athletes.index');
+        Route::get("/athletes/ajouter", [AthleteClubController::class, 'create'])->name('club.athletes.create');
+        Route::post("/athletes", [AthleteClubController::class, "store"])->name('club.athletes.store');
+        Route::post("/athletes/modifier/{id}", [AthleteClubController::class, "update"])->name('club.athletes.update');
+        Route::delete("/athletes/{id}", [AthleteClubController::class, "destroy"])->name('club.athletes.destroy');
+        Route::get("/athletes/modifier/{id}", [AthleteClubController::class, 'edit'])->name('club.athletes.show');
 
         // Route::get("/plongeurs", [PlongeurController::class, 'index'])->name('plongeurs.index');
         // Route::get("/plongeurs/api", [PlongeurController::class, 'getAllPlongeurs']);

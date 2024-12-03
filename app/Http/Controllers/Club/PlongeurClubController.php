@@ -17,9 +17,13 @@ class PlongeurClubController extends Controller
     const statut_en_cours = 'en cours'; 
     const statut_accepter = 'accepter'; 
     const statut_refuser = 'refuser'; 
+
+    const type_club_sportif_id = 1; 
+    const type_club_diving_id = 2; 
+
     public function index()
     {
-      $plongeurs = Plongeur::where('club_id', Auth::user()->club->id)->latest()->get();
+      $plongeurs = Plongeur::where('type_club_id', self::type_club_diving_id)->where('club_id', Auth::user()->club->id)->latest()->get();
       return view('clubDash.pages.plongeur.index', compact('plongeurs'));
      
     }
@@ -83,9 +87,10 @@ class PlongeurClubController extends Controller
                 $image = $request->file('image');
                 $nomImage = time() . '.' . $image->getClientOriginalExtension();
                 $image->move(public_path('admin/uploads/images/plongeurs/'), $nomImage);
-                $plongeur->image = 'https://diver.cdma-solution.ma' . '/admin/uploads/images/plongeurs/' . $nomImage;
+                $plongeur->image = '/admin/uploads/images/plongeurs/' . $nomImage;
             }
             $plongeur->club_id  = Auth::user()->club->id;
+            $plongeur->type_club_id   = self::type_club_diving_id;
 
             $plongeur->save();
 
@@ -125,6 +130,16 @@ class PlongeurClubController extends Controller
      */
     public function destroy($id)
     {
-      
+        try {
+            $deletedPlongeur = Plongeur::where("id", $id)->delete();
+            if ($deletedPlongeur <> 0) {
+                return response()->json(array('message' => "Plongeur est supprimé avec succés"), 200);
+            } else {
+                return response()->json(array('message' => "Erreur servenu"), 500);
+            }
+        } catch (\Exception $err) {
+            return response()->json(array('message' => "Erreur servenu"), 500);
+        }
+
     }
 }

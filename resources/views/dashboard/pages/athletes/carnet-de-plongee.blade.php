@@ -1,7 +1,7 @@
-@extends('clubDash.layout.master')
+@extends('dashboard.layout.master')
 
 @section('title')
-<title>FRMPAS - Plongeur</title>
+<title>FRMPAS - Carnet de plongée</title>
 @endsection
 
 @section('css')
@@ -18,14 +18,10 @@
     <div class="card-body position-relative">
         <div class="row">
             <div class="col-lg-8">
-                <h3>Plongeurs</h3>
+                <h3>Carnet de plongée de Abdelilah BOUHOU</h3>
                 <p class="mb-0">Rapide, intelligent et vous pouvez voir toutes les analyses sur cette page.</p>
             </div>
-            <div class="col-lg-4 d-flex justify-content-end align-items-center">
-                <a href="{{ route('club.plongeurs.create') }}" role="button" class="btn btn-outline-primary">
-                    <span class="fas fa-plus me-1" data-fa-transform="shrink-3"></span>Ajouter
-                </a>
-            </div>
+
         </div>
     </div>
 </div>
@@ -44,39 +40,40 @@
                 <thead class="bg-200 text-900">
                     <tr>
                         <th style="width: 60px;">ID</th>
-                        <th style="min-width: 220px;">Nom et prénom</th>
-                        <th style="min-width: 80px;">Genre</th>
-                        <th style="min-width: 120px;">E-mail</th>
-                        <th style="min-width: 120px;">Club</th>
-                        <th style="min-width: 120px;">Niveau</th>
-                        <th style="min-width: 120px;">Jour d'entrainement</th>
-                        <th style="min-width: 120px;">Date de naissance
-                        </th>
-                        <th style="min-width: 180px;">Crée le</th>
+                        <th style="min-width: 120px; ">Equipe</th>
+                        <th style="min-width: 80px;">Heure de depart</th>
+                        <th style="min-width: 80px;">Heure de sortie</th>
+                        <th style="min-width: 60px;">Prof M</th>
+                        <th style="min-width: 60px;">DT MN</th>
+                        <th style="min-width: 60px;">P depart</th>
+                        <th style="min-width: 60px;">P sortie</th>
+                        <th style="min-width: 60px;">Paliere 9</th>
+                        <th style="width: 60px;">Paliere 6</th>
+                        <th style="width: 60px;">Paliere oxy</th>
+                        <th style="width: 60px;">Paliere 3</th>
+                        <th style="width: 60px;">Crée le</th>
+                        <th style="width: 60px;">Crée par</th>
                         <th style="width: 60px;">Actions</th>
+
                     </tr>
                 </thead>
                 <tbody class="list">
-                    @foreach ($plongeurs as $item)
+                    @foreach ($carnets_plongee as $item)
                     <tr id="row{{ $item->id }}">
                         <td class="text-center align-middle">{{ $item->id }}</td>
-                        <td class="align-middle white-space-nowrap py-2">
-                            <div class="d-flex d-flex align-items-center">
-                                <div class="avatar avatar-xl me-2">
-                                    <img class="rounded-circle" src={{ $item->image }} alt={{ $item->title }}>
-                                </div>
-                                <div class="flex-1">
-                                    <p class="mb-0 fs--1">{{ $item->nom . ' ' . $item->prenom }}</p>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="align-middle">{{ $item->genre }}</td>
-                        <td class="align-middle">{{ $item->email }}</td>
-                        <td class="align-middle">{{ $item->club->nom ?? '--' }}</td>
-                        <td class="align-middle">{{ $item->niveau? $item->niveau->label : "" }}</td>
-                        <td class="align-middle">{{ $item->jour_entrainement }}</td>
-                        <td class="align-middle">{{ $item->date_de_naissance }}</td>
+                        <td class="align-middle">{{ $item->equipe->nom }}</td>
+                        <td class="text-center align-middle">{{ $item->heure_depart }}</td>
+                        <td class="text-center align-middle">{{ $item->heure_sortie }}</td>
+                        <td class="text-center align-middle">{{ $item->prof_m }}</td>
+                        <td class="text-center align-middle">{{ $item->dt_mn }}</td>
+                        <td class="text-center align-middle">{{ $item->p_depart }}</td>
+                        <td class="text-center align-middle">{{ $item->p_sortie }}</td>
+                        <td class="text-center align-middle">{{ $item->paliere_9 }}</td>
+                        <td class="text-center align-middle">{{ $item->paliere_6 }}</td>
+                        <td class="text-center align-middle">{{ $item->paliere_oxy }}</td>
+                        <td class="text-center align-middle">{{ $item->paliere_3 }}</td>
                         <td class="align-middle">{{ $item->created_at }}</td>
+                        <td class="align-middle">{{ $item->createur->nom ." " . $item->createur->prenom }}</td>
                         <td class="py-2 align-middle white-space-nowrap text-center">
                             <div class="dropdown font-sans-serif position-static">
                                 <button class="btn btn-link text-600 btn-sm dropdown-toggle btn-reveal" type="button"
@@ -96,18 +93,6 @@
                                     <div class="py-2">
                                         <a class="dropdown-item"
                                             href="/dashboard/plongeurs/modifier/{{ $item->id }}">Modifier
-                                        </a>
-                                        <a class="dropdown-item"
-                                            href="/dashboard/plongeurs/{{ $item->id }}/formations/niveau/{{$item->id_niveau}}">Formations
-                                        </a>
-                                        <a class="dropdown-item"
-                                            href="/dashboard/plongeurs/{{ $item->id }}/carnet-de-plongee">Carnet de
-                                            plongée
-                                        </a>
-                                        <a class="dropdown-item"
-                                            href="/dashboard/plongeurs/{{ $item->id }}/niveau/1/suivi-prepa">Fiche de
-                                            suivi
-                                            prépa
                                         </a>
                                         <a class="dropdown-item"
                                             href="/dashboard/plongeurs/{{ $item->id }}/details">Details
@@ -159,61 +144,5 @@
 <script src={{ asset('dashboard/vendors/datatables.net-bs5/dataTables.bootstrap5.min.js') }}></script>
 <script src={{ asset('dashboard/vendors/datatables.net-fixedcolumns/dataTables.fixedColumns.min.js') }}></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
-<script>
-    async function deletePlongeur(id) {
-            try {
-                const btnClose = document.getElementById(`colseModal${id}`);
-                btnClose.click();
-                const response = await axios.delete(`/club/plongeurs/${id}`);
-                if (response.status === 200) {
-                    const notif =
-                        `<div class="toast-container position-fixed bottom-0 end-0 p-3">
-                                <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                                    <div class="toast-header">
-                                        <div style="width: 15px;height: 15px;background: green;border-radius: 3px;margin-right: 5px;"></div>
-                                        <strong class="me-auto">ASAAM</strong>
-                                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                                    </div>
-                                    <div class="toast-body">
-                                       ${response.data.message}
-                                    </div>
-                                </div>
-                            </div>`;
-                    const notElement = document.getElementById("notification");
-                    notElement.innerHTML = notif;
-                    const toastTrigger = document.getElementById('btn-confirmation-delete')
-                    const toastLiveExample = document.getElementById('liveToast')
-                    if (toastTrigger) {
-                        const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
-                        toastBootstrap.show();
-                    }
-                    const rowElement = document.getElementById(`row${id}`);
-                    rowElement.remove();
-                }
-            } catch (err) {
-                const notif =
-                    `<div class="toast-container position-fixed bottom-0 end-0 p-3">
-                                <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                                    <div class="toast-header">
-                                        <div style="width: 15px;height: 15px;background: red;border-radius: 3px;margin-right: 5px;"></div>
-                                        <strong class="me-auto">ASAAM</strong>
-                                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                                    </div>
-                                    <div class="toast-body">
-                                       Erreur servenu
-                                    </div>
-                                </div>
-                            </div>`;
-                const notElement = document.getElementById("notification");
-                notElement.innerHTML = notif;
-                const toastTrigger = document.getElementById('btn-confirmation-delete');
-                const toastLiveExample = document.getElementById('liveToast');
-                if (toastTrigger) {
-                    const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
-                    toastBootstrap.show();
-                }
-            }
 
-        }
-</script>
 @endsection
