@@ -1,0 +1,1544 @@
+Uri: https://fonts.googleapis.com/css?family=Josefin+Sans:100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic|Karla:100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&display=auto&ver=6.1.1
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\css
+Content Type: text/css
+
+Uri: https://fonts.googleapis.com/css?family=Josefin+Sans:100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic|Noto+Sans+HK:100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&display=auto&ver=6.1.1
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\css-1
+Content Type: text/css
+
+Uri: https://fonts.googleapis.com/css?family=Josefin+Sans:100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&display=auto&ver=6.1.1
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\css-2
+Content Type: text/css
+
+Uri: https://fonts.gstatic.com/s/josefinsans/v25/Qw3JZQNVED7rKGKxtqIqX5EUCGZ2dIn0FyA96fCT6oJRLSzt.ttf
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\s\josefinsans\v25\Qw3JZQNVED7rKGKxtqIqX5EUCGZ2dIn0FyA96fCT6oJRLSzt.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/josefinsans/v25/Qw3JZQNVED7rKGKxtqIqX5EUCGZ2dIn0FyA96fCTaoVRLSzt.ttf
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\s\josefinsans\v25\Qw3JZQNVED7rKGKxtqIqX5EUCGZ2dIn0FyA96fCTaoVRLSzt.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/josefinsans/v25/Qw3JZQNVED7rKGKxtqIqX5EUCGZ2dIn0FyA96fCThoJRLSzt.ttf
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\s\josefinsans\v25\Qw3JZQNVED7rKGKxtqIqX5EUCGZ2dIn0FyA96fCThoJRLSzt.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/josefinsans/v25/Qw3JZQNVED7rKGKxtqIqX5EUCGZ2dIn0FyA96fCTNIJRLSzt.ttf
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\s\josefinsans\v25\Qw3JZQNVED7rKGKxtqIqX5EUCGZ2dIn0FyA96fCTNIJRLSzt.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/josefinsans/v25/Qw3JZQNVED7rKGKxtqIqX5EUCGZ2dIn0FyA96fCTtIJRLSzt.ttf
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\s\josefinsans\v25\Qw3JZQNVED7rKGKxtqIqX5EUCGZ2dIn0FyA96fCTtIJRLSzt.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/josefinsans/v25/Qw3JZQNVED7rKGKxtqIqX5EUCGZ2dIn0FyA96fCTtINRLSzt.ttf
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\s\josefinsans\v25\Qw3JZQNVED7rKGKxtqIqX5EUCGZ2dIn0FyA96fCTtINRLSzt.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/josefinsans/v25/Qw3JZQNVED7rKGKxtqIqX5EUCGZ2dIn0FyA96fCTU4VRLSzt.ttf
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\s\josefinsans\v25\Qw3JZQNVED7rKGKxtqIqX5EUCGZ2dIn0FyA96fCTU4VRLSzt.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/josefinsans/v25/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_ArQbMZhKg.ttf
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\s\josefinsans\v25\Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_ArQbMZhKg.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/josefinsans/v25/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_DjQbMZhKg.ttf
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\s\josefinsans\v25\Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_DjQbMZhKg.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/josefinsans/v25/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_DjRbMZhKg.ttf
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\s\josefinsans\v25\Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_DjRbMZhKg.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/josefinsans/v25/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_GbQbMZhKg.ttf
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\s\josefinsans\v25\Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_GbQbMZhKg.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/josefinsans/v25/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_LjQbMZhKg.ttf
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\s\josefinsans\v25\Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_LjQbMZhKg.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/josefinsans/v25/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_N_XbMZhKg.ttf
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\s\josefinsans\v25\Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_N_XbMZhKg.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/josefinsans/v25/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_ObXbMZhKg.ttf
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\s\josefinsans\v25\Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_ObXbMZhKg.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/karla/v23/qkBIXvYC6trAT55ZBi1ueQVIjQTD-JqaE0lP.ttf
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\s\karla\v23\qkBIXvYC6trAT55ZBi1ueQVIjQTD-JqaE0lP.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/karla/v23/qkBIXvYC6trAT55ZBi1ueQVIjQTDeJ2aE0lP.ttf
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\s\karla\v23\qkBIXvYC6trAT55ZBi1ueQVIjQTDeJ2aE0lP.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/karla/v23/qkBIXvYC6trAT55ZBi1ueQVIjQTDeJqaE0lP.ttf
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\s\karla\v23\qkBIXvYC6trAT55ZBi1ueQVIjQTDeJqaE0lP.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/karla/v23/qkBIXvYC6trAT55ZBi1ueQVIjQTDH52aE0lP.ttf
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\s\karla\v23\qkBIXvYC6trAT55ZBi1ueQVIjQTDH52aE0lP.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/karla/v23/qkBIXvYC6trAT55ZBi1ueQVIjQTDJp2aE0lP.ttf
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\s\karla\v23\qkBIXvYC6trAT55ZBi1ueQVIjQTDJp2aE0lP.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/karla/v23/qkBIXvYC6trAT55ZBi1ueQVIjQTDppqaE0lP.ttf
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\s\karla\v23\qkBIXvYC6trAT55ZBi1ueQVIjQTDppqaE0lP.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/karla/v23/qkBIXvYC6trAT55ZBi1ueQVIjQTDypqaE0lP.ttf
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\s\karla\v23\qkBIXvYC6trAT55ZBi1ueQVIjQTDypqaE0lP.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/karla/v23/qkBKXvYC6trAT7RQNNK2EG7SIwPWMNkcV3lIb7Y.ttf
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\s\karla\v23\qkBKXvYC6trAT7RQNNK2EG7SIwPWMNkcV3lIb7Y.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/karla/v23/qkBKXvYC6trAT7RQNNK2EG7SIwPWMNlCV3lIb7Y.ttf
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\s\karla\v23\qkBKXvYC6trAT7RQNNK2EG7SIwPWMNlCV3lIb7Y.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/karla/v23/qkBKXvYC6trAT7RQNNK2EG7SIwPWMNlwV3lIb7Y.ttf
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\s\karla\v23\qkBKXvYC6trAT7RQNNK2EG7SIwPWMNlwV3lIb7Y.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/karla/v23/qkBKXvYC6trAT7RQNNK2EG7SIwPWMNmcUHlIb7Y.ttf
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\s\karla\v23\qkBKXvYC6trAT7RQNNK2EG7SIwPWMNmcUHlIb7Y.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/karla/v23/qkBKXvYC6trAT7RQNNK2EG7SIwPWMNmlUHlIb7Y.ttf
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\s\karla\v23\qkBKXvYC6trAT7RQNNK2EG7SIwPWMNmlUHlIb7Y.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/karla/v23/qkBKXvYC6trAT7RQNNK2EG7SIwPWMNnCUHlIb7Y.ttf
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\s\karla\v23\qkBKXvYC6trAT7RQNNK2EG7SIwPWMNnCUHlIb7Y.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/karla/v23/qkBKXvYC6trAT7RQNNK2EG7SIwPWMNnCV3lIb7Y.ttf
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\s\karla\v23\qkBKXvYC6trAT7RQNNK2EG7SIwPWMNnCV3lIb7Y.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/notosanshk/v21/nKKO-GM_FYFRJvXzVXaAPe9ZUEp0Ouk.otf
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\s\notosanshk\v21\nKKO-GM_FYFRJvXzVXaAPe9ZUEp0Ouk.otf
+Content Type: font/otf
+
+Uri: https://fonts.gstatic.com/s/notosanshk/v21/nKKP-GM_FYFRJvXzVXaAPe9ZiF9jHc_4.otf
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\s\notosanshk\v21\nKKP-GM_FYFRJvXzVXaAPe9ZiF9jHc_4.otf
+Content Type: font/otf
+
+Uri: https://fonts.gstatic.com/s/notosanshk/v21/nKKP-GM_FYFRJvXzVXaAPe9ZmFhjHc_4.otf
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\s\notosanshk\v21\nKKP-GM_FYFRJvXzVXaAPe9ZmFhjHc_4.otf
+Content Type: font/otf
+
+Uri: https://fonts.gstatic.com/s/notosanshk/v21/nKKP-GM_FYFRJvXzVXaAPe9ZsF1jHc_4.otf
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\s\notosanshk\v21\nKKP-GM_FYFRJvXzVXaAPe9ZsF1jHc_4.otf
+Content Type: font/otf
+
+Uri: https://fonts.gstatic.com/s/notosanshk/v21/nKKP-GM_FYFRJvXzVXaAPe9ZwFljHc_4.otf
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\s\notosanshk\v21\nKKP-GM_FYFRJvXzVXaAPe9ZwFljHc_4.otf
+Content Type: font/otf
+
+Uri: https://fonts.gstatic.com/s/notosanshk/v21/nKKQ-GM_FYFRJvXzVXaAPe9RM3p1.otf
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\s\notosanshk\v21\nKKQ-GM_FYFRJvXzVXaAPe9RM3p1.otf
+Content Type: font/otf
+
+Uri: https://templatekit.jegtheme.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\cdn-cgi\scripts\5c5dd728\cloudflare-static\email-decode.min.js
+Content Type: application/javascript
+
+Uri: https://templatekit.jegtheme.com/findive/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\index.htm
+Content Type: text/html
+
+Uri: https://templatekit.jegtheme.com/findive/2021/10/08/new-caledonia-the-lagoon-of-all-hopes/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\2021\10\08\new-caledonia-the-lagoon-of-all-hopes\index.htm
+Content Type: text/html
+
+Uri: https://templatekit.jegtheme.com/findive/2021/10/08/new-caledonia-the-lagoon-of-all-hopes/feed/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\2021\10\08\new-caledonia-the-lagoon-of-all-hopes\feed\index.htm
+Content Type: application/rss+xml
+
+Uri: https://templatekit.jegtheme.com/findive/2021/10/08/scuba-diving-in-okinawa-a-first-timer/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\2021\10\08\scuba-diving-in-okinawa-a-first-timer\index.htm
+Content Type: text/html
+
+Uri: https://templatekit.jegtheme.com/findive/2021/10/08/scuba-diving-in-okinawa-a-first-timer/feed/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\2021\10\08\scuba-diving-in-okinawa-a-first-timer\feed\index.htm
+Content Type: application/rss+xml
+
+Uri: https://templatekit.jegtheme.com/findive/2021/10/08/shore-diving-in-maui-wave-big-island/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\2021\10\08\shore-diving-in-maui-wave-big-island\index.htm
+Content Type: text/html
+
+Uri: https://templatekit.jegtheme.com/findive/2021/10/08/shore-diving-in-maui-wave-big-island/feed/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\2021\10\08\shore-diving-in-maui-wave-big-island\feed\index.htm
+Content Type: application/rss+xml
+
+Uri: https://templatekit.jegtheme.com/findive/2021/10/08/turning-diving-sport-trip-adventures/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\2021\10\08\turning-diving-sport-trip-adventures\index.htm
+Content Type: text/html
+
+Uri: https://templatekit.jegtheme.com/findive/2021/10/08/turning-diving-sport-trip-adventures/feed/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\2021\10\08\turning-diving-sport-trip-adventures\feed\index.htm
+Content Type: application/rss+xml
+
+Uri: https://templatekit.jegtheme.com/findive/2021/10/08/what-do-you-need-for-deep-sea-diving/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\2021\10\08\what-do-you-need-for-deep-sea-diving\index.htm
+Content Type: text/html
+
+Uri: https://templatekit.jegtheme.com/findive/2021/10/08/what-do-you-need-for-deep-sea-diving/feed/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\2021\10\08\what-do-you-need-for-deep-sea-diving\feed\index.htm
+Content Type: application/rss+xml
+
+Uri: https://templatekit.jegtheme.com/findive/2021/10/08/women-in-diving-become-a-professional/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\2021\10\08\women-in-diving-become-a-professional\index.htm
+Content Type: text/html
+
+Uri: https://templatekit.jegtheme.com/findive/2021/10/08/women-in-diving-become-a-professional/feed/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\2021\10\08\women-in-diving-become-a-professional\feed\index.htm
+Content Type: application/rss+xml
+
+Uri: https://templatekit.jegtheme.com/findive/about/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\about\index.htm
+Content Type: text/html
+
+Uri: https://templatekit.jegtheme.com/findive/blog/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\blog\index.htm
+Content Type: text/html
+
+Uri: https://templatekit.jegtheme.com/findive/category/beach/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\category\beach\index.htm
+Content Type: text/html
+
+Uri: https://templatekit.jegtheme.com/findive/category/beach/feed/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\category\beach\feed\index.htm
+Content Type: application/rss+xml
+
+Uri: https://templatekit.jegtheme.com/findive/category/diver/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\category\diver\index.htm
+Content Type: text/html
+
+Uri: https://templatekit.jegtheme.com/findive/category/diver/feed/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\category\diver\feed\index.htm
+Content Type: application/rss+xml
+
+Uri: https://templatekit.jegtheme.com/findive/category/diving/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\category\diving\index.htm
+Content Type: text/html
+
+Uri: https://templatekit.jegtheme.com/findive/category/diving/feed/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\category\diving\feed\index.htm
+Content Type: application/rss+xml
+
+Uri: https://templatekit.jegtheme.com/findive/category/lifestyle/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\category\lifestyle\index.htm
+Content Type: text/html
+
+Uri: https://templatekit.jegtheme.com/findive/category/lifestyle/feed/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\category\lifestyle\feed\index.htm
+Content Type: application/rss+xml
+
+Uri: https://templatekit.jegtheme.com/findive/category/scuba/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\category\scuba\index.htm
+Content Type: text/html
+
+Uri: https://templatekit.jegtheme.com/findive/category/scuba/feed/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\category\scuba\feed\index.htm
+Content Type: application/rss+xml
+
+Uri: https://templatekit.jegtheme.com/findive/category/underwater/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\category\underwater\index.htm
+Content Type: text/html
+
+Uri: https://templatekit.jegtheme.com/findive/category/underwater/feed/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\category\underwater\feed\index.htm
+Content Type: application/rss+xml
+
+Uri: https://templatekit.jegtheme.com/findive/comments/feed/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\comments\feed\index.htm
+Content Type: application/rss+xml
+
+Uri: https://templatekit.jegtheme.com/findive/contact/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\contact\index.htm
+Content Type: text/html
+
+Uri: https://templatekit.jegtheme.com/findive/courses/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\courses\index.htm
+Content Type: text/html
+
+Uri: https://templatekit.jegtheme.com/findive/feed/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\feed\index.htm
+Content Type: application/rss+xml
+
+Uri: https://templatekit.jegtheme.com/findive/pricing/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\pricing\index.htm
+Content Type: text/html
+
+Uri: https://templatekit.jegtheme.com/findive/tag/beach/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\tag\beach\index.htm
+Content Type: text/html
+
+Uri: https://templatekit.jegtheme.com/findive/tag/beach/feed/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\tag\beach\feed\index.htm
+Content Type: application/rss+xml
+
+Uri: https://templatekit.jegtheme.com/findive/tag/diver/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\tag\diver\index.htm
+Content Type: text/html
+
+Uri: https://templatekit.jegtheme.com/findive/tag/diver/feed/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\tag\diver\feed\index.htm
+Content Type: application/rss+xml
+
+Uri: https://templatekit.jegtheme.com/findive/tag/diving/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\tag\diving\index.htm
+Content Type: text/html
+
+Uri: https://templatekit.jegtheme.com/findive/tag/diving/feed/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\tag\diving\feed\index.htm
+Content Type: application/rss+xml
+
+Uri: https://templatekit.jegtheme.com/findive/tag/lifestyle/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\tag\lifestyle\index.htm
+Content Type: text/html
+
+Uri: https://templatekit.jegtheme.com/findive/tag/lifestyle/feed/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\tag\lifestyle\feed\index.htm
+Content Type: application/rss+xml
+
+Uri: https://templatekit.jegtheme.com/findive/tag/scuba/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\tag\scuba\index.htm
+Content Type: text/html
+
+Uri: https://templatekit.jegtheme.com/findive/tag/scuba/feed/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\tag\scuba\feed\index.htm
+Content Type: application/rss+xml
+
+Uri: https://templatekit.jegtheme.com/findive/tag/underwater/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\tag\underwater\index.htm
+Content Type: text/html
+
+Uri: https://templatekit.jegtheme.com/findive/tag/underwater/feed/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\tag\underwater\feed\index.htm
+Content Type: application/rss+xml
+
+Uri: https://templatekit.jegtheme.com/findive/team/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\team\index.htm
+Content Type: text/html
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/allow-webp-image/public/css/allow-webp-image-public.css?ver=1.0.1
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\allow-webp-image\public\css\allow-webp-image-public.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/allow-webp-image/public/js/allow-webp-image-public.js?ver=1.0.1
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\allow-webp-image\public\js\allow-webp-image-public.js
+Content Type: application/javascript
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/css/frontend-lite.min.css?ver=3.11.4
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\css\frontend-lite.min.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/css/widget-icon-box.min.css
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\css\widget-icon-box.min.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\css\widget-icon-list.min.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.11.4
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\js\frontend-modules.min.js
+Content Type: application/javascript
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.11.4
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\js\frontend.min.js
+Content Type: application/javascript
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.11.4
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\js\webpack.runtime.min.js
+Content Type: application/javascript
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=3.11.4
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\lib\animations\animations.min.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.18.0
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\lib\eicons\css\elementor-icons.min.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.eot?5.18.0
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\lib\eicons\fonts\eicons.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.svg?5.18.0
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\lib\eicons\fonts\eicons.svg
+Content Type: image/svg+xml
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.ttf?5.18.0
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\lib\eicons\fonts\eicons.ttf
+Content Type: font/ttf
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.woff2?5.18.0
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\lib\eicons\fonts\eicons.woff2
+Content Type: 
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.woff?5.18.0
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\lib\eicons\fonts\eicons.woff
+Content Type: application/x-font-woff
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/lib/font-awesome/css/all.min.css?ver=3.11.4
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\lib\font-awesome\css\all.min.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/lib/font-awesome/css/brands.min.css?ver=5.15.3
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\lib\font-awesome\css\brands.min.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.min.css?ver=5.15.3
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\lib\font-awesome\css\fontawesome.min.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/lib/font-awesome/css/solid.min.css?ver=5.15.3
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\lib\font-awesome\css\solid.min.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/lib/font-awesome/css/v4-shims.min.css?ver=3.11.4
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\lib\font-awesome\css\v4-shims.min.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/lib/font-awesome/js/v4-shims.min.js?ver=3.11.4
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\lib\font-awesome\js\v4-shims.min.js
+Content Type: application/javascript
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-brands-400.eot
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\lib\font-awesome\webfonts\fa-brands-400.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-brands-400.eot?
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\lib\font-awesome\webfonts\fa-brands-400-1.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-brands-400.svg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\lib\font-awesome\webfonts\fa-brands-400.svg
+Content Type: image/svg+xml
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-brands-400.ttf
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\lib\font-awesome\webfonts\fa-brands-400.ttf
+Content Type: font/ttf
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-brands-400.woff
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\lib\font-awesome\webfonts\fa-brands-400.woff
+Content Type: application/x-font-woff
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-brands-400.woff2
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\lib\font-awesome\webfonts\fa-brands-400.woff2
+Content Type: 
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-regular-400.eot
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\lib\font-awesome\webfonts\fa-regular-400.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-regular-400.eot?
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\lib\font-awesome\webfonts\fa-regular-400-1.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-regular-400.svg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\lib\font-awesome\webfonts\fa-regular-400.svg
+Content Type: image/svg+xml
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-regular-400.ttf
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\lib\font-awesome\webfonts\fa-regular-400.ttf
+Content Type: font/ttf
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-regular-400.woff
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\lib\font-awesome\webfonts\fa-regular-400.woff
+Content Type: application/x-font-woff
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-regular-400.woff2
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\lib\font-awesome\webfonts\fa-regular-400.woff2
+Content Type: 
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-solid-900.eot
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\lib\font-awesome\webfonts\fa-solid-900.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-solid-900.eot?
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\lib\font-awesome\webfonts\fa-solid-900-1.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-solid-900.svg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\lib\font-awesome\webfonts\fa-solid-900.svg
+Content Type: image/svg+xml
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-solid-900.ttf
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\lib\font-awesome\webfonts\fa-solid-900.ttf
+Content Type: font/ttf
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-solid-900.woff
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\lib\font-awesome\webfonts\fa-solid-900.woff
+Content Type: application/x-font-woff
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-solid-900.woff2
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\lib\font-awesome\webfonts\fa-solid-900.woff2
+Content Type: 
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/lib/jquery-numerator/jquery-numerator.min.js?ver=0.2.1
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\lib\jquery-numerator\jquery-numerator.min.js
+Content Type: application/javascript
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/lib/swiper/css/swiper.min.css?ver=5.3.6
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\lib\swiper\css\swiper.min.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js?ver=4.0.2
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\elementor\assets\lib\waypoints\waypoints.min.js
+Content Type: application/javascript
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/jeg-elementor-kit/assets/css/elements/main.css?ver=2.6.1
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\jeg-elementor-kit\assets\css\elements\main.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/jeg-elementor-kit/assets/fonts/jkiticon/jkiticon.css?ver=2.6.1
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\jeg-elementor-kit\assets\fonts\jkiticon\jkiticon.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/jeg-elementor-kit/assets/fonts/jkiticon/jkiticon.eot?bv8d8l
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\jeg-elementor-kit\assets\fonts\jkiticon\jkiticon.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/jeg-elementor-kit/assets/fonts/jkiticon/jkiticon.svg?bv8d8l
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\jeg-elementor-kit\assets\fonts\jkiticon\jkiticon.svg
+Content Type: image/svg+xml
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/jeg-elementor-kit/assets/fonts/jkiticon/jkiticon.ttf?bv8d8l
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\jeg-elementor-kit\assets\fonts\jkiticon\jkiticon.ttf
+Content Type: font/ttf
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/jeg-elementor-kit/assets/fonts/jkiticon/jkiticon.woff2?bv8d8l
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\jeg-elementor-kit\assets\fonts\jkiticon\jkiticon.woff2
+Content Type: 
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/jeg-elementor-kit/assets/fonts/jkiticon/jkiticon.woff?bv8d8l
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\jeg-elementor-kit\assets\fonts\jkiticon\jkiticon.woff
+Content Type: application/x-font-woff
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/jeg-elementor-kit/assets/img/letter-x.svg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\jeg-elementor-kit\assets\img\letter-x.svg
+Content Type: image/svg+xml
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/jeg-elementor-kit/assets/js/chartjs/chart.min.js?ver=3.9.1
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\jeg-elementor-kit\assets\js\chartjs\chart.min.js
+Content Type: application/javascript
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/jeg-elementor-kit/assets/js/elements/accordion.js?ver=2.6.1
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\jeg-elementor-kit\assets\js\elements\accordion.js
+Content Type: application/javascript
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/jeg-elementor-kit/assets/js/elements/mailchimp.js?ver=2.6.1
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\jeg-elementor-kit\assets\js\elements\mailchimp.js
+Content Type: application/javascript
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/jeg-elementor-kit/assets/js/elements/nav-menu.js?ver=2.6.1
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\jeg-elementor-kit\assets\js\elements\nav-menu.js
+Content Type: application/javascript
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/jeg-elementor-kit/assets/js/elements/off-canvas.js?ver=2.6.1
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\jeg-elementor-kit\assets\js\elements\off-canvas.js
+Content Type: application/javascript
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/jeg-elementor-kit/assets/js/elements/pie-chart.js?ver=2.6.1
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\jeg-elementor-kit\assets\js\elements\pie-chart.js
+Content Type: application/javascript
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/jeg-elementor-kit/assets/js/elements/portfolio-gallery.js?ver=2.6.1
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\jeg-elementor-kit\assets\js\elements\portfolio-gallery.js
+Content Type: application/javascript
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/jeg-elementor-kit/assets/js/elements/post-pagination.js?ver=2.6.1
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\jeg-elementor-kit\assets\js\elements\post-pagination.js
+Content Type: application/javascript
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/jeg-elementor-kit/assets/js/elements/progress-bar.js?ver=2.6.1
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\jeg-elementor-kit\assets\js\elements\progress-bar.js
+Content Type: application/javascript
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/jeg-elementor-kit/assets/js/elements/search.js?ver=2.6.1
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\jeg-elementor-kit\assets\js\elements\search.js
+Content Type: application/javascript
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/jeg-elementor-kit/assets/js/elements/sticky-element.js?ver=2.6.1
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\jeg-elementor-kit\assets\js\elements\sticky-element.js
+Content Type: application/javascript
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/jeg-elementor-kit/assets/js/elements/team.js?ver=2.6.1
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\jeg-elementor-kit\assets\js\elements\team.js
+Content Type: application/javascript
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/jeg-elementor-kit/assets/js/elements/testimonials.js?ver=2.6.1
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\jeg-elementor-kit\assets\js\elements\testimonials.js
+Content Type: application/javascript
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/jeg-elementor-kit/assets/js/elements/video-button.js?ver=2.6.1
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\jeg-elementor-kit\assets\js\elements\video-button.js
+Content Type: application/javascript
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/jeg-elementor-kit/assets/js/goodshare/goodshare.min.js?ver=6.1.5
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\jeg-elementor-kit\assets\js\goodshare\goodshare.min.js
+Content Type: application/javascript
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/jeg-elementor-kit/assets/js/sweetalert2/sweetalert2.min.css?ver=11.6.16
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\jeg-elementor-kit\assets\js\sweetalert2\sweetalert2.min.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/jeg-elementor-kit/assets/js/sweetalert2/sweetalert2.min.js?ver=11.6.16
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\jeg-elementor-kit\assets\js\sweetalert2\sweetalert2.min.js
+Content Type: application/javascript
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/jeg-elementor-kit/assets/js/tiny-slider/tiny-slider.css?ver=2.9.3
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\jeg-elementor-kit\assets\js\tiny-slider\tiny-slider.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/jeg-elementor-kit/assets/js/tiny-slider/tiny-slider.js?ver=2.9.3
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\jeg-elementor-kit\assets\js\tiny-slider\tiny-slider.js
+Content Type: application/javascript
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/jeg-elementor-kit/lib/jeg-framework/assets/css/jeg-dynamic-styles.css?ver=1.2.9
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\jeg-elementor-kit\lib\jeg-framework\assets\css\jeg-dynamic-styles.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/metform/public/assets/css/flatpickr.min.css?ver=3.2.3
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\metform\public\assets\css\flatpickr.min.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/metform/public/assets/css/metform-ui.css?ver=3.2.3
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\metform\public\assets\css\metform-ui.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/metform/public/assets/css/style.css?ver=3.2.3
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\metform\public\assets\css\style.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/metform/public/assets/js/app.js?ver=3.2.3
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\metform\public\assets\js\app.js
+Content Type: application/javascript
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/metform/public/assets/js/htm.js?ver=3.2.3
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\metform\public\assets\js\htm.js
+Content Type: application/javascript
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/template-kit-export/public/assets/css/template-kit-export-public.min.css?ver=1.0.21
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\template-kit-export\public\assets\css\template-kit-export-public.min.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/plugins/template-kit-export/public/assets/js/template-kit-export-public.min.js?ver=1.0.21
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\plugins\template-kit-export\public\assets\js\template-kit-export-public.min.js
+Content Type: application/javascript
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/themes/hello-elementor/assets/js/hello-frontend.min.js?ver=1.0.0
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\themes\hello-elementor\assets\js\hello-frontend.min.js
+Content Type: application/javascript
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/themes/hello-elementor/style.min.css?ver=2.6.1
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\themes\hello-elementor\style.min.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/themes/hello-elementor/theme.min.css?ver=2.6.1
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\themes\hello-elementor\theme.min.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/a-diver-ascends-to-a-waiting-boat-silhouette-e1634536473866.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\a-diver-ascends-to-a-waiting-boat-silhouette-e1634536473866.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/a-female-scuba-diver-watches-a-hawksbill-turtle-swim-lazily-above-a-reef-in-the-cayman-islands--e1634535880681.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\a-female-scuba-diver-watches-a-hawksbill-turtle-swim-lazily-above-a-reef-in-the-cayman-islands--e1634535880681.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/a-young-diver-with-goggles-in-the-middle-of-the-red-see-with-a-beautiful-sunset-in-the-background-e1634535908104.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\a-young-diver-with-goggles-in-the-middle-of-the-red-see-with-a-beautiful-sunset-in-the-background-e1634535908104.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/Asset-2@3x.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\Asset-2@3x.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/Asset-39PWZG.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\Asset-39PWZG.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/Asset-4@3x.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\Asset-4@3x.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/Asset-5@3x.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\Asset-5@3x.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/attractive-and-happy-man-on-beach-KKJFKYA.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\attractive-and-happy-man-on-beach-KKJFKYA.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/cheerful-woman-wearing-diving-mask-and-snorkel-smi-9HYU53G.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\cheerful-woman-wearing-diving-mask-and-snorkel-smi-9HYU53G.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/deep-diver-in-blue-water-1024x768.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\deep-diver-in-blue-water-1024x768.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/deep-diver-in-blue-water-1536x1152.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\deep-diver-in-blue-water-1536x1152.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/deep-diver-in-blue-water-300x225.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\deep-diver-in-blue-water-300x225.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/deep-diver-in-blue-water-768x576.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\deep-diver-in-blue-water-768x576.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/deep-diver-in-blue-water-800x600.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\deep-diver-in-blue-water-800x600.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/deep-diver-in-blue-water-e1634536094218.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\deep-diver-in-blue-water-e1634536094218.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/Dhanikans-ZC2XABX-1024x272.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\Dhanikans-ZC2XABX-1024x272.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/Dhanikans-ZC2XABX-300x80.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\Dhanikans-ZC2XABX-300x80.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/Dhanikans-ZC2XABX-768x204.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\Dhanikans-ZC2XABX-768x204.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/Dhanikans-ZC2XABX-800x212.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\Dhanikans-ZC2XABX-800x212.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/Dhanikans-ZC2XABX-e1634535809172.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\Dhanikans-ZC2XABX-e1634535809172.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/divers-e1634536272746.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\divers-e1634536272746.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/divers-watch-interaction-of-different-species-of-marine-life-underwater-e1634536330772.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\divers-watch-interaction-of-different-species-of-marine-life-underwater-e1634536330772.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/divers-with-whale-shark-at-the-georgia-aquarium-world-s-largest-fish-in-captivity--e1634536443390.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\divers-with-whale-shark-at-the-georgia-aquarium-world-s-largest-fish-in-captivity--e1634536443390.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/diving-e1634535948100.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\diving-e1634535948100.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/exploring-under-the-water-e1634535900542.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\exploring-under-the-water-e1634535900542.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/female-diver-and-male-divemaster-diving-school-e1634536348723.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\female-diver-and-male-divemaster-diving-school-e1634536348723.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/female-scuba-diver-near-a-stand-of-healthy-elkhorn-coral-acropora-palmata-new-providence-bahamas-e1634536231618.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\female-scuba-diver-near-a-stand-of-healthy-elkhorn-coral-acropora-palmata-new-providence-bahamas-e1634536231618.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/free-diving-1-e1634536175529.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\free-diving-1-e1634536175529.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/free-diving-1024x684.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\free-diving-1024x684.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/free-diving-1536x1025.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\free-diving-1536x1025.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/free-diving-300x200.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\free-diving-300x200.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/free-diving-768x513.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\free-diving-768x513.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/free-diving-800x534.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\free-diving-800x534.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/free-diving-e1634536119799.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\free-diving-e1634536119799.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/freediving-e1633923358732.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\freediving-e1633923358732.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/front-view-of-mature-man-on-a-walk-outdoors-on-bea-EC4E36G.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\front-view-of-mature-man-on-a-walk-outdoors-on-bea-EC4E36G.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/handsome-european-man-standing-on-the-beach-B56WB8R.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\handsome-european-man-standing-on-the-beach-B56WB8R.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/happy-2-friends-men-enjoying-summer-vacation-and-scu-EUX8KUF.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\happy-2-friends-men-enjoying-summer-vacation-and-scu-EUX8KUF.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/happy-friends-men-enjoying-summer-vacation-and-scu-EUX8KUF.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\happy-friends-men-enjoying-summer-vacation-and-scu-EUX8KUF.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/instructor-and-two-divers-course-in-diving-school-e1634536370733.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\instructor-and-two-divers-course-in-diving-school-e1634536370733.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/instructor-and-two-divers-in-suits-diving-school-e1634536434614.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\instructor-and-two-divers-in-suits-diving-school-e1634536434614.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/instructor-and-two-divers-lesson-in-diving-school-e1634536388263.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\instructor-and-two-divers-lesson-in-diving-school-e1634536388263.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo-DTBHXU-1024x765.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo-DTBHXU-1024x765.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo-DTBHXU-300x224.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo-DTBHXU-300x224.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo-DTBHXU-768x574.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo-DTBHXU-768x574.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo-DTBHXU-800x598.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo-DTBHXU-800x598.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo-DTBHXU.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo-DTBHXU.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo-findive-blck-1024x367.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo-findive-blck-1024x367.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo-findive-blck-1536x550.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo-findive-blck-1536x550.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo-findive-blck-2048x734.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo-findive-blck-2048x734.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo-findive-blck-300x107.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo-findive-blck-300x107.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo-findive-blck-768x275.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo-findive-blck-768x275.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo-findive-blck-800x287.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo-findive-blck-800x287.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo-findive-blck-e1634536046930.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo-findive-blck-e1634536046930.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo-findive-wht-1024x367.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo-findive-wht-1024x367.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo-findive-wht-1536x550.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo-findive-wht-1536x550.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo-findive-wht-2048x734.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo-findive-wht-2048x734.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo-findive-wht-300x107.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo-findive-wht-300x107.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo-findive-wht-768x275.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo-findive-wht-768x275.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo-findive-wht-800x287.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo-findive-wht-800x287.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo-findive-wht-e1634536053789.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo-findive-wht-e1634536053789.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo2-DTBHXU-280x300.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo2-DTBHXU-280x300.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo2-DTBHXU-768x822.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo2-DTBHXU-768x822.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo2-DTBHXU-800x856.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo2-DTBHXU-800x856.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo2-DTBHXU-957x1024.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo2-DTBHXU-957x1024.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo2-DTBHXU.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo2-DTBHXU.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo3-DTBHXU-244x300.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo3-DTBHXU-244x300.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo3-DTBHXU-768x944.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo3-DTBHXU-768x944.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo3-DTBHXU-800x984.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo3-DTBHXU-800x984.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo3-DTBHXU-833x1024.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo3-DTBHXU-833x1024.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo3-DTBHXU.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo3-DTBHXU.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo4-DTBHXU-1024x888.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo4-DTBHXU-1024x888.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo4-DTBHXU-300x260.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo4-DTBHXU-300x260.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo4-DTBHXU-768x666.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo4-DTBHXU-768x666.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo4-DTBHXU-800x694.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo4-DTBHXU-800x694.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo4-DTBHXU.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo4-DTBHXU.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo5-DTBHXU-300x254.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo5-DTBHXU-300x254.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo5-DTBHXU-768x651.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo5-DTBHXU-768x651.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo5-DTBHXU-800x679.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo5-DTBHXU-800x679.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo5-DTBHXU.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo5-DTBHXU.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo6-DTBHXU-1024x664.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo6-DTBHXU-1024x664.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo6-DTBHXU-300x195.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo6-DTBHXU-300x195.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo6-DTBHXU-768x498.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo6-DTBHXU-768x498.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo6-DTBHXU-800x519.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo6-DTBHXU-800x519.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/logo6-DTBHXU.png
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\logo6-DTBHXU.png
+Content Type: image/png
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/man-free-diving-and-making-rings-e1634535873391.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\man-free-diving-and-making-rings-e1634535873391.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/old-man-carrying-a-surfboard-V5MY383.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\old-man-carrying-a-surfboard-V5MY383.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/partial-view-of-man-diving-in-ocean-alone-1024x682.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\partial-view-of-man-diving-in-ocean-alone-1024x682.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/partial-view-of-man-diving-in-ocean-alone-1536x1024.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\partial-view-of-man-diving-in-ocean-alone-1536x1024.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/partial-view-of-man-diving-in-ocean-alone-300x200.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\partial-view-of-man-diving-in-ocean-alone-300x200.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/partial-view-of-man-diving-in-ocean-alone-768x512.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\partial-view-of-man-diving-in-ocean-alone-768x512.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/partial-view-of-man-diving-in-ocean-alone-800x533.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\partial-view-of-man-diving-in-ocean-alone-800x533.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/partial-view-of-man-diving-in-ocean-alone-e1634536085170.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\partial-view-of-man-diving-in-ocean-alone-e1634536085170.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/scuba-diver-approaches-a-red-lion-fish--e1634536282400.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\scuba-diver-approaches-a-red-lion-fish--e1634536282400.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/scuba-diver-approaching-a-red-lion-fish-pterois-volitans-underwater--e1634535919849.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\scuba-diver-approaching-a-red-lion-fish-pterois-volitans-underwater--e1634535919849.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/scuba-diver-framed-by-sea-fan--e1634535938984.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\scuba-diver-framed-by-sea-fan--e1634535938984.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/scuba-diver-poses-amid-a-plethora-of-marine-life-vibrant-soft-corals-dendronephthya-sp-and-e1634535977885.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\scuba-diver-poses-amid-a-plethora-of-marine-life-vibrant-soft-corals-dendronephthya-sp-and-e1634535977885.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/scuba-diver-swims-alongside-hawksbill-turtle-grand-cayman--e1634536128296.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\scuba-diver-swims-alongside-hawksbill-turtle-grand-cayman--e1634536128296.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/scuba-diver-takes-picture-of-anemone-fish-and-their-host-anemone--e1634536311218.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\scuba-diver-takes-picture-of-anemone-fish-and-their-host-anemone--e1634536311218.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/scuba-diver-under-water-swimming-to-the-diving-yacht--e1633922585337.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\scuba-diver-under-water-swimming-to-the-diving-yacht--e1633922585337.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/scuba-diver-waves-one-arm-to-show-distress-and-that-she-requires-assistance--1024x787.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\scuba-diver-waves-one-arm-to-show-distress-and-that-she-requires-assistance--1024x787.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/scuba-diver-waves-one-arm-to-show-distress-and-that-she-requires-assistance--1536x1181.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\scuba-diver-waves-one-arm-to-show-distress-and-that-she-requires-assistance--1536x1181.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/scuba-diver-waves-one-arm-to-show-distress-and-that-she-requires-assistance--300x231.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\scuba-diver-waves-one-arm-to-show-distress-and-that-she-requires-assistance--300x231.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/scuba-diver-waves-one-arm-to-show-distress-and-that-she-requires-assistance--768x591.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\scuba-diver-waves-one-arm-to-show-distress-and-that-she-requires-assistance--768x591.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/scuba-diver-waves-one-arm-to-show-distress-and-that-she-requires-assistance--800x615.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\scuba-diver-waves-one-arm-to-show-distress-and-that-she-requires-assistance--800x615.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/scuba-diver-waves-one-arm-to-show-distress-and-that-she-requires-assistance--e1634536102128.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\scuba-diver-waves-one-arm-to-show-distress-and-that-she-requires-assistance--e1634536102128.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/scuba-divers-e1634536255109.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\scuba-divers-e1634536255109.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/scuba-divers-enter-water-from-boat-via-giant-stride-entry-diving-into-the-water--e1634536425295.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\scuba-divers-enter-water-from-boat-via-giant-stride-entry-diving-into-the-water--e1634536425295.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/scuba-diving-in-the-caymans-e1634536138894.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\scuba-diving-in-the-caymans-e1634536138894.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/scuba-diving-with-turtle-1024x685.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\scuba-diving-with-turtle-1024x685.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/scuba-diving-with-turtle-1536x1027.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\scuba-diving-with-turtle-1536x1027.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/scuba-diving-with-turtle-300x201.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\scuba-diving-with-turtle-300x201.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/scuba-diving-with-turtle-768x513.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\scuba-diving-with-turtle-768x513.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/scuba-diving-with-turtle-800x535.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\scuba-diving-with-turtle-800x535.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/scuba-diving-with-turtle-e1634536110377.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\scuba-diving-with-turtle-e1634536110377.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/scuba-in-cenotes-tulum-mexico-e1634536039179.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\scuba-in-cenotes-tulum-mexico-e1634536039179.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/selfie-underwater-with-friend-e1634536299859.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\selfie-underwater-with-friend-e1634536299859.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/smiling-asian-man-with-sea-view-background-RTHWGVC.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\smiling-asian-man-with-sea-view-background-RTHWGVC.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/snorkeling-and-playing-with-clown-fish-e1634535865442.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\snorkeling-and-playing-with-clown-fish-e1634535865442.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/snorkeling-in-the-tropical-sea-woman-with-mask-diving-underwater-1-1024x670.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\snorkeling-in-the-tropical-sea-woman-with-mask-diving-underwater-1-1024x670.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/snorkeling-in-the-tropical-sea-woman-with-mask-diving-underwater-1-1536x1005.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\snorkeling-in-the-tropical-sea-woman-with-mask-diving-underwater-1-1536x1005.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/snorkeling-in-the-tropical-sea-woman-with-mask-diving-underwater-1-300x196.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\snorkeling-in-the-tropical-sea-woman-with-mask-diving-underwater-1-300x196.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/snorkeling-in-the-tropical-sea-woman-with-mask-diving-underwater-1-768x503.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\snorkeling-in-the-tropical-sea-woman-with-mask-diving-underwater-1-768x503.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/snorkeling-in-the-tropical-sea-woman-with-mask-diving-underwater-1-800x524.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\snorkeling-in-the-tropical-sea-woman-with-mask-diving-underwater-1-800x524.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/snorkeling-in-the-tropical-sea-woman-with-mask-diving-underwater-1-e1634536065651.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\snorkeling-in-the-tropical-sea-woman-with-mask-diving-underwater-1-e1634536065651.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/surfer-standing-in-the-ocean-with-his-surfboard-45B82RE.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\surfer-standing-in-the-ocean-with-his-surfboard-45B82RE.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/two-divers-swimming-along-the-remaining-structure-of-a-shipwreck--e1634536320229.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\two-divers-swimming-along-the-remaining-structure-of-a-shipwreck--e1634536320229.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/underwater-photo-of-young-woman-in-swimming-suit-diving-in-ocean-alone-e1634535963134.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\underwater-photo-of-young-woman-in-swimming-suit-diving-in-ocean-alone-e1634535963134.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/underwater-scuba-diving-selfie-shot-with-selfie-stick-deep-blue-sea-wide-angle-shot--e1634535890797.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\underwater-scuba-diving-selfie-shot-with-selfie-stick-deep-blue-sea-wide-angle-shot--e1634535890797.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/underwater-view-of-diver-wearing-wet-suit-and-flippers-sunlight-filtering-through-from-above--e1634536146867.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\underwater-view-of-diver-wearing-wet-suit-and-flippers-sunlight-filtering-through-from-above--e1634536146867.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/woman-with-mask-underwater-snorkeling-in-the-clear-tropical-water-e1634536164766.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\woman-with-mask-underwater-snorkeling-in-the-clear-tropical-water-e1634536164766.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/2021/10/young-adult-snorkeling-in-a-river-PZBBFN3.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\2021\10\young-adult-snorkeling-in-a-river-PZBBFN3.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/elementor/css/global.css?ver=1678678800
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\elementor\css\global.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/elementor/css/post-10.css?ver=1678780716
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\elementor\css\post-10.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/elementor/css/post-11.css?ver=1678705571
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\elementor\css\post-11.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/elementor/css/post-1104.css?ver=1678696321
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\elementor\css\post-1104.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/elementor/css/post-1172.css?ver=1678696322
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\elementor\css\post-1172.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/elementor/css/post-12.css?ver=1678679547
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\elementor\css\post-12.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/elementor/css/post-1206.css?ver=1678815961
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\elementor\css\post-1206.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/elementor/css/post-1269.css?ver=1678847718
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\elementor\css\post-1269.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/elementor/css/post-13.css?ver=1678704842
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\elementor\css\post-13.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/elementor/css/post-1308.css?ver=1678785351
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\elementor\css\post-1308.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/elementor/css/post-1330.css?ver=1678709577
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\elementor\css\post-1330.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/elementor/css/post-1351.css?ver=1678709577
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\elementor\css\post-1351.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/elementor/css/post-29.css?ver=1678678801
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\elementor\css\post-29.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/elementor/css/post-3.css?ver=1678678799
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\elementor\css\post-3.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/elementor/css/post-43.css?ver=1678678801
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\elementor\css\post-43.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/elementor/css/post-6.css?ver=1678741170
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\elementor\css\post-6.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/elementor/css/post-807.css?ver=1678696350
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\elementor\css\post-807.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/elementor/css/post-812.css?ver=1678678801
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\elementor\css\post-812.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/elementor/css/post-816.css?ver=1678678802
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\elementor\css\post-816.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/elementor/css/post-9.css?ver=1678847665
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\elementor\css\post-9.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/elementor/thumbs/boy-snorkels-next-to-a-ship-wreck-submerged-in-the-ocean-e1634536246878-peqegbnu9f7j08pxairnnpcrk4kg2054ivigy5yiaa.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\elementor\thumbs\boy-snorkels-next-to-a-ship-wreck-submerged-in-the-ocean-e1634536246878-peqegbnu9f7j08pxairnnpcrk4kg2054ivigy5yiaa.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/elementor/thumbs/listening-to-the-sea-e1634536196815-peqef0nwrpf6vqm6wygb717puv03d4yjoew6ybw6xe.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\elementor\thumbs\listening-to-the-sea-e1634536196815-peqef0nwrpf6vqm6wygb717puv03d4yjoew6ybw6xe.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/elementor/thumbs/reef-scene-with-scuba-diver-and-staghorn-coral-e1634535828132-peqe5erawoamdcj75uj0cq57hsdfpk0lmksoxjn2qg.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\elementor\thumbs\reef-scene-with-scuba-diver-and-staghorn-coral-e1634535828132-peqe5erawoamdcj75uj0cq57hsdfpk0lmksoxjn2qg.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/elementor/thumbs/scuba-diver-interacts-with-southern-stingrays-dasyatis-americana--e1634535801294-peqe4pdns5bvnvk2a1k2zejrgduixq7uj36kz2opeg.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\elementor\thumbs\scuba-diver-interacts-with-southern-stingrays-dasyatis-americana--e1634535801294-peqe4pdns5bvnvk2a1k2zejrgduixq7uj36kz2opeg.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/elementor/thumbs/scuba-diving-on-the-city-of-washington-shipwreck-florida-keys-national-marine-sanctuary-e1634535779806-peqe44p7lsjkkge3msmagjrmdwog8dxr48twezjd7c.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\elementor\thumbs\scuba-diving-on-the-city-of-washington-shipwreck-florida-keys-national-marine-sanctuary-e1634535779806-peqe44p7lsjkkge3msmagjrmdwog8dxr48twezjd7c.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-content/uploads/sites/185/elementor/thumbs/snorkeler-framed-by-the-struts-of-a-wreck-of-a-plane-on-the-seabed--e1634535769483-peqe3vatpg6pccrr5ok0rm50g1ys3ewfqyb1m7xaxk.jpg
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-content\uploads\sites\185\elementor\thumbs\snorkeler-framed-by-the-struts-of-a-wreck-of-a-plane-on-the-seabed--e1634535769483-peqe3vatpg6pccrr5ok0rm50g1ys3ewfqyb1m7xaxk.jpg
+Content Type: image/jpeg
+
+Uri: https://templatekit.jegtheme.com/findive/wp-includes/css/classic-themes.min.css?ver=1
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-includes\css\classic-themes.min.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-includes/css/dist/block-library/style.min.css?ver=6.1.1
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-includes\css\dist\block-library\style.min.css
+Content Type: text/css
+
+Uri: https://templatekit.jegtheme.com/findive/wp-includes/js/comment-reply.min.js?ver=6.1.1
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-includes\js\comment-reply.min.js
+Content Type: application/javascript
+
+Uri: https://templatekit.jegtheme.com/findive/wp-includes/js/dist/element.min.js?ver=47162ff4492c7ec4956b
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-includes\js\dist\element.min.js
+Content Type: application/javascript
+
+Uri: https://templatekit.jegtheme.com/findive/wp-includes/js/dist/escape-html.min.js?ver=03e27a7b6ae14f7afaa6
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-includes\js\dist\escape-html.min.js
+Content Type: application/javascript
+
+Uri: https://templatekit.jegtheme.com/findive/wp-includes/js/dist/vendor/react-dom.min.js?ver=17.0.1
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-includes\js\dist\vendor\react-dom.min.js
+Content Type: application/javascript
+
+Uri: https://templatekit.jegtheme.com/findive/wp-includes/js/dist/vendor/react.min.js?ver=17.0.1
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-includes\js\dist\vendor\react.min.js
+Content Type: application/javascript
+
+Uri: https://templatekit.jegtheme.com/findive/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.9
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-includes\js\dist\vendor\regenerator-runtime.min.js
+Content Type: application/javascript
+
+Uri: https://templatekit.jegtheme.com/findive/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-includes\js\dist\vendor\wp-polyfill.min.js
+Content Type: application/javascript
+
+Uri: https://templatekit.jegtheme.com/findive/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-includes\js\jquery\jquery-migrate.min.js
+Content Type: application/javascript
+
+Uri: https://templatekit.jegtheme.com/findive/wp-includes/js/jquery/jquery.min.js?ver=3.6.1
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-includes\js\jquery\jquery.min.js
+Content Type: application/javascript
+
+Uri: https://templatekit.jegtheme.com/findive/wp-includes/js/jquery/ui/core.min.js?ver=1.13.2
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-includes\js\jquery\ui\core.min.js
+Content Type: application/javascript
+
+Uri: https://templatekit.jegtheme.com/findive/wp-includes/wlwmanifest.xml
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-includes\wlwmanifest.xml
+Content Type: application/xml
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\index.htm
+Content Type: application/json
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/oembed/1.0/embed?url=https:%2F%2Ftemplatekit.jegtheme.com%2Ffindive%2F
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\oembed\1.0\embed
+Content Type: application/json
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/oembed/1.0/embed?url=https:%2F%2Ftemplatekit.jegtheme.com%2Ffindive%2F&format=xml
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\oembed\1.0\embed-1
+Content Type: text/xml
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/oembed/1.0/embed?url=https:%2F%2Ftemplatekit.jegtheme.com%2Ffindive%2F2021%2F10%2F08%2Fnew-caledonia-the-lagoon-of-all-hopes%2F
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\oembed\1.0\embed-12
+Content Type: application/json
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/oembed/1.0/embed?url=https:%2F%2Ftemplatekit.jegtheme.com%2Ffindive%2F2021%2F10%2F08%2Fnew-caledonia-the-lagoon-of-all-hopes%2F&format=xml
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\oembed\1.0\embed-13
+Content Type: text/xml
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/oembed/1.0/embed?url=https:%2F%2Ftemplatekit.jegtheme.com%2Ffindive%2F2021%2F10%2F08%2Fscuba-diving-in-okinawa-a-first-timer%2F
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\oembed\1.0\embed-24
+Content Type: application/json
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/oembed/1.0/embed?url=https:%2F%2Ftemplatekit.jegtheme.com%2Ffindive%2F2021%2F10%2F08%2Fscuba-diving-in-okinawa-a-first-timer%2F&format=xml
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\oembed\1.0\embed-25
+Content Type: text/xml
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/oembed/1.0/embed?url=https:%2F%2Ftemplatekit.jegtheme.com%2Ffindive%2F2021%2F10%2F08%2Fshore-diving-in-maui-wave-big-island%2F
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\oembed\1.0\embed-20
+Content Type: application/json
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/oembed/1.0/embed?url=https:%2F%2Ftemplatekit.jegtheme.com%2Ffindive%2F2021%2F10%2F08%2Fshore-diving-in-maui-wave-big-island%2F&format=xml
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\oembed\1.0\embed-21
+Content Type: text/xml
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/oembed/1.0/embed?url=https:%2F%2Ftemplatekit.jegtheme.com%2Ffindive%2F2021%2F10%2F08%2Fturning-diving-sport-trip-adventures%2F
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\oembed\1.0\embed-16
+Content Type: application/json
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/oembed/1.0/embed?url=https:%2F%2Ftemplatekit.jegtheme.com%2Ffindive%2F2021%2F10%2F08%2Fturning-diving-sport-trip-adventures%2F&format=xml
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\oembed\1.0\embed-17
+Content Type: text/xml
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/oembed/1.0/embed?url=https:%2F%2Ftemplatekit.jegtheme.com%2Ffindive%2F2021%2F10%2F08%2Fwhat-do-you-need-for-deep-sea-diving%2F
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\oembed\1.0\embed-18
+Content Type: application/json
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/oembed/1.0/embed?url=https:%2F%2Ftemplatekit.jegtheme.com%2Ffindive%2F2021%2F10%2F08%2Fwhat-do-you-need-for-deep-sea-diving%2F&format=xml
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\oembed\1.0\embed-19
+Content Type: text/xml
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/oembed/1.0/embed?url=https:%2F%2Ftemplatekit.jegtheme.com%2Ffindive%2F2021%2F10%2F08%2Fwomen-in-diving-become-a-professional%2F
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\oembed\1.0\embed-22
+Content Type: application/json
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/oembed/1.0/embed?url=https:%2F%2Ftemplatekit.jegtheme.com%2Ffindive%2F2021%2F10%2F08%2Fwomen-in-diving-become-a-professional%2F&format=xml
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\oembed\1.0\embed-23
+Content Type: text/xml
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/oembed/1.0/embed?url=https:%2F%2Ftemplatekit.jegtheme.com%2Ffindive%2Fabout%2F
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\oembed\1.0\embed-2
+Content Type: application/json
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/oembed/1.0/embed?url=https:%2F%2Ftemplatekit.jegtheme.com%2Ffindive%2Fabout%2F&format=xml
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\oembed\1.0\embed-3
+Content Type: text/xml
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/oembed/1.0/embed?url=https:%2F%2Ftemplatekit.jegtheme.com%2Ffindive%2Fblog%2F
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\oembed\1.0\embed-10
+Content Type: application/json
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/oembed/1.0/embed?url=https:%2F%2Ftemplatekit.jegtheme.com%2Ffindive%2Fblog%2F&format=xml
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\oembed\1.0\embed-11
+Content Type: text/xml
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/oembed/1.0/embed?url=https:%2F%2Ftemplatekit.jegtheme.com%2Ffindive%2Fcontact%2F
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\oembed\1.0\embed-14
+Content Type: application/json
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/oembed/1.0/embed?url=https:%2F%2Ftemplatekit.jegtheme.com%2Ffindive%2Fcontact%2F&format=xml
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\oembed\1.0\embed-15
+Content Type: text/xml
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/oembed/1.0/embed?url=https:%2F%2Ftemplatekit.jegtheme.com%2Ffindive%2Fcourses%2F
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\oembed\1.0\embed-4
+Content Type: application/json
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/oembed/1.0/embed?url=https:%2F%2Ftemplatekit.jegtheme.com%2Ffindive%2Fcourses%2F&format=xml
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\oembed\1.0\embed-5
+Content Type: text/xml
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/oembed/1.0/embed?url=https:%2F%2Ftemplatekit.jegtheme.com%2Ffindive%2Fpricing%2F
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\oembed\1.0\embed-8
+Content Type: application/json
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/oembed/1.0/embed?url=https:%2F%2Ftemplatekit.jegtheme.com%2Ffindive%2Fpricing%2F&format=xml
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\oembed\1.0\embed-9
+Content Type: text/xml
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/oembed/1.0/embed?url=https:%2F%2Ftemplatekit.jegtheme.com%2Ffindive%2Fteam%2F
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\oembed\1.0\embed-6
+Content Type: application/json
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/oembed/1.0/embed?url=https:%2F%2Ftemplatekit.jegtheme.com%2Ffindive%2Fteam%2F&format=xml
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\oembed\1.0\embed-7
+Content Type: text/xml
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/wp/v2/categories/2
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\wp\v2\categories\2
+Content Type: application/json
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/wp/v2/categories/3
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\wp\v2\categories\3
+Content Type: application/json
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/wp/v2/categories/4
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\wp\v2\categories\4
+Content Type: application/json
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/wp/v2/categories/5
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\wp\v2\categories\5
+Content Type: application/json
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/wp/v2/categories/6
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\wp\v2\categories\6
+Content Type: application/json
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/wp/v2/categories/7
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\wp\v2\categories\7
+Content Type: application/json
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/wp/v2/pages/1104
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\wp\v2\pages\1104
+Content Type: application/json
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/wp/v2/pages/1206
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\wp\v2\pages\1206
+Content Type: application/json
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/wp/v2/pages/1269
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\wp\v2\pages\1269
+Content Type: application/json
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/wp/v2/pages/1308
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\wp\v2\pages\1308
+Content Type: application/json
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/wp/v2/pages/1330
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\wp\v2\pages\1330
+Content Type: application/json
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/wp/v2/pages/29
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\wp\v2\pages\29
+Content Type: application/json
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/wp/v2/pages/807
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\wp\v2\pages\807
+Content Type: application/json
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/wp/v2/posts/10
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\wp\v2\posts\10
+Content Type: application/json
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/wp/v2/posts/11
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\wp\v2\posts\11
+Content Type: application/json
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/wp/v2/posts/12
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\wp\v2\posts\12
+Content Type: application/json
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/wp/v2/posts/13
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\wp\v2\posts\13
+Content Type: application/json
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/wp/v2/posts/6
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\wp\v2\posts\6
+Content Type: application/json
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/wp/v2/posts/9
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\wp\v2\posts\9
+Content Type: application/json
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/wp/v2/tags/10
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\wp\v2\tags\10
+Content Type: application/json
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/wp/v2/tags/11
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\wp\v2\tags\11
+Content Type: application/json
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/wp/v2/tags/12
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\wp\v2\tags\12
+Content Type: application/json
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/wp/v2/tags/13
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\wp\v2\tags\13
+Content Type: application/json
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/wp/v2/tags/8
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\wp\v2\tags\8
+Content Type: application/json
+
+Uri: https://templatekit.jegtheme.com/findive/wp-json/wp/v2/tags/9
+File Name: D:\Downloaded Web Sites\templatekit.jegtheme.com\findive\wp-json\wp\v2\tags\9
+Content Type: application/json
+
