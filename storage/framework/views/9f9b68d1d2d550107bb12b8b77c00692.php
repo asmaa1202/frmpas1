@@ -217,7 +217,7 @@
             </div>
             <div class="card mb-3 overflow-hidden">
                 <div class="card-header">
-                    <h5 class="mb-0">Informations de plongeur</h5>
+                    <h5 class="mb-0">Informations d'athlète</h5>
                 </div>
                 <div class="card-body bg-light">
 
