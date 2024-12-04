@@ -5,8 +5,9 @@ namespace App\Http\Controllers\Club;
 use App\Http\Controllers\Controller;
 use App\Models\Adhesion;
 use Illuminate\Http\Request;
-
-class AdhesionClubController extends Controller
+use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
+class HomeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,32 +15,25 @@ class AdhesionClubController extends Controller
     const statut_en_cours = 'en cours'; 
     const statut_accepter = 'accepter'; 
     const statut_refuser = 'refuser'; 
-    public function demande_adhesion(Request $request, $id)
+    public function index()
     {
-      
-        try {
+        $clubId = Auth::user()->club->id;
 
-            // dd($id);
-            $demande_adhesion = new Adhesion();
-            $demande_adhesion->club_id = $id;
-            $demande_adhesion->montant = 1999;
-            $demande_adhesion->annee = date('Y');
-            $demande_adhesion->statut = self::statut_en_cours;
+        // // Vérifier si la licence est active pour l'année en cours
+        // $active_licence = Licence::where('plongeur_id', $plongeurId)
+        //     ->where('annee', date('Y'))
+        //     ->first();
 
-            $file = $request->document;
-            $adhesion_document = $file->store('attestation paiement');
-            $demande_adhesion->document = $adhesion_document ?? null;
-            $demande_adhesion->save();
-    
-            return response()->json(['message' => 'La demande d\'adhésion a été envoyée avec succès'], 200);
-    
+        // Calculer les jours restants jusqu'à la fin de l'année
+        $remainingDays = Carbon::now()->diffInDays(Carbon::now()->endOfYear());
 
 
-            
-        } catch (\Exception $err) {
-            // dd($err);
-            return response()->json(array('message' => $err), 500);
-        }
+        $active_adhesion = Adhesion::where('club_id', $clubId)
+                                    ->where('annee', date('Y'))
+                                    // ->where('annee', 22)
+                                    ->first();
+        // dd(empty($active_adhesion));
+        return view('clubDash.pages.home', compact('active_adhesion', 'remainingDays'));
     }
 
     /**

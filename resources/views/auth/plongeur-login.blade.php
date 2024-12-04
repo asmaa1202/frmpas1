@@ -54,58 +54,62 @@
                     <!--/.bg-holder-->
 
                 </div>
-                <div class="col-sm-10 col-md-6 px-sm-0 align-self-center mx-auto py-5">
-                    <div class="row justify-content-center g-0">
-                        <div class="col-lg-9 col-xl-8 col-xxl-6">
-                            <div class="card">
-                                <div class="card-header text-center p-2">
-                                    <img src={{ asset('images/logo.png') }} alt="" style=" width: 200px">
-                                </div>
-                                <div class="card-body p-4">
-                                    <div class="row flex-between-center">
-                                        <div class="col-auto">
-                                            <h3>Connexion</h3>
-                                        </div>
-
+                <div class="row min-vh-100 bg-100">
+                    <!-- Section gauche avec l'image -->
+                    <div class="col-6 d-none d-lg-block p-0 position-relative">
+                        <img src="{{ asset('plongeur.jpg') }}" alt="Plongeur" class="img-fluid w-100 h-100" style="object-fit: cover;">
+                    </div>
+                    <!-- Section droite avec le formulaire -->
+                    <div class="col-sm-10 col-md-6 px-sm-0 align-self-center mx-auto py-5">
+                        <div class="row justify-content-center g-0">
+                            <div class="col-lg-9 col-xl-8 col-xxl-6">
+                                <div class="card">
+                                    <div class="card-header text-center p-2">
+                                        <img src="{{ asset('images/logo.png') }}" alt="" style="width: 200px">
                                     </div>
-                                    <form method="POST" action="{{ route('plongeur.login.submit') }}">
-                                        @csrf
-                                        <div class="mb-3">
-                                            <label class="form-label" for="card-email">E-mail</label>
-                                            <input id="card-email" type="email"
-                                                class="form-control @error('email') is-invalid @enderror" name="email"
-                                                value="{{ old('email') }}" required autocomplete="email" autofocus />
-                                            @error('email')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                            @enderror
-                                        </div>
-                                        <div class="mb-4">
-                                            <div class="d-flex justify-content-between">
-                                                <label class="form-label" for="card-password">Mot de passe</label>
+                                    <div class="card-body p-4">
+                                        <div class="row flex-between-center">
+                                            <div class="col-auto">
+                                                <h3>Connexion</h3>
                                             </div>
-                                            <input class="form-control @error('password') is-invalid @enderror"
-                                                name="password" required autocomplete="current-password"
-                                                id="card-password" type="password" />
-                                            @error('password')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                            @enderror
                                         </div>
-                                        @if (Route::has('password.request'))
-                                        <div class="mb-3">
-                                            <button class="btn btn-primary d-block w-100 mt-3" type="submit"
-                                                name="submit">Connexion</button>
-                                        </div>
-                                        @endif
-                                    </form>
+                                        <form method="POST" action="{{ route('plongeur.login.submit') }}">
+                                            @csrf
+                                            <div class="mb-3">
+                                                <label class="form-label" for="card-email">E-mail</label>
+                                                <input id="card-email" type="email" class="form-control @error('email') is-invalid @enderror"
+                                                    name="email" value="{{ old('email') }}" required autocomplete="email" autofocus />
+                                                @error('email')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
+                                            </div>
+                                            <div class="mb-4">
+                                                <div class="d-flex justify-content-between">
+                                                    <label class="form-label" for="card-password">Mot de passe</label>
+                                                </div>
+                                                <input class="form-control @error('password') is-invalid @enderror" name="password"
+                                                    required autocomplete="current-password" id="card-password" type="password" />
+                                                @error('password')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
+                                            </div>
+                                            <div class="mb-3">
+                                                <button class="btn btn-primary d-block w-100 mt-3" type="submit" name="submit">
+                                                    Connexion
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                
             </div>
         </div>
     </main>

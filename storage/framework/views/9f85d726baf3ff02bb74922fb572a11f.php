@@ -1,3 +1,51 @@
+<style>
+    .remaining-days-warning {
+        color: red;
+        font-weight: bold;
+        margin-top: 5px;
+        animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+        0% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0.5;
+            transform: scale(1.1);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    .dropzone .dz-preview-single .dz-preview-img {
+        width: 50% !important;
+    }
+
+    .signal-button {
+        animation: pulse-signal 1.5s infinite;
+        border-width: 2px; /* Pour rendre le contour plus visible */
+        font-weight: bold;
+    }
+
+    @keyframes pulse-signal {
+        0% {
+            transform: scale(1);
+            box-shadow: 0 0 5px;
+        }
+        50% {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px;
+        }
+        100% {
+            transform: scale(1);
+            box-shadow: 0 0 5px;
+        }
+    }
+
+</style>
 <?php $__env->startSection('content'); ?>
 <div class="card mb-3">
     <div class="bg-holder d-none d-lg-block bg-card"
@@ -14,7 +62,28 @@
             </div>
 
             <div class="col-lg-4 d-flex justify-content-end align-items-center">
-                <button class="btn btn-outline-primary" onclick="demandeAdhesion(<?php echo e(Auth::user()->club->id); ?>)">Demande d'adhésion</button>
+                <?php if(isset($active_adhesion)): ?>
+                <button class="btn" style="background: #279e5b; color: white;">
+                    Attestation d'affiliation
+                </button>&nbsp;
+                <button class="btn" style="background: #279e5b; color: white;">
+                    Autorisation de plongée
+                </button>&nbsp;
+                <button class="btn" style="background: #279e5b; color: white;">
+                    Active
+                </button> &nbsp;&nbsp;
+                <div class="remaining-days-warning">
+                    <?php echo e($remainingDays); ?> jours restants
+                </div>
+
+                <?php elseif(empty($active_adhesion)): ?>
+                
+                <button class="btn btn-danger signal-button" data-bs-toggle="modal" data-bs-target="#adhesionModal">
+                    Demande d'adhésion
+                </button>
+                
+                
+                <?php endif; ?>
             </div>
         </div>
     </div>
@@ -134,6 +203,37 @@
         </div>
     </div>
 </div>
+<!-- Bouton pour ouvrir le modal -->
+<button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#adhesionModal">
+    Demande d'adhésion
+</button>
+
+<!-- Modal Adhesion -->
+<div class="modal fade" id="adhesionModal" tabindex="-1" aria-labelledby="adhesionModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="adhesionModalLabel">Formulaire de demande d'adhésion</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Formulaire -->
+               
+                
+                <form action="/upload" class="dropzone" id="my-dropzone">
+                    <div class="dz-message">
+                        Glissez-déposez ou cliquez pour télécharger l'attestation de paiement (PDF, image).
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                <button type="button" class="btn btn-primary" onclick="demandeAdhesion(<?php echo e(Auth::user()->club->id); ?>)">Envoyer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div id="notification"></div>
 
 <?php $__env->stopSection(); ?>
@@ -143,10 +243,57 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
 
 <script>
-   
+     // Configuration de Dropzone
+    var myDropzone = new Dropzone("#my-dropzone", {
+        url: "/club/demande-adhesion",  // URL pour l'upload
+        paramName: "file",  // Nom du paramètre pour l'envoi du fichier
+        maxFilesize: 3,  // Taille max du fichier (en Mo)
+        maxFiles: 1,  // Limiter à un seul fichier
+        acceptedFiles: ".jpg,.jpeg,.png,.gif,.pdf",  // Types de fichiers acceptés
+        addRemoveLinks: true,  // Permet d'ajouter des liens de suppression
+    
+        init: function () {
+                this.on("maxfilesexceeded", function (file) {
+                    this.removeAllFiles(); // Supprimer le fichier précédent
+                    this.addFile(file); // Ajouter le nouveau fichier
+                });
+
+                this.on("thumbnail", function (file) {
+                    if (!file.type.startsWith("image/")) {
+                        // Remplacer l'aperçu par une icône ou une image de dossier
+                        file.previewElement.querySelector("img").src = "<?php echo e(asset('assets/img/image-file-2.png')); ?>"; // Remplacez par le chemin de votre icône de dossier
+                    }
+                });
+
+                this.on("removedfile", function (file) {
+                    console.log("Fichier supprimé : ", file.name);
+                    // Ajoutez ici une requête pour supprimer le fichier côté serveur si nécessaire
+                });
+
+                this.on("success", function (file, response) {
+                    console.log("Fichier téléchargé avec succès : ", response);
+                });
+
+                this.on("error", function (file, errorMessage) {
+                    console.error("Erreur lors du téléchargement : ", errorMessage);
+                });
+            }
+    
+    });
+
+  // Supprimer tous les fichiers
+  document.getElementById('remove-all-files').addEventListener('click', function() {
+    myDropzone.removeAllFiles(true);  // true pour forcer la suppression du fichier du DOM
+    console.log("Tous les fichiers ont été supprimés.");
+  });
+
+
     async function demandeAdhesion(id) {
         try {
+            const files = myDropzone.getAcceptedFiles();
+            
             let formData = new FormData();
+            formData.append("document", files[0]);
 
             const res = await axios.post(`/club/demande-adhesion/${id}`, formData, {
                 headers: {

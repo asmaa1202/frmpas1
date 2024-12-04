@@ -29,7 +29,8 @@ class PlongeurLoginController extends Controller
             "email" => $request->email,
             "password" => $request->password,
         ], $request->remember)) {
-            return redirect()->intended(route("plongeur.dashboard"));
+            return redirect()->route("plongeur.dashboard");
+
         }
 
         return redirect()->back()->withInput($request->only("email", "remember"));
