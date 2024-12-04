@@ -1,5 +1,51 @@
 @extends('plongeurDash.layout.master')
+<style>
+    .remaining-days-warning {
+        color: red;
+        font-weight: bold;
+        margin-top: 5px;
+        animation: pulse 1s infinite;
+    }
 
+    @keyframes pulse {
+        0% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0.5;
+            transform: scale(1.1);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    .dropzone .dz-preview-single .dz-preview-img {
+        width: 50% !important;
+    }
+.signal-button {
+    animation: pulse-signal 1.5s infinite;
+    border-width: 2px; /* Pour rendre le contour plus visible */
+    font-weight: bold;
+}
+
+@keyframes pulse-signal {
+    0% {
+        transform: scale(1);
+        /* box-shadow: 0 0 5px rgba(248, 84, 84, 0.8); */
+    }
+    50% {
+        transform: scale(1.1);
+        /* box-shadow: 0 0 15px rgb(231, 50, 50); */
+    }
+    100% {
+        transform: scale(1);
+        /* box-shadow: 0 0 5px rgba(248, 84, 84, 0.8); */
+    }
+}
+
+</style>
 @section('content')
 <div class="card mb-3">
     <div class="bg-holder d-none d-lg-block bg-card"
@@ -28,9 +74,46 @@
                     analyses sur cette page.</p>
             </div>
 
-            <div class="col-lg-4 d-flex justify-content-end align-items-center">
+            {{-- <div class="col-lg-4 d-flex justify-content-end align-items-center">
+                @if(isset($active_licence))
+                <button class="btn" style="background: #279e5b;color:white;">Active</button>
+
+                @elseif(empty($active_licence))
                 <button class="btn btn-outline-primary" onclick="demandeLicence({{ Auth::guard('plongeurs')->user()->id }})">Demande une licence</button>
+                @endif
+
+            </div> --}}
+            {{-- <div class="col-lg-4 d-flex justify-content-end align-items-center">
+                @if(isset($active_licence))
+                    <button class="btn" style="background: #279e5b; color: white;">
+                        Active 
+                    </button>
+                    <div>
+                        {{ $remainingDays }} jours restants
+                    </div>
+                @else
+                    <button class="btn btn-outline-primary" onclick="demandeLicence({{ Auth::guard('plongeurs')->user()->id }})">
+                        Demande une licence
+                    </button>
+                @endif
             </div>
+             --}}
+             <div class="col-lg-4 d-flex justify-content-end align-items-center"> 
+                @if(isset($active_licence))
+                    <button class="btn" style="background: #279e5b; color: white;">
+                        Active
+                    </button> &nbsp;&nbsp;
+                    <div class="remaining-days-warning">
+                        {{ $remainingDays }} jours restants
+                    </div>
+                @else
+                    <button class="btn btn-danger signal-button"  data-bs-toggle="modal" data-bs-target="#licenceModal">
+                        Demande une licence
+                    </button>
+                @endif
+            </div>
+            
+            
         </div>
     </div>
 
@@ -153,22 +236,109 @@
         </div>
     </div>
 </div>
+<!-- Modal Licence -->
+<div class="modal fade" id="licenceModal" tabindex="-1" aria-labelledby="licenceModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="licenceModalLabel">Formulaire de demande d'adhésion</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+         
+                <form action="/upload" class="dropzone" id="my-dropzone">
+                    <div class="dz-message">
+                        Glissez-déposez ou cliquez pour télécharger un fichier.
+                    </div>
+                </form>
+                
+            
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                <button type="button" class="btn btn-primary" onclick="demandeLicence({{ Auth::guard('plongeurs')->user()->id }})">Envoyer</button>
+            </div>
+        </div>
+    </div>
+</div>
 <div id="notification"></div>
 
 @section('javascript')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/dropzone@5.9.3/dist/min/dropzone.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 <script>
+  // Configuration de Dropzone
+  var myDropzone = new Dropzone("#my-dropzone", {
+    url: "/plongeur/demande-licence",  // URL pour l'upload
+    paramName: "file",  // Nom du paramètre pour l'envoi du fichier
+    maxFilesize: 3,  // Taille max du fichier (en Mo)
+    maxFiles: 1,  // Limiter à un seul fichier
+    acceptedFiles: ".jpg,.jpeg,.png,.gif,.pdf",  // Types de fichiers acceptés
+    addRemoveLinks: true,  // Permet d'ajouter des liens de suppression
+  
+    init: function () {
+            this.on("maxfilesexceeded", function (file) {
+                this.removeAllFiles(); // Supprimer le fichier précédent
+                this.addFile(file); // Ajouter le nouveau fichier
+            });
+
+            this.on("removedfile", function (file) {
+                console.log("Fichier supprimé : ", file.name);
+                // Ajoutez ici une requête pour supprimer le fichier côté serveur si nécessaire
+            });
+
+            this.on("success", function (file, response) {
+                console.log("Fichier téléchargé avec succès : ", response);
+            });
+
+            this.on("error", function (file, errorMessage) {
+                console.error("Erreur lors du téléchargement : ", errorMessage);
+            });
+        }
+   
+  });
+
+  // Supprimer un fichier spécifique lorsqu'on clique sur le lien de suppression
+//   myDropzone.on("removedfile", function(file) {
+//     // Vérifie si le nom de fichier existe et l'affiche correctement
+//     if (file && file.name) {
+//       alert("Fichier supprimé : " + file.name);
+//     } else {
+//       alert("Impossible de récupérer le nom du fichier.");
+//     }
+//   });
+
+  // Supprimer tous les fichiers
+  document.getElementById('remove-all-files').addEventListener('click', function() {
+    myDropzone.removeAllFiles(true);  // true pour forcer la suppression du fichier du DOM
+    console.log("Tous les fichiers ont été supprimés.");
+  });
+
+
     async function demandeLicence(id) {
         try {
-            let formData = new FormData();
+            // Vérifiez que Dropzone a un fichier accepté
+            const files = myDropzone.getAcceptedFiles();
+            // if (files.length === 0) {
+            //     alert("Aucun fichier sélectionné.");
+            //     return;
+            // }
 
+            // Créer un FormData et ajouter le fichier
+            let formData = new FormData();
+            formData.append("document", files[0]);
+
+            // Envoyer le fichier à Laravel via axios
             const res = await axios.post(`/plongeur/demande-licence/${id}`, formData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                 },
             });
 
+            // Notification de succès
             if (res.status === 200) {
                 const notif = `
                     <div class="toast-container position-fixed bottom-0 end-0 p-3">
@@ -190,7 +360,8 @@
                 toastBootstrap.show();
             }
         } catch (err) {
-            alert(err);
+            console.error(err);
+            // Notification d'erreur
             const notif = `
                 <div class="toast-container position-fixed bottom-0 end-0 p-3">
                     <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
@@ -211,7 +382,7 @@
             toastBootstrap.show();
         }
     }
-
 </script>
+
 @endsection
 @endsection
