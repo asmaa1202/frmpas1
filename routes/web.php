@@ -16,6 +16,7 @@ use App\Http\Controllers\PlongeurController;
 use App\Http\Controllers\CarnetPlongeeDetailsEnteteController;
 use App\Http\Controllers\Club\AdhesionClubController;
 use App\Http\Controllers\Club\AthleteClubController;
+use App\Http\Controllers\Club\HomeController;
 use App\Http\Controllers\Club\PlongeurClubController;
 use App\Http\Controllers\ClubController;
 use App\Http\Controllers\ContactController;
@@ -30,6 +31,7 @@ use App\Http\Controllers\LevelController;
 use App\Http\Controllers\SuiviPrepaController;
 use App\Http\Controllers\ExercicePlongeurStatutController;
 use App\Http\Controllers\LicenceController;
+use App\Http\Controllers\Plongeur\HomePlongeurController;
 use App\Http\Controllers\Plongeur\LicencePlongeurController;
 use App\Models\Plongeur;
 
@@ -381,9 +383,10 @@ Route::middleware(['auth', 'role:1'])->group(function () {
 Route::group(['prefix'=>'club', 'middleware' => ['auth','role:2']],function () {
     // Route::group(['prefix'=>'admin', 'middleware' => ['auth','role:1']],function (){
     
-        Route::get("/home", function () {
-            return view("clubDash.pages.home");
-        })->name('club.index');
+        // Route::get("/home", function () {
+        //     return view("clubDash.pages.home");
+        // })->name('club.index');
+        Route::get("/home", [HomeController::class, "index"])->name('club.index');
         // demande adhesion
         Route::post("/demande-adhesion/{id}", [AdhesionClubController::class, "demande_adhesion"])->name('demande.adhesion');
 
@@ -457,18 +460,20 @@ Route::group(['prefix'=>'club', 'middleware' => ['auth','role:2']],function () {
 
 Route::middleware('auth:plongeurs')->group(
     function () {
-        Route::get("/plongeur/home", function () {
-            return view("plongeurDash.pages.home");
-        })->name('plongeur.index');
+        // Route::get("/plongeur/home", function () {
+        //     return view("plongeurDash.pages.home");
+        // })->name('plongeur.index');
+        Route::get("/plongeur", [HomePlongeurController::class, 'index'])->name('plongeur.dashboard');
+        Route::get("/plongeur/home", [HomePlongeurController::class, 'index'])->name('plongeur.index');
 
         // demande adhesion
         Route::post("/plongeur/demande-licence/{id}", [LicencePlongeurController::class, "demande_licence"])->name('demande.licence');
 
-        Route::get("/plongeur", function () {
-            return view("plongeurDash.pages.home");
-        })->name(
-            'plongeur.dashboard'
-        );
+        // Route::get("/plongeur", function () {
+        //     return view("plongeurDash.pages.home");
+        // })->name(
+        //     'plongeur.dashboard'
+        // );
         Route::get("/plongeur/mon-compte", [PlongeurController::class, "infoPersonnel"])->name(
             'plongeur.mon-compte'
         );

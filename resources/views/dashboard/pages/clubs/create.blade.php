@@ -238,7 +238,7 @@
                 // alert(document.getElementById("document").value);
             
                 formData.append("image_club", file);
-                formData.append("document", document.getElementById("document").value);
+                // formData.append("document", document.getElementById("document").value);
                 formData.append("nom_club", document.getElementById("nom_club").value);
                 formData.append("date_creation", document.getElementById("date_creation").value);
                 formData.append("email_club", document.getElementById("email_club").value);
