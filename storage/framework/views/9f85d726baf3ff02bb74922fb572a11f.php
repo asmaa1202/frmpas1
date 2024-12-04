@@ -64,6 +64,12 @@
             <div class="col-lg-4 d-flex justify-content-end align-items-center">
                 <?php if(isset($active_adhesion)): ?>
                 <button class="btn" style="background: #279e5b; color: white;">
+                    Attestation d'affiliation
+                </button>&nbsp;
+                <button class="btn" style="background: #279e5b; color: white;">
+                    Autorisation de plongée
+                </button>&nbsp;
+                <button class="btn" style="background: #279e5b; color: white;">
                     Active
                 </button> &nbsp;&nbsp;
                 <div class="remaining-days-warning">
@@ -288,7 +294,7 @@
             
             let formData = new FormData();
             formData.append("document", files[0]);
-            
+
             const res = await axios.post(`/club/demande-adhesion/${id}`, formData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
