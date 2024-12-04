@@ -212,14 +212,14 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="licenceModalLabel">Formulaire de demande d'adhésion</h5>
+                <h5 class="modal-title" id="licenceModalLabel">Télécharger l'attestation de paiement</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
          
                 <form action="/upload" class="dropzone" id="my-dropzone">
                     <div class="dz-message">
-                        Glissez-déposez ou cliquez pour télécharger un fichier.
+                        Glissez-déposez ou cliquez pour télécharger l'attestation de paiement (PDF, image).
                     </div>
                 </form>
                 
@@ -256,6 +256,13 @@
                 this.addFile(file); // Ajouter le nouveau fichier
             });
 
+            this.on("thumbnail", function (file) {
+                if (!file.type.startsWith("image/")) {
+                    // Remplacer l'aperçu par une icône ou une image de dossier
+                    file.previewElement.querySelector("img").src = "<?php echo e(asset('assets/img/image-file-2.png')); ?>"; // Remplacez par le chemin de votre icône de dossier
+                }
+            });
+
             this.on("removedfile", function (file) {
                 console.log("Fichier supprimé : ", file.name);
                 // Ajoutez ici une requête pour supprimer le fichier côté serveur si nécessaire
@@ -271,16 +278,6 @@
         }
    
   });
-
-  // Supprimer un fichier spécifique lorsqu'on clique sur le lien de suppression
-//   myDropzone.on("removedfile", function(file) {
-//     // Vérifie si le nom de fichier existe et l'affiche correctement
-//     if (file && file.name) {
-//       alert("Fichier supprimé : " + file.name);
-//     } else {
-//       alert("Impossible de récupérer le nom du fichier.");
-//     }
-//   });
 
   // Supprimer tous les fichiers
   document.getElementById('remove-all-files').addEventListener('click', function() {
