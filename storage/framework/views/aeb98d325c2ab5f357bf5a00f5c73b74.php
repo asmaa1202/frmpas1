@@ -59,7 +59,6 @@
                             <div class="col-auto">
                                 <h3>Connexion</h3>
                             </div>
-
                         </div>
                         <form method="POST" action="<?php echo e(route('login')); ?>">
                             <?php echo csrf_field(); ?>
@@ -114,13 +113,17 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                             </div>
-                            <?php if(Route::has('password.request')): ?>
                             <div class="mb-3">
-                                <button class="btn btn-primary d-block w-100 mt-3" type="submit"
-                                    name="submit">Connexion</button>
+                                <button class="btn btn-primary d-block w-100 mt-3" type="submit" name="submit">Connexion</button>
                             </div>
-                            <?php endif; ?>
                         </form>
+                        <div class="text-center mt-3">
+                            <a href="<?php echo e(route('plongeur.login')); ?>" class="text-primary" style="text-decoration: underline;">
+                                Vous êtes un plongeur ? Cliquez ici pour vous connecter
+                            </a>
+                        </div>
+                    </div>
+                    
                     </div>
                 </div>
                 <div class="text-center pt-2">

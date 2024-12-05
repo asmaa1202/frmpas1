@@ -60,6 +60,19 @@
 		text-decoration: none;
 		color: inherit;
 	}
+	.login-icon {
+    color: #007bff;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 5px;
+	padding-left: 20px;
+    transition: color 0.3s ease;
+}
+
+.login-icon:hover {
+    color: #0056b3;
+}
+
 
 	.page_slider .slide-link img {
 		width: 100%;
@@ -290,9 +303,14 @@
 								</nav>
 								<!-- eof main nav -->
 							</div>
-							<div class="col-xl-2 col-lg-3 text-right d-none d-lg-block">
+							
 								<a class="fs-20 links-maincolor-hover" href="tel:+212661140912"><mark>+212</mark> 6 61 14 09 12</a>
-							</div>
+							
+								<a href="/login" class="login-icon">
+									<i class="fa fa-sign-in" aria-hidden="true"></i>
+								</a>
+								
+						
 						</div>
 					</div>
 					<!-- header toggler -->
