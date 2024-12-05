@@ -497,6 +497,9 @@ Route::middleware('auth:plongeurs')->group(
         Route::get("/plongeur/cours", [CoursController::class, 'coursParPlongeur'])->name('plongeur.cours.index');
         Route::get("/plongeur/cours/modifier/{id}", [CoursController::class, 'show'])->name('plongeur.cours.show');
 
+        //attestation de licence 
+        Route::get("/attestation-licence/{id}", [HomePlongeurController::class, "attestationLicence"])->name('attestation.licence');
+
         // - logout
         Route::post('/plongeur/logout', function () {
 
