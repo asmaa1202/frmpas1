@@ -1,4 +1,6 @@
 @extends('clubDash.layout.master')
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
 <style>
     .remaining-days-warning {
         color: red;
@@ -56,14 +58,20 @@
 
     <div class="card-body position-relative">
         <div class="row">
-            <div class="col-lg-8">
+            <div class="{{isset($active_adhesion) ? 'col-lg-6' : 'col-lg-8' }}">
                 <h3>{{Auth::user()->club->nom}}</h3>
                 <p class="mb-0">Rapide, intelligent et vous pouvez voir toutes les
                     analyses sur cette page.</p>
             </div>
-
+{{-- 
             <div class="col-lg-4 d-flex justify-content-end align-items-center">
                 @if(isset($active_adhesion))
+                <button class="btn" style="background: #279e5b; color: white;">
+                    Attestation d'affiliation
+                </button>&nbsp;
+                <button class="btn" style="background: #279e5b; color: white;">
+                    Autorisation de plongée
+                </button>&nbsp;
                 <button class="btn" style="background: #279e5b; color: white;">
                     Active
                 </button> &nbsp;&nbsp;
@@ -72,14 +80,38 @@
                 </div>
 
                 @elseif(empty($active_adhesion))
-                {{-- <button class="btn btn-outline-primary" onclick="demandeAdhesion({{ Auth::user()->club->id }})">Demande d'adhésion</button> --}}
+                <button class="btn btn-outline-primary" onclick="demandeAdhesion({{ Auth::user()->club->id }})">Demande d'adhésion</button>
                 <button class="btn btn-danger signal-button" data-bs-toggle="modal" data-bs-target="#adhesionModal">
                     Demande d'adhésion
                 </button>
-                
+                     <button class="btn" style="background: #279e5b; color: white;">
+                    Autorisation de plongée
+                </button> 
+                &nbsp;&nbsp;
+                <button class="btn" style="background: #279e5b; color: white;">
+                    Attestation d'affiliation
+                </button>
                 
                 @endif
-            </div>
+            </div> --}}
+          
+                @if(isset($active_adhesion))
+                    <div class="col-lg-6 d-flex justify-content-end align-items-center flex-wrap">
+                        
+                        <button class="btn btn-primary"><i class="bi bi-file-earmark-arrow-down-fill"></i> Autorisation de plongée</button>
+                        &nbsp;&nbsp;
+                        <button class="btn btn-primary"><i class="bi bi-file-earmark-arrow-down-fill"></i> Attestation d'affiliation</button>
+                    </div>
+              
+                @elseif(empty($active_adhesion))
+                    <div class="col-lg-4 d-flex justify-content-end align-items-center flex-wrap">
+                        <button class="btn btn-danger signal-button" data-bs-toggle="modal" data-bs-target="#adhesionModal">
+                            Demande d'adhésion
+                        </button>
+                    </div>
+            
+                @endif
+            
         </div>
     </div>
 </div>
@@ -213,10 +245,8 @@
             </div>
             <div class="modal-body">
                 <!-- Formulaire -->
-                <form action="">
-                    
-                </form>
-                <div class="dropzone dropzone-single p-0" data-dropzone="data-dropzone" 
+               
+                {{-- <div class="dropzone dropzone-single p-0" data-dropzone="data-dropzone" 
                      data-options='{"url":"valid/url","maxFiles":1,"dictDefaultMessage":"Choose or Drop a file here"}'>
                     <div class="fallback">
                         <input type="file" name="file" />
@@ -244,7 +274,12 @@
                             Drop your file here
                         </div>
                     </div>
-                </div>
+                </div> --}}
+                <form action="/upload" class="dropzone" id="my-dropzone">
+                    <div class="dz-message">
+                        Glissez-déposez ou cliquez pour télécharger l'attestation de paiement (PDF, image).
+                    </div>
+                </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
@@ -263,10 +298,57 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
 
 <script>
-   
+     // Configuration de Dropzone
+    var myDropzone = new Dropzone("#my-dropzone", {
+        url: "/club/demande-adhesion",  // URL pour l'upload
+        paramName: "file",  // Nom du paramètre pour l'envoi du fichier
+        maxFilesize: 3,  // Taille max du fichier (en Mo)
+        maxFiles: 1,  // Limiter à un seul fichier
+        acceptedFiles: ".jpg,.jpeg,.png,.gif,.pdf",  // Types de fichiers acceptés
+        addRemoveLinks: true,  // Permet d'ajouter des liens de suppression
+    
+        init: function () {
+                this.on("maxfilesexceeded", function (file) {
+                    this.removeAllFiles(); // Supprimer le fichier précédent
+                    this.addFile(file); // Ajouter le nouveau fichier
+                });
+
+                this.on("thumbnail", function (file) {
+                    if (!file.type.startsWith("image/")) {
+                        // Remplacer l'aperçu par une icône ou une image de dossier
+                        file.previewElement.querySelector("img").src = "{{asset('assets/img/image-file-2.png')}}"; // Remplacez par le chemin de votre icône de dossier
+                    }
+                });
+
+                this.on("removedfile", function (file) {
+                    console.log("Fichier supprimé : ", file.name);
+                    // Ajoutez ici une requête pour supprimer le fichier côté serveur si nécessaire
+                });
+
+                this.on("success", function (file, response) {
+                    console.log("Fichier téléchargé avec succès : ", response);
+                });
+
+                this.on("error", function (file, errorMessage) {
+                    console.error("Erreur lors du téléchargement : ", errorMessage);
+                });
+            }
+    
+    });
+
+  // Supprimer tous les fichiers
+  document.getElementById('remove-all-files').addEventListener('click', function() {
+    myDropzone.removeAllFiles(true);  // true pour forcer la suppression du fichier du DOM
+    console.log("Tous les fichiers ont été supprimés.");
+  });
+
+
     async function demandeAdhesion(id) {
         try {
+            const files = myDropzone.getAcceptedFiles();
+            
             let formData = new FormData();
+            formData.append("document", files[0]);
 
             const res = await axios.post(`/club/demande-adhesion/${id}`, formData, {
                 headers: {

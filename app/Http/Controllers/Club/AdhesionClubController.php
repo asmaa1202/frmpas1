@@ -14,7 +14,7 @@ class AdhesionClubController extends Controller
     const statut_en_cours = 'en cours'; 
     const statut_accepter = 'accepter'; 
     const statut_refuser = 'refuser'; 
-    public function demande_adhesion($id)
+    public function demande_adhesion(Request $request, $id)
     {
       
         try {
@@ -25,6 +25,10 @@ class AdhesionClubController extends Controller
             $demande_adhesion->montant = 1999;
             $demande_adhesion->annee = date('Y');
             $demande_adhesion->statut = self::statut_en_cours;
+
+            $file = $request->document;
+            $adhesion_document = $file->store('attestation paiement');
+            $demande_adhesion->document = $adhesion_document ?? null;
             $demande_adhesion->save();
     
             return response()->json(['message' => 'La demande d\'adhésion a été envoyée avec succès'], 200);

@@ -2,19 +2,14 @@
     <button class="btn navbar-toggler-humburger-icon navbar-toggler me-1 me-sm-3" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbarVerticalCollapse" aria-controls="navbarVerticalCollapse" aria-expanded="false"
         aria-label="Toggle Navigation"><span class="navbar-toggle-icon"><span class="toggle-line"></span></span></button>
-    {{-- <a class="navbar-brand me-1 me-sm-3" href="index.html">
-        <div class="d-flex align-items-center"><img class="me-2"
-                src={{ asset('dashboard/img/icons/spot-illustrations/falcon.png') }} alt=""
-                width="40" /><span class="font-sans-serif">falcon</span>
-        </div>
-    </a> --}}
+    
     <ul class="navbar-nav align-items-center d-none d-lg-block">
         <li class="nav-item">
             <div class="search-box" data-list='{"valueNames":["title"]}'>
 
-                <a href={{ route('admin.index') }}>
+                <a href=<?php echo e(route('admin.index')); ?>>
                     <div class="d-flex py-3 px-2">
-                        <img src={{ asset('/images/logo.png') }} width="25%" />
+                        <img src=<?php echo e(asset('/images/logo.png')); ?> width="25%" />
                     </div>
                 </a>
 
@@ -68,7 +63,7 @@
                         </h6><a class="dropdown-item px-card py-2" href="#!">
                             <div class="d-flex align-items-center">
                                 <div class="file-thumbnail me-2"><img class="border h-100 w-100 fit-cover rounded-3"
-                                        src={{ asset('dashboard/img/products/3-thumb.png') }} alt="" /></div>
+                                        src=<?php echo e(asset('dashboard/img/products/3-thumb.png')); ?> alt="" /></div>
                                 <div class="flex-1">
                                     <h6 class="mb-0 title">iPhone</h6>
                                     <p class="fs--2 mb-0 d-flex"><span class="fw-semi-bold">Antony</span><span
@@ -79,7 +74,7 @@
                         <a class="dropdown-item px-card py-2" href="#!">
                             <div class="d-flex align-items-center">
                                 <div class="file-thumbnail me-2"><img class="img-fluid"
-                                        src={{ asset('dashboard/img/icons/zip.png') }} alt="" />
+                                        src=<?php echo e(asset('dashboard/img/icons/zip.png')); ?> alt="" />
                                 </div>
                                 <div class="flex-1">
                                     <h6 class="mb-0 title">Falcon v1.8.2</h6>
@@ -93,7 +88,8 @@
                         </h6><a class="dropdown-item px-card py-2" href="pages/user/profile.html">
                             <div class="d-flex align-items-center">
                                 <div class="avatar avatar-l status-online me-2">
-                                    <img class="rounded-circle" src={{ asset('dashboard/img/team/1.jpg') }}
+                                    <img class="rounded-circle" src=<?php echo e(asset('dashboard/img/team/1.jpg')); ?>
+
                                         alt="" />
                                 </div>
                                 <div class="flex-1">
@@ -105,7 +101,8 @@
                         <a class="dropdown-item px-card py-2" href="pages/user/profile.html">
                             <div class="d-flex align-items-center">
                                 <div class="avatar avatar-l me-2">
-                                    <img class="rounded-circle" src={{ asset('dashboard/img/team/2.jpg') }}
+                                    <img class="rounded-circle" src=<?php echo e(asset('dashboard/img/team/2.jpg')); ?>
+
                                         alt="" />
 
                                 </div>
@@ -118,7 +115,8 @@
                         <a class="dropdown-item px-card py-2" href="pages/user/profile.html">
                             <div class="d-flex align-items-center">
                                 <div class="avatar avatar-l me-2">
-                                    <img class="rounded-circle" src={{ asset('dashboard/img/team/3.jpg') }}
+                                    <img class="rounded-circle" src=<?php echo e(asset('dashboard/img/team/3.jpg')); ?>
+
                                         alt="" />
 
                                 </div>
@@ -139,7 +137,7 @@
     </ul>
     <ul class="navbar-nav navbar-nav-icons ms-auto flex-row align-items-center">
         <li class="nav-item dropdown px-2">
-            <a href={{ '#' }} class="btn btn-circle navbar-toggler-humburger-icon navbar-vertical-toggle"
+            <a href=<?php echo e('#'); ?> class="btn btn-circle navbar-toggler-humburger-icon navbar-vertical-toggle"
                 data-bs-toggle="tooltip" data-bs-placement="left" title="www.asaam.com">
                 <i class="fas fa-home" style="color: rgb(255, 0, 0)"></i>
             </a>
@@ -181,7 +179,7 @@
                                     <div class="notification-avatar">
                                         <div class="avatar avatar-2xl me-3">
                                             <img class="rounded-circle"
-                                                src={{ asset('dashboard/img/team/1-thumb.png') }} alt="" />
+                                                src=<?php echo e(asset('dashboard/img/team/1-thumb.png')); ?> alt="" />
 
                                         </div>
                                     </div>
@@ -219,7 +217,8 @@
                                     <div class="notification-avatar">
                                         <div class="avatar avatar-2xl me-3">
                                             <img class="rounded-circle"
-                                                src={{ asset('dashboard/img/icons/weather-sm.jpg') }}
+                                                src=<?php echo e(asset('dashboard/img/icons/weather-sm.jpg')); ?>
+
                                                 alt="" />
 
                                         </div>
@@ -240,7 +239,7 @@
                                     <div class="notification-avatar">
                                         <div class="avatar avatar-xl me-3">
                                             <img class="rounded-circle"
-                                                src={{ asset('dashboard/img/logos/oxford.png') }} alt="" />
+                                                src=<?php echo e(asset('dashboard/img/logos/oxford.png')); ?> alt="" />
 
                                         </div>
                                     </div>
@@ -258,7 +257,8 @@
                                 <a class="border-bottom-0 notification notification-flush" href="#!">
                                     <div class="notification-avatar">
                                         <div class="avatar avatar-xl me-3">
-                                            <img class="rounded-circle" src{{ asset('dashboard/img/team/10.jpg') }}
+                                            <img class="rounded-circle" src<?php echo e(asset('dashboard/img/team/10.jpg')); ?>
+
                                                 alt="" />
 
                                         </div>
@@ -284,7 +284,7 @@
         <li class="nav-item dropdown"><a class="nav-link pe-0 ps-2" id="navbarDropdownUser" role="button"
                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="avatar avatar-xl d-flex">
-                    <img class="rounded-circle" src={{ asset('dashboard/img/team/3-thumb.png') }} alt="" />
+                    <img class="rounded-circle" src=<?php echo e(asset('dashboard/img/team/3-thumb.png')); ?> alt="" />
                 </div>
             </a>
             <div class="dropdown-menu dropdown-caret dropdown-caret dropdown-menu-end py-0"
@@ -297,23 +297,23 @@
                         onclick="event.preventDefault();
                                   document.getElementById('logout-form').submit();">Se
                         déconnecter</a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
+                    <form id="logout-form" action="<?php echo e(route('plongeur.logout.submit')); ?>" method="POST" class="d-none">
+                        <?php echo csrf_field(); ?>
                     </form>
                 </div>
             </div>
         </li>
-        @if(isset($active_adhesion))
+        <?php if(isset($active_licence)): ?>
         <div class="d-flex align-items-center ms-auto">
             <button class="btn" style="background: #279e5b; color: white;">
                 Active
             </button>
             &nbsp;&nbsp;
             <div class="remaining-days-warning">
-                {{ $remainingDays }} jours restants
+                <?php echo e($remainingDays); ?> jours restants
             </div>
         </div>
-        @endif
-    
+        <?php endif; ?>
     </ul>
 </nav>
+<?php /**PATH C:\xampp\htdocs\projects\frmpas\resources\views/plongeurDash/layout/header.blade.php ENDPATH**/ ?>

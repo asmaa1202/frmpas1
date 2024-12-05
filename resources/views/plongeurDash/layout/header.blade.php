@@ -303,5 +303,16 @@
                 </div>
             </div>
         </li>
+        @if(isset($active_licence))
+        <div class="d-flex align-items-center ms-auto">
+            <button class="btn" style="background: #279e5b; color: white;">
+                Active
+            </button>
+            &nbsp;&nbsp;
+            <div class="remaining-days-warning">
+                {{ $remainingDays }} jours restants
+            </div>
+        </div>
+        @endif
     </ul>
 </nav>
