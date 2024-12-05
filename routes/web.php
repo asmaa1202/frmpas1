@@ -426,6 +426,7 @@ Route::group(['prefix'=>'club', 'middleware' => ['auth','role:2']],function () {
 
         // pdfs
         Route::get("/attestation-affiliation/{id}", [HomeController::class, "attestationAffiliation"])->name('attestation.affiliation');
+        Route::get("/autorisation-plonge/{id}", [HomeController::class, "autorisationPlonge"])->name('autorisation.plonge');
 
 
 

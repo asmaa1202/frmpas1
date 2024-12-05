@@ -100,14 +100,14 @@
                         
                         <a href="{{ route('attestation.affiliation', Auth::user()->club_id) }}" class="btn btn-primary" target="__blank"><i class="bi bi-file-earmark-arrow-down-fill"></i> Autorisation de plongée</a>
                         &nbsp;&nbsp;
-                        <a class="btn btn-primary"><i class="bi bi-file-earmark-arrow-down-fill"></i> Attestation d'affiliation</a>
+                        <a href="{{route('autorisation.plonge', Auth::user()->club_id)}}" class="btn btn-primary" target="__blank"><i class="bi bi-file-earmark-arrow-down-fill"></i> Attestation d'affiliation</a>
                     </div>
               
                 @elseif(empty($active_adhesion))
                     <div class="col-lg-4 d-flex justify-content-end align-items-center flex-wrap">
-                        <button class="btn btn-danger signal-button" data-bs-toggle="modal" data-bs-target="#adhesionModal">
+                        <a class="btn btn-danger signal-button" data-bs-toggle="modal" data-bs-target="#adhesionModal">
                             Demande d'adhésion
-                        </button>
+                        </a>
                     </div>
             
                 @endif
