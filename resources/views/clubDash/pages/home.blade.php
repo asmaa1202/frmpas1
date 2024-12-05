@@ -1,4 +1,6 @@
 @extends('clubDash.layout.master')
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
 <style>
     .remaining-days-warning {
         color: red;
@@ -56,12 +58,12 @@
 
     <div class="card-body position-relative">
         <div class="row">
-            <div class="col-lg-8">
+            <div class="{{isset($active_adhesion) ? 'col-lg-6' : 'col-lg-8' }}">
                 <h3>{{Auth::user()->club->nom}}</h3>
                 <p class="mb-0">Rapide, intelligent et vous pouvez voir toutes les
                     analyses sur cette page.</p>
             </div>
-
+{{-- 
             <div class="col-lg-4 d-flex justify-content-end align-items-center">
                 @if(isset($active_adhesion))
                 <button class="btn" style="background: #279e5b; color: white;">
@@ -78,14 +80,38 @@
                 </div>
 
                 @elseif(empty($active_adhesion))
-                {{-- <button class="btn btn-outline-primary" onclick="demandeAdhesion({{ Auth::user()->club->id }})">Demande d'adhésion</button> --}}
+                <button class="btn btn-outline-primary" onclick="demandeAdhesion({{ Auth::user()->club->id }})">Demande d'adhésion</button>
                 <button class="btn btn-danger signal-button" data-bs-toggle="modal" data-bs-target="#adhesionModal">
                     Demande d'adhésion
                 </button>
-                
+                     <button class="btn" style="background: #279e5b; color: white;">
+                    Autorisation de plongée
+                </button> 
+                &nbsp;&nbsp;
+                <button class="btn" style="background: #279e5b; color: white;">
+                    Attestation d'affiliation
+                </button>
                 
                 @endif
-            </div>
+            </div> --}}
+          
+                @if(isset($active_adhesion))
+                    <div class="col-lg-6 d-flex justify-content-end align-items-center flex-wrap">
+                        
+                        <button class="btn btn-primary"><i class="bi bi-file-earmark-arrow-down-fill"></i> Autorisation de plongée</button>
+                        &nbsp;&nbsp;
+                        <button class="btn btn-primary"><i class="bi bi-file-earmark-arrow-down-fill"></i> Attestation d'affiliation</button>
+                    </div>
+              
+                @elseif(empty($active_adhesion))
+                    <div class="col-lg-4 d-flex justify-content-end align-items-center flex-wrap">
+                        <button class="btn btn-danger signal-button" data-bs-toggle="modal" data-bs-target="#adhesionModal">
+                            Demande d'adhésion
+                        </button>
+                    </div>
+            
+                @endif
+            
         </div>
     </div>
 </div>

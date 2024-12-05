@@ -1,4 +1,3 @@
-@extends('plongeurDash.layout.master')
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
 <style>
@@ -48,88 +47,46 @@
 }
 
 </style>
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div class="card mb-3">
     <div class="bg-holder d-none d-lg-block bg-card"
-        style="background-image:url({{ asset('dashboard/img/icons/spot-illustrations/corner-4.png') }});">
+        style="background-image:url(<?php echo e(asset('dashboard/img/icons/spot-illustrations/corner-4.png')); ?>);">
     </div>
     <!--/.bg-holder-->
 
-    {{-- <div class="card-body position-relative">
-        <div class="row">
-            <div class="col-lg-8">
-                <h3>ASAAM</h3>
-                <p class="mb-0">Rapide, intelligent et vous pouvez voir toutes les
-                    analyses sur cette page.</p>
-            </div>
-        </div>
-    </div> --}}
+    
 
 
     <div class="card-body position-relative">
         <div class="row">
-            <div class="{{isset($active_licence) ? 'col-lg-6' : 'col-lg-8' }}">
+            <div class="<?php echo e(isset($active_licence) ? 'col-lg-6' : 'col-lg-8'); ?>">
                 <h3>
-                    {{Auth::guard('plongeurs')->user()->nom}} {{Auth::guard('plongeurs')->user()->prenom}}
+                    <?php echo e(Auth::guard('plongeurs')->user()->nom); ?> <?php echo e(Auth::guard('plongeurs')->user()->prenom); ?>
+
                 </h3>
                 <p class="mb-0">Rapide, intelligent et vous pouvez voir toutes les
                     analyses sur cette page.</p>
             </div>
 
-            {{-- <div class="col-lg-4 d-flex justify-content-end align-items-center">
-                @if(isset($active_licence))
-                <button class="btn" style="background: #279e5b;color:white;">Active</button>
-
-                @elseif(empty($active_licence))
-                <button class="btn btn-outline-primary" onclick="demandeLicence({{ Auth::guard('plongeurs')->user()->id }})">Demande une licence</button>
-                @endif
-
-            </div> --}}
-            {{-- <div class="col-lg-4 d-flex justify-content-end align-items-center">
-                @if(isset($active_licence))
-                    <button class="btn" style="background: #279e5b; color: white;">
-                        Active 
-                    </button>
-                    <div>
-                        {{ $remainingDays }} jours restants
-                    </div>
-                @else
-                    <button class="btn btn-outline-primary" onclick="demandeLicence({{ Auth::guard('plongeurs')->user()->id }})">
-                        Demande une licence
-                    </button>
-                @endif
-            </div>
-             --}}
-             {{-- <div class="col-lg-4 d-flex justify-content-end align-items-center"> 
-                @if(isset($active_licence))
-                    <button class="btn" style="background: #279e5b; color: white;">
-                        Active
-                    </button> &nbsp;&nbsp;
-                    <div class="remaining-days-warning">
-                        {{ $remainingDays }} jours restants
-                    </div>
-                @else
-                    <button class="btn btn-danger signal-button"  data-bs-toggle="modal" data-bs-target="#licenceModal">
-                        Demande une licence
-                    </button>
-                @endif
-            </div> --}}
+            
+            
+             
             
                
-                @if(isset($active_licence))
+                <?php if(isset($active_licence)): ?>
                   <div class="col-lg-6 d-flex justify-content-end align-items-center flex-wrap">
                         <button class="btn btn-primary"><i class="bi bi-file-earmark-arrow-down-fill"></i> Autorisation de plongée</button>
                         &nbsp;&nbsp;
                         <button class="btn btn-primary"><i class="bi bi-file-earmark-arrow-down-fill"></i> Attestation d'affiliation</button>
                    </div>
                
-                @elseif(empty($active_licence))
+                <?php elseif(empty($active_licence)): ?>
                     <div class="col-lg-4 d-flex justify-content-end align-items-center flex-wrap">   
                         <button class="btn btn-danger signal-button" data-bs-toggle="modal" data-bs-target="#adhesionModal">
                             Demande d'adhésion
                         </button>
                     </div>
-                @endif
+                <?php endif; ?>
         </div>
     </div>
 
@@ -145,7 +102,7 @@
                     <div class="col-sm-6">
                         <div class="card overflow-hidden" style="min-width: 12rem">
                             <div class="bg-holder bg-card"
-                                style="background-image:url({{ asset('dashboard/img/icons/spot-illustrations/corner-1.png') }});">
+                                style="background-image:url(<?php echo e(asset('dashboard/img/icons/spot-illustrations/corner-1.png')); ?>);">
                             </div>
                             <!--/.bg-holder-->
 
@@ -162,7 +119,7 @@
                     <div class="col-sm-6">
                         <div class="card overflow-hidden" style="min-width: 12rem">
                             <div class="bg-holder bg-card"
-                                style="background-image:url({{ asset('dashboard/img/icons/spot-illustrations/corner-2.png') }});">
+                                style="background-image:url(<?php echo e(asset('dashboard/img/icons/spot-illustrations/corner-2.png')); ?>);">
                             </div>
                             <!--/.bg-holder-->
 
@@ -178,7 +135,7 @@
                     <div class="col-sm-6">
                         <div class="card overflow-hidden" style="min-width: 12rem">
                             <div class="bg-holder bg-card"
-                                style="background-image:url({{ asset('dashboard/img/icons/spot-illustrations/corner-5.png') }});">
+                                style="background-image:url(<?php echo e(asset('dashboard/img/icons/spot-illustrations/corner-5.png')); ?>);">
                             </div>
                             <!--/.bg-holder-->
 
@@ -194,7 +151,7 @@
                     <div class="col-sm-6">
                         <div class="card overflow-hidden" style="min-width: 12rem">
                             <div class="bg-holder bg-card"
-                                style="background-image:url({{ asset('dashboard/img/icons/spot-illustrations/corner-7.png') }});">
+                                style="background-image:url(<?php echo e(asset('dashboard/img/icons/spot-illustrations/corner-7.png')); ?>);">
                             </div>
                             <!--/.bg-holder-->
                             <div class="card-body position-relative">
@@ -273,14 +230,14 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                <button type="button" class="btn btn-primary" onclick="demandeLicence({{ Auth::guard('plongeurs')->user()->id }})">Envoyer</button>
+                <button type="button" class="btn btn-primary" onclick="demandeLicence(<?php echo e(Auth::guard('plongeurs')->user()->id); ?>)">Envoyer</button>
             </div>
         </div>
     </div>
 </div>
 <div id="notification"></div>
 
-@section('javascript')
+<?php $__env->startSection('javascript'); ?>
 
 <script src="https://cdn.jsdelivr.net/npm/dropzone@5.9.3/dist/min/dropzone.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -304,7 +261,7 @@
             this.on("thumbnail", function (file) {
                 if (!file.type.startsWith("image/")) {
                     // Remplacer l'aperçu par une icône ou une image de dossier
-                    file.previewElement.querySelector("img").src = "{{asset('assets/img/image-file-2.png')}}"; // Remplacez par le chemin de votre icône de dossier
+                    file.previewElement.querySelector("img").src = "<?php echo e(asset('assets/img/image-file-2.png')); ?>"; // Remplacez par le chemin de votre icône de dossier
                 }
             });
 
@@ -397,5 +354,6 @@
     }
 </script>
 
-@endsection
-@endsection
+<?php $__env->stopSection(); ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('plongeurDash.layout.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\projects\frmpas\resources\views/plongeurDash/pages/home.blade.php ENDPATH**/ ?>
