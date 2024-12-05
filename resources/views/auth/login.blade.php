@@ -59,7 +59,6 @@
                             <div class="col-auto">
                                 <h3>Connexion</h3>
                             </div>
-
                         </div>
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
@@ -86,13 +85,17 @@
                                 </span>
                                 @enderror
                             </div>
-                            @if (Route::has('password.request'))
                             <div class="mb-3">
-                                <button class="btn btn-primary d-block w-100 mt-3" type="submit"
-                                    name="submit">Connexion</button>
+                                <button class="btn btn-primary d-block w-100 mt-3" type="submit" name="submit">Connexion</button>
                             </div>
-                            @endif
                         </form>
+                        <div class="text-center mt-3">
+                            <a href="{{ route('plongeur.login') }}" class="text-primary" style="text-decoration: underline;">
+                                Vous êtes un plongeur ? Cliquez ici pour vous connecter
+                            </a>
+                        </div>
+                    </div>
+                    
                     </div>
                 </div>
                 <div class="text-center pt-2">
