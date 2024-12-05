@@ -82,7 +82,7 @@
                
                 <?php elseif(empty($active_licence)): ?>
                     <div class="col-lg-4 d-flex justify-content-end align-items-center flex-wrap">   
-                        <button class="btn btn-danger signal-button" data-bs-toggle="modal" data-bs-target="#adhesionModal">
+                        <button class="btn btn-danger signal-button" data-bs-toggle="modal" data-bs-target="#licenceModal">
                             Demande d'adhésion
                         </button>
                     </div>
