@@ -20,6 +20,9 @@ class Club extends Model
     //     'role_id',
         
     // ];
+    protected $casts = [
+        'types' => 'array', // Convertit automatiquement le JSON en tableau
+    ];
 
     public function adhesions()
     {

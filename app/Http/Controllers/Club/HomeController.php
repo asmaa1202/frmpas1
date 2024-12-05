@@ -33,8 +33,8 @@ class HomeController extends Controller
 
 
         $active_adhesion = Adhesion::where('club_id', $clubId)
-                                    // ->where('annee', date('Y'))
-                                    ->where('annee', 22)
+                                    ->where('annee', date('Y'))
+                                    // ->where('annee', 22)
                                     ->first();
         // dd(empty($active_adhesion));
         return view('clubDash.pages.home', compact('active_adhesion', 'remainingDays'));
@@ -57,7 +57,7 @@ class HomeController extends Controller
             'title' => "ATTESTATION D'AFFILIATION",
             'clubPresident' => "Abdelaziz ALAZRAK",
             'clubName' => $club->nom,
-            'saison' => $adhesion->annee."-".$adhesion->annee+1,
+            'saison' => $adhesion->annee." - ".$adhesion->annee+1,
             'number' => "00".$club->id."/".$adhesion->annee+1,
             'today' =>  $adhesion->updated_at->format('d/m/Y'),
 
@@ -122,32 +122,48 @@ class HomeController extends Controller
     }
 
 
-    public function autorisationPlonge(Request $request)
+    public function autorisationPlonge($id)
     {
-        $directoryPath = 'uploads/pdfs';
+        $adhesion = Adhesion::where('club_id', $id)->where('annee', date('Y'))->where('statut', self::statut_accepter)->first();
+        $club = Club::find($id);
+
+        // $directoryPath = 'uploads/pdfs';
         $filename = 'autorisation-plonge.pdf';
 
-
+        $clubType = '';
+        if (is_array($club->types)) {
+            if (in_array('Sportif', $club->types) && in_array('Diving', $club->types)) {
+                $clubType = 'Sportive et de Plongée';
+            } elseif (in_array('Sportif', $club->types)) {
+                $clubType = 'Sportive';
+            } elseif (in_array('Diving', $club->types)) {
+                $clubType = 'de Plongée';
+            }
+        }
 
         $data = [
 
             'title' => "AUTORISATION DE PLONGÉE",
-            'clubPresident' => "Abdelaziz ALAZRAK",
-            'club' => "ASSOCIATION CLUB DE PLONGEE DE CASABLANCA",
-            'address' => "au complexe sportif Mohamed 5 Casablanca",
-            'clubType' => "Association Sportive",
-            'name' => "M.ALAZRAK Abdelaziz",
-            'cin' => "BE68997",
-            'clubNumber' => "0001 / 2024",
-            'saison' => " 2023 - 2024",
+            'frmpasPresident' => "Abdelaziz ALAZRAK",
+
+            'clubPresident' => $club->president,
+            'club' => $club->nom,
+            'address' => $club->adresse,
+            'legalStructure' => $club->legal_structure,
+            // 'clubType' => $club->types,
+            'clubType' => $clubType,
+            'name' =>$club->president,
+            'cin' => $club->cin,
+            'clubNumber' =>  "00".$club->id."/".$adhesion->annee+1,
+            'saison' => $adhesion->annee." - ".$adhesion->annee+1,
             'authorizedClub' => "A.C.P.C",
-            'today' => date('d/m/Y'),
+            'today' => $adhesion->updated_at->format('d/m/Y'),
 
         ];
 
 
 
-        $html = view()->make('autorisation-plonge', $data)->render();
+        $html = view()->make('clubDash.pages.pdf.autorisation-plonge', $data)->render();
 
 
 
@@ -156,13 +172,13 @@ class HomeController extends Controller
         $pdf = new TCPDF;
 
         $pdf::setHeaderCallback(function($pdf) {
-            $header = 'pdf_resources\frmas_header.jpg';
+            $header = 'assets\images\pdf_resources\frmas_header.jpg';
             $pdf->Image($header, 0, 0, 210, 45);
         });
 
         // Custom Footer
         $pdf::setFooterCallback(function($pdf) {
-            $footer = 'pdf_resources\frmas_footer.jpg';
+            $footer = 'assets\images\pdf_resources\frmas_footer.jpg';
             $pdf->Image($footer, 5, 275, 200, 15);
             //$pdf->SetY(-15);
             // Set font
@@ -191,15 +207,15 @@ class HomeController extends Controller
 
         $pdf::writeHTML($html, true, false, true, false, '');
 
-        if(!File::isDirectory($directoryPath)){
-            //make the directory because it doesn't exist
-            File::makeDirectory($directoryPath);
-        }
+        // if(!File::isDirectory($directoryPath)){
+        //     //make the directory because it doesn't exist
+        //     File::makeDirectory($directoryPath);
+        // }
 
-        //$pdf::Output(public_path($directoryPath) . '/' . $filename);
+        $pdf::Output($filename);
 
-        $pdf::Output(public_path('uploads/pdfs') . '/' . $filename, 'F');
-        return response()->download(public_path('uploads/pdfs') . '/' . $filename);
+        // $pdf::Output(public_path('uploads/pdfs') . '/' . $filename, 'F');
+        // return response()->download(public_path('uploads/pdfs') . '/' . $filename);
 
     }
 

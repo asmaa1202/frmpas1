@@ -41,6 +41,7 @@
                        <th style="min-width: 180px;">Club</th>
                        <th style="min-width: 180px;">Niveau</th>
                        <th style="min-width: 180px;">Année</th>
+                       <th style="min-width: 180px;">Document</th>
                         <th style="width: 80px;">Actions</th>
                     </tr>
                 </thead>
@@ -65,6 +66,10 @@
                             <td class="align-middle"><?php echo e(optional($item->plongeur->club)->nom ?? '--'); ?></td>
                             <td class="align-middle"><?php echo e($item->plongeur->niveau->label); ?></td>
                             <td class="align-middle"><?php echo e($item->annee); ?></td>
+                            <td class="align-middle">
+                                <a href="<?php echo e(route('licence.read.document', $item->id)); ?>" target="__blank">
+                                    Attestation de Paiement
+                                </a></td>
                             <td class="py-2 align-middle white-space-nowrap text-center">
                                 <div class="dropdown font-sans-serif position-static">
                                     <button class="btn btn-link text-600 btn-sm dropdown-toggle btn-reveal"
