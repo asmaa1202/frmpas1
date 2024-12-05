@@ -303,6 +303,17 @@
                 </div>
             </div>
         </li>
+        <?php if(isset($active_licence)): ?>
+        <div class="d-flex align-items-center ms-auto">
+            <button class="btn" style="background: #279e5b; color: white;">
+                Active
+            </button>
+            &nbsp;&nbsp;
+            <div class="remaining-days-warning">
+                <?php echo e($remainingDays); ?> jours restants
+            </div>
+        </div>
+        <?php endif; ?>
     </ul>
 </nav>
 <?php /**PATH C:\xampp\htdocs\frmpas\resources\views/plongeurDash/layout/header.blade.php ENDPATH**/ ?>
