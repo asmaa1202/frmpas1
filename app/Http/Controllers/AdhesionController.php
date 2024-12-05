@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Adhesion;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AdhesionController extends Controller
 {
@@ -100,6 +101,29 @@ class AdhesionController extends Controller
     public function show(adhesion $adhesion)
     {
         //
+    }
+    public function readDocument(String $id)
+    {
+        try {
+            $adhesion = Adhesion::findOrFail($id);
+
+            // Vérifiez si le document existe dans la base de données
+            if (empty($adhesion->document)) {
+                return response()->json(['message' => 'Aucun document associé à ce club'], 404);
+            }
+
+            // Vérifiez si le fichier existe dans le système de stockage
+            if (Storage::exists($adhesion->document)) {
+                $content = Storage::get($adhesion->document);
+                return response($content)
+                    ->header('Content-Type', Storage::mimeType($adhesion->document))
+                    ->header('Content-Disposition', 'inline; filename="' . basename($adhesion->document) . '"');
+            } else {
+                return response()->json(['message' => 'Fichier introuvable'], 404);
+            }
+        } catch (\Exception $e) {
+            return back()->with('error', 'Une erreur est survenue lors de la lecture du document : ' . $e->getMessage());
+        }
     }
 
     /**

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Adhesion;
 use App\Models\Licence;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class LicenceController extends Controller
 {
@@ -52,6 +53,30 @@ class LicenceController extends Controller
     {
  
         
+    }
+
+    public function readDocument(String $id)
+    {
+        try {
+            $licence = Licence::findOrFail($id);
+
+            // Vérifiez si le document existe dans la base de données
+            if (empty($licence->document)) {
+                return response()->json(['message' => 'Aucun Attestaion de paiement!'], 404);
+            }
+
+            // Vérifiez si le fichier existe dans le système de stockage
+            if (Storage::exists($licence->document)) {
+                $content = Storage::get($licence->document);
+                return response($content)
+                    ->header('Content-Type', Storage::mimeType($licence->document))
+                    ->header('Content-Disposition', 'inline; filename="' . basename($licence->document) . '"');
+            } else {
+                return response()->json(['message' => 'Fichier introuvable'], 404);
+            }
+        } catch (\Exception $e) {
+            return back()->with('error', 'Une erreur est survenue lors de la lecture du document : ' . $e->getMessage());
+        }
     }
 
     /**

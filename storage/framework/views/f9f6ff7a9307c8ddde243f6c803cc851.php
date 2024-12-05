@@ -1,3 +1,5 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
 <style>
     .remaining-days-warning {
         color: red;
@@ -57,7 +59,7 @@
 
     <div class="card-body position-relative">
         <div class="row">
-            <div class="col-lg-8">
+            <div class="<?php echo e(isset($active_licence) ? 'col-lg-6' : 'col-lg-8'); ?>">
                 <h3>
                     <?php echo e(Auth::guard('plongeurs')->user()->nom); ?> <?php echo e(Auth::guard('plongeurs')->user()->prenom); ?>
 
@@ -68,22 +70,23 @@
 
             
             
-             <div class="col-lg-4 d-flex justify-content-end align-items-center"> 
+             
+            
+               
                 <?php if(isset($active_licence)): ?>
-                    <button class="btn" style="background: #279e5b; color: white;">
-                        Active
-                    </button> &nbsp;&nbsp;
-                    <div class="remaining-days-warning">
-                        <?php echo e($remainingDays); ?> jours restants
+                  <div class="col-lg-6 d-flex justify-content-end align-items-center flex-wrap">
+                        <button class="btn btn-primary"><i class="bi bi-file-earmark-arrow-down-fill"></i> Autorisation de plongée</button>
+                        &nbsp;&nbsp;
+                        <button class="btn btn-primary"><i class="bi bi-file-earmark-arrow-down-fill"></i> Attestation d'affiliation</button>
+                   </div>
+               
+                <?php elseif(empty($active_licence)): ?>
+                    <div class="col-lg-4 d-flex justify-content-end align-items-center flex-wrap">   
+                        <button class="btn btn-danger signal-button" data-bs-toggle="modal" data-bs-target="#adhesionModal">
+                            Demande d'adhésion
+                        </button>
                     </div>
-                <?php else: ?>
-                    <button class="btn btn-danger signal-button"  data-bs-toggle="modal" data-bs-target="#licenceModal">
-                        Demande une licence
-                    </button>
                 <?php endif; ?>
-            </div>
-            
-            
         </div>
     </div>
 
@@ -211,14 +214,14 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="licenceModalLabel">Formulaire de demande d'adhésion</h5>
+                <h5 class="modal-title" id="licenceModalLabel">Télécharger l'attestation de paiement</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
          
                 <form action="/upload" class="dropzone" id="my-dropzone">
                     <div class="dz-message">
-                        Glissez-déposez ou cliquez pour télécharger un fichier.
+                        Glissez-déposez ou cliquez pour télécharger l'attestation de paiement (PDF, image).
                     </div>
                 </form>
                 
@@ -255,6 +258,13 @@
                 this.addFile(file); // Ajouter le nouveau fichier
             });
 
+            this.on("thumbnail", function (file) {
+                if (!file.type.startsWith("image/")) {
+                    // Remplacer l'aperçu par une icône ou une image de dossier
+                    file.previewElement.querySelector("img").src = "<?php echo e(asset('assets/img/image-file-2.png')); ?>"; // Remplacez par le chemin de votre icône de dossier
+                }
+            });
+
             this.on("removedfile", function (file) {
                 console.log("Fichier supprimé : ", file.name);
                 // Ajoutez ici une requête pour supprimer le fichier côté serveur si nécessaire
@@ -270,16 +280,6 @@
         }
    
   });
-
-  // Supprimer un fichier spécifique lorsqu'on clique sur le lien de suppression
-//   myDropzone.on("removedfile", function(file) {
-//     // Vérifie si le nom de fichier existe et l'affiche correctement
-//     if (file && file.name) {
-//       alert("Fichier supprimé : " + file.name);
-//     } else {
-//       alert("Impossible de récupérer le nom du fichier.");
-//     }
-//   });
 
   // Supprimer tous les fichiers
   document.getElementById('remove-all-files').addEventListener('click', function() {
