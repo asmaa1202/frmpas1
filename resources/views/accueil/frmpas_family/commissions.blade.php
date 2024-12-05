@@ -1,9 +1,41 @@
 @extends('layout.master')
 
 @section('custom-css')
+<style>
+    .team-layout {
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 30px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .team-layout .item-media img {
+        border-radius: 50%;
+        max-width: 100%;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        margin: 0 auto;
+    }
+
+    .team-layout h5 a {
+        color: #333;
+        font-size: 20px;
+        text-decoration: none;
+    }
+
+    .special-heading span {
+        font-size: 30px;
+        color: #0651b1;
+        font-family: 'ui-serif';
+    }
+</style>
+@endsection
+
 
    
-@endsection
+
 @section('custom-js')
 
 @endsection
@@ -35,267 +67,106 @@
 
 <section class="ls s-pb-90 s-pb-xl-160">
     <div class="container">
-       
-            <div class="col-12">
+        <div class="row">
+            <!-- Commission Sportive -->
+            <div class="col-md-6 mb-4">
                 <h3 class="text-center mt-0 mb-2 special-heading color-darkgrey">
                     <span>Commission Sportive</span>
                 </h3>
-                <div class="divider-40 divider-xl-60"></div>
-
-                <div >
-                    <div class="vertical-item  text-center team-layout">
-                        <div class="item-media">
-                            <img src="{{asset('equipe/e1.jpg')}}" alt="img">
-                            <div class="media-links">
-                                <a class="abs-link" title="" href="team-single.html"></a>
-                            </div>
-                        </div>
-                        <div class="item-content">
-                            <h5 class="mb-0">
-                                <a href="team-single.html">Mohammed Atouani</a>
-                            </h5>
-
-                            <p class="team-position pb-xl-3">
-                                membre
-                            </p>
-
-                           
-
-                        </div>
-                    
-
-
-                    
-
-                   
-
+                <div class="vertical-item text-center team-layout">
+                    <div class="item-media">
+                        <img src="{{asset('equipe/e1.jpg')}}" alt="img" class="img-fluid">
+                    </div>
+                    <div class="item-content">
+                        <h5 class="mb-0"><a href="team-single.html">Mohammed Atouani</a></h5>
+                        <p class="team-position pb-xl-3">Membre</p>
+                    </div>
                 </div>
-                {{-- <div class="divider-40 divider-xl-60"></div> --}}
             </div>
-        </div>
 
-                {{-- <div class="divider-40 divider-xl-60"></div> --}}
-            </div>
-        </div>
-
-       
-            <div class="col-12">
-                <h3 class="text-center mt-0 mb-2 special-heading color-darkgrey">
+            <!-- Commission Technique -->
+            <div class="col-md-6 mb-4">
+                <h3 class="text-center mt-0 mb-2 special-heading text-blue">
                     <span>Commission Technique</span>
                 </h3>
-                <div class="divider-40 divider-xl-60"></div>
-
-                <div >
-                    <div class="vertical-item  text-center team-layout">
-                        <div class="item-media">
-                            <img src="{{asset('equipe/TIMOUYASSE Hamza.jpg')}}" alt="img">
-                            <div class="media-links">
-                                <a class="abs-link" title="" href="team-single.html"></a>
-                            </div>
-                        </div>
-                        <div class="item-content">
-                            <h5 class="mb-0">
-                                <a href="team-single.html">TIMOUYASSE Hamza</a>
-                            </h5>
-
-                            <p class="team-position pb-xl-3">
-                                Trésorier
-                            </p>
-
-                           
-
-                        </div>
+                <div class="vertical-item text-center team-layout">
+                    <div class="item-media">
+                        <img src="{{asset('equipe/TIMOUYASSE Hamza.jpg')}}" alt="img" class="img-fluid">
                     </div>
-
-
-                    
-
-                   
-
+                    <div class="item-content">
+                        <h5 class="mb-0"><a href="team-single.html">TIMOUYASSE Hamza</a></h5>
+                        <p class="team-position pb-xl-3">Trésorier</p>
+                    </div>
                 </div>
-                {{-- <div class="divider-40 divider-xl-60"></div> --}}
             </div>
-        </div>
 
-                {{-- <div class="divider-40 divider-xl-60"></div> --}}
-            </div>
-        </div>
-
-       
-            <div class="col-12">
+            <!-- Commission Scientifique -->
+            <div class="col-md-6 mb-4">
                 <h3 class="text-center mt-0 mb-2 special-heading color-darkgrey">
-                    <span>Commission Scientifique
-                    </span>
+                    <span>Commission Scientifique</span>
                 </h3>
-                <div class="divider-40 divider-xl-60"></div>
-
-                <div >
-                    <div class="vertical-item  text-center team-layout">
-                        <div class="item-media">
-                            <img src="{{asset('equipe/e2.jpg')}}" alt="img">
-                            <div class="media-links">
-                                <a class="abs-link" title="" href="team-single.html"></a>
-                            </div>
-                        </div>
-                        <div class="item-content">
-                            <h5 class="mb-0">
-                                <a href="team-single.html">MANHI Hamza </a>
-                            </h5>
-
-                            <p class="team-position pb-xl-3">
-                                vice président
-                            </p>
-
-                           
-
-                        </div>
+                <div class="vertical-item text-center team-layout">
+                    <div class="item-media">
+                        <img src="{{asset('equipe/e2.jpg')}}" alt="img" class="img-fluid">
                     </div>
-
-
-                    
-
-                   
-
+                    <div class="item-content">
+                        <h5 class="mb-0"><a href="team-single.html">MANHI Hamza</a></h5>
+                        <p class="team-position pb-xl-3">Vice-président</p>
+                    </div>
                 </div>
-                {{-- <div class="divider-40 divider-xl-60"></div> --}}
             </div>
-        </div>
 
-                {{-- <div class="divider-40 divider-xl-60"></div> --}}
-            </div>
-        </div>
-
-       
-            <div class="col-12">
+            <!-- Commission Féminine -->
+            <div class="col-md-6 mb-4">
                 <h3 class="text-center mt-0 mb-2 special-heading color-darkgrey">
-                    <span>Commission féminine</span>
+                    <span>Commission Féminine</span>
                 </h3>
-                <div class="divider-40 divider-xl-60"></div>
-
-                <div >
-                    <div class="vertical-item  text-center team-layout">
-                        <div class="item-media">
-                            <img src="{{asset('equipe/AHAKKAM Ghizlane.jpg')}}" alt="img">
-                            <div class="media-links">
-                                <a class="abs-link" title="" href="team-single.html"></a>
-                            </div>
-                        </div>
-                        <div class="item-content">
-                            <h5 class="mb-0">
-                                <a href="team-single.html">AHAKKAM Ghizlane</a>
-                            </h5>
-
-                            <p class="team-position pb-xl-3">
-                                membre
-                            </p>
-
-                           
-
-                        </div>
+                <div class="vertical-item text-center team-layout">
+                    <div class="item-media">
+                        <img src="{{asset('equipe/AHAKKAM Ghizlane.jpg')}}" alt="img" class="img-fluid">
                     </div>
-
-
-                    
-
-                   
-
+                    <div class="item-content">
+                        <h5 class="mb-0"><a href="team-single.html">AHAKKAM Ghizlane</a></h5>
+                        <p class="team-position pb-xl-3">Membre</p>
+                    </div>
                 </div>
-                {{-- <div class="divider-40 divider-xl-60"></div> --}}
             </div>
-        </div>
 
-                {{-- <div class="divider-40 divider-xl-60"></div> --}}
-            </div>
-        </div>
-
-       
-            <div class="col-12">
+            <!-- Commission de Juge -->
+            <div class="col-md-6 mb-4">
                 <h3 class="text-center mt-0 mb-2 special-heading color-darkgrey">
-                    <span>Commission de juge</span>
+                    <span>Commission de Juge</span>
                 </h3>
-                <div class="divider-40 divider-xl-60"></div>
-
-                <div >
-                    <div class="vertical-item  text-center team-layout">
-                        <div class="item-media">
-                            <img src="{{asset('equipe/Omar Behari.jpg')}}" alt="img">
-                            <div class="media-links">
-                                <a class="abs-link" title="" href="team-single.html"></a>
-                            </div>
-                        </div>
-                        <div class="item-content">
-                            <h5 class="mb-0">
-                                <a href="team-single.html">TIMOUYASSE Hamza</a>
-                            </h5>
-
-                            <p class="team-position pb-xl-3">
-                                Trésorier
-                            </p>
-
-                           
-
-                        </div>
+                <div class="vertical-item text-center team-layout">
+                    <div class="item-media">
+                        <img src="{{asset('equipe/Omar Behari.jpg')}}" alt="img" class="img-fluid">
                     </div>
-
-
-                    
-
-                   
-
+                    <div class="item-content">
+                        <h5 class="mb-0"><a href="team-single.html">BEHARI Moulay Omar</a></h5>
+                        <p class="team-position pb-xl-3">secrétaire général</p>
+                    </div>
                 </div>
-                {{-- <div class="divider-40 divider-xl-60"></div> --}}
             </div>
-        </div>
 
-                {{-- <div class="divider-40 divider-xl-60"></div> --}}
-            </div>
-        </div>
-
-  
-            <div class="">
+            <!-- Commission Discipline -->
+            <div class="col-md-6 mb-4">
                 <h3 class="text-center mt-0 mb-2 special-heading color-darkgrey">
                     <span>Commission Discipline</span>
                 </h3>
-                <div class="divider-40 divider-xl-60"></div>
-
-                <div >
-                    <div class="vertical-item  text-center team-layout">
-                        <div class="item-media">
-                            <img src="{{asset('equipe/TIMOUYASSE Hamza.jpg')}}" alt="img">
-                            <div class="media-links">
-                                <a class="abs-link" title="" href="team-single.html"></a>
-                            </div>
-                        </div>
-                        <div class="item-content">
-                            <h5 class="mb-0">
-                                <a href="team-single.html">TIMOUYASSE Hamza</a>
-                            </h5>
-
-                            <p class="team-position pb-xl-3">
-                                Trésorier
-                            </p>
-
-                           
-
-                        </div>
+                <div class="vertical-item text-center team-layout">
+                    <div class="item-media">
+                        <img src="{{asset('equipe/TIMOUYASSE Hamza.jpg')}}" alt="img" class="img-fluid">
                     </div>
-
-
-                    
-
-                   
-
+                    <div class="item-content">
+                        <h5 class="mb-0"><a href="team-single.html">TIMOUYASSE Hamza</a></h5>
+                        <p class="team-position pb-xl-3">Trésorier</p>
+                    </div>
                 </div>
-                {{-- <div class="divider-40 divider-xl-60"></div> --}}
             </div>
         </div>
-
-                {{-- <div class="divider-40 divider-xl-60"></div> --}}
-            </div>
-      
-
-    
+    </div>
 </section>
+
 
 
 <div class="divider-40 divider-xl-50"></div>

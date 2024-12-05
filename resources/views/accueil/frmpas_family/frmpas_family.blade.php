@@ -51,6 +51,36 @@
 .team-scroller-wrapper::-webkit-scrollbar {
     display: none;
 }
+.team-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 400px; /* Hauteur fixe (modifiable) */
+    width: 250px;  /* Largeur fixe (modifiable) */
+    margin: 10px;  /* Espace entre les cartes */
+    background-color: #f9f9f9; /* Couleur de fond pour différencier */
+    border: 1px solid #ddd; /* Optionnel : bordure pour une meilleure visibilité */
+    border-radius: 10px; /* Optionnel : coins arrondis */
+    overflow: hidden; /* Assure que le contenu déborde pas */
+}
+
+.team-layout .item-media img {
+    height: 150px; /* Hauteur de l'image */
+    width: 100%; /* L'image prend toute la largeur du conteneur */
+    object-fit: cover; /* Ajuste l'image pour qu'elle ne soit pas déformée */
+    border-bottom: 1px solid #ddd; /* Séparation visuelle avec le texte */
+}
+
+.item-content {
+    padding: 10px;
+    text-align: center;
+    flex-grow: 1; /* Laisser l'espace restant */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 
     </style>
 @endsection
@@ -571,3 +601,4 @@
 
 
 @endsection
+
