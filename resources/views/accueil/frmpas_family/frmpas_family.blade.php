@@ -31,19 +31,21 @@
 
 /* Style des membres individuels */
 .team-member {
-    flex: 0 0 250px; /* Largeur fixe pour chaque membre */
-    display: inline-block; /* Assure un alignement horizontal */
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
+
 
 /* Images des membres */
 .team-member img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
+    max-height: 200px; /* Limite la hauteur des images */
     object-fit: cover;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 
 /* Suppression des barres de défilement (optionnel) */
 .team-scroller-wrapper::-webkit-scrollbar {
@@ -88,7 +90,7 @@
                         {{-- <div class="col-lg-6 col-md-6"> --}}
                             <div class="vertical-item text-center team-layout">
                                 <div class="py-4">
-                                    <img src="{{asset('assets/images/team/pesident.jpeg')}}" alt="img" style="width: 60%">
+                                    <img src="{{asset('equipe/pesident.jpeg')}}" alt="img" style="width: 60%">
                                 </div>
                                 <div class="item-content">
                                     <h5 class="mb-0">
@@ -167,7 +169,7 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="vertical-item hero-bg text-center team-layout">
                             <div class="item-media">
-                                <img src="{{asset('assets/images/profile_unknown.jpg')}}" alt="img">
+                                <img src="{{asset('equipe/profile_unknown.jpg')}}" alt="img">
                                 <div class="media-links">
                                     <a class="abs-link" title="" href="team-single.html"></a>
                                 </div>
@@ -183,7 +185,7 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="vertical-item hero-bg text-center team-layout">
                             <div class="item-media">
-                                <img src="{{asset('assets/images/profile_unknown.jpg')}}" alt="img">
+                                <img src="{{asset('equipe/profile_unknown.jpg')}}" alt="img">
                                 <div class="media-links">
                                     <a class="abs-link" title="" href="team-single.html"></a>
                                 </div>
@@ -199,7 +201,7 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="vertical-item hero-bg text-center team-layout">
                             <div class="item-media">
-                                <img src="{{asset('assets/images/profile_unknown.jpg')}}" alt="img">
+                                <img src="{{asset('equipe/profile_unknown.jpg')}}" alt="img">
                                 <div class="media-links">
                                     <a class="abs-link" title="" href="team-single.html"></a>
                                 </div>
@@ -215,7 +217,7 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="vertical-item hero-bg text-center team-layout">
                             <div class="item-media">
-                                <img src="{{asset('assets/images/profile_unknown.jpg')}}" alt="img">
+                                <img src="{{asset('equipe/profile_unknown.jpg')}}" alt="img">
                                 <div class="media-links">
                                     <a class="abs-link" title="" href="team-single.html"></a>
                                 </div>
@@ -231,7 +233,7 @@
                     <div class="col-lg-6 col-md-6 mx-auto">
                         <div class="vertical-item hero-bg text-center team-layout">
                             <div class="item-media">
-                                <img src="{{asset('assets/images/profile_unknown.jpg')}}" alt="img">
+                                <img src="{{asset('equipe/profile_unknown.jpg')}}" alt="img">
                                 <div class="media-links">
                                     <a class="abs-link" title="" href="team-single.html"></a>
                                 </div>
@@ -297,10 +299,10 @@
 
                 <div class="divider-40 divider-xl-60"></div>
 
-                <div class="owl-carousel" data-responsive-lg="3" data-responsive-md="2" data-responsive-sm="1" data-responsive-xs="1" data-nav="false" data-margin="60" data-loop="true">
+                <div class="owl-carousel" data-responsive-lg="4" data-responsive-md="2" data-responsive-sm="1" data-responsive-xs="1" data-nav="false" data-margin="60" data-loop="true">
                     <div class="vertical-item hero-bg text-center team-layout">
                         <div class="item-media">
-                            <img src="{{asset('assets/images/profile_unknown.jpg')}}" alt="img">
+                            <img src="{{asset('/equipe/Omar Behari.jpg')}}" alt="img">
                             <div class="media-links">
                                 <a class="abs-link" title="" href="team-single.html"></a>
                             </div>
@@ -314,19 +316,13 @@
                                 Secrétaire Général
                             </p>
 
-                            <p class="social-icons">
-                                <a href="https://www.facebook.com/" class="fa bg-icon rounded-icon fa-facebook" title="facebook"></a>
-                                <a href="https://twitter.com/" class="fa bg-icon rounded-icon fa-twitter" title="twitter"></a>
-                                <a href="https://www.linkedin.com/" class="fa bg-icon rounded-icon fa-linkedin" title="linkedin"></a>
-                                <a href="https://www.instagram.com/" class="fa bg-icon rounded-icon fa-instagram" title="instagram"></a>
-                                <a href="https://www.youtube.com/" class="fa bg-icon rounded-icon fa-youtube-play" title="youtube"></a>
-                            </p>
+                            
 
                         </div>
                     </div>
                     <div class="vertical-item hero-bg text-center team-layout">
                         <div class="item-media">
-                            <img src="{{asset('assets/images/profile_unknown.jpg')}}" alt="img">
+                            <img src="{{asset('/equipe/e2.jpg')}}" alt="img">
                             <div class="media-links">
                                 <a class="abs-link" title="" href="team-single.html"></a>
                             </div>
@@ -340,19 +336,13 @@
                                 1<sup>ere</sup> Vice-Président
                             </p>
 
-                            <p class="social-icons">
-                                <a href="https://www.facebook.com/" class="fa bg-icon rounded-icon fa-facebook" title="facebook"></a>
-                                <a href="https://twitter.com/" class="fa bg-icon rounded-icon fa-twitter" title="twitter"></a>
-                                <a href="https://www.linkedin.com/" class="fa bg-icon rounded-icon fa-linkedin" title="linkedin"></a>
-                                <a href="https://www.instagram.com/" class="fa bg-icon rounded-icon fa-instagram" title="instagram"></a>
-                                <a href="https://www.youtube.com/" class="fa bg-icon rounded-icon fa-youtube-play" title="youtube"></a>
-                            </p>
+                            
 
                         </div>
                     </div>
                     <div class="vertical-item hero-bg text-center team-layout">
                         <div class="item-media">
-                            <img src="{{asset('assets/images/profile_unknown.jpg')}}" alt="img">
+                            <img src="{{asset('/equipe/FAOUZI Mustapha.jpg')}}" alt="img">
                             <div class="media-links">
                                 <a class="abs-link" title="" href="team-single.html"></a>
                             </div>
@@ -366,19 +356,13 @@
                                 2<sup>eme</sup> Vice-Président
                             </p>
 
-                            <p class="social-icons">
-                                <a href="https://www.facebook.com/" class="fa bg-icon rounded-icon fa-facebook" title="facebook"></a>
-                                <a href="https://twitter.com/" class="fa bg-icon rounded-icon fa-twitter" title="twitter"></a>
-                                <a href="https://www.linkedin.com/" class="fa bg-icon rounded-icon fa-linkedin" title="linkedin"></a>
-                                <a href="https://www.instagram.com/" class="fa bg-icon rounded-icon fa-instagram" title="instagram"></a>
-                                <a href="https://www.youtube.com/" class="fa bg-icon rounded-icon fa-youtube-play" title="youtube"></a>
-                            </p>
+                            
 
                         </div>
                     </div>
                     <div class="vertical-item hero-bg text-center team-layout">
                         <div class="item-media">
-                            <img src="{{asset('assets/images/profile_unknown.jpg')}}" alt="img">
+                            <img src="{{asset('equipe/KARRA Azzeddine.jpg')}}" alt="img">
                             <div class="media-links">
                                 <a class="abs-link" title="" href="team-single.html"></a>
                             </div>
@@ -389,22 +373,16 @@
                             </h5>
 
                             <p class="team-position pb-xl-3">
-                                Vice-secrétaire Général
+                                secrétaire général adjoint
                             </p>
 
-                            <p class="social-icons">
-                                <a href="https://www.facebook.com/" class="fa bg-icon rounded-icon fa-facebook" title="facebook"></a>
-                                <a href="https://twitter.com/" class="fa bg-icon rounded-icon fa-twitter" title="twitter"></a>
-                                <a href="https://www.linkedin.com/" class="fa bg-icon rounded-icon fa-linkedin" title="linkedin"></a>
-                                <a href="https://www.instagram.com/" class="fa bg-icon rounded-icon fa-instagram" title="instagram"></a>
-                                <a href="https://www.youtube.com/" class="fa bg-icon rounded-icon fa-youtube-play" title="youtube"></a>
-                            </p>
+                            
 
                         </div>
                     </div>
                     <div class="vertical-item hero-bg text-center team-layout">
                         <div class="item-media">
-                            <img src="{{asset('assets/images/profile_unknown.jpg')}}" alt="img">
+                            <img src="{{asset('equipe/TIMOUYASSE Hamza.jpg')}}" alt="img">
                             <div class="media-links">
                                 <a class="abs-link" title="" href="team-single.html"></a>
                             </div>
@@ -418,19 +396,13 @@
                                 Trésorier
                             </p>
 
-                            <p class="social-icons">
-                                <a href="https://www.facebook.com/" class="fa bg-icon rounded-icon fa-facebook" title="facebook"></a>
-                                <a href="https://twitter.com/" class="fa bg-icon rounded-icon fa-twitter" title="twitter"></a>
-                                <a href="https://www.linkedin.com/" class="fa bg-icon rounded-icon fa-linkedin" title="linkedin"></a>
-                                <a href="https://www.instagram.com/" class="fa bg-icon rounded-icon fa-instagram" title="instagram"></a>
-                                <a href="https://www.youtube.com/" class="fa bg-icon rounded-icon fa-youtube-play" title="youtube"></a>
-                            </p>
+                            
 
                         </div>
                     </div>
                     <div class="vertical-item hero-bg text-center team-layout">
                         <div class="item-media">
-                            <img src="{{asset('assets/images/team/driss_barnoussi.jpeg')}}" alt="img">
+                            <img src="{{asset('equipe/BARNOUSSI driss.jpg')}}" alt="img">
                             <div class="media-links">
                                 <a class="abs-link" title="" href="team-single.html"></a>
                             </div>
@@ -441,22 +413,16 @@
                             </h5>
 
                             <p class="team-position pb-xl-3">
-                                Vice-trésorier
+                                Trésorier adjoint
                             </p>
 
-                            <p class="social-icons">
-                                <a href="https://www.facebook.com/" class="fa bg-icon rounded-icon fa-facebook" title="facebook"></a>
-                                <a href="https://twitter.com/" class="fa bg-icon rounded-icon fa-twitter" title="twitter"></a>
-                                <a href="https://www.linkedin.com/" class="fa bg-icon rounded-icon fa-linkedin" title="linkedin"></a>
-                                <a href="https://www.instagram.com/" class="fa bg-icon rounded-icon fa-instagram" title="instagram"></a>
-                                <a href="https://www.youtube.com/" class="fa bg-icon rounded-icon fa-youtube-play" title="youtube"></a>
-                            </p>
+                            
 
                         </div>
                     </div>
                     <div class="vertical-item hero-bg text-center team-layout">
                         <div class="item-media">
-                            <img src="{{asset('assets/images/profile_unknown.jpg')}}" alt="img">
+                            <img src="{{asset('equipe/AHAKKAM Ghizlane.jpg')}}" alt="img">
                             <div class="media-links">
                                 <a class="abs-link" title="" href="team-single.html"></a>
                             </div>
@@ -467,22 +433,16 @@
                             </h5>
 
                             <p class="team-position pb-xl-3">
-                                Conseiller
+                                membre
                             </p>
 
-                            <p class="social-icons">
-                                <a href="https://www.facebook.com/" class="fa bg-icon rounded-icon fa-facebook" title="facebook"></a>
-                                <a href="https://twitter.com/" class="fa bg-icon rounded-icon fa-twitter" title="twitter"></a>
-                                <a href="https://www.linkedin.com/" class="fa bg-icon rounded-icon fa-linkedin" title="linkedin"></a>
-                                <a href="https://www.instagram.com/" class="fa bg-icon rounded-icon fa-instagram" title="instagram"></a>
-                                <a href="https://www.youtube.com/" class="fa bg-icon rounded-icon fa-youtube-play" title="youtube"></a>
-                            </p>
+                            
 
                         </div>
                     </div>
                     <div class="vertical-item hero-bg text-center team-layout">
                         <div class="item-media">
-                            <img src="{{asset('assets/images/profile_unknown.jpg')}}" alt="img">
+                            <img src="{{asset('equipe/e1.jpg')}}" alt="img">
                             <div class="media-links">
                                 <a class="abs-link" title="" href="team-single.html"></a>
                             </div>
@@ -493,22 +453,16 @@
                             </h5>
 
                             <p class="team-position pb-xl-3">
-                                Conseiller
+                                membre
                             </p>
 
-                            <p class="social-icons">
-                                <a href="https://www.facebook.com/" class="fa bg-icon rounded-icon fa-facebook" title="facebook"></a>
-                                <a href="https://twitter.com/" class="fa bg-icon rounded-icon fa-twitter" title="twitter"></a>
-                                <a href="https://www.linkedin.com/" class="fa bg-icon rounded-icon fa-linkedin" title="linkedin"></a>
-                                <a href="https://www.instagram.com/" class="fa bg-icon rounded-icon fa-instagram" title="instagram"></a>
-                                <a href="https://www.youtube.com/" class="fa bg-icon rounded-icon fa-youtube-play" title="youtube"></a>
-                            </p>
+                            
 
                         </div>
                     </div>
                     <div class="vertical-item hero-bg text-center team-layout">
                         <div class="item-media">
-                            <img src="{{asset('assets/images/profile_unknown.jpg')}}" alt="img">
+                            <img src="{{asset('equipe/ELKASEMI Mustafa.jpg')}}" alt="img">
                             <div class="media-links">
                                 <a class="abs-link" title="" href="team-single.html"></a>
                             </div>
@@ -519,22 +473,16 @@
                             </h5>
 
                             <p class="team-position pb-xl-3">
-                                Conseiller
+                                membre
                             </p>
 
-                            <p class="social-icons">
-                                <a href="https://www.facebook.com/" class="fa bg-icon rounded-icon fa-facebook" title="facebook"></a>
-                                <a href="https://twitter.com/" class="fa bg-icon rounded-icon fa-twitter" title="twitter"></a>
-                                <a href="https://www.linkedin.com/" class="fa bg-icon rounded-icon fa-linkedin" title="linkedin"></a>
-                                <a href="https://www.instagram.com/" class="fa bg-icon rounded-icon fa-instagram" title="instagram"></a>
-                                <a href="https://www.youtube.com/" class="fa bg-icon rounded-icon fa-youtube-play" title="youtube"></a>
-                            </p>
+                            
 
                         </div>
                     </div>
                     <div class="vertical-item hero-bg text-center team-layout">
                         <div class="item-media">
-                            <img src="{{asset('assets/images/team/omar-el-midaoui.jpeg')}}" alt="img">
+                            <img src="{{asset('equipe/ELMIDAOUI Omar.jpg')}}" alt="img">
                             <div class="media-links">
                                 <a class="abs-link" title="" href="team-single.html"></a>
                             </div>
@@ -545,13 +493,13 @@
                             </h5>
 
                             <p class="team-position pb-xl-3">
-                                Conseiller
+                                membre
                             </p>
                         </div>
                     </div>
                     <div class="vertical-item hero-bg text-center team-layout">
                         <div class="item-media">
-                            <img src="{{asset('assets/images/team/youssef-smik.jpeg')}}" alt="img">
+                            <img src="{{asset('equipe/SMIK Youssef.jpg')}}" alt="img">
                             <div class="media-links">
                                 <a class="abs-link" title="" href="team-single.html"></a>
                             </div>
@@ -562,22 +510,16 @@
                             </h5>
 
                             <p class="team-position pb-xl-3">
-                                Conseiller
+                                membre
                             </p>
 
-                            <p class="social-icons">
-                                <a href="https://www.facebook.com/" class="fa bg-icon rounded-icon fa-facebook" title="facebook"></a>
-                                <a href="https://twitter.com/" class="fa bg-icon rounded-icon fa-twitter" title="twitter"></a>
-                                <a href="https://www.linkedin.com/" class="fa bg-icon rounded-icon fa-linkedin" title="linkedin"></a>
-                                <a href="https://www.instagram.com/" class="fa bg-icon rounded-icon fa-instagram" title="instagram"></a>
-                                <a href="https://www.youtube.com/" class="fa bg-icon rounded-icon fa-youtube-play" title="youtube"></a>
-                            </p>
+                            
 
                         </div>
                     </div>
                     <div class="vertical-item hero-bg text-center team-layout">
                         <div class="item-media">
-                            <img src="{{asset('assets/images/profile_unknown.jpg')}}" alt="img">
+                            <img src="{{asset('equipe/Bkhibkhi brahim.jpg')}}" alt="img">
                             <div class="media-links">
                                 <a class="abs-link" title="" href="team-single.html"></a>
                             </div>
@@ -588,22 +530,16 @@
                             </h5>
 
                             <p class="team-position pb-xl-3">
-                                Conseiller
+                                membre
                             </p>
 
-                            <p class="social-icons">
-                                <a href="https://www.facebook.com/" class="fa bg-icon rounded-icon fa-facebook" title="facebook"></a>
-                                <a href="https://twitter.com/" class="fa bg-icon rounded-icon fa-twitter" title="twitter"></a>
-                                <a href="https://www.linkedin.com/" class="fa bg-icon rounded-icon fa-linkedin" title="linkedin"></a>
-                                <a href="https://www.instagram.com/" class="fa bg-icon rounded-icon fa-instagram" title="instagram"></a>
-                                <a href="https://www.youtube.com/" class="fa bg-icon rounded-icon fa-youtube-play" title="youtube"></a>
-                            </p>
+                            
 
                         </div>
                     </div>
                     <div class="vertical-item hero-bg text-center team-layout">
                         <div class="item-media">
-                            <img src="{{asset('assets/images/profile_unknown.jpg')}}" alt="img">
+                            <img src="{{asset('equipe/JEBLI Ali.jpg')}}" alt="img">
                             <div class="media-links">
                                 <a class="abs-link" title="" href="team-single.html"></a>
                             </div>
@@ -614,16 +550,10 @@
                             </h5>
 
                             <p class="team-position pb-xl-3">
-                                Conseiller
+                                membre
                             </p>
 
-                            <p class="social-icons">
-                                <a href="https://www.facebook.com/" class="fa bg-icon rounded-icon fa-facebook" title="facebook"></a>
-                                <a href="https://twitter.com/" class="fa bg-icon rounded-icon fa-twitter" title="twitter"></a>
-                                <a href="https://www.linkedin.com/" class="fa bg-icon rounded-icon fa-linkedin" title="linkedin"></a>
-                                <a href="https://www.instagram.com/" class="fa bg-icon rounded-icon fa-instagram" title="instagram"></a>
-                                <a href="https://www.youtube.com/" class="fa bg-icon rounded-icon fa-youtube-play" title="youtube"></a>
-                            </p>
+                            
 
                         </div>
                     </div>
