@@ -425,6 +425,10 @@ Route::group(['prefix'=>'club', 'middleware' => ['auth','role:2']],function () {
         Route::get("/mon-compte", [UserController::class, "myAccount"])->name('compteClub.index');
         Route::put("/mon-compte", [UserController::class, "updateAccount"])->name('compteClub.update');
 
+        // pdfs
+        Route::get("/attestation-affiliation/{id}", [HomeController::class, "attestationAffiliation"])->name('attestation.affiliation');
+
+
 
 
 
