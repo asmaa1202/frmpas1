@@ -33,8 +33,8 @@ class HomeController extends Controller
 
 
         $active_adhesion = Adhesion::where('club_id', $clubId)
-                                    // ->where('annee', date('Y'))
-                                    ->where('annee', 22)
+                                    ->where('annee', date('Y'))
+                                    // ->where('annee', 22)
                                     ->first();
         // dd(empty($active_adhesion));
         return view('clubDash.pages.home', compact('active_adhesion', 'remainingDays'));
@@ -130,7 +130,16 @@ class HomeController extends Controller
         // $directoryPath = 'uploads/pdfs';
         $filename = 'autorisation-plonge.pdf';
 
-
+        $clubType = '';
+        if (is_array($club->types)) {
+            if (in_array('Sportif', $club->types) && in_array('Diving', $club->types)) {
+                $clubType = 'Sportive et de Plongée';
+            } elseif (in_array('Sportif', $club->types)) {
+                $clubType = 'Sportive';
+            } elseif (in_array('Diving', $club->types)) {
+                $clubType = 'de Plongée';
+            }
+        }
 
         $data = [
 
@@ -140,9 +149,11 @@ class HomeController extends Controller
             'clubPresident' => $club->president,
             'club' => $club->nom,
             'address' => $club->adresse,
-            'clubType' => "Association Sportive",
-            'name' => "M.ALAZRAK Abdelaziz",
-            'cin' => "BE68997",
+            'legalStructure' => $club->legal_structure,
+            // 'clubType' => $club->types,
+            'clubType' => $clubType,
+            'name' =>$club->president,
+            'cin' => $club->cin,
             'clubNumber' =>  "00".$club->id."/".$adhesion->annee+1,
             'saison' => $adhesion->annee." - ".$adhesion->annee+1,
             'authorizedClub' => "A.C.P.C",

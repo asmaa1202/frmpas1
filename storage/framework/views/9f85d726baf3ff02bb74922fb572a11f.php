@@ -199,10 +199,7 @@
         </div>
     </div>
 </div>
-<!-- Bouton pour ouvrir le modal -->
-<button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#adhesionModal">
-    Demande d'adhésion
-</button>
+
 
 <!-- Modal Adhesion -->
 <div class="modal fade" id="adhesionModal" tabindex="-1" aria-labelledby="adhesionModalLabel" aria-hidden="true">

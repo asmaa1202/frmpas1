@@ -13,13 +13,13 @@
 <h1 style="text-align: center; font-weight: bold;">{!! $title ?? '--' !!}</h1>
 <p></p>
 
-<p style="font-size: 14px; text-indent: 15px;">Je, soussigné, <span style="font-weight: bold;">{{ $clubPresident ?? '--' }}</span>, Président de la
+<p style="font-size: 14px; text-indent: 15px;">Je, soussigné, <span style="font-weight: bold;">{{ $frmpasPresident ?? '--' }}</span>, Président de la
     Fédération
     Royale Marocaine de Plongée et d'Activités Subaquatiques -
     FRMPAS -, atteste par la présente que « <span style="font-weight: bold;">{{ $club ?? '--' }}</span> » représentée par son Président
     <span style="font-weight: bold;">{{ $name ?? '--' }}</span> CIN : <span style="font-weight: bold;">{{ $cin ?? '--' }}</span>,
     ayant son siège <span style="font-weight: bold;">{{ $address ?? '--' }}</span>, et une <span
-        style="font-weight: bold;">{{ $clubType ?? '--' }}</span>, est
+        style="font-weight: bold;">{{ $legalStructure ?? '--' }} {{ $clubType ?? '--' }}</span>, est
     affiliée à cette Fédération sous le numéro <span style="font-weight: bold;">{{ $clubNumber ?? '--' }}</span></p>
 <p style="font-size: 14px; text-indent: 15px;">Par cette affiliation, l’Association précitée adhère automatiquement
     à la Loi n° 30-09 relative à l’éducation physique et aux sports, aux
