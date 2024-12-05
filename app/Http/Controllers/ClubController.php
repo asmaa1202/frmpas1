@@ -61,6 +61,7 @@ class ClubController extends Controller
             //     throw new \Exception('Aucun fichier sélectionné.');
             // }
             $club = new Club();
+            $club->id = $request->abreviation.'-'.$request->region;
             $club->nom = $request->nom_club;
             $club->email = $request->email_club;
             $club->ville = $request->ville_club;

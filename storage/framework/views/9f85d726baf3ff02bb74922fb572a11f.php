@@ -67,9 +67,9 @@
                 <?php if(isset($active_adhesion)): ?>
                     <div class="col-lg-6 d-flex justify-content-end align-items-center flex-wrap">
                         
-                        <a href="<?php echo e(route('attestation.affiliation', Auth::user()->club_id)); ?>" class="btn btn-primary" target="__blank"><i class="bi bi-file-earmark-arrow-down-fill"></i> Autorisation de plongée</a>
+                        <a href="<?php echo e(route('autorisation.plonge', Auth::user()->club_id)); ?>" class="btn btn-primary" target="__blank"><i class="bi bi-file-earmark-arrow-down-fill"></i> Autorisation de plongée</a>
                         &nbsp;&nbsp;
-                        <a href="<?php echo e(route('autorisation.plonge', Auth::user()->club_id)); ?>" class="btn btn-primary" target="__blank"><i class="bi bi-file-earmark-arrow-down-fill"></i> Attestation d'affiliation</a>
+                        <a href="<?php echo e(route('attestation.affiliation', Auth::user()->club_id)); ?>" class="btn btn-primary" target="__blank"><i class="bi bi-file-earmark-arrow-down-fill"></i> Attestation d'affiliation</a>
                     </div>
               
                 <?php elseif(empty($active_adhesion)): ?>

@@ -98,9 +98,9 @@
                 @if(isset($active_adhesion))
                     <div class="col-lg-6 d-flex justify-content-end align-items-center flex-wrap">
                         
-                        <a href="{{ route('attestation.affiliation', Auth::user()->club_id) }}" class="btn btn-primary" target="__blank"><i class="bi bi-file-earmark-arrow-down-fill"></i> Autorisation de plongée</a>
+                        <a href="{{ route('autorisation.plonge', Auth::user()->club_id) }}" class="btn btn-primary" target="__blank"><i class="bi bi-file-earmark-arrow-down-fill"></i> Autorisation de plongée</a>
                         &nbsp;&nbsp;
-                        <a href="{{route('autorisation.plonge', Auth::user()->club_id)}}" class="btn btn-primary" target="__blank"><i class="bi bi-file-earmark-arrow-down-fill"></i> Attestation d'affiliation</a>
+                        <a href="{{route('attestation.affiliation', Auth::user()->club_id)}}" class="btn btn-primary" target="__blank"><i class="bi bi-file-earmark-arrow-down-fill"></i> Attestation d'affiliation</a>
                     </div>
               
                 @elseif(empty($active_adhesion))
