@@ -62,21 +62,21 @@
                 <p class="mb-0">Rapide, intelligent et vous pouvez voir toutes les
                     analyses sur cette page.</p>
             </div>
-
+            
           
                 <?php if(isset($active_adhesion)): ?>
                     <div class="col-lg-6 d-flex justify-content-end align-items-center flex-wrap">
                         
-                        <button class="btn btn-primary"><i class="bi bi-file-earmark-arrow-down-fill"></i> Autorisation de plongée</button>
+                        <a href="<?php echo e(route('attestation.affiliation', Auth::user()->club_id)); ?>" class="btn btn-primary" target="__blank"><i class="bi bi-file-earmark-arrow-down-fill"></i> Autorisation de plongée</a>
                         &nbsp;&nbsp;
-                        <button class="btn btn-primary"><i class="bi bi-file-earmark-arrow-down-fill"></i> Attestation d'affiliation</button>
+                        <a href="<?php echo e(route('autorisation.plonge', Auth::user()->club_id)); ?>" class="btn btn-primary" target="__blank"><i class="bi bi-file-earmark-arrow-down-fill"></i> Attestation d'affiliation</a>
                     </div>
               
                 <?php elseif(empty($active_adhesion)): ?>
                     <div class="col-lg-4 d-flex justify-content-end align-items-center flex-wrap">
-                        <button class="btn btn-danger signal-button" data-bs-toggle="modal" data-bs-target="#adhesionModal">
+                        <a class="btn btn-danger signal-button" data-bs-toggle="modal" data-bs-target="#adhesionModal">
                             Demande d'adhésion
-                        </button>
+                        </a>
                     </div>
             
                 <?php endif; ?>
@@ -199,10 +199,7 @@
         </div>
     </div>
 </div>
-<!-- Bouton pour ouvrir le modal -->
-<button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#adhesionModal">
-    Demande d'adhésion
-</button>
+
 
 <!-- Modal Adhesion -->
 <div class="modal fade" id="adhesionModal" tabindex="-1" aria-labelledby="adhesionModalLabel" aria-hidden="true">
