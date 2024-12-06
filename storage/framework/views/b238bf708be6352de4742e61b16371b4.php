@@ -67,9 +67,9 @@
                 <?php if(isset($active_adhesion)): ?>
                     <div class="col-lg-6 d-flex justify-content-end align-items-center flex-wrap">
                         
-                        <a href="<?php echo e(route('attestation.affiliation', Auth::user()->club_id)); ?>" class="btn btn-primary" target="__blank"><i class="bi bi-file-earmark-arrow-down-fill"></i> Autorisation de plongée</a>
+                        <a href="<?php echo e(route('autorisation.plonge', Auth::user()->club_id)); ?>" class="btn btn-primary" target="__blank"><i class="bi bi-file-earmark-arrow-down-fill"></i> Autorisation de plongée</a>
                         &nbsp;&nbsp;
-                        <a href="<?php echo e(route('autorisation.plonge', Auth::user()->club_id)); ?>" class="btn btn-primary" target="__blank"><i class="bi bi-file-earmark-arrow-down-fill"></i> Attestation d'affiliation</a>
+                        <a href="<?php echo e(route('attestation.affiliation', Auth::user()->club_id)); ?>" class="btn btn-primary" target="__blank"><i class="bi bi-file-earmark-arrow-down-fill"></i> Attestation d'affiliation</a>
                     </div>
               
                 <?php elseif(empty($active_adhesion)): ?>
@@ -97,10 +97,11 @@
                             <!--/.bg-holder-->
 
                             <div class="card-body position-relative">
-                                <h6>Missions</h6>
-                                <div class="display-4 fs-4 mb-2 fw-normal font-sans-serif text-warning"
-                                    data-countup="{&quot;endValue&quot;:58.386,&quot;decimalPlaces&quot;:2,&quot;suffix&quot;:&quot;k&quot;}">
-                                    58.39k</div><a class="fw-semi-bold fs--1 text-nowrap"
+                                <h6>Club Actif</h6>
+                                <div class="display-4 fs-4 mb-2 fw-normal font-sans-serif text-warning">
+                                    <?php echo e($clubsActifs); ?>
+
+                                </div><a class="fw-semi-bold fs--1 text-nowrap"
                                     href="../app/e-commerce/customers.html">Voir tout<span
                                         class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a>
                             </div>
@@ -114,10 +115,11 @@
                             <!--/.bg-holder-->
 
                             <div class="card-body position-relative">
-                                <h6>Missions Express</h6>
-                                <div class="display-4 fs-4 mb-2 fw-normal font-sans-serif text-info"
-                                    data-countup="{&quot;endValue&quot;:23.434,&quot;decimalPlaces&quot;:2,&quot;suffix&quot;:&quot;k&quot;}">
-                                    23.43k</div><a class="fw-semi-bold fs--1 text-nowrap" href="#">Voir tout
+                                <h6>Club Inactif</h6>
+                                <div class="display-4 fs-4 mb-2 fw-normal font-sans-serif text-info">
+                                    <?php echo e($clubsInactifs); ?>
+
+                                </div><a class="fw-semi-bold fs--1 text-nowrap" href="#">Voir tout
                                     <span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a>
                             </div>
                         </div>
@@ -130,11 +132,12 @@
                             <!--/.bg-holder-->
 
                             <div class="card-body position-relative">
-                                <h6>Missions Normales</h6>
-                                <div class="display-4 fs-4 mb-2 fw-normal font-sans-serif text-info"
-                                    data-countup="{&quot;endValue&quot;:23.434,&quot;decimalPlaces&quot;:2,&quot;suffix&quot;:&quot;k&quot;}">
-                                    23.43k</div><a class="fw-semi-bold fs--1 text-nowrap" href="#">Voir tout
-                                    <span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span> </a>
+                                <h6>Nombre de plongeurs</h6>
+                                <div class="display-4 fs-4 mb-2 fw-normal font-sans-serif text-info">
+                                    <?php echo e($nombrePlongeurs); ?>
+
+                                </div><a class="fw-semi-bold fs--1 text-nowrap" href="#">Voir tout
+                                    <span class="fas fa-v-right ms-1" data-fa-transform="down-1"></span> </a>
                             </div>
                         </div>
                     </div>
@@ -145,10 +148,11 @@
                             </div>
                             <!--/.bg-holder-->
                             <div class="card-body position-relative">
-                                <h6>Missions Garantie Réparation</h6>
-                                <div class="display-4 fs-4 mb-2 fw-normal font-sans-serif text-info"
-                                    data-countup="{&quot;endValue&quot;:23.434,&quot;decimalPlaces&quot;:2,&quot;suffix&quot;:&quot;k&quot;}">
-                                    23.43k</div><a class="fw-semi-bold fs--1 text-nowrap" href="#">Voir tout
+                                <h6>Nombre d'athlètes</h6>
+                                <div class="display-4 fs-4 mb-2 fw-normal font-sans-serif text-info">
+                                    <?php echo e($nombreAthletes); ?>
+
+                                </div><a class="fw-semi-bold fs--1 text-nowrap" href="#">Voir tout
                                     <span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a>
                             </div>
                         </div>
