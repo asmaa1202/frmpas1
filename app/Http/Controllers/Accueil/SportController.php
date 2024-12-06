@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use Exception;
 use App\Models\Blog;
+use App\Models\Club;
 use App\Models\Document;
 use Illuminate\Http\Request;
 
@@ -13,9 +14,32 @@ class SportController extends Controller
 {
     const blog_status_active = 1 ; 
     const blog_status_principal = 2 ; 
+    // public function club()
+    // {
+
+    //     $clubs = Club::all()->filter(function ($club) {
+    //         $types = is_string($club->types) ? json_decode($club->types, true) : $club->types;
+    //         return is_array($types) && in_array('Sportif', $types);
+    //     });
+
+    //     return view('accueil.sport.club', compact('clubs'));
+    // }
+
     public function club()
     {
-        return view('accueil.sport.club');
+        $clubs = Club::all()->filter(function ($club) {
+            $types = is_string($club->types) ? json_decode($club->types, true) : $club->types;
+            return is_array($types) && in_array('Sportif', $types);
+        });
+
+        $clubsByRegion = $clubs->groupBy('region');
+     
+        $regionOrder = ['Nord', 'Centre', 'Sud'];
+
+        $clubsByRegion = $clubsByRegion->sortBy(function ($value, $key) use ($regionOrder) {
+            return array_search($key, $regionOrder);
+        });
+        return view('accueil.sport.club', compact('clubsByRegion'));
     }
 
     public function competition(Request $request)

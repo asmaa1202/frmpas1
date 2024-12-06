@@ -48,9 +48,9 @@
                         <th style="min-width: 120px;">Club</th>
                         <th style="min-width: 120px;">Niveau</th>
                         <th style="min-width: 120px;">Jour d'entrainement</th>
-                        <th style="min-width: 120px;">Date de naissance
-                        </th>
+                        <th style="min-width: 120px;">Date de naissance</th>
                         <th style="min-width: 180px;">Crée le</th>
+                        <th style="min-width: 180px;">Licence</th>
                         <th style="width: 60px;">Actions</th>
                     </tr>
                 </thead>
@@ -75,6 +75,14 @@
                         <td class="align-middle"><?php echo e($item->jour_entrainement); ?></td>
                         <td class="align-middle"><?php echo e($item->date_de_naissance); ?></td>
                         <td class="align-middle"><?php echo e($item->created_at); ?></td>
+                        
+                        <td class="align-middle"> 
+                            <?php echo $item->has_active_licence 
+                                ? '<span class="badge bg-success">Actif</span>' 
+                                : '<span class="badge bg-danger">Inactif</span>'; ?>
+
+                        </td>
+
                         <td class="py-2 align-middle white-space-nowrap text-center">
                             <div class="dropdown font-sans-serif position-static">
                                 <button class="btn btn-link text-600 btn-sm dropdown-toggle btn-reveal" type="button"

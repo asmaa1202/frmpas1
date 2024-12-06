@@ -23,7 +23,14 @@ class PlongeurController extends Controller
 
     public function index()
     {
-        $plongeurs = Plongeur::where('type_club_id', self::type_club_diving_id)->orderBy('created_at', 'DESC')->with("niveau")->paginate(100);
+        $plongeurs = Plongeur::where('type_club_id', self::type_club_diving_id)->orderBy('created_at', 'DESC')->with("niveau")->paginate(100)->map(function ($plongeur) {
+            $plongeur->has_active_licence = $plongeur->hasActiveLicence();
+            return $plongeur;
+        });
+        // $clubs = Club::latest()->get()->map(function ($club) {
+        //     $club->has_active_adhesion = $club->hasActiveAdhesion();
+        //     return $club;
+        // });
 
         return view("dashboard.pages.plongeur.index")->with("plongeurs", $plongeurs);
     }

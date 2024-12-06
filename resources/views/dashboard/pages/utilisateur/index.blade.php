@@ -57,7 +57,7 @@
                         <td class="align-middle white-space-nowrap py-2">
                             <div class="d-flex d-flex align-items-center">
                                 <div class="avatar avatar-xl me-2">
-                                    <img class="rounded-circle" src={{ $item->image }} alt={{ $item->title }}>
+                                    <img class="rounded-circle" src={{ asset($item->image) }} alt={{ $item->title }}>
                                 </div>
                                 <div class="flex-1">
                                     <p class="mb-0 fs--1">{{ $item->nom . ' ' . $item->prenom }}</p>

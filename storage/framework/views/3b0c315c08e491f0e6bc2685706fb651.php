@@ -66,14 +66,7 @@
                         </div>
                     </a>
 
-                    <a class="nav-link" href="<?php echo e(route('carnet_plongee.index')); ?>" role="button" data-bs-toggle=""
-                        aria-expanded="false">
-                        <div class="d-flex align-items-center"><span class="nav-link-icon">
-                                <i class="far fa-address-card"></i>
-                            </span>
-                            <span class="nav-link-text ps-2">Carnet de plongée</span>
-                        </div>
-                    </a>
+                    
                     <a class="nav-link dropdown-indicator" href="#email" role="button" data-bs-toggle="collapse"
                         aria-expanded="true" aria-controls="email">
                         <div class="d-flex align-items-center"><span class="nav-link-icon"><svg

@@ -55,7 +55,7 @@
                         <td class="align-middle white-space-nowrap py-2">
                             <div class="d-flex d-flex align-items-center">
                                 <div class="avatar avatar-xl me-2">
-                                    <img class="rounded-circle" src=<?php echo e($item->image); ?> alt=<?php echo e($item->title); ?>>
+                                    <img class="rounded-circle" src=<?php echo e(asset($item->image)); ?> alt=<?php echo e($item->title); ?>>
                                 </div>
                                 <div class="flex-1">
                                     <p class="mb-0 fs--1"><?php echo e($item->nom . ' ' . $item->prenom); ?></p>

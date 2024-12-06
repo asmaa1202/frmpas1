@@ -27,7 +27,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::orderBy('created_at', 'DESC')->paginate(100);
+        $users = User::where('role_id', 1)->orderBy('created_at', 'DESC')->paginate(100);
         return view("dashboard.pages.utilisateur.index")->with("utilisateurs", $users);
     }
 
@@ -53,8 +53,8 @@ class UserController extends Controller
             "nom" => "required|string",
             "prenom" => "required|string",
             'email' => 'required|email|max:255|unique:users',
-            "password" => "required|confirmed|min:6",
-            'password_confirmation' => 'required|min:6',
+            "password" => "required|confirmed",
+            'password_confirmation' => 'required',
         ], [
             "nom.required" => "Nom est obligatoire",
             "prenom.required" => "Prénom est obligatoire",
@@ -76,12 +76,14 @@ class UserController extends Controller
             $user->nom = $nom;
             $user->prenom = $prenom;
             $user->email = $email;
+            $user->role_id  = 1;
+            $user->active  = 1;
             $user->password = Hash::make($password);
             if ($request->hasFile('image')) {
                 $image = $request->file('image');
                 $nomImage = time() . '.' . $image->getClientOriginalExtension();
                 $image->move(public_path('admin/uploads/images/utilisateurs/'), $nomImage);
-                $user->image = 'https://diver.cdma-solution.ma' . '/admin/uploads/images/utilisateurs/' . $nomImage;
+                $user->image = '/admin/uploads/images/utilisateurs/' . $nomImage;
             }
             $user->save();
 

@@ -67,9 +67,7 @@
                             <td class="align-middle"><?php echo e($item->annee); ?></td>
            
                             <td class="align-middle">
-                                <a href="<?php echo e(route('adhesion.read.document', $item->id)); ?>" target="__blank">
-                                    Attestation de Paiement
-                                </a></td>
+                                
                             <td class="py-2 align-middle white-space-nowrap text-center">
                                 <div class="dropdown font-sans-serif position-static">
                                     <button class="btn btn-link text-600 btn-sm dropdown-toggle btn-reveal"

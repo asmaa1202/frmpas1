@@ -93,5 +93,11 @@ class Plongeur extends Authenticatable
         return $this->belongsTo(Licence::class, 'plongeur_id');
     }
 
+    public function hasActiveLicence()
+    {
+        return $this->licence()
+            ->where('annee', date('Y'))
+            ->exists();
+    }
     public $timestamps = false;
 }

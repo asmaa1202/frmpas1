@@ -22,26 +22,25 @@ class HomeController extends Controller
     const statut_refuser = 'refuser'; 
     public function index()
     {
-        $currentYear = date('Y');
-    
-        // Clubs actifs : Club ID est présent dans la table adhésions avec statut "accepter"
-        $clubsActifs = Club::whereHas('adhesions', function ($query) use ($currentYear) {
-            $query->where('statut', self::statut_accepter)
-                  ->where('annee', $currentYear);
-        })->count();
-    
-        // Clubs inactifs : Club ID est présent avec statut "en cours" ou "refuser"
-        $clubsInactifs = Club::whereHas('adhesions', function ($query) use ($currentYear) {
-            $query->whereIn('statut', [self::statut_en_cours, self::statut_refuser])
-                  ->where('annee', $currentYear);
-        })->count();
-    
+        $clubId = Auth::user()->club->id;
+
+        // // Vérifier si la licence est active pour l'année en cours
+        // $active_licence = Licence::where('plongeur_id', $plongeurId)
+        //     ->where('annee', date('Y'))
+        //     ->first();
+
+        // Calculer les jours restants jusqu'à la fin de l'année
         $remainingDays = Carbon::now()->diffInDays(Carbon::now()->endOfYear());
 
-        $nombreAthletes = Plongeur::where('type_club_id', 1)->count();
-        $nombrePlongeurs = Plongeur::where('type_club_id', 2)->count();
+
+        $active_adhesion = Adhesion::where('club_id', $clubId)
+                                    ->where('annee', date('Y'))
+                                    // ->where('annee', 22)
+                                    ->first();
+        // dd(empty($active_adhesion));
+        return view('clubDash.pages.home', compact('active_adhesion', 'remainingDays'));
     
-        return view('clubDash.pages.home', compact('clubsActifs', 'clubsInactifs', 'remainingDays', 'nombrePlongeurs', 'nombreAthletes'));
+        // return view('clubDash.pages.home', compact('clubsActifs', 'clubsInactifs', 'remainingDays', 'nombrePlongeurs', 'nombreAthletes'));
     }
     
     

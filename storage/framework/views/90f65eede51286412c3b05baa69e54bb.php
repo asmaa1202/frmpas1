@@ -1,7 +1,10 @@
 <?php $__env->startSection('custom-css'); ?>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
 <style>
-
+#box_wrapper > section, #box_wrapper > div > section {
+    overflow: visible !important;
+}
 </style>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('custom-js'); ?>
@@ -34,6 +37,9 @@
 </section>
 
 
+
+
+
 <section class="woocommerce-order-details container">
     <p class="text-center text-md-left color-darkgrey mb-1">
         <span class="line-left">Club du sport</span>
@@ -42,216 +48,47 @@
         <span>Club du sport</span>
     </h3>
     
-    <h6 class="text-success"># Casablanca-Settat</h6>
-    <table class="woocommerce-table woocommerce-table--order-details shop_table order_details">
+    <?php $__currentLoopData = $clubsByRegion; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $region => $clubs): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <h6 class="text-success"># <?php echo e($region); ?></h6>
+        <table class="woocommerce-table woocommerce-table--order-details shop_table order_details">
+            <thead>
+                <tr>
+                    <th class="woocommerce-table__product-name product-name">Club</th>
+                    <th class="woocommerce-table__product-table product-total">Président</th>
+                    <th class="woocommerce-table__product-table product-total">Ville</th>
+                    <th class="woocommerce-table__product-table product-total">Contact</th>
+                    <th class="woocommerce-table__product-table product-total">Est_Federal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php $__currentLoopData = $clubs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $club): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <tr class="woocommerce-table__line-item order_item">
+                        <td class="woocommerce-table__product-name product-name">
+                            <a href="#"><?php echo e($club->nom ?? '--'); ?></a>
+                        </td>
+                        <td class="woocommerce-table__product-name product-name">
+                            <?php echo e($club->president ?? '--'); ?>
 
-        <thead>
-            <tr>
-                <th class="woocommerce-table__product-name product-name">Club</th>
-                <th class="woocommerce-table__product-table product-total">Region</th>
-                <th class="woocommerce-table__product-table product-total">Contact</th>
-            </tr>
-        </thead>
+                        </td>
+                        <td class="woocommerce-table__product-name product-name">
+                            <?php echo e($club->ville ?? '--'); ?>
 
-        <tbody>
-            <tr class="woocommerce-table__line-item order_item">
-
-                <td class="woocommerce-table__product-name product-name">
-                    <a href="shop-product-right.html">XXXXXXXXXX</a></strong>
-                </td>
-                <td class="woocommerce-table__product-name product-name">
-                    <a href="shop-product-right.html">XXXXXXXXXX</a></strong>
-                </td> 
-                <td class="woocommerce-table__product-name product-name">
-                    <a href="shop-product-right.html">XXXXXXXXXX</a></strong>
-                </td>
-                
-            </tr>
-            <tr class="woocommerce-table__line-item order_item">
-
-                <td class="woocommerce-table__product-name product-name">
-                    <a href="shop-product-right.html">XXXXXXXXXX</a></strong>
-                </td>
-                <td class="woocommerce-table__product-name product-name">
-                    <a href="shop-product-right.html">XXXXXXXXXX</a></strong>
-                </td> 
-                <td class="woocommerce-table__product-name product-name">
-                    <a href="shop-product-right.html">XXXXXXXXXX</a></strong>
-                </td>
-                
-            </tr> 
-            <tr class="woocommerce-table__line-item order_item">
-
-                <td class="woocommerce-table__product-name product-name">
-                    <a href="shop-product-right.html">XXXXXXXXXX</a></strong>
-                </td>
-                <td class="woocommerce-table__product-name product-name">
-                    <a href="shop-product-right.html">XXXXXXXXXX</a></strong>
-                </td> 
-                <td class="woocommerce-table__product-name product-name">
-                    <a href="shop-product-right.html">XXXXXXXXXX</a></strong>
-                </td>
-                
-            </tr>
-            <tr class="woocommerce-table__line-item order_item">
-
-                <td class="woocommerce-table__product-name product-name">
-                    <a href="shop-product-right.html">XXXXXXXXXX</a></strong>
-                </td>
-                <td class="woocommerce-table__product-name product-name">
-                    <a href="shop-product-right.html">XXXXXXXXXX</a></strong>
-                </td> 
-                <td class="woocommerce-table__product-name product-name">
-                    <a href="shop-product-right.html">XXXXXXXXXX</a></strong>
-                </td>
-                
-            </tr>
-
-        </tbody>
-
-    </table>
-
-
-    <h6 class="text-success"># Rabat-Salé-Kénitra</h6>
-    <table class="woocommerce-table woocommerce-table--order-details shop_table order_details">
-
-        <thead>
-            <tr>
-                <th class="woocommerce-table__product-name product-name">Club</th>
-                <th class="woocommerce-table__product-table product-total">Region</th>
-                <th class="woocommerce-table__product-table product-total">Contact</th>
-            </tr>
-        </thead>
-
-        <tbody>
-            <tr class="woocommerce-table__line-item order_item">
-
-                <td class="woocommerce-table__product-name product-name">
-                    <a href="shop-product-right.html">XXXXXXXXXX</a></strong>
-                </td>
-                <td class="woocommerce-table__product-name product-name">
-                    <a href="shop-product-right.html">XXXXXXXXXX</a></strong>
-                </td> 
-                <td class="woocommerce-table__product-name product-name">
-                    <a href="shop-product-right.html">XXXXXXXXXX</a></strong>
-                </td>
-                
-            </tr>
-            <tr class="woocommerce-table__line-item order_item">
-
-                <td class="woocommerce-table__product-name product-name">
-                    <a href="shop-product-right.html">XXXXXXXXXX</a></strong>
-                </td>
-                <td class="woocommerce-table__product-name product-name">
-                    <a href="shop-product-right.html">XXXXXXXXXX</a></strong>
-                </td> 
-                <td class="woocommerce-table__product-name product-name">
-                    <a href="shop-product-right.html">XXXXXXXXXX</a></strong>
-                </td>
-                
-            </tr> 
-            <tr class="woocommerce-table__line-item order_item">
-
-                <td class="woocommerce-table__product-name product-name">
-                    <a href="shop-product-right.html">XXXXXXXXXX</a></strong>
-                </td>
-                <td class="woocommerce-table__product-name product-name">
-                    <a href="shop-product-right.html">XXXXXXXXXX</a></strong>
-                </td> 
-                <td class="woocommerce-table__product-name product-name">
-                    <a href="shop-product-right.html">XXXXXXXXXX</a></strong>
-                </td>
-                
-            </tr>
-            <tr class="woocommerce-table__line-item order_item">
-
-                <td class="woocommerce-table__product-name product-name">
-                    <a href="shop-product-right.html">XXXXXXXXXX</a></strong>
-                </td>
-                <td class="woocommerce-table__product-name product-name">
-                    <a href="shop-product-right.html">XXXXXXXXXX</a></strong>
-                </td> 
-                <td class="woocommerce-table__product-name product-name">
-                    <a href="shop-product-right.html">XXXXXXXXXX</a></strong>
-                </td>
-                
-            </tr>
-
-        </tbody>
-
-
-    </table>
-
-
-    <h6 class="text-success"># Marrakech-Safi</h6>
-    <table class="woocommerce-table woocommerce-table--order-details shop_table order_details">
-
-        <thead>
-            <tr>
-                <th class="woocommerce-table__product-name product-name">Club</th>
-                <th class="woocommerce-table__product-table product-total">Region</th>
-                <th class="woocommerce-table__product-table product-total">Contact</th>
-            </tr>
-        </thead>
-
-        <tbody>
-            <tr class="woocommerce-table__line-item order_item">
-
-                <td class="woocommerce-table__product-name product-name">
-                    <a href="shop-product-right.html">XXXXXXXXXX</a></strong>
-                </td>
-                <td class="woocommerce-table__product-name product-name">
-                    <a href="shop-product-right.html">XXXXXXXXXX</a></strong>
-                </td> 
-                <td class="woocommerce-table__product-name product-name">
-                    <a href="shop-product-right.html">XXXXXXXXXX</a></strong>
-                </td>
-                
-            </tr>
-            <tr class="woocommerce-table__line-item order_item">
-
-                <td class="woocommerce-table__product-name product-name">
-                    <a href="shop-product-right.html">XXXXXXXXXX</a></strong>
-                </td>
-                <td class="woocommerce-table__product-name product-name">
-                    <a href="shop-product-right.html">XXXXXXXXXX</a></strong>
-                </td> 
-                <td class="woocommerce-table__product-name product-name">
-                    <a href="shop-product-right.html">XXXXXXXXXX</a></strong>
-                </td>
-                
-            </tr> 
-            <tr class="woocommerce-table__line-item order_item">
-
-                <td class="woocommerce-table__product-name product-name">
-                    <a href="shop-product-right.html">XXXXXXXXXX</a></strong>
-                </td>
-                <td class="woocommerce-table__product-name product-name">
-                    <a href="shop-product-right.html">XXXXXXXXXX</a></strong>
-                </td> 
-                <td class="woocommerce-table__product-name product-name">
-                    <a href="shop-product-right.html">XXXXXXXXXX</a></strong>
-                </td>
-                
-            </tr>
-            <tr class="woocommerce-table__line-item order_item">
-
-                <td class="woocommerce-table__product-name product-name">
-                    <a href="shop-product-right.html">XXXXXXXXXX</a></strong>
-                </td>
-                <td class="woocommerce-table__product-name product-name">
-                    <a href="shop-product-right.html">XXXXXXXXXX</a></strong>
-                </td> 
-                <td class="woocommerce-table__product-name product-name">
-                    <a href="shop-product-right.html">XXXXXXXXXX</a></strong>
-                </td>
-                
-            </tr>
-
-        </tbody>
-
-
-    </table>
+                        </td>
+                        <td class="woocommerce-table__product-name product-name">
+                            <a href="mailto:<?php echo e($club->email ?? ''); ?>"><?php echo e($club->email ?? '--'); ?></a>
+                        </td>
+                        <td class="woocommerce-table__product-name product-name">
+                            <?php if($club->is_federal): ?>
+                                <i class="bi bi-check-circle-fill text-success"></i> Fédéral
+                            <?php else: ?>
+                                --
+                            <?php endif; ?>
+                        </td>
+                    </tr>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            </tbody>
+        </table>
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 </section>
 
 <div class="divider-40 divider-xl-50"></div>
