@@ -34,7 +34,9 @@ use App\Http\Controllers\LicenceController;
 use App\Http\Controllers\Plongeur\HomePlongeurController;
 use App\Http\Controllers\Plongeur\LicencePlongeurController;
 use App\Models\Plongeur;
-
+use App\Models\Club;
+use Carbon\Carbon;
+use App\Constants\ClubStatutConstants;
 
 Route::get('/', function () {
     return view('welcome');
@@ -230,7 +232,24 @@ Route::middleware(['auth', 'role:1'])->group(function () {
         $countNiveau2Plongeur = Plongeur::where('id_niveau', '=', 2)->get()->count();
         $countNiveau3Plongeur = Plongeur::where('id_niveau', '=', 3)->get()->count();
         $countNiveau4Plongeur = Plongeur::where('id_niveau', '=', 4)->get()->count();
+        $currentYear = date('Y');
+    
+        // Clubs actifs : Club ID est présent dans la table adhésions avec statut "accepter"
+        $clubsActifs = Club::whereHas('adhesions', function ($query) use ($currentYear) {
+            $query->where('statut', ClubStatutConstants::STATUT_ACCEPTER)
+                  ->where('annee', $currentYear);
+        })->count();
+    
+        $clubsInactifs = Club::whereHas('adhesions', function ($query) use ($currentYear) {
+            $query->whereIn('statut', [ClubStatutConstants::STATUT_EN_COURS, ClubStatutConstants::STATUT_REFUSER])
+                  ->where('annee', $currentYear);
+        })->count();
+    
+        $remainingDays = Carbon::now()->diffInDays(Carbon::now()->endOfYear());
 
+        $nombreAthletes = Plongeur::where('type_club_id', 1)->count();
+        $nombrePlongeurs = Plongeur::where('type_club_id', 2)->count();
+    
         return view(
             "dashboard.pages.home",
             compact(
@@ -240,7 +259,12 @@ Route::middleware(['auth', 'role:1'])->group(function () {
                 'countNiveau1Plongeur',
                 'countNiveau2Plongeur',
                 'countNiveau3Plongeur',
-                'countNiveau4Plongeur'
+                'countNiveau4Plongeur',
+                'clubsActifs',
+                'clubsInactifs',
+                'remainingDays',
+                'nombreAthletes',
+                'nombrePlongeurs',
             )
         );
     })->name('admin.index');

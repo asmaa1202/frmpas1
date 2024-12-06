@@ -115,77 +115,7 @@
         </div>
     </div>
 </div>
-<div class="card mb-3">
-    <div class="card-body position-relative">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="row g-3 mb-3">
-                    <div class="col-sm-6">
-                        <div class="card overflow-hidden" style="min-width: 12rem">
-                            <div class="bg-holder bg-card"
-                                style="background-image:url({{ asset('dashboard/img/icons/spot-illustrations/corner-1.png') }});">
-                            </div>
-                            <!--/.bg-holder-->
 
-                            <div class="card-body position-relative">
-                                <h6>Club Actif</h6>
-                                <div class="display-4 fs-4 mb-2 fw-normal font-sans-serif text-warning">
-                                    {{$clubsActifs}}
-                                </div><a class="fw-semi-bold fs--1 text-nowrap"
-                                    href="../app/e-commerce/customers.html">Voir tout<span
-                                        class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="card overflow-hidden" style="min-width: 12rem">
-                            <div class="bg-holder bg-card"
-                                style="background-image:url({{ asset('dashboard/img/icons/spot-illustrations/corner-2.png') }});">
-                            </div>
-                            <!--/.bg-holder-->
-
-                            <div class="card-body position-relative">
-                                <h6>Club Inactif</h6>
-                                <div class="display-4 fs-4 mb-2 fw-normal font-sans-serif text-info">
-                                    {{$clubsInactifs}}
-                                </div><a class="fw-semi-bold fs--1 text-nowrap" href="#">Voir tout
-                                    <span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="card overflow-hidden" style="min-width: 12rem">
-                            <div class="bg-holder bg-card"
-                                style="background-image:url({{ asset('dashboard/img/icons/spot-illustrations/corner-5.png') }});">
-                            </div>
-                            <!--/.bg-holder-->
-
-                            <div class="card-body position-relative">
-                                <h6>Nombre de plongeurs</h6>
-                                <div class="display-4 fs-4 mb-2 fw-normal font-sans-serif text-info">
-                                    {{ $nombrePlongeurs }}
-                                </div><a class="fw-semi-bold fs--1 text-nowrap" href="#">Voir tout
-                                    <span class="fas fa-v-right ms-1" data-fa-transform="down-1"></span> </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="card overflow-hidden" style="min-width: 12rem">
-                            <div class="bg-holder bg-card"
-                                style="background-image:url({{ asset('dashboard/img/icons/spot-illustrations/corner-7.png') }});">
-                            </div>
-                            <!--/.bg-holder-->
-                            <div class="card-body position-relative">
-                                <h6>Nombre d'athlètes</h6>
-                                <div class="display-4 fs-4 mb-2 fw-normal font-sans-serif text-info">
-                                    {{ $nombreAthletes }}
-                                </div><a class="fw-semi-bold fs--1 text-nowrap" href="#">Voir tout
-                                    <span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header pb-0">
