@@ -14,6 +14,9 @@ class ClubController extends Controller
     /**
      * Display a listing of the resource.
      */
+    const region_nord = 'nord'; 
+    const region_centre = 'centre'; 
+    const region_sud = 'sud';
     // public function index()
     // {
     //     $clubs = Club::latest()->get();
@@ -47,21 +50,10 @@ class ClubController extends Controller
     public function store(Request $request)
     {
         try {
-            // Validation des données (optionnel mais recommandé)
-            // $validated = $request->validate([
-            //     'nom' => 'required|string|max:255',
-            //     'ville' => 'required|string|max:255',
-            //     'date_creation' => 'required|date',
-            //     'email' => 'required|email|unique:clubs,email',
-            //     'password' => 'required|string|min:8',
-            //     'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            // ]);
-            // $file = $request->file('document'); // Assurez-vous de récupérer l'objet UploadedFile
-            // if (!$file) {
-            //     throw new \Exception('Aucun fichier sélectionné.');
-            // }
+               
+         
+
             $club = new Club();
-            $club->id = $request->abreviation.'-'.$request->region;
             $club->nom = $request->nom_club;
             $club->email = $request->email_club;
             $club->ville = $request->ville_club;
@@ -90,6 +82,18 @@ class ClubController extends Controller
 
             $club->save();
 
+            $regionCode = '';
+            if (strtolower($club->region) === 'nord') {
+                $regionCode = 'N';
+            } elseif (strtolower($club->region) === 'centre') {
+                $regionCode = 'C';
+            } elseif (strtolower($club->region) === 'sud') {
+                $regionCode = 'S';
+            }
+            
+            $club->custom_id = $club->abreviation . "-" . $regionCode . $club->id;
+            $club->save();
+            
             $user = new User();
             
             $user->nom = $request->nom;

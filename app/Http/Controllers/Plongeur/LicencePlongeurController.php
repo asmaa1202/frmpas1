@@ -31,16 +31,12 @@ class LicencePlongeurController extends Controller
 
             // }
             if ($plongeur->type_club_id == self::type_club_diving) {
-                // Générer un ID incrémental
-            // 
-
+           
                 $lastLicence = Licence::orderBy('id', 'desc')->first();
                 
                 $lastId = $lastLicence ? intval(substr($lastLicence->id, -6)) : 0;
                 $nextId = $lastId + 1;
-                // return response()->json(['message' => $nextId], 200);
     
-                // Formater l'ID (exemple : "FMP2024000001")
                 $id_dl = 'FMP' . date('Y') . str_pad($nextId, 6, '0', STR_PAD_LEFT);
                 // return response()->json(['message' => $id_dl], 200);
 
@@ -49,7 +45,6 @@ class LicencePlongeurController extends Controller
                 $lastId = $lastLicence ? intval(substr($lastLicence->id, -6)) : 0;
                 $nextId = $lastId + 1;
     
-                // Formater l'ID (exemple : "FMP2024000001")
                 $id_dl = 'FMA' . date('Y') . str_pad($nextId, 6, '0', STR_PAD_LEFT);
             }
 

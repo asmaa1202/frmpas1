@@ -229,7 +229,7 @@
  
                 const fileDocument = document.getElementById("document").files[0];
                 if (fileDocument) {
-                    alert(fileDocument);
+                    // alert(fileDocument);
                     formData.append("document", fileDocument);
                 }
                
