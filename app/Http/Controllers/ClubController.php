@@ -63,6 +63,7 @@ class ClubController extends Controller
             $club->cp = $request->code_postal;
             $club->region = $request->region;
             $club->is_federal = $request->is_federal ? 1 : 0;
+            $club->is_active = 1;
 
             $club->types = $request->types;
 
@@ -106,7 +107,7 @@ class ClubController extends Controller
             $user->password = Hash::make($request->password);
             $user->club_id = $club->id;
             $user->role_id = 2;
-           
+            $user->active = 1;
             $user->save();
     
             return response()->json(['message' => 'Le club a été ajouté avec succès'], 200);

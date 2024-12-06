@@ -48,7 +48,7 @@
                 <tbody class="list">
                     <?php $__currentLoopData = $licences; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr id="row<?php echo e($item->id); ?>">
-                            <td class="align-middle text-center"><?php echo e($item->id); ?></td>
+                            <td class="align-middle text-center"><?php echo e($item->custom_id); ?></td>
                             <td class="align-middle white-space-nowrap py-2">
                                 <div class="d-flex d-flex align-items-center">
                                     <div class="avatar avatar-xl me-2">
