@@ -302,7 +302,7 @@ Route::middleware(['auth', 'role:1'])->group(function () {
     Route::post("/dashboard/clubs/modifier/{id}", [ClubController::class, "update"])->name('clubs.update');
     Route::delete('/dashboard/clubs/{id}', [ClubController::class, 'destroy'])->name('clubs.destroy');
     Route::post('/dashboard/clubs/{id}/toggle-activation', [ClubController::class, 'toggleActivation'])->name('clubs.toggleActivation');
-    Route::get('/dashboard/document/{id}',[ClubController::class,'readDocument'])->name('club.read.document');
+    Route::get('/dashboard/documentj/{id}',[ClubController::class,'readDocument'])->name('club.read.document');
 
 
 

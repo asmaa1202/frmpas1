@@ -50,7 +50,7 @@
                 <tbody class="list">
                     @foreach ($licences as $item)
                         <tr id="row{{ $item->id }}">
-                            <td class="align-middle text-center">{{ $item->id }}</td>
+                            <td class="align-middle text-center">{{ $item->custom_id }}</td>
                             <td class="align-middle white-space-nowrap py-2">
                                 <div class="d-flex d-flex align-items-center">
                                     <div class="avatar avatar-xl me-2">

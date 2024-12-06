@@ -58,7 +58,7 @@ class HomeController extends Controller
             'clubPresident' => "Abdelaziz ALAZRAK",
             'clubName' => $club->nom,
             'saison' => $adhesion->annee." - ".$adhesion->annee+1,
-            'number' => "ATT-".$club->abreviation."-".$adhesion->annee,
+            'number' => "ATT".$club->abreviation.$adhesion->annee,
             'today' =>  $adhesion->updated_at->format('d/m/Y'),
 
         ];

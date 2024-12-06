@@ -68,25 +68,19 @@
                     analyses sur cette page.</p>
             </div>
 
-            
-            
-             
-            
                
-                <?php if(isset($active_licence)): ?>
-                  <div class="col-lg-6 d-flex justify-content-end align-items-center flex-wrap">
-                        <button class="btn btn-primary"><i class="bi bi-file-earmark-arrow-down-fill"></i> Autorisation de plongée</button>
-                        &nbsp;&nbsp;
-                        <button class="btn btn-primary"><i class="bi bi-file-earmark-arrow-down-fill"></i> Attestation d'affiliation</button>
-                   </div>
-               
-                <?php elseif(empty($active_licence)): ?>
-                    <div class="col-lg-4 d-flex justify-content-end align-items-center flex-wrap">   
-                        <button class="btn btn-danger signal-button" data-bs-toggle="modal" data-bs-target="#adhesionModal">
-                            Demande d'adhésion
-                        </button>
-                    </div>
-                <?php endif; ?>
+            <?php if(isset($active_licence)): ?>
+                <div class="col-lg-6 d-flex justify-content-end align-items-center flex-wrap">
+                    <a href="<?php echo e(route('attestation.licence', Auth::guard('plongeurs')->user()->id)); ?>" class="btn btn-primary" target="__blank"><i class="bi bi-file-earmark-arrow-down-fill"></i> Attestation de licence</a>
+                </div>
+            
+            <?php elseif(empty($active_licence)): ?>
+                <div class="col-lg-4 d-flex justify-content-end align-items-center flex-wrap">   
+                    <button class="btn btn-danger signal-button" data-bs-toggle="modal" data-bs-target="#licenceModal">
+                        Demande d'adhésion
+                    </button>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 

@@ -33,8 +33,8 @@ class HomePlongeurController extends Controller
 
         // Vérifier si la licence est active pour l'année en cours
         $active_licence = Licence::where('plongeur_id', $plongeurId)
-            ->where('annee', date('Y'))
-            // ->where('annee', 22)
+            // ->where('annee', date('Y'))
+            ->where('annee', 22)
             ->first();
 
         // Calculer les jours restants jusqu'à la fin de l'année

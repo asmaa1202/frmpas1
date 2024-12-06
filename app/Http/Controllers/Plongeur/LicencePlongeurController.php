@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Plongeur;
 use App\Http\Controllers\Controller;
 use App\Models\Adhesion;
 use App\Models\Licence;
-use Illuminate\Http\Request;
+use App\Models\Plongeur;use Illuminate\Http\Request;
 
 class LicencePlongeurController extends Controller
 {
@@ -15,13 +15,47 @@ class LicencePlongeurController extends Controller
     const statut_en_cours = 'en cours'; 
     const statut_accepter = 'accepter'; 
     const statut_refuser = 'refuser'; 
+
+    const type_club_sportif = 1; 
+    const type_club_diving = 2; 
     public function demande_licence(Request $request, $id)
     {
       
         try {
 
             // dd($id);
+            $plongeur = Plongeur::find($id);
+            $id_dl = "";
+            // if($plongeur->type_club_id = self::type_club_diving){
+            //     $id_dl = 'FMP'.date('Y').aleatroire(6 chiffre);
+
+            // }
+            if ($plongeur->type_club_id == self::type_club_diving) {
+                // Générer un ID incrémental
+            // 
+
+                $lastLicence = Licence::orderBy('id', 'desc')->first();
+                
+                $lastId = $lastLicence ? intval(substr($lastLicence->id, -6)) : 0;
+                $nextId = $lastId + 1;
+                // return response()->json(['message' => $nextId], 200);
+    
+                // Formater l'ID (exemple : "FMP2024000001")
+                $id_dl = 'FMP' . date('Y') . str_pad($nextId, 6, '0', STR_PAD_LEFT);
+                // return response()->json(['message' => $id_dl], 200);
+
+            }elseif($plongeur->type_club_id == self::type_club_sportif){
+                $lastLicence = Licence::orderBy('id', 'desc')->first();
+                $lastId = $lastLicence ? intval(substr($lastLicence->id, -6)) : 0;
+                $nextId = $lastId + 1;
+    
+                // Formater l'ID (exemple : "FMP2024000001")
+                $id_dl = 'FMA' . date('Y') . str_pad($nextId, 6, '0', STR_PAD_LEFT);
+            }
+
+
             $demande_licence = new Licence();
+            $demande_licence->custom_id =  $id_dl;
             $demande_licence->plongeur_id = $id;
             $demande_licence->type_id = 1;
             $demande_licence->montant = 1999;
