@@ -139,8 +139,8 @@ Route::get('/les_activités_subaquatiques', [AccueilController::class, 'activite
 Route::get('/commissions', [AccueilController::class, 'commissions'])->name('commissions');
 
 //contact
-// Route::get('/contact', [AccueilController::class, 'contact'])->name('contact');
-// Route::post('contactus/store', [AccueilController::class, 'storeContactUs'])->name('contact.us.store');
+Route::get('/contact', [AccueilController::class, 'contact'])->name('contact');
+Route::post('contactus/store', [AccueilController::class, 'storeContactUs'])->name('contact.us.store');
 
 //sport
 Route::get('/sport/club', [SportController::class, 'club'])->name('sport.club');

@@ -81,7 +81,8 @@ class AccueilController extends Controller
 
     public function contact()
     {
-        return view('contact');
+        // dd('hh');
+        return view('accueil.contact.contact');
     }
 
     public function storeContactUs(Request $request)

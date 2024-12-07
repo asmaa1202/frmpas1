@@ -248,7 +248,7 @@
 													<a href="{{route('accueil')}}#membre">Espace membre</a>
 												</li> --}}
 												<li>
-													{{-- <a href="{{route('contact')}}">Contact</a> --}}
+													<a href="{{route('contact')}}">Contact</a>
 												</li>
 
 											</ul>

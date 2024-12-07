@@ -29,7 +29,7 @@
                                     </li>
                                     
                                     <li>
-                                        
+                                        <a href="<?php echo e(route('contact')); ?>">Contact</a>
                                     </li>
                                 </ul>
                             </li>
