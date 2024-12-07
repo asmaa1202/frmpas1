@@ -79,10 +79,7 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\Plongeur::class,
         ],
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        
     ],
 
     /*

@@ -306,11 +306,32 @@
 							
 								<a class="fs-20 links-maincolor-hover" href="tel:+212661140912"><mark>+212</mark> 6 61 14 09 12</a>
 							
-								<a href="/login" class="login-icon">
-									<i class="fa fa-sign-in" aria-hidden="true"></i>
-								</a>
-								
-						
+						<?php
+							$isGuest = !Auth::check() && !Auth::guard('plongeurs')->check();
+
+							$dashboardRoute = null;
+
+							if (Auth::check()) {
+								$dashboardRoute = match (auth()->user()->role_id) {
+									1 => route('admin.index'),
+									2 => route('club.index'),
+									default => route('welcome'),
+								};
+							} elseif (Auth::guard('plongeurs')->check()) {
+								$dashboardRoute = route('plongeur.dashboard');
+							}
+						?>
+
+						<?php if($isGuest): ?>
+							<a href="<?php echo e(route('login')); ?>" class="login-icon">
+								<i class="fa fa-sign-in" aria-hidden="true"></i>
+							</a>
+						<?php else: ?>
+							<a href="<?php echo e($dashboardRoute); ?>" class="login-icon">
+								<i class="fa fa-sign-in" aria-hidden="true"></i>
+							</a>
+						<?php endif; ?>
+
 						</div>
 					</div>
 					<!-- header toggler -->

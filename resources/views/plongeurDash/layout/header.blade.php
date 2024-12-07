@@ -139,8 +139,8 @@
     </ul>
     <ul class="navbar-nav navbar-nav-icons ms-auto flex-row align-items-center">
         <li class="nav-item dropdown px-2">
-            <a href={{ '#' }} class="btn btn-circle navbar-toggler-humburger-icon navbar-vertical-toggle"
-                data-bs-toggle="tooltip" data-bs-placement="left" title="www.asaam.com">
+            <a href="{{ route('welcome') }}" class="btn btn-circle navbar-toggler-humburger-icon navbar-vertical-toggle"
+                data-bs-toggle="tooltip" data-bs-placement="left" title="www.frmpas.com">
                 <i class="fas fa-home" style="color: rgb(255, 0, 0)"></i>
             </a>
         </li>
