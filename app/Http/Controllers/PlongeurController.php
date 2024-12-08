@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Formation;
 use App\Models\CarnetPlongee;
+use Carbon\Carbon;
 use App\Models\Club;
 use App\Models\Plongeur;
 use App\Models\Level;
@@ -23,18 +24,49 @@ class PlongeurController extends Controller
 
     public function index()
     {
-        $plongeurs = Plongeur::where('type_club_id', self::type_club_diving_id)->orderBy('created_at', 'DESC')->with("niveau")->paginate(100)->map(function ($plongeur) {
-            $plongeur->has_active_licence = $plongeur->hasActiveLicence();
-            return $plongeur;
-        });
-        // $clubs = Club::latest()->get()->map(function ($club) {
-        //     $club->has_active_adhesion = $club->hasActiveAdhesion();
-        //     return $club;
+        // $plongeurs = Plongeur::where('type_club_id', self::type_club_diving_id)->orderBy('created_at', 'DESC')->with("niveau")->paginate(100)->map(function ($plongeur) {
+        //     $plongeur->has_active_licence = $plongeur->hasActiveLicence();
+        //     return $plongeur;
         // });
+        $currentYear = Carbon::now()->year;
+        
+        $plongeurs = Plongeur::whereIn('id', function ($query) use ($currentYear) {
+            $query->select('plongeur_id')
+                  ->from('licences')
+                  ->where('annee', $currentYear);
+                  
+        })->where('type_club_id', self::type_club_diving_id)
+        ->orderBy('created_at', 'DESC')->with("niveau")->paginate(100);
 
         return view("dashboard.pages.plongeur.index")->with("plongeurs", $plongeurs);
     }
 
+    public function plongeurs_inactifs()
+    {
+        // $plongeurs = Plongeur::where('type_club_id', self::type_club_diving_id)->orderBy('created_at', 'DESC')->with("niveau")->paginate(100)->map(function ($plongeur) {
+        //     $plongeur->has_active_licence = $plongeur->hasActiveLicence();
+        //     return $plongeur;
+        // });
+        $currentYear = Carbon::now()->year;
+
+       $plongeurs = Plongeur::where(function ($query) use ($currentYear) {
+            // Plongeurs sans aucune licence
+            $query->whereNotIn('id', function ($subQuery) {
+                $subQuery->select('plongeur_id')->from('licences');
+            })
+            ->orWhereIn('id', function ($subQuery) use ($currentYear) {
+                $subQuery->select('plongeur_id')
+                        ->from('licences')
+                        ->whereYear('annee', '!=', $currentYear);
+            });
+        })
+        ->where('type_club_id', self::type_club_diving_id)
+        ->orderBy('created_at', 'DESC')
+        ->with('niveau')
+        ->paginate(100);
+// dd($plongeurs);
+        return view("dashboard.pages.plongeur.plongeurs-inactifs")->with("plongeurs", $plongeurs);
+    }
     /**
      * Show the form for creating a new resource.
      */

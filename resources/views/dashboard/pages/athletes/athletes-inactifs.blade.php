@@ -79,9 +79,8 @@
                         <td class="align-middle">{{ $item->date_de_naissance }}</td>
                         <td class="align-middle">{{ $item->created_at }}</td>
                         <td class="align-middle"> 
-                            <span class="badge bg-success">Actif</span>
+                            <span class="badge bg-danger">Inactif</span>
                         </td>
-
                         <td class="py-2 align-middle white-space-nowrap text-center">
                             <div class="dropdown font-sans-serif position-static">
                                 <button class="btn btn-link text-600 btn-sm dropdown-toggle btn-reveal" type="button"

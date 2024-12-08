@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Formation;
 use App\Models\CarnetPlongee;
+use Carbon\Carbon;
 use App\Models\Club;
 use App\Models\Plongeur;
 use App\Models\Level;
@@ -11,8 +12,7 @@ use App\Models\User;
 use App\Models\SuiviPrepa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use DB;
-
+use Illuminate\Support\Facades\DB;
 class AthleteController extends Controller
 {
     /**
@@ -24,11 +24,43 @@ class AthleteController extends Controller
     
     public function index()
     {
-        $plongeurs = Plongeur::where('type_club_id', self::type_club_sportif_id)->orderBy('created_at', 'DESC')->with("niveau")->paginate(100);
-
+        // $plongeurs = Plongeur::where('type_club_id', self::type_club_sportif_id)->orderBy('created_at', 'DESC')->with("niveau")->paginate(100);
+        $currentYear = Carbon::now()->year;
+        
+        $plongeurs = Plongeur::whereIn('id', function ($query) use ($currentYear) {
+            $query->select('plongeur_id')
+                  ->from('licences')
+                  ->where('annee', $currentYear);
+                  
+        })->where('type_club_id', self::type_club_sportif_id)
+        ->orderBy('created_at', 'DESC')->with("niveau")->paginate(100);
+        // dd($plongeurs);
         return view("dashboard.pages.athletes.index")->with("plongeurs", $plongeurs);
     }
 
+    public function athletes_inactifs()
+    {
+        // $plongeurs = Plongeur::where('type_club_id', self::type_club_sportif_id)->orderBy('created_at', 'DESC')->with("niveau")->paginate(100);
+        $currentYear = Carbon::now()->year;
+        
+       $plongeurs = Plongeur::where(function ($query) use ($currentYear) {
+          
+            $query->whereNotIn('id', function ($subQuery) {
+                $subQuery->select('plongeur_id')->from('licences');
+            })
+            ->orWhereIn('id', function ($subQuery) use ($currentYear) {
+                $subQuery->select('plongeur_id')
+                        ->from('licences')
+                        ->whereYear('annee', '!=', $currentYear);
+            });
+        })
+        ->where('type_club_id', self::type_club_sportif_id)
+        ->orderBy('created_at', 'DESC')
+        ->with('niveau')
+        ->paginate(100);
+
+        return view("dashboard.pages.athletes.athletes-inactifs")->with("plongeurs", $plongeurs);
+    }
     /**
      * Show the form for creating a new resource.
      */

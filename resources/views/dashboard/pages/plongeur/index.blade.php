@@ -79,9 +79,7 @@
                         <td class="align-middle">{{ $item->created_at }}</td>
                         {{-- <td class="align-middle">{{ $item->created_at }}</td> --}}
                         <td class="align-middle"> 
-                            {!! $item->has_active_licence 
-                                ? '<span class="badge bg-success">Actif</span>' 
-                                : '<span class="badge bg-danger">Inactif</span>' !!}
+                            <span class="badge bg-success">Actif</span>
                         </td>
 
                         <td class="py-2 align-middle white-space-nowrap text-center">

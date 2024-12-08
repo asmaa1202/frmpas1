@@ -279,6 +279,7 @@ Route::middleware(['auth', 'role:1'])->group(function () {
 
     // - plongeur
     Route::get("/dashboard/plongeurs", [PlongeurController::class, 'index'])->name('plongeurs.index');
+    Route::get("/dashboard/plongeurs-inactifs", [PlongeurController::class, 'plongeurs_inactifs'])->name('plongeurs.inactifs');
     Route::get("/dashboard/plongeurs/api", [PlongeurController::class, 'getAllPlongeurs']);
     Route::get("/dashboard/plongeurs/niveau/{id_niveau}", [PlongeurController::class, 'getPlongeursParNiveau']);
     Route::get("/dashboard/plongeurs/{id}/details", [PlongeurController::class, 'show'])->name('plongeurs.show');
@@ -310,6 +311,7 @@ Route::middleware(['auth', 'role:1'])->group(function () {
 
     // - Athlète
     Route::get("/dashboard/athletes", [AthleteController::class, 'index'])->name('athletes.index');
+    Route::get("/dashboard/athletes-inactifs", [AthleteController::class, 'athletes_inactifs'])->name('athletes.inactifs');
     Route::get("/dashboard/athletes/ajouter", [AthleteController::class, 'create'])->name('athletes.create');
     Route::post("/dashboard/athletes", [AthleteController::class, 'store'])->name('athletes.store');
     Route::get("/dashboard/athletes/modifier/{club}", [AthleteController::class, 'edit'])->name('athletes.edit');
