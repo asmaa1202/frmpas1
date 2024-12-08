@@ -40,14 +40,33 @@
                             <span class="nav-link-text ps-2">Utilisateurs</span>
                         </div>
                     </a>
-                    <a class="nav-link" href="{{ route('clubs.index') }}" role="button" data-bs-toggle=""
+                    {{-- <a class="nav-link" href="{{ route('clubs.index') }}" role="button" data-bs-toggle=""
                         aria-expanded="false">
                         <div class="d-flex align-items-center"><span class="nav-link-icon">
                                 <i class="fas fa-store"></i>
                             </span>
                             <span class="nav-link-text ps-2">Clubs</span>
                         </div>
+                    </a> --}}
+                    <a class="nav-link dropdown-indicator" href="#club" role="button" data-bs-toggle="collapse"
+                        aria-expanded="true" aria-controls="club">
+                        <div class="d-flex align-items-center"><span class="nav-link-icon">
+                            <i class="fas fa-store"></i>
+                        </span>
+                        <span class="nav-link-text ps-2">Clubs</span></div>
                     </a>
+                    <ul class="nav collapse show" id="club" style="">
+                        <li class="nav-item"><a class="nav-link" href="{{ route('clubs.index') }}">
+                                <div class="d-flex align-items-center"><span class="nav-link-text ps-2">Liste Clubs</span>
+                                </div>
+                            </a><!-- more inner pages-->
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('clubs.inactifs') }}">
+                                <div class="d-flex align-items-center"><span class="nav-link-text ps-2">Clubs Inactifs</span></div>
+                            </a><!-- more inner pages-->
+                        </li>
+                    </ul>
+
                     <a class="nav-link dropdown-indicator" href="#plongeur" role="button" data-bs-toggle="collapse"
                         aria-expanded="true" aria-controls="plongeur">
                         <div class="d-flex align-items-center"><span class="nav-link-icon">

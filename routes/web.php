@@ -322,6 +322,7 @@ Route::middleware(['auth', 'role:1'])->group(function () {
 
     // - clubs
     Route::get("/dashboard/clubs", [ClubController::class, 'index'])->name('clubs.index');
+    Route::get("/dashboard/clubs-inactifs", [ClubController::class, 'clubsInactifs'])->name('clubs.inactifs');
     Route::get("/dashboard/clubs/ajouter", [ClubController::class, 'create'])->name('clubs.create');
     Route::post("/dashboard/clubs", [ClubController::class, 'store'])->name('clubs.store');
     Route::get("/dashboard/clubs/modifier/{club}", [ClubController::class, 'edit'])->name('clubs.edit');

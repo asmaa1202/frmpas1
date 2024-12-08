@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Club;
 use App\Models\TypeClub;
 use App\Models\User;
@@ -25,15 +26,42 @@ class ClubController extends Controller
 
     public function index()
     {
-        $clubs = Club::latest()->get()->map(function ($club) {
-            $club->has_active_adhesion = $club->hasActiveAdhesion();
-            return $club;
-        });
+
+        $currentYear = Carbon::now()->year;
+        
+        $clubs = Club::whereIn('id', function ($query) use ($currentYear) {
+            $query->select('club_id')
+                  ->from('adhesions')
+                  ->where('annee', $currentYear);
+                  
+        })
+        // ->where('type_club_id', self::type_club_diving_id)
+        ->latest()->paginate(100);
 
         return view("dashboard.pages.clubs.club", compact('clubs'));
     }
 
+    public function clubsInactifs()
+    {
 
+        $currentYear = Carbon::now()->year;
+        
+        $clubs = Club::where(function ($query) use ($currentYear) {
+            // Plongeurs sans aucune licence
+            $query->whereNotIn('id', function ($subQuery) {
+                $subQuery->select('club_id')->from('adhesions');
+            })
+            ->orWhereIn('id', function ($subQuery) use ($currentYear) {
+                $subQuery->select('club_id')
+                        ->from('adhesions')
+                        ->whereYear('annee', '!=', $currentYear);
+            });
+        })
+        ->orderBy('created_at', 'DESC')
+        ->paginate(100);
+
+        return view("dashboard.pages.clubs.club", compact('clubs'));
+    }
     /**
      * Show the form for creating a new resource.
      */
