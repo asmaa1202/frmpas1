@@ -64,7 +64,7 @@ class ClubController extends Controller
         ->orderBy('created_at', 'DESC')
         ->paginate(100);
 
-        return view("dashboard.pages.clubs.club", compact('clubs'));
+        return view("dashboard.pages.clubs.club-inactifs", compact('clubs'));
     }
     /**
      * Show the form for creating a new resource.

@@ -47,9 +47,9 @@
                         <th style="min-width: 280px;">E-mail</th>
                         <th style="min-width: 180px;">Ville</th>
                         <th style="min-width: 180px;">Document</th>
-                        <th style="min-width: 180px;">Adhésion</th>
+                        {{-- <th style="min-width: 180px;">Adhésion</th> --}}
                         <th style="min-width: 180px;">Crée le</th>
-                        <th style="min-width: 180px;">Etat du compte</th>
+                        <th style="min-width: 180px;">Adhésion</th>
                         <th style="width: 80px;">Actions</th>
                     </tr>
                 </thead>
@@ -75,18 +75,16 @@
                                 <svg class="svg-inline--fa fa-file fa-w-12 text-900 fs-2" aria-hidden="true" focusable="false" data-prefix="far" data-icon="file" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M369.9 97.9L286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 128H256V51.9l76.1 76.1zM48 464V48h160v104c0 13.3 10.7 24 24 24h104v288H48z"></path></svg>
                             </a></td>
 
-                        <td class="align-middle"> 
+                        {{-- <td class="align-middle"> 
                             {!! $club->has_active_adhesion 
                                 ? '<span class="badge bg-success">Actif</span>' 
                                 : '<span class="badge bg-danger">Inactif</span>' !!}
-                        </td>
+                        </td> --}}
                         
                         <td class="align-middle">{{ $club->date_creation }}</td>
 
                         <td class="align-middle"> 
-                            {!! $club->is_active 
-                                ? '<span class="badge bg-success">Actif</span>' 
-                                : '<span class="badge bg-danger">Inactif</span>' !!}
+                            <span class="badge bg-danger">Inactif</span>
                         </td>
 
                         <td class="py-2 align-middle white-space-nowrap text-center">
