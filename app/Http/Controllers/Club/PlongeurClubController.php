@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Club;
 
+use Carbon\Carbon;
 use App\Http\Controllers\Controller;
 use App\Models\Level;
 use App\Models\Plongeur;
@@ -23,11 +24,49 @@ class PlongeurClubController extends Controller
 
     public function index()
     {
-      $plongeurs = Plongeur::where('type_club_id', self::type_club_diving_id)->where('club_id', Auth::user()->club->id)->latest()->get();
+    //   $plongeurs = Plongeur::where('type_club_id', self::type_club_diving_id)->where('club_id', Auth::user()->club->id)->latest()->get();
+    
+      $currentYear = Carbon::now()->year;
+        
+      $plongeurs = Plongeur::where('club_id', Auth::user()->club->id)
+            ->whereIn('id', function ($query) use ($currentYear) {
+            $query->select('plongeur_id')
+                ->from('licences')
+                ->where('statut', self::statut_accepter)
+                ->where('annee', $currentYear);
+                
+            })->where('type_club_id', self::type_club_diving_id)
+            ->orderBy('created_at', 'DESC')->with("niveau")->paginate(100);
+
       return view('clubDash.pages.plongeur.index', compact('plongeurs'));
      
     }
 
+    public function plongeurs_inactifs()
+    {
+    //   $plongeurs = Plongeur::where('type_club_id', self::type_club_diving_id)->where('club_id', Auth::user()->club->id)->latest()->get();
+    
+      $currentYear = Carbon::now()->year;
+
+      $plongeurs = Plongeur::where('club_id', Auth::user()->club->id)
+           ->where(function ($query) use ($currentYear) {
+           $query->whereNotIn('id', function ($subQuery) {
+               $subQuery->select('plongeur_id')->from('licences');
+           })
+           ->orWhereIn('id', function ($subQuery) use ($currentYear) {
+               $subQuery->select('plongeur_id')
+                       ->from('licences')
+                 ->where('statut', self::statut_refuser)
+                 ->whereYear('annee', '!=', $currentYear);
+           });
+       })
+       ->where('type_club_id', self::type_club_diving_id)
+       ->orderBy('created_at', 'DESC')
+       ->with('niveau')
+       ->paginate(100);
+      return view('clubDash.pages.plongeur.plongeur_inactifs', compact('plongeurs'));
+     
+    }
     /**
      * Show the form for creating a new resource.
      */

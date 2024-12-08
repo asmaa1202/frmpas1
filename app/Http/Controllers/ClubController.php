@@ -18,6 +18,8 @@ class ClubController extends Controller
     const region_nord = 'nord'; 
     const region_centre = 'centre'; 
     const region_sud = 'sud';
+    const statut_accepter = 'accepter';
+    const statut_refuser = 'refuser';
     // public function index()
     // {
     //     $clubs = Club::latest()->get();
@@ -32,6 +34,7 @@ class ClubController extends Controller
         $clubs = Club::whereIn('id', function ($query) use ($currentYear) {
             $query->select('club_id')
                   ->from('adhesions')
+                  ->where('statut', self::statut_accepter)
                   ->where('annee', $currentYear);
                   
         })
@@ -54,6 +57,7 @@ class ClubController extends Controller
             ->orWhereIn('id', function ($subQuery) use ($currentYear) {
                 $subQuery->select('club_id')
                         ->from('adhesions')
+                        ->whereYear('statut', self::statut_refuser)
                         ->whereYear('annee', '!=', $currentYear);
             });
         })

@@ -21,7 +21,9 @@ class AthleteController extends Controller
 
     const type_club_sportif_id = 1; 
     const type_club_diving_id = 2; 
-    
+    const statut_accepter = 'accepter';
+    const statut_refuser = 'refuser';
+
     public function index()
     {
         // $plongeurs = Plongeur::where('type_club_id', self::type_club_sportif_id)->orderBy('created_at', 'DESC')->with("niveau")->paginate(100);
@@ -30,6 +32,7 @@ class AthleteController extends Controller
         $plongeurs = Plongeur::whereIn('id', function ($query) use ($currentYear) {
             $query->select('plongeur_id')
                   ->from('licences')
+                  ->where('statut', self::statut_accepter)
                   ->where('annee', $currentYear);
                   
         })->where('type_club_id', self::type_club_sportif_id)
@@ -51,7 +54,8 @@ class AthleteController extends Controller
             ->orWhereIn('id', function ($subQuery) use ($currentYear) {
                 $subQuery->select('plongeur_id')
                         ->from('licences')
-                        ->whereYear('annee', '!=', $currentYear);
+                  ->where('statut', self::statut_refuser)
+                  ->whereYear('annee', '!=', $currentYear);
             });
         })
         ->where('type_club_id', self::type_club_sportif_id)

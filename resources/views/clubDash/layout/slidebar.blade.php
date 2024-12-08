@@ -40,14 +40,33 @@
                             <span class="nav-link-text ps-2">Mon compte</span>
                         </div>
                     </a>
-                    <a class="nav-link" href="{{ route('club.plongeurs.index') }}" role="button" data-bs-toggle=""
+                    {{-- <a class="nav-link" href="{{ route('club.plongeurs.index') }}" role="button" data-bs-toggle=""
                     aria-expanded="false">
                     <div class="d-flex align-items-center"><span class="nav-link-icon">
                             <i class="fas fa-user-graduate"></i>
                         </span>
                         <span class="nav-link-text ps-2">Plongeurs</span>
-                    </div>
-                    <a class="nav-link" href="{{ route('club.athletes.index') }}" role="button" data-bs-toggle=""
+                    </div> --}}
+                    <a class="nav-link dropdown-indicator" href="#plongeur" role="button" data-bs-toggle="collapse"
+                        aria-expanded="true" aria-controls="plongeur">
+                        <div class="d-flex align-items-center"><span class="nav-link-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </span>
+                        <span class="nav-link-text ps-2">Plongeurs</span></div>
+                    </a>
+                    <ul class="nav collapse show" id="plongeur" style="">
+                        <li class="nav-item"><a class="nav-link" href="{{ route('club.plongeurs.index') }}">
+                                <div class="d-flex align-items-center"><span class="nav-link-text ps-2">Liste Plongeurs</span>
+                                </div>
+                            </a><!-- more inner pages-->
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('club.plongeurs.inactifs') }}">
+                                <div class="d-flex align-items-center"><span class="nav-link-text ps-2">Plongeurs Inactifs</span></div>
+                            </a><!-- more inner pages-->
+                        </li>
+                    </ul>
+
+                    {{-- <a class="nav-link" href="{{ route('club.athletes.index') }}" role="button" data-bs-toggle=""
                     aria-expanded="false">
                         <div class="d-flex align-items-center"><span class="nav-link-icon">
                                 <i class="fas fa-user-graduate"></i>
@@ -55,7 +74,25 @@
                             <span class="nav-link-text ps-2">Athlètes</span>
                         </div>
 
+                    </a> --}}
+                    <a class="nav-link dropdown-indicator" href="#athletes" role="button" data-bs-toggle="collapse"
+                        aria-expanded="true" aria-controls="athletes">
+                        <div class="d-flex align-items-center"><span class="nav-link-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </span>
+                        <span class="nav-link-text ps-2">Athlètes</span></div>
                     </a>
+                    <ul class="nav collapse show" id="athletes" style="">
+                        <li class="nav-item"><a class="nav-link" href="{{ route('club.athletes.index') }}">
+                                <div class="d-flex align-items-center"><span class="nav-link-text ps-2">Liste Athlètes</span>
+                                </div>
+                            </a><!-- more inner pages-->
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('club.athletes.inactifs') }}">
+                                <div class="d-flex align-items-center"><span class="nav-link-text ps-2">Athlètes Inactifs</span></div>
+                            </a><!-- more inner pages-->
+                        </li>
+                    </ul>
 
                     <a class="nav-link dropdown-indicator collapsed" href="#email" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="email">
                         <div class="d-flex align-items-center"><span class="nav-link-icon">

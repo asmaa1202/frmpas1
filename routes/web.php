@@ -420,6 +420,7 @@ Route::group(['prefix'=>'club', 'middleware' => ['auth','role:2']],function () {
 
         // plongeur
         Route::get("/plongeurs", [PlongeurClubController::class, "index"])->name('club.plongeurs.index');
+        Route::get("/plongeurs-inactifs", [PlongeurClubController::class, "plongeurs_inactifs"])->name('club.plongeurs.inactifs');
         Route::get("/plongeurs/ajouter", [PlongeurClubController::class, 'create'])->name('club.plongeurs.create');
         Route::post("/plongeurs", [PlongeurClubController::class, "store"])->name('club.plongeurs.store');
         Route::post("/plongeurs/modifier/{id}", [PlongeurClubController::class, "update"])->name('club.plongeurs.update');
@@ -428,6 +429,7 @@ Route::group(['prefix'=>'club', 'middleware' => ['auth','role:2']],function () {
 
         // athletes
         Route::get("/athletes", [AthleteClubController::class, "index"])->name('club.athletes.index');
+        Route::get("/athletes-inactifs", [AthleteClubController::class, "athletes_inactifs"])->name('club.athletes.inactifs');
         Route::get("/athletes/ajouter", [AthleteClubController::class, 'create'])->name('club.athletes.create');
         Route::post("/athletes", [AthleteClubController::class, "store"])->name('club.athletes.store');
         Route::post("/athletes/modifier/{id}", [AthleteClubController::class, "update"])->name('club.athletes.update');
