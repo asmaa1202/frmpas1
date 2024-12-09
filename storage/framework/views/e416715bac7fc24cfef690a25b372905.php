@@ -133,8 +133,8 @@
     <ul class="navbar-nav navbar-nav-icons ms-auto flex-row align-items-center">
         <li class="nav-item dropdown px-2">
 
-            <a href=<?php echo e('https://diver.cdma-solution.ma'); ?> class="btn btn-circle navbar-toggler-humburger-icon navbar-vertical-toggle"
-                data-bs-toggle="tooltip" data-bs-placement="left" title="www.diver.cdma-solution.ma">
+            <a href="<?php echo e(route('welcome')); ?>" class="btn btn-circle navbar-toggler-humburger-icon navbar-vertical-toggle"
+                data-bs-toggle="tooltip" data-bs-placement="left" title="www.frmpas.ma">
                 <i class="fas fa-home" style="color: rgb(255, 0, 0)"></i>
             </a>
         </li>

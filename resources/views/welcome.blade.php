@@ -223,10 +223,10 @@
 								<nav class="top-nav">
 									<ul class="nav sf-menu">
 										<li class="active">
-											<a href="{{route('frmpas.about')}}">Frmpas Family</a>
+											<a href="{{route('frmpas.about')}}">Frmpas Organisation</a>
 											<ul>
                                                 <li>
-													<a href="{{route('frmpas.about')}}">Frmpas</a>
+													<a href="{{route('frmpas.about')}}">Historique</a>
 												</li>
 												<li>
 													<a href="{{route('frmpas.family')}}">Frmpas Family</a>
@@ -235,9 +235,7 @@
 													<a href="{{route('commissions')}}">Commissions</a>
 												</li>
 			
-												<li>
-													<a href="{{route('activites.subaquatiques')}}">Découvrir les activités subaquatiques</a>
-												</li> 
+												
 												{{-- <li>
 													<a href="{{route('accueil')}}#formations">Formations et certifications</a>
 												</li> --}}
@@ -253,17 +251,47 @@
 
 											</ul>
 										</li>
+										<li>
+											<a href="{{route('frmpas.about')}}">Frmpas</a>
+											<ul>
+                                                <li>
+													<a href="{{route('frmpas.about')}}">Equipe National</a>
+												</li>
+												<li>
+													<a href="{{route('frmpas.family')}}">Club Sportif</a>
+												</li>
+												<li>
+													<a href="{{route('commissions')}}">Club Plongée</a>
+												</li>
+			
+												<li>
+													<a href="{{route('contact')}}">Entraineur</a>
+												</li>
+												<li>
+													<a href="{{route('contact')}}">Juge</a>
+												</li>
+												<li>
+													<a href="{{route('contact')}}">Competition</a>
+												</li>
 
+											</ul>
+										</li>
 										<!-- Sport -->
 										<li>
-											<a href="#">Plongée sportive en piscine</a>
+											<a href="#">Sport</a>
 											<ul>
 
 												<li>
-													<a href="{{route('sport.club')}}">Club Sportif</a>
+													<a href="{{route('sport.club')}}">FINSWIMMING</a>
 												</li>
 												<li>
-													<a href="{{route('sport.competition')}}">Competition FRMPAS</a>
+													<a href="{{route('sport.competition')}}">SPORT DIVING</a>
+												</li>
+												<li>
+													<a href="{{route('sport.competition')}}">VISUAL</a>
+												</li>
+												<li>
+													<a href="{{route('sport.competition')}}">FREEDIVING</a>
 												</li>
 											
 											</ul>
@@ -285,6 +313,12 @@
 													<a href="{{route('plongee.formation')}}">Formation FRMPAS</a>
 												</li>
 											</ul>
+										</li>
+										
+										<li>
+											<a href="#">Environement et Science</a>
+
+											
 										</li>
 										<!-- eof features -->
 
@@ -313,7 +347,7 @@
 								<!-- eof main nav -->
 							</div>
 							
-								<a class="fs-20 links-maincolor-hover" href="tel:+212661140912"><mark>+212</mark> 6 61 14 09 12</a>
+								<!--<a class="fs-20 links-maincolor-hover" href="tel:+212661140912"><mark>+212</mark> 6 61 14 09 12</a>-->
 							
 						@php
 							$isGuest = !Auth::check() && !Auth::guard('plongeurs')->check();
