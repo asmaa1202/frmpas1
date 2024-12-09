@@ -337,9 +337,9 @@
 								</nav>
 								<!-- eof main nav -->
 							</div>
-							
+						
 								<!--<a class="fs-20 links-maincolor-hover" href="tel:+212661140912"><mark>+212</mark> 6 61 14 09 12</a>-->
-							
+							<div style="width: 150px"></div>
 						<?php
 							$isGuest = !Auth::check() && !Auth::guard('plongeurs')->check();
 
