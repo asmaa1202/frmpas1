@@ -70,7 +70,7 @@
                     </div>
                     <div class="col-lg-6">
                         <label class="form-label" for="email">Email :</label>
-                        <input class="form-control" id="email" type="email" />
+                        <input class="form-control" id="email1" type="email" />
 
                     </div>
                     <div class="col-lg-6">
@@ -120,7 +120,7 @@
                 formData.append("image", file);
                 formData.append("nom", document.getElementById("nom").value);
                 formData.append("prenom", document.getElementById("prenom").value);
-                formData.append("email", document.getElementById("email").value);
+                formData.append("email", document.getElementById("email1").value);
                 formData.append("password", document.getElementById("password").value);
                 formData.append("password_confirmation", document.getElementById("password_confirmation").value);
 

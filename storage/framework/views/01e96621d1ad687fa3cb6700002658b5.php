@@ -137,7 +137,7 @@ if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>" id="email" name="email"
+unset($__errorArgs, $__bag); ?>" id="email1" name="email"
                                 value="<?php echo e(old('email', $utilisateur->email)); ?>">
                             <?php $__errorArgs = ['email'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -221,7 +221,7 @@ unset($__errorArgs, $__bag); ?>
                 formData.append("image", file);
                 formData.append("nom", document.getElementById("nom").value);
                 formData.append("prenom", document.getElementById("prenom").value);
-                formData.append("email", document.getElementById("email").value);
+                formData.append("email", document.getElementById("email1").value);
                 formData.append("password", document.getElementById("password").value);
                 formData.append("password_confirmation", document.getElementById("password_confirmation").value);
                 const toastTrigger = document.getElementById('liveToastBtn');
@@ -258,6 +258,7 @@ unset($__errorArgs, $__bag); ?>
                 }
 
             } catch (err) {
+                // alert(err);
                 const notif =
                     `<div class="toast-container position-fixed bottom-0 end-0 p-3">
                             <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">

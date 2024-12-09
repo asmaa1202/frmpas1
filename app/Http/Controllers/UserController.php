@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-
+use Illuminate\Validation\Rule;
 class UserController extends Controller
 {
     /**
@@ -127,9 +127,14 @@ class UserController extends Controller
         $request->validate([
             "nom" => "required|string",
             "prenom" => "required|string",
-            'email' => 'required|email|max:255',
-            "password" => "confirmed|min:6|nullable",
-            'password_confirmation' => 'min:6|nullable',
+                'email' => [
+                'required',
+                'email',
+                'max:255',
+                Rule::unique('users')->ignore($id),
+             ],
+            "password" => "confirmed|nullable",
+            'password_confirmation' => 'nullable',
         ], [
             "nom.required" => "Nom est obligatoire",
             "prenom.required" => "Prénom est obligatoire",
@@ -154,7 +159,7 @@ class UserController extends Controller
                 $image = $request->file('image');
                 $nomImage = time() . '.' . $image->getClientOriginalExtension();
                 $image->move(public_path('admin/uploads/images/utilisateurs/'), $nomImage);
-                $user->image = 'https://diver.cdma-solution.ma' . '/admin/uploads/images/utilisateurs/' . $nomImage;
+                $user->image = '/admin/uploads/images/utilisateurs/' . $nomImage;
             }
             $user->save();
 
@@ -254,7 +259,7 @@ class UserController extends Controller
             "nom" => "required|string",
             "prenom" => "required|string",
             "email" => "required|email|max:255",
-            "password" => "nullable|confirmed|min:6",
+            "password" => "nullable|confirmed",
         ];
 
         $messages = [
@@ -267,15 +272,15 @@ class UserController extends Controller
         ];
 
         // Ajouter des règles supplémentaires si l'utilisateur est lié à un club
-        // if ($user->club_id) {
-        //     $rules = array_merge($rules, [
-        //         "nom_club" => "required|string",
-        //         // "date_creation" => "required|date",
-        //         // "tel_club" => "nullable|string",
-        //         // "type_sportifs" => "nullable|array",
-        //         // "is_federal" => "nullable|boolean",
-        //     ]);
-        // }
+        if ($user->club_id) {
+            $rules = array_merge($rules, [
+                "nom_club" => "required|string",
+                // "date_creation" => "required|date",
+                // "tel_club" => "nullable|string",
+                // "type_sportifs" => "nullable|array",
+                // "is_federal" => "nullable|boolean",
+            ]);
+        }
 
         // Valider les données
         $request->validate($rules, $messages);
@@ -297,9 +302,10 @@ class UserController extends Controller
                 $user->club->tel = $request->tel_club;
                 $user->club->types = $request->type_sportifs;
                 $user->club->is_federal = $request->is_federal ? 1 : 0;
+                $user->club->save();
             }
 
-            $user->club->save();
+           
             $user->save();
 
             return response()->json(['message' => "Votre compte a été modifié avec succès"], 200);

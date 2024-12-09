@@ -40,33 +40,65 @@
                             <span class="nav-link-text ps-2">Utilisateurs</span>
                         </div>
                     </a>
-                    <a class="nav-link" href="<?php echo e(route('clubs.index')); ?>" role="button" data-bs-toggle=""
-                        aria-expanded="false">
-                        <div class="d-flex align-items-center"><span class="nav-link-icon">
-                                <i class="fas fa-store"></i>
-                            </span>
-                            <span class="nav-link-text ps-2">Clubs</span>
-                        </div>
-                    </a>
-                    <a class="nav-link" href="<?php echo e(route('plongeurs.index')); ?>" role="button" data-bs-toggle=""
-                        aria-expanded="false">
-                        <div class="d-flex align-items-center"><span class="nav-link-icon">
-                                <i class="fas fa-user-graduate"></i>
-                            </span>
-                            <span class="nav-link-text ps-2">Plongeurs</span>
-                        </div>
-                    </a>
-
-                    <a class="nav-link" href="<?php echo e(route('athletes.index')); ?>" role="button" data-bs-toggle=""
-                        aria-expanded="false">
-                        <div class="d-flex align-items-center"><span class="nav-link-icon">
-                                <i class="fas fa-user-graduate"></i>
-                            </span>
-                            <span class="nav-link-text ps-2">Athlètes</span>
-                        </div>
-                    </a>
-
                     
+                    <a class="nav-link dropdown-indicator" href="#club" role="button" data-bs-toggle="collapse"
+                        aria-expanded="true" aria-controls="club">
+                        <div class="d-flex align-items-center"><span class="nav-link-icon">
+                            <i class="fas fa-store"></i>
+                        </span>
+                        <span class="nav-link-text ps-2">Clubs</span></div>
+                    </a>
+                    <ul class="nav collapse show" id="club" style="">
+                        <li class="nav-item"><a class="nav-link" href="<?php echo e(route('clubs.index')); ?>">
+                                <div class="d-flex align-items-center"><span class="nav-link-text ps-2">Liste Clubs</span>
+                                </div>
+                            </a><!-- more inner pages-->
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="<?php echo e(route('clubs.inactifs')); ?>">
+                                <div class="d-flex align-items-center"><span class="nav-link-text ps-2">Clubs Inactifs</span></div>
+                            </a><!-- more inner pages-->
+                        </li>
+                    </ul>
+
+                    <a class="nav-link dropdown-indicator" href="#plongeur" role="button" data-bs-toggle="collapse"
+                        aria-expanded="true" aria-controls="plongeur">
+                        <div class="d-flex align-items-center"><span class="nav-link-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </span>
+                        <span class="nav-link-text ps-2">Plongeurs</span></div>
+                    </a>
+                    <ul class="nav collapse show" id="plongeur" style="">
+                        <li class="nav-item"><a class="nav-link" href="<?php echo e(route('plongeurs.index')); ?>">
+                                <div class="d-flex align-items-center"><span class="nav-link-text ps-2">Liste Plongeurs</span>
+                                </div>
+                            </a><!-- more inner pages-->
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="<?php echo e(route('plongeurs.inactifs')); ?>">
+                                <div class="d-flex align-items-center"><span class="nav-link-text ps-2">Plongeurs Inactifs</span></div>
+                            </a><!-- more inner pages-->
+                        </li>
+                    </ul>
+
+                    <a class="nav-link dropdown-indicator" href="#athlète" role="button" data-bs-toggle="collapse"
+                        aria-expanded="true" aria-controls="athlète">
+                        <div class="d-flex align-items-center"><span class="nav-link-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </span>
+                        <span class="nav-link-text ps-2">Athlètes</span></div>
+                    </a>
+                    <ul class="nav collapse show" id="athlète" style="">
+                        <li class="nav-item"><a class="nav-link" href="<?php echo e(route('athletes.index')); ?>">
+                                <div class="d-flex align-items-center"><span class="nav-link-text ps-2">Liste Athlètes</span>
+                                </div>
+                            </a><!-- more inner pages-->
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="<?php echo e(route('athletes.inactifs')); ?>">
+                                <div class="d-flex align-items-center"><span class="nav-link-text ps-2">Athlètes Inactifs</span></div>
+                            </a><!-- more inner pages-->
+                        </li>
+                    </ul>
+
+
                     <a class="nav-link dropdown-indicator" href="#email" role="button" data-bs-toggle="collapse"
                         aria-expanded="true" aria-controls="email">
                         <div class="d-flex align-items-center"><span class="nav-link-icon"><svg

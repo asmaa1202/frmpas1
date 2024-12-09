@@ -100,7 +100,7 @@
                     <div class="col-lg-6">
                         <label class="form-label" for="email">E-mail :</label>
                         <div class="has-validation">
-                            <input class="form-control @error('email') is-invalid @enderror" id="email" name="email"
+                            <input class="form-control @error('email') is-invalid @enderror" id="email1" name="email"
                                 value="{{ old('email', $utilisateur->email) }}">
                             @error('email')
                             <div class="invalid-feedback">
@@ -161,7 +161,7 @@
                 formData.append("image", file);
                 formData.append("nom", document.getElementById("nom").value);
                 formData.append("prenom", document.getElementById("prenom").value);
-                formData.append("email", document.getElementById("email").value);
+                formData.append("email", document.getElementById("email1").value);
                 formData.append("password", document.getElementById("password").value);
                 formData.append("password_confirmation", document.getElementById("password_confirmation").value);
                 const toastTrigger = document.getElementById('liveToastBtn');
@@ -198,6 +198,7 @@
                 }
 
             } catch (err) {
+                // alert(err);
                 const notif =
                     `<div class="toast-container position-fixed bottom-0 end-0 p-3">
                             <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
