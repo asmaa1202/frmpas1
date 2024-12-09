@@ -1,7 +1,7 @@
 @extends('dashboard.layout.master')
 
 @section('title')
-<title>FRMPAS - Ajouter club</title>
+<title>FRMPAS - Modifier Club</title>
 @endsection
 
 @section('content')
@@ -224,7 +224,7 @@
         async function editclub(id) {
             try {
                 // image.src = 'http://localhost:8000/dashboard/img/team/avatar.png';
-alert(document.getElementById("is_federal").checked);
+// alert(document.getElementById("is_federal").checked);
                 let formData = new FormData();
                 formData.append("image_club", file);
                 formData.append("nom_club", document.getElementById("nom_club").value);

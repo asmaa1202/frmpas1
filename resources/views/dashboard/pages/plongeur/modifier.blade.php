@@ -143,8 +143,7 @@
                             <input class="form-check-input" id="telephone_fixe_diffusable" type="checkbox"
                                 {{ $plongeur->telephone_fixe_diffusable ? 'checked' : '' }} />
                             <label class="form-check-label" for="telephone_fixe_diffusable">Diffusable aux autres
-                                membres
-                                de l'ASAAM</label>
+                                membres de FRMPAS</label>
                         </div>
                     </div>
                     <div class="col-sm-6 mt-3">
@@ -152,8 +151,7 @@
                             <input class="form-check-input" id="telephone_portable_diffusable" type="checkbox"
                                 {{ $plongeur->telephone_portable_diffusable ? 'checked' : '' }} />
                             <label class="form-check-label" for="telephone_portable_diffusable">Diffusable aux autres
-                                membres de
-                                l'ASAAM</label>
+                                membres de FRMPAS</label>
                         </div>
                     </div>
                 </div>
