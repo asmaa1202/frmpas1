@@ -75,7 +75,7 @@
                             </a></td>
 
                         
-                        <td class="align-middle">{{ $club->date_creation }}</td>
+                        <td class="align-middle">{{ $club->date_creation ?? '--'}}</td>
 
                         <td class="align-middle"> 
                             <span class="badge bg-success">Actif</span>

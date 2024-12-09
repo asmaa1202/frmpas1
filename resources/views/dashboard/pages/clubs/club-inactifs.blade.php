@@ -81,7 +81,7 @@
                                 : '<span class="badge bg-danger">Inactif</span>' !!}
                         </td> --}}
                         
-                        <td class="align-middle">{{ $club->date_creation }}</td>
+                        <td class="align-middle">{{ $club->date_creation ?? '--'}}</td>
 
                         <td class="align-middle"> 
                             <span class="badge bg-danger">Inactif</span>
@@ -147,7 +147,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="d-flex justify-content-center mt-3">
+        {{-- <div class="d-flex justify-content-center mt-3">
             <button class="btn btn-sm btn-falcon-default me-1" type="button" title="Previous"
                 data-list-pagination="prev">
                 <span class="fas fa-chevron-left"></span>
@@ -155,7 +155,7 @@
             <ul class="pagination mb-0"></ul>
             <button class="btn btn-sm btn-falcon-default ms-1" type="button" title="Next"
                 data-list-pagination="next"><span class="fas fa-chevron-right"></span></button>
-        </div>
+        </div> --}}
     </div>
 </div>
 <div id="notification"></div>

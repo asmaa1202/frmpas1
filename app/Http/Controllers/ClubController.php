@@ -272,7 +272,7 @@ class ClubController extends Controller
             $user->role_id = 2; // Assigner un rôle spécifique à l'utilisateur
             $user->save();
     
-            return response()->json(array('message' => $request->is_federal), 200);
+            return response()->json(array('message' => 'Le club a été modifié avec succès.'), 200);
         } catch (\Exception $err) {
             return response()->json(array('message' => $err->getMessage()), 500);
         }
