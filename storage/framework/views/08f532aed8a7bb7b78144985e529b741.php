@@ -309,7 +309,7 @@
                 Active
             </button>
             &nbsp;&nbsp;
-            <div class="remaining-days-warning">
+            <div class="<?php echo e(now()->month == 12 ? 'highlight' : 'remaining-days-warning'); ?>">
                 <?php echo e($remainingDays); ?> jours restants
             </div>
         </div>

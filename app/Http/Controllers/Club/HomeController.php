@@ -36,6 +36,7 @@ class HomeController extends Controller
         $active_adhesion = Adhesion::where('club_id', $clubId)
                                     ->where('annee', date('Y'))
                                     // ->where('annee', 22)
+                                    ->where('statut', self::statut_accepter)
                                     ->first();
         // dd(empty($active_adhesion));
         return view('clubDash.pages.home', compact('active_adhesion', 'remainingDays'));

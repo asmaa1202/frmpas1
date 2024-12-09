@@ -309,7 +309,7 @@
                 Active
             </button>
             &nbsp;&nbsp;
-            <div class="remaining-days-warning">
+            <div class="{{ now()->month !== 12 ? 'highlight' : 'remaining-days-warning' }}">
                 {{ $remainingDays }} jours restants
             </div>
         </div>

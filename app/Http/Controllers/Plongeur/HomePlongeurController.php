@@ -35,6 +35,7 @@ class HomePlongeurController extends Controller
         $active_licence = Licence::where('plongeur_id', $plongeurId)
             ->where('annee', date('Y'))
             // ->where('annee', 22)
+            ->where('statut', self::statut_accepter)
             ->first();
 
         // Calculer les jours restants jusqu'à la fin de l'année

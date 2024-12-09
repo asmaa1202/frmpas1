@@ -8,7 +8,10 @@
         margin-top: 5px;
         animation: pulse 1s infinite;
     }
-
+    .highlight {
+        color: green;
+        font-weight: bold;
+    }
     @keyframes pulse {
         0% {
             opacity: 1;
