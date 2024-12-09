@@ -87,6 +87,7 @@ class PlongeurController extends Controller
     public function store(Request $request)
     {
         try {
+            // dd($request->club);
             $request->validate([
                 'nom' => 'required|string|max:255',
                 'prenom' => 'required|string|max:255',
@@ -209,6 +210,7 @@ class PlongeurController extends Controller
                 $image->move(public_path('admin/uploads/images/plongeurs/'), $nomImage);
                 $plongeur->image = '/admin/uploads/images/plongeurs/' . $nomImage;
             }
+            $plongeur->club_id  = $request->club;
             $plongeur->save();
 
             return response()->json(array('message' => "Plongeur est modifiée avec succés",), 200);

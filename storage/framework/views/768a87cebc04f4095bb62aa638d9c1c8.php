@@ -101,8 +101,8 @@
                         <input class="form-control" id="cin" value="<?php echo e($plongeur->cin); ?>" type="text" />
                     </div>
                     <div class="col-sm-3">
-                        <label for="email">Adresse courriel</label>
-                        <input class="form-control" id="email" data-input-mask='{"mask":"/^\S*@?\S*$/"}'
+                        <label for="email-athlete">Adresse courriel</label>
+                        <input class="form-control" id="email-athlete" data-input-mask='{"mask":"/^\S*@?\S*$/"}'
                             placeholder="XXXX@XXX.XXX" value="<?php echo e($plongeur->email); ?>" type="email" />
                     </div>
                     <div class="col-sm-6">
@@ -239,8 +239,8 @@
                         <input class="form-control" id="n_licence" type="text" value="<?php echo e($plongeur->n_licence); ?>" />
                     </div>
                     <div class="mb-2">
-                        <label for="jour_entrainement">Club</label>
-                        <select class="form-select js-choice" id="club" size="1" name="club"
+                        <label for="club-athlete">Club</label>
+                        <select class="form-select js-choice" id="club-athlete" size="1" name="club"
                         data-options='{"removeItemButton":true,"placeholder":true}'>
                             <option value="">Choisissez le niveau</option>
                             <?php $__currentLoopData = $clubs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $club): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -355,7 +355,7 @@
                 formData.append("nom", document.getElementById("nom").value);
                 formData.append("genre", document.querySelector(".genre:checked").value);
                 formData.append("prenom", document.getElementById("prenom").value);
-                formData.append("email", document.getElementById("email").value);
+                formData.append("email", document.getElementById("email-athlete").value);
                 formData.append("cin", document.getElementById("cin").value);
                 formData.append("profession", document.getElementById("profession").value);
                 formData.append("date_naissance", document.getElementById("date_naissance").value);
@@ -380,6 +380,7 @@
                 formData.append("jour_entrainement", document.getElementById("jour_entrainement").innerText.split(/(?=[A-Z])/).toString().trim().slice(1));
                 formData.append("enseignement", document.getElementById("enseignement").value);
                 formData.append("qualifications", document.getElementById("qualifications").value);
+                formData.append("club", document.getElementById("club-athlete").value);
 
                 const res = await axios.post(`/dashboard/plongeurs/modifier/${id}`, formData, {
                     headers: {

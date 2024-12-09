@@ -92,7 +92,7 @@
                                         value="<?php echo e($type->type); ?>" 
                                         name="types[]" 
                                         id="type_sportifs" 
-                                        <?php echo e(in_array($type->type, json_decode($club->types ?? '[]', true)) ? 'checked' : ''); ?>
+                                        <?php echo e(in_array($type->type, array_values(json_decode($club->types ?? '[]', true))) ? 'checked' : ''); ?>
 
                                     />
                                     <label class="form-check-label mb-0" for="<?php echo e($type->type); ?>"><?php echo e($type->type); ?></label>
@@ -101,7 +101,7 @@
                         
                             <div class="form-check mb-0 lh-1 col-2">
                                 <div class="form-check form-switch">
-                                    <input class="form-check-input" id="is_federal" type="checkbox" <?php echo e($club->is_federal ? 'checked' : ''); ?>/>
+                                    <input class="form-check-input" id="is_federal" type="checkbox" <?php echo e($club->is_federal === 1 ? 'checked' : ''); ?>/>
                                     <label class="form-check-label" for="is_federal">Fédéral</label>
                                 </div>
                             </div>

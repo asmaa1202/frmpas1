@@ -100,8 +100,8 @@
                         <input class="form-control" id="cin" type="text" />
                     </div>
                     <div class="col-sm-3">
-                        <label for="email">Adresse courriel</label>
-                        <input class="form-control" id="email" data-input-mask='{"mask":"/^\S*@?\S*$/"}'
+                        <label for="email-plongeur-club">Adresse courriel</label>
+                        <input class="form-control" id="email-plongeur-club" data-input-mask='{"mask":"/^\S*@?\S*$/"}'
                             placeholder="XXXX@XXX.XXX" type="email" />
                     </div>
                     <div class="col-sm-6">
@@ -318,7 +318,7 @@
                 formData.append("nom", document.getElementById("nom").value);
                 formData.append("genre", document.querySelector(".genre:checked").value);
                 formData.append("prenom", document.getElementById("prenom").value);
-                formData.append("email", document.getElementById("email").value);
+                formData.append("email", document.getElementById("email-plongeur-club").value);
                 formData.append("cin", document.getElementById("cin").value);
                 formData.append("profession", document.getElementById("profession").value);
                 formData.append("date_naissance", document.getElementById("date_naissance").value);
@@ -375,7 +375,7 @@
                     image_card.src = 'http://localhost:8000/dashboard/img/team/avatar.png';
                     document.getElementById("nom").value = "";
                     document.getElementById("prenom").value = "";
-                    document.getElementById("email").value = "";
+                    document.getElementById("email-plongeur-club").value = "";
                     document.getElementById("cin").value = "";
                     document.getElementById("profession").value = "";
                     document.getElementById("date_naissance").value = "";

@@ -100,7 +100,7 @@
                                     aria-labelledby="order-dropdown-0">
                                     <div class="py-2">
                                         <a class="dropdown-item"
-                                            href="/dashboard/plongeurs/modifier/{{ $item->id }}">Modifier
+                                            href="/club/plongeurs/modifier/{{ $item->id }}">Modifier
                                         </a>
                                         <a class="dropdown-item"
                                             href="/dashboard/plongeurs/{{ $item->id }}/formations/niveau/{{$item->id_niveau}}">Formations

@@ -203,6 +203,7 @@ class AthleteController extends Controller
                 $image->move(public_path('admin/uploads/images/plongeurs/'), $nomImage);
                 $plongeur->image = '/admin/uploads/images/plongeurs/' . $nomImage;
             }
+            $plongeur->club_id  = $request->club;
             $plongeur->save();
 
             return response()->json(array('message' => "Plongeur est modifiée avec succés",), 200);

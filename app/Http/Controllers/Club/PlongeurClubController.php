@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Club;
 
 use Carbon\Carbon;
 use App\Http\Controllers\Controller;
+use App\Models\Club;
 use App\Models\Level;
 use App\Models\Plongeur;
 use Illuminate\Http\Request;
@@ -82,7 +83,7 @@ class PlongeurClubController extends Controller
     public function store(Request $request)
     {
         try {
-
+// dd($request->input());
             $request->validate([
                 'nom' => 'required|string|max:255',
                 'prenom' => 'required|string|max:255',
@@ -120,7 +121,7 @@ class PlongeurClubController extends Controller
             if ($request->password) {
                 $plongeur->password = Hash::make($request->password);
             }
-            $plongeur->cree_par = auth()->user()->id;
+            $plongeur->cree_par = Auth::user()->id;
 
             if ($request->hasFile('image')) {
                 $image = $request->file('image');
@@ -151,18 +152,68 @@ class PlongeurClubController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(plongeur $plongeur)
+    public function edit($id)
     {
-        //
+        $plongeur = Plongeur::find($id);
+        $niveaux = Level::all();
+        $clubs = Club::orderBy('nom', 'desc')->get();
+
+        return view("clubDash.pages.plongeur.modifier", compact('plongeur', 'niveaux', 'clubs'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, plongeur $plongeur)
+    public function update(Request $request, $id)
     {
-        //
-    }
+        
+        try {
+            $plongeur = Plongeur::find($id);
+            $plongeur->nom = $request->nom;
+            $plongeur->genre = $request->genre;
+            $plongeur->prenom = $request->prenom;
+            $plongeur->email = $request->email;
+            $plongeur->cin = $request->cin;
+            $plongeur->profession = $request->profession;
+            $plongeur->telephone_fixe = $request->phone_fix;
+            $plongeur->adresse = $request->adresse;
+            $plongeur->code_postal = $request->code_postal;
+            $plongeur->ville = $request->ville;
+            $plongeur->date_de_naissance = $request->date_naissance;
+            $plongeur->pays = $request->pays;
+            $plongeur->telephone_portable = $request->phone_portable;
+            $plongeur->telephone_fixe_diffusable = $request->phone_fixe_diffusable == true ? 1 : 0;
+            $plongeur->telephone_portable_diffusable = $request->phone_portable_diffusable == true ? 1 : 0;
+            $plongeur->jour_entrainement = $request->jour_entrainement;
+            $plongeur->nom_persone_cas_urgence = $request->nom_personne;
+            $plongeur->prenom_persone_cas_urgence = $request->prenom_personne;
+            $plongeur->email_persone_cas_urgence = $request->email_personne;
+            $plongeur->telephone_fixe_persone_cas_urgence  = $request->phone_fixe_personne;
+            $plongeur->telephone_portable_persone_cas_urgence = $request->phone_portable_personne;
+            $plongeur->lien_parente_persone_cas_urgence = $request->lien_parente_personne;
+            $plongeur->n_licence = $request->n_licence;
+            $plongeur->date_visite_medicale = $request->date_visite_medicale;
+            $plongeur->id_niveau = $request->niveaux;
+            $plongeur->enseignement = $request->enseignement;
+            $plongeur->qualifications = $request->qualifications;
+            if ($request->password) {
+                $plongeur->password = Hash::make($request->password);
+            }
+            if ($request->hasFile('image')) {
+                $image = $request->file('image');
+                $nomImage = time() . '.' . $image->getClientOriginalExtension();
+                $image->move(public_path('admin/uploads/images/plongeurs/'), $nomImage);
+                $plongeur->image = '/admin/uploads/images/plongeurs/' . $nomImage;
+            }
+            $plongeur->cree_par = auth()->user()->id;
+            $plongeur->save();
+
+            return response()->json(array('message' => "Plongeur est modifiée avec succés",), 200);
+        } catch (\Exception $err) {
+            return response()->json(array('message' => $err), 500);
+        }
+        
+        }
 
     /**
      * Remove the specified resource from storage.

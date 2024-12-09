@@ -101,8 +101,8 @@
                         <input class="form-control" id="cin" value="<?php echo e($plongeur->cin); ?>" type="text" />
                     </div>
                     <div class="col-sm-3">
-                        <label for="email">Adresse courriel</label>
-                        <input class="form-control" id="email" data-input-mask='{"mask":"/^\S*@?\S*$/"}'
+                        <label for="email-athlete-actif">Adresse courriel</label>
+                        <input class="form-control" id="email-athlete-actif" data-input-mask='{"mask":"/^\S*@?\S*$/"}'
                             placeholder="XXXX@XXX.XXX" value="<?php echo e($plongeur->email); ?>" type="email" />
                     </div>
                     <div class="col-sm-6">
@@ -142,8 +142,7 @@
                             <input class="form-check-input" id="telephone_fixe_diffusable" type="checkbox"
                                 <?php echo e($plongeur->telephone_fixe_diffusable ? 'checked' : ''); ?> />
                             <label class="form-check-label" for="telephone_fixe_diffusable">Diffusable aux autres
-                                membres
-                                de l'ASAAM</label>
+                                membres de FRMPAS</label>
                         </div>
                     </div>
                     <div class="col-sm-6 mt-3">
@@ -151,8 +150,7 @@
                             <input class="form-check-input" id="telephone_portable_diffusable" type="checkbox"
                                 <?php echo e($plongeur->telephone_portable_diffusable ? 'checked' : ''); ?> />
                             <label class="form-check-label" for="telephone_portable_diffusable">Diffusable aux autres
-                                membres de
-                                l'ASAAM</label>
+                                membres de FRMPAS</label>
                         </div>
                     </div>
                 </div>
@@ -347,7 +345,7 @@
                 formData.append("nom", document.getElementById("nom").value);
                 formData.append("genre", document.querySelector(".genre:checked").value);
                 formData.append("prenom", document.getElementById("prenom").value);
-                formData.append("email", document.getElementById("email").value);
+                formData.append("email", document.getElementById("email-athlete-actif").value);
                 formData.append("cin", document.getElementById("cin").value);
                 formData.append("profession", document.getElementById("profession").value);
                 formData.append("date_naissance", document.getElementById("date_naissance").value);

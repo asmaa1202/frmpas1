@@ -136,14 +136,14 @@
                         <div class="form-check form-switch">
                             <input class="form-check-input" id="phone_fixe_diffusable" type="checkbox" />
                             <label class="form-check-label" for="phone_fixe_diffusable">Diffusable aux autres membres
-                                de l'ASAAM</label>
+                                de FRMPAS</label>
                         </div>
                     </div>
                     <div class="col-sm-6 mt-3">
                         <div class="form-check form-switch">
                             <input class="form-check-input" id="phone_portable_diffusable" type="checkbox" />
                             <label class="form-check-label" for="phone_portable_diffusable">Diffusable aux autres
-                                membres de l'ASAAM
+                                membres de FRMPAS
                             </label>
                         </div>
                     </div>

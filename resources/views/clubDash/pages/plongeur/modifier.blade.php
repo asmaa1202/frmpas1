@@ -102,8 +102,8 @@
                         <input class="form-control" id="cin" value="{{ $plongeur->cin }}" type="text" />
                     </div>
                     <div class="col-sm-3">
-                        <label for="email">Adresse courriel</label>
-                        <input class="form-control" id="email" data-input-mask='{"mask":"/^\S*@?\S*$/"}'
+                        <label for="email-plongeur-edit">Adresse courriel</label>
+                        <input class="form-control" id="email-plongeur-edit" data-input-mask='{"mask":"/^\S*@?\S*$/"}'
                             placeholder="XXXX@XXX.XXX" value="{{ $plongeur->email }}" type="email" />
                     </div>
                     <div class="col-sm-6">
@@ -346,7 +346,7 @@
                 formData.append("nom", document.getElementById("nom").value);
                 formData.append("genre", document.querySelector(".genre:checked").value);
                 formData.append("prenom", document.getElementById("prenom").value);
-                formData.append("email", document.getElementById("email").value);
+                formData.append("email", document.getElementById("email-plongeur-edit").value);
                 formData.append("cin", document.getElementById("cin").value);
                 formData.append("profession", document.getElementById("profession").value);
                 formData.append("date_naissance", document.getElementById("date_naissance").value);
@@ -372,7 +372,7 @@
                 formData.append("enseignement", document.getElementById("enseignement").value);
                 formData.append("qualifications", document.getElementById("qualifications").value);
 
-                const res = await axios.post(`/dashboard/plongeurs/modifier/${id}`, formData, {
+                const res = await axios.post(`/club/plongeurs/modifier/${id}`, formData, {
                     headers: {
                         "Content-Type": "multipart/form-data",
                     }
