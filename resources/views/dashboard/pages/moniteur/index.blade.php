@@ -1,7 +1,7 @@
 @extends('dashboard.layout.master')
 
 @section('title')
-<title>FRMPAS - Plongeur</title>
+<title>FRMPAS - Moniteur</title>
 @endsection
 
 @section('css')
@@ -18,11 +18,11 @@
     <div class="card-body position-relative">
         <div class="row">
             <div class="col-lg-8">
-                <h3>Plongeurs Inactifs</h3>
+                <h3>Moniteurs</h3>
                 <p class="mb-0">Rapide, intelligent et vous pouvez voir toutes les analyses sur cette page.</p>
             </div>
             <div class="col-lg-4 d-flex justify-content-end align-items-center">
-                <a href="{{ route('plongeurs.create') }}" role="button" class="btn btn-outline-primary">
+                <a href="{{ route('moniteurs.create') }}" role="button" class="btn btn-outline-primary">
                     <span class="fas fa-plus me-1" data-fa-transform="shrink-3"></span>Ajouter
                 </a>
             </div>
@@ -79,7 +79,7 @@
                         <td class="align-middle">{{ $item->created_at }}</td>
                         {{-- <td class="align-middle">{{ $item->created_at }}</td> --}}
                         <td class="align-middle"> 
-                            <span class="badge bg-danger">Inactif</span>
+                            <span class="badge bg-success">Actif</span>
                         </td>
 
                         <td class="py-2 align-middle white-space-nowrap text-center">
@@ -100,22 +100,22 @@
                                     aria-labelledby="order-dropdown-0">
                                     <div class="py-2">
                                         <a class="dropdown-item"
-                                            href="/dashboard/plongeurs/modifier/{{ $item->id }}">Modifier
+                                            href="/dashboard/moniteurs/modifier/{{ $item->id }}">Modifier
                                         </a>
                                         {{-- <a class="dropdown-item"
-                                            href="/dashboard/plongeurs/{{ $item->id }}/formations/niveau/{{$item->id_niveau}}">Formations
-                                        </a>
-                                        <a class="dropdown-item"
-                                            href="/dashboard/plongeurs/{{ $item->id }}/carnet-de-plongee">Carnet de
+                                            href="/dashboard/moniteurs/{{ $item->id }}/formations/niveau/{{$item->id_niveau}}">Formations
+                                        </a> --}}
+                                        {{-- <a class="dropdown-item"
+                                            href="/dashboard/moniteurs/{{ $item->id }}/carnet-de-plongee">Carnet de
                                             plongée
                                         </a>
                                         <a class="dropdown-item"
-                                            href="/dashboard/plongeurs/{{ $item->id }}/niveau/1/suivi-prepa">Fiche de
+                                            href="/dashboard/moniteurs/{{ $item->id }}/niveau/1/suivi-prepa">Fiche de
                                             suivi
                                             prépa
                                         </a> --}}
                                         <a class="dropdown-item"
-                                            href="/dashboard/plongeurs/{{ $item->id }}/details">Details
+                                            href="/dashboard/moniteurs/{{ $item->id }}/details">Details
                                         </a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item text-danger" role="button" data-bs-toggle="modal"
@@ -142,7 +142,7 @@
                                             <button type="button" class="btn btn-secondary"
                                                 id="colseModal{{ $item->id }}" data-bs-dismiss="modal">Non</button>
                                             <button type="button" class="btn btn-primary"
-                                                onclick="deletePlongeur({{ $item->id }})"
+                                                onclick="deleteMoniteur({{ $item->id }})"
                                                 id="btn-confirmation-delete">Oui</button>
                                         </div>
                                     </div>
@@ -165,7 +165,7 @@
 <script src={{ asset('dashboard/vendors/datatables.net-fixedcolumns/dataTables.fixedColumns.min.js') }}></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
 <script>
-    async function deletePlongeur(id) {
+    async function deleteMoniteur(id) {
             try {
                 const btnClose = document.getElementById(`colseModal${id}`);
                 btnClose.click();

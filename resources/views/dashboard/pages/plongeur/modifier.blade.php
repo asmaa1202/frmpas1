@@ -237,7 +237,7 @@
 
                     <div class="mb-2">
                         <label class="form-label" for="n_licence">N° de Licence</label>
-                        <input class="form-control" id="n_licence" type="text" value="{{ $plongeur->n_licence }}" />
+                        <input class="form-control" id="n_licence" type="text" value="{{ $licence->custom_id ?? ' '  }}"  disabled />
                     </div>
                     <div class="mb-2">
                         <label for="club-plongeur">Club</label>

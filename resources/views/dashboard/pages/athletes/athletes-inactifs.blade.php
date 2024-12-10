@@ -18,7 +18,7 @@
     <div class="card-body position-relative">
         <div class="row">
             <div class="col-lg-8">
-                <h3>Athlètes</h3>
+                <h3>Athlètes Inactifs</h3>
                 <p class="mb-0">Rapide, intelligent et vous pouvez voir toutes les analyses sur cette page.</p>
             </div>
             <div class="col-lg-4 d-flex justify-content-end align-items-center">
@@ -101,7 +101,7 @@
                                         <a class="dropdown-item"
                                             href="/dashboard/athletes/modifier/{{ $item->id }}">Modifier
                                         </a>
-                                        <a class="dropdown-item"
+                                        {{-- <a class="dropdown-item"
                                             href="/dashboard/athletes/{{ $item->id }}/formations/niveau/{{$item->id_niveau}}">Formations
                                         </a>
                                         <a class="dropdown-item"
@@ -112,7 +112,7 @@
                                             href="/dashboard/athletes/{{ $item->id }}/niveau/1/suivi-prepa">Fiche de
                                             suivi
                                             prépa
-                                        </a>
+                                        </a> --}}
                                         <a class="dropdown-item"
                                             href="/dashboard/athletes/{{ $item->id }}/details">Details
                                         </a>

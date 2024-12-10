@@ -102,7 +102,7 @@
                                         <a class="dropdown-item"
                                             href="/dashboard/athletes/modifier/{{ $item->id }}">Modifier
                                         </a>
-                                        <a class="dropdown-item"
+                                        {{-- <a class="dropdown-item"
                                             href="/dashboard/athletes/{{ $item->id }}/formations/niveau/{{$item->id_niveau}}">Formations
                                         </a>
                                         <a class="dropdown-item"
@@ -113,7 +113,7 @@
                                             href="/dashboard/athletes/{{ $item->id }}/niveau/1/suivi-prepa">Fiche de
                                             suivi
                                             prépa
-                                        </a>
+                                        </a> --}}
                                         <a class="dropdown-item"
                                             href="/dashboard/athletes/{{ $item->id }}/details">Details
                                         </a>

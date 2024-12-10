@@ -38,7 +38,7 @@ class ClubController extends Controller
                   ->where('annee', $currentYear);
                   
         })
-        // ->where('type_club_id', self::type_club_diving_id)
+        // ->where('type_plongeur_id', self::type_club_diving_id)
         ->latest()->paginate(100);
 
         return view("dashboard.pages.clubs.club", compact('clubs'));

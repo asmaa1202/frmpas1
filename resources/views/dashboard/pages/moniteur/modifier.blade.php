@@ -1,27 +1,29 @@
-<?php $__env->startSection('title'); ?>
-<title>FRMPAS - Modifier plongeur</title>
-<?php $__env->stopSection(); ?>
+@extends('dashboard.layout.master')
 
-<?php $__env->startSection('content'); ?>
+@section('title')
+<title>FRMPAS - Modifier plongeur</title>
+@endsection
+
+@section('content')
 <div class="card mb-3">
     <div class="bg-holder d-none d-lg-block bg-card"
-        style="background-image:url(<?php echo e(asset('dashboard/img/icons/spot-illustrations/corner-4.png')); ?>);">
+        style="background-image:url({{ asset('dashboard/img/icons/spot-illustrations/corner-4.png') }});">
     </div>
     <!--/.bg-holder-->
 
     <div class="card-body position-relative">
         <div class="row">
             <div class="col-lg-8">
-                <h3>Modifer <?php echo e($plongeur->nom . ' ' . $plongeur->prenom); ?></h3>
+                <h3>Modifer {{ $plongeur->nom . ' ' . $plongeur->prenom }}</h3>
                 <p class="mb-0">Rapide, intelligent et vous pouvez voir toutes les analyses sur cette page.</p>
             </div>
             <div class="col-lg-4 d-flex justify-content-end align-items-center">
-                <button class="btn btn-primary me-3" role="button" onclick="modifierPlongeur(<?php echo e($plongeur->id); ?>)"
+                <button class="btn btn-primary me-3" role="button" onclick="modifierPlongeur({{ $plongeur->id }})"
                     id="liveToastBtn">
                     <i class="far fa-save me-1"></i>
                     Enregistrer
                 </button>
-                <a href="<?php echo e(route('plongeurs.index')); ?>" role="button" class="btn btn-outline-primary">
+                <a href="{{ route('moniteurs.index') }}" role="button" class="btn btn-outline-primary">
                     <span class="pe-1">Retour</span>
                     <span class="fas fa-arrow-right" data-fa-transform="shrink-3"></span>
                 </a>
@@ -41,8 +43,7 @@
                 </div>
                 <div class="avatar avatar-5xl avatar-profile shadow-sm img-thumbnail rounded-circle">
                     <div class="h-100 w-100 rounded-circle overflow-hidden position-relative">
-                        <img src=<?php echo e($plongeur->image ? $plongeur->image : asset('/dashboard/img/team/avatar.png')); ?>
-
+                        <img src={{ $plongeur->image ? $plongeur->image : asset('/dashboard/img/team/avatar.png') }}
                             width="200" alt="" data-dz-thumbnail="data-dz-thumbnail" id="image_card" />
                         <input class="d-none" id="image_profile" type="file" onchange="handleChageImage()"
                             accept="image/png, image/gif, image/jpeg" />
@@ -69,19 +70,19 @@
                         <div class="row mx-2">
                             <div class="form-check mb-0 lh-1 col-2">
                                 <input class="form-check-input genre" type="radio" value="Homme" name="genre"
-                                    <?php echo e($plongeur->genre == 'Homme' ? 'checked' : ''); ?> id="home" name="view-settings" />
+                                    {{ $plongeur->genre == 'Homme' ? 'checked' : '' }} id="home" name="view-settings" />
                                 <label class="form-check-label mb-0" for="home">Homme
                                 </label>
                             </div>
                             <div class="form-check mb-0 lh-1 col-2">
                                 <input class="form-check-input genre" type="radio" value="Femme" name="genre" id="femme"
-                                    <?php echo e($plongeur->genre == 'Femme' ? 'checked' : ''); ?> name="view-settings" />
+                                    {{ $plongeur->genre == 'Femme' ? 'checked' : '' }} name="view-settings" />
                                 <label class="form-check-label mb-0" for="femme">Femme
                                 </label>
                             </div>
                             <div class="form-check mb-0 lh-1 col-2">
                                 <input class="form-check-input genre" type="radio" value="Enfant" name="genre"
-                                    <?php echo e($plongeur->genre == 'Enfant' ? 'checked' : ''); ?> id="Enfant"
+                                    {{ $plongeur->genre == 'Enfant' ? 'checked' : '' }} id="Enfant"
                                     name="view-settings" />
                                 <label class="form-check-label mb-0" for="only-me">Enfant
                                 </label>
@@ -90,20 +91,20 @@
                     </div>
                     <div class="col-lg-6">
                         <label class="form-label" for="nom">Nom</label>
-                        <input class="form-control" value="<?php echo e($plongeur->nom); ?>" id="nom" type="text" />
+                        <input class="form-control" value="{{ $plongeur->nom }}" id="nom" type="text" />
                     </div>
                     <div class="col-lg-6">
                         <label class="form-label" for="prenom">Prénom</label>
-                        <input class="form-control" id="prenom" type="text" value="<?php echo e($plongeur->prenom); ?>" />
+                        <input class="form-control" id="prenom" type="text" value="{{ $plongeur->prenom }}" />
                     </div>
                     <div class="col-lg-3">
                         <label class="form-label" for="cin">CIN</label>
-                        <input class="form-control" id="cin" value="<?php echo e($plongeur->cin); ?>" type="text" />
+                        <input class="form-control" id="cin" value="{{ $plongeur->cin }}" type="text" />
                     </div>
                     <div class="col-sm-3">
                         <label for="email_plongeur_edit">Adresse courriel</label>
                         <input class="form-control" id="email_plongeur_edit" data-input-mask='{"mask":"/^\S*@?\S*$/"}'
-                            placeholder="XXXX@XXX.XXX" value="<?php echo e($plongeur->email); ?>" type="email" />
+                            placeholder="XXXX@XXX.XXX" value="{{ $plongeur->email }}" type="email" />
                     </div>
                     <div class="col-sm-6">
                         <label class="form-label" for="password">Mot de passe</label>
@@ -121,26 +122,26 @@
                     <div class="col-sm-6">
                         <label class="form-label" for="date_naissance">Date de naissance</label>
                         <input class="form-control datetimepicker" id="date_naissance" type="text" placeholder="d/m/yy"
-                            value="<?php echo e($plongeur->date_de_naissance); ?>" />
+                            value="{{ $plongeur->date_de_naissance }}" />
                     </div>
                     <div class="col-sm-6">
                         <label class="form-label" for="profession">Profession</label>
-                        <input class="form-control" id="profession" type="text" value="<?php echo e($plongeur->profession); ?>" />
+                        <input class="form-control" id="profession" type="text" value="{{ $plongeur->profession }}" />
                     </div>
                     <div class="col-sm-6">
                         <label for="usPhoneInputmask">Téléphone fixe</label>
                         <input class="form-control" id="phone_fix" data-input-mask='{"mask":"+212 999-999-999"}'
-                            placeholder="+212 XXX-XXX-XXX" type="tel" value="<?php echo e($plongeur->telephone_fixe); ?>" />
+                            placeholder="+212 XXX-XXX-XXX" type="tel" value="{{ $plongeur->telephone_fixe }}" />
                     </div>
                     <div class="col-sm-6">
                         <label for="usPhoneInputmask">Téléphone portable</label>
                         <input class="form-control" id="phone_portable" data-input-mask='{"mask":"+212 999-999-999"}'
-                            placeholder="+212 XXX-XXX-XXX" type="tel" value="<?php echo e($plongeur->telephone_portable); ?>" />
+                            placeholder="+212 XXX-XXX-XXX" type="tel" value="{{ $plongeur->telephone_portable }}" />
                     </div>
                     <div class="col-sm-6 mt-3">
                         <div class="form-check form-switch">
                             <input class="form-check-input" id="telephone_fixe_diffusable" type="checkbox"
-                                <?php echo e($plongeur->telephone_fixe_diffusable ? 'checked' : ''); ?> />
+                                {{ $plongeur->telephone_fixe_diffusable ? 'checked' : '' }} />
                             <label class="form-check-label" for="telephone_fixe_diffusable">Diffusable aux autres
                                 membres de FRMPAS</label>
                         </div>
@@ -148,7 +149,7 @@
                     <div class="col-sm-6 mt-3">
                         <div class="form-check form-switch">
                             <input class="form-check-input" id="telephone_portable_diffusable" type="checkbox"
-                                <?php echo e($plongeur->telephone_portable_diffusable ? 'checked' : ''); ?> />
+                                {{ $plongeur->telephone_portable_diffusable ? 'checked' : '' }} />
                             <label class="form-check-label" for="telephone_portable_diffusable">Diffusable aux autres
                                 membres de FRMPAS</label>
                         </div>
@@ -167,35 +168,35 @@
                     <div class="col-lg-6">
                         <label class="form-label" for="nom_personne">Nom</label>
                         <input class="form-control" id="nom_personne"
-                            value="<?php echo e($plongeur->nom_persone_cas_urgence); ?>" />
+                            value="{{ $plongeur->nom_persone_cas_urgence }}" />
                     </div>
                     <div class="col-lg-6">
                         <label class="form-label" for="prenom_personne">Prénom</label>
                         <input class="form-control" id="prenom_personne"
-                            value="<?php echo e($plongeur->prenom_persone_cas_urgence); ?>" />
+                            value="{{ $plongeur->prenom_persone_cas_urgence }}" />
                     </div>
                     <div class="col-sm-6">
                         <label for="email_personne">Adresse courriel</label>
                         <input class="form-control" id="email_personne" data-input-mask='{"mask":"/^\S*@?\S*$/"}'
                             placeholder="XXXX@XXX.XXX" type="email"
-                            value="<?php echo e($plongeur->email_persone_cas_urgence); ?>" />
+                            value="{{ $plongeur->email_persone_cas_urgence }}" />
                     </div>
                     <div class="col-sm-6">
                         <label for="phone_fixe_personne">Téléphone fixe</label>
                         <input class="form-control" id="phone_fixe_personne"
                             data-input-mask='{"mask":"+212 999-999-999"}' placeholder="+212 XXX-XXX-XXX" type="tel"
-                            value="<?php echo e($plongeur->telephone_fixe_persone_cas_urgence); ?>" />
+                            value="{{ $plongeur->telephone_fixe_persone_cas_urgence }}" />
                     </div>
                     <div class="col-sm-6">
                         <label for="phone_portable_personne">Téléphone portable</label>
                         <input class="form-control" id="phone_portable_personne"
                             data-input-mask='{"mask":"+212 999-999-999"}' placeholder="+212 XXX-XXX-XXX" type="tel"
-                            value="<?php echo e($plongeur->telephone_portable_persone_cas_urgence); ?>" />
+                            value="{{ $plongeur->telephone_portable_persone_cas_urgence }}" />
                     </div>
                     <div class="col-lg-6">
                         <label class="form-label" for="lien_parente_personne">Lien de parenté</label>
                         <input class="form-control" id="lien_parente_personne" type="text"
-                            value="<?php echo e($plongeur->lien_parente_persone_cas_urgence); ?>" />
+                            value="{{ $plongeur->lien_parente_persone_cas_urgence }}" />
                     </div>
                 </div>
             </div>
@@ -211,57 +212,61 @@
 
                     <div class="mb-2">
                         <label class="form-label" for="adresse">Adresse</label>
-                        <input class="form-control" id="adresse" type="text" value="<?php echo e($plongeur->adresse); ?>" />
+                        <input class="form-control" id="adresse" type="text" value="{{ $plongeur->adresse }}" />
                     </div>
                     <div class="mb-2">
                         <label class="form-label" for="code_postal">Code postal</label>
-                        <input class="form-control" id="code_postal" type="text" value="<?php echo e($plongeur->code_postal); ?>" />
+                        <input class="form-control" id="code_postal" type="text" value="{{ $plongeur->code_postal }}" />
                     </div>
                     <div class="mb-2">
                         <label class="form-label" for="ville">Ville</label>
-                        <input class="form-control" id="ville" type="text" value="<?php echo e($plongeur->ville); ?>" />
+                        <input class="form-control" id="ville" type="text" value="{{ $plongeur->ville }}" />
                     </div>
                     <div class="mb-2">
                         <label class="form-label" for="pays">Pays</label>
-                        <input class="form-control" id="pays" type="text" value="<?php echo e($plongeur->pays); ?>" />
+                        <input class="form-control" id="pays" type="text" value="{{ $plongeur->pays }}" />
                     </div>
                 </div>
 
             </div>
             <div class="card mb-3 overflow-hidden">
                 <div class="card-header">
-                    <h5 class="mb-0">Informations de plongeur</h5>
+                    <h5 class="mb-0">Informations du moniteur</h5>
                 </div>
                 <div class="card-body bg-light">
 
+                    {{-- <div class="mb-2">
+                        <label class="form-label" for="n_licence">N° de Licence</label>
+                        <input class="form-control" id="n_licence" type="text" value="{{ $plongeur->n_licence }}" />
+                    </div> --}}
                     <div class="mb-2">
                         <label class="form-label" for="n_licence">N° de Licence</label>
-                        <input class="form-control" id="n_licence" type="text" value="<?php echo e($licence->custom_id ?? ' '); ?>"  disabled />
+                        <input class="form-control" id="n_licence" type="text" value="{{ $licence->custom_id ?? '' }}" readonly disabled />
                     </div>
                     <div class="mb-2">
                         <label for="club-plongeur">Club</label>
                         <select class="form-select js-choice" id="club-plongeur" size="1" name="club"
                         data-options='{"removeItemButton":true,"placeholder":true}'>
                             <option value="">Choisissez le niveau</option>
-                            <?php $__currentLoopData = $clubs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $club): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <option value=<?php echo e($club->id); ?> <?php echo e($plongeur->club_id == $club->id ? 'selected' : ''); ?>><?php echo e($club->nom); ?></option>
-                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            @foreach ($clubs as $club)
+                            <option value={{$club->id}} {{ $plongeur->club_id == $club->id ? 'selected' : '' }}>{{$club->nom}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="mb-2">
                         <label class="form-label" for="date_visite_medicale">Date de visite médicale</label>
                         <input class="form-control datetimepicker" id="date_visite_medicale" type="text"
-                            value="<?php echo e($plongeur->date_visite_medicale); ?>" placeholder="yy/m/d" />
+                            value="{{ $plongeur->date_visite_medicale }}" placeholder="yy/m/d" />
                     </div>
                     <div class="mb-2">
                         <label for="niveaux">Niveaux</label>
                         <select class="form-select js-choice" id="niveaux" size="1" name="niveaux"
                             data-options='{"removeItemButton":true,"placeholder":true}'>
                             <option value="">Choisissez le niveau</option>
-                            <?php $__currentLoopData = $niveaux; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <option value=<?php echo e($item->id); ?> <?php echo e($plongeur->id_niveau == $item->id ? 'selected' : ''); ?>>
-                                <?php echo e($item->label); ?></option>
-                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            @foreach ($niveaux as $item)
+                            <option value={{$item->id}} {{ $plongeur->id_niveau == $item->id ? 'selected' : '' }}>
+                                {{$item->label}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="mb-2">
@@ -271,37 +276,37 @@
                             data-options='{"removeItemButton":true,"placeholder":true, "delimiter": ","}'>
                             <option value="">Choisissez le jour d'entraînement</option>
                             <option
-                                <?php echo e(array_search('Lundi', explode(',', $plongeur->jour_entrainement)) ? '' : 'selected'); ?>>
+                                {{ array_search('Lundi', explode(',', $plongeur->jour_entrainement)) ? '' : 'selected'}}>
                                 Lundi</option>
                             <option
-                                <?php echo e(array_search('Mardi', explode(',', $plongeur->jour_entrainement)) == false ? '' : 'selected'); ?>>
+                                {{ array_search('Mardi', explode(',', $plongeur->jour_entrainement)) == false ? '' : 'selected' }}>
                                 Mardi</option>
                             <option
-                                <?php echo e(array_search('Mercredi', explode(',', $plongeur->jour_entrainement)) == false ? '' : 'selected'); ?>>
+                                {{ array_search('Mercredi', explode(',', $plongeur->jour_entrainement)) == false ? '' : 'selected' }}>
                                 Mercredi</option>
                             <option
-                                <?php echo e(array_search('Jeudi', explode(',', $plongeur->jour_entrainement)) == false ? '' : 'selected'); ?>>
+                                {{ array_search('Jeudi', explode(',', $plongeur->jour_entrainement)) == false ? '' : 'selected' }}>
                                 Jeudi</option>
                             <option
-                                <?php echo e(array_search('Vendredi', explode(',', $plongeur->jour_entrainement)) == false ? '' : 'selected'); ?>>
+                                {{ array_search('Vendredi', explode(',', $plongeur->jour_entrainement)) == false ? '' : 'selected' }}>
                                 Vendredi</option>
                             <option
-                                <?php echo e(array_search('Samedi', explode(',', $plongeur->jour_entrainement)) == false ? '' : 'selected'); ?>>
+                                {{ array_search('Samedi', explode(',', $plongeur->jour_entrainement)) == false ? '' : 'selected' }}>
                                 Samedi</option>
                             <option
-                                <?php echo e(array_search('Dimanch', explode(',', $plongeur->jour_entrainement)) == false ? '' : 'selected'); ?>>
+                                {{ array_search('Dimanch', explode(',', $plongeur->jour_entrainement)) == false ? '' : 'selected' }}>
                                 Dimanch</option>
                         </select>
                     </div>
                     <div class="mb-2">
                         <label class="form-label" for="enseignement">Enseignement</label>
                         <input class="form-control" id="enseignement" type="text"
-                            value="<?php echo e($plongeur->enseignement); ?>" />
+                            value="{{ $plongeur->enseignement }}" />
                     </div>
                     <div class="mb-2">
                         <label class="form-label" for="qualifications">Qualifications</label>
                         <input class="form-control" id="qualifications" type="text"
-                            value="<?php echo e($plongeur->qualifications); ?>" />
+                            value="{{ $plongeur->qualifications }}" />
                     </div>
                 </div>
 
@@ -317,7 +322,7 @@
             </div>
             <div class="col-auto">
                 <button class="btn btn-link text-secondary p-0 me-3 fw-medium" role="button">Annuler</button>
-                <button class="btn btn-primary me-3" onclick="modifierPlongeur(<?php echo e($plongeur->id); ?>)" id="liveToastBtn">
+                <button class="btn btn-primary me-3" onclick="modifierPlongeur({{ $plongeur->id }})" id="liveToastBtn">
                     <i class="far fa-save me-1"></i>
                     Enregistrer
                 </button>
@@ -326,11 +331,11 @@
     </div>
 </div>
 <div id="notification"></div>
-<?php $__env->stopSection(); ?>
+@endsection
 
-<?php $__env->startSection('javascript'); ?>
-<script src=<?php echo e(asset('dashboard/vendors/inputmask/inputmask.min.js')); ?>></script>
-<script src=<?php echo e(asset('dashboard/vendors/choices/choices.min.js')); ?>></script>
+@section('javascript')
+<script src={{ asset('dashboard/vendors/inputmask/inputmask.min.js') }}></script>
+<script src={{ asset('dashboard/vendors/choices/choices.min.js') }}></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
 <script>
     let file;
@@ -374,7 +379,7 @@
                 formData.append("phone_fixe_personne", document.getElementById("phone_fixe_personne").value);
                 formData.append("phone_portable_personne", document.getElementById("phone_portable_personne").value);
                 formData.append("lien_parente_personne", document.getElementById("lien_parente_personne").value);
-                formData.append("n_licence", document.getElementById("n_licence").value);
+                // formData.append("n_licence", document.getElementById("n_licence").value);
                 formData.append("date_visite_medicale", document.getElementById("date_visite_medicale").value);
                 formData.append("niveaux", document.getElementById("niveaux").value);
                 formData.append("jour_entrainement", document.getElementById("jour_entrainement").innerText.split(/(?=[A-Z])/).toString().trim().slice(1));
@@ -382,7 +387,7 @@
                 formData.append("qualifications", document.getElementById("qualifications").value);
                 formData.append("club", document.getElementById("club-plongeur").value);
 
-                const res = await axios.post(`/dashboard/plongeurs/modifier/${id}`, formData, {
+                const res = await axios.post(`/dashboard/moniteurs/modifier/${id}`, formData, {
                     headers: {
                         "Content-Type": "multipart/form-data",
                     }
@@ -438,5 +443,4 @@
 
         }
 </script>
-<?php $__env->stopSection(); ?>
-<?php echo $__env->make('dashboard.layout.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\projets\FRMPAS\resources\views/dashboard/pages/plongeur/modifier.blade.php ENDPATH**/ ?>
+@endsection

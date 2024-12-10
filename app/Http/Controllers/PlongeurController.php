@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use App\Models\Club;
 use App\Models\Plongeur;
 use App\Models\Level;
+use App\Models\Licence;
 use App\Models\User;
 use App\Models\SuiviPrepa;
 use Illuminate\Http\Request;
@@ -26,7 +27,7 @@ class PlongeurController extends Controller
 
     public function index()
     {
-        // $plongeurs = Plongeur::where('type_club_id', self::type_club_diving_id)->orderBy('created_at', 'DESC')->with("niveau")->paginate(100)->map(function ($plongeur) {
+        // $plongeurs = Plongeur::where('type_plongeur_id', self::type_club_diving_id)->orderBy('created_at', 'DESC')->with("niveau")->paginate(100)->map(function ($plongeur) {
         //     $plongeur->has_active_licence = $plongeur->hasActiveLicence();
         //     return $plongeur;
         // });
@@ -38,7 +39,7 @@ class PlongeurController extends Controller
                   ->where('statut', self::statut_accepter)
                   ->where('annee', $currentYear);
                   
-        })->where('type_club_id', self::type_club_diving_id)
+        })->where('type_plongeur_id', self::type_club_diving_id)
         ->orderBy('created_at', 'DESC')->with("niveau")->paginate(100);
 
         return view("dashboard.pages.plongeur.index")->with("plongeurs", $plongeurs);
@@ -46,7 +47,7 @@ class PlongeurController extends Controller
 
     public function plongeurs_inactifs()
     {
-        // $plongeurs = Plongeur::where('type_club_id', self::type_club_diving_id)->orderBy('created_at', 'DESC')->with("niveau")->paginate(100)->map(function ($plongeur) {
+        // $plongeurs = Plongeur::where('type_plongeur_id', self::type_club_diving_id)->orderBy('created_at', 'DESC')->with("niveau")->paginate(100)->map(function ($plongeur) {
         //     $plongeur->has_active_licence = $plongeur->hasActiveLicence();
         //     return $plongeur;
         // });
@@ -64,7 +65,7 @@ class PlongeurController extends Controller
                   ->whereYear('annee', '!=', $currentYear);
             });
         })
-        ->where('type_club_id', self::type_club_diving_id)
+        ->where('type_plongeur_id', self::type_club_diving_id)
         ->orderBy('created_at', 'DESC')
         ->with('niveau')
         ->paginate(100);
@@ -134,7 +135,7 @@ class PlongeurController extends Controller
                 $plongeur->image = '/admin/uploads/images/plongeurs/' . $nomImage;
             }
             $plongeur->club_id  = $request->club;
-            $plongeur->type_club_id   = self::type_club_diving_id;
+            $plongeur->type_plongeur_id   = self::type_club_diving_id;
 
             $plongeur->save();
 
@@ -163,8 +164,9 @@ class PlongeurController extends Controller
         $plongeur = Plongeur::find($id);
         $niveaux = Level::all();
         $clubs = Club::orderBy('nom', 'desc')->get();
+        $licence = Licence::where('plongeur_id', $id)->where('annee', date('Y'))->where('statut', self::statut_accepter)->first();
 
-        return view("dashboard.pages.plongeur.modifier", compact('plongeur', 'niveaux', 'clubs'));
+        return view("dashboard.pages.plongeur.modifier", compact('plongeur', 'niveaux', 'clubs', 'licence'));
     }
 
     /**

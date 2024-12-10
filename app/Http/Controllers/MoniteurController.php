@@ -14,20 +14,21 @@ use App\Models\SuiviPrepa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
-class AthleteController extends Controller
+class MoniteurController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
 
-    const type_club_sportif_id = 1; 
-    const type_club_diving_id = 2; 
+    const type_plongeur_athlete_id = 1; 
+    const type_plongeur_plongeur_id = 2; 
+    const type_plongeur_moniteur_id = 3; 
     const statut_accepter = 'accepter';
     const statut_refuser = 'refuser';
 
     public function index()
     {
-        // $plongeurs = Plongeur::where('type_plongeur_id', self::type_club_sportif_id)->orderBy('created_at', 'DESC')->with("niveau")->paginate(100);
+        // $plongeurs = Plongeur::where('type_plongeur_id', self::type_plongeur_moniteur_id)->orderBy('created_at', 'DESC')->with("niveau")->paginate(100);
         $currentYear = Carbon::now()->year;
         
         $plongeurs = Plongeur::whereIn('id', function ($query) use ($currentYear) {
@@ -36,15 +37,15 @@ class AthleteController extends Controller
                   ->where('statut', self::statut_accepter)
                   ->where('annee', $currentYear);
                   
-        })->where('type_plongeur_id', self::type_club_sportif_id)
+        })->where('type_plongeur_id', self::type_plongeur_moniteur_id)
         ->orderBy('created_at', 'DESC')->with("niveau")->paginate(100);
         // dd($plongeurs);
-        return view("dashboard.pages.athletes.index")->with("plongeurs", $plongeurs);
+        return view("dashboard.pages.moniteur.index")->with("plongeurs", $plongeurs);
     }
 
-    public function athletes_inactifs()
+    public function moniteurs_inactifs()
     {
-        // $plongeurs = Plongeur::where('type_plongeur_id', self::type_club_sportif_id)->orderBy('created_at', 'DESC')->with("niveau")->paginate(100);
+        // $plongeurs = Plongeur::where('type_plongeur_id', self::type_plongeur_moniteur_id)->orderBy('created_at', 'DESC')->with("niveau")->paginate(100);
         $currentYear = Carbon::now()->year;
         
        $plongeurs = Plongeur::where(function ($query) use ($currentYear) {
@@ -59,12 +60,12 @@ class AthleteController extends Controller
                   ->whereYear('annee', '!=', $currentYear);
             });
         })
-        ->where('type_plongeur_id', self::type_club_sportif_id)
+        ->where('type_plongeur_id', self::type_plongeur_moniteur_id)
         ->orderBy('created_at', 'DESC')
         ->with('niveau')
         ->paginate(100);
 
-        return view("dashboard.pages.athletes.athletes-inactifs")->with("plongeurs", $plongeurs);
+        return view("dashboard.pages.moniteur.moniteurs-inactifs")->with("plongeurs", $plongeurs);
     }
     /**
      * Show the form for creating a new resource.
@@ -73,7 +74,7 @@ class AthleteController extends Controller
     {
         $niveaux = Level::all();
         $clubs = Club::orderBy('nom', 'desc')->get();
-        return view("dashboard.pages.athletes.ajouter", compact('niveaux', 'clubs'));
+        return view("dashboard.pages.moniteur.ajouter", compact('niveaux', 'clubs'));
     }
 
     /**
@@ -111,7 +112,7 @@ class AthleteController extends Controller
             $plongeur->telephone_fixe_persone_cas_urgence  = $request->phone_fixe_personne;
             $plongeur->telephone_portable_persone_cas_urgence = $request->phone_portable_personne;
             $plongeur->lien_parente_persone_cas_urgence = $request->lien_parente_personne;
-            $plongeur->n_licence = $request->n_licence;
+            // $plongeur->n_licence = $request->n_licence;
             $plongeur->date_visite_medicale = $request->date_visite_medicale;
             $plongeur->id_niveau = $request->niveaux;
             $plongeur->enseignement = $request->enseignement;
@@ -128,7 +129,7 @@ class AthleteController extends Controller
                 $plongeur->image = '/admin/uploads/images/plongeurs/' . $nomImage;
             }
             $plongeur->club_id  = $request->club;
-            $plongeur->type_plongeur_id   = self::type_club_sportif_id;
+            $plongeur->type_plongeur_id   = self::type_plongeur_moniteur_id;
 
             $plongeur->save();
 
@@ -145,7 +146,7 @@ class AthleteController extends Controller
     {
         $plongeur = Plongeur::with('formations')->with('carnet_plongee_details.equipe')->with("createur")->find($id);
 //         return $plongeur;
-        return view("dashboard.pages.athletes.details", ["plongeur" => $plongeur]);
+        return view("dashboard.pages.moniteur.details", ["plongeur" => $plongeur]);
     }
 
 
@@ -159,7 +160,7 @@ class AthleteController extends Controller
         $clubs = Club::orderBy('nom', 'desc')->get();
         $licence = Licence::where('plongeur_id', $id)->where('annee', date('Y'))->where('statut', self::statut_accepter)->first();
 
-        return view("dashboard.pages.athletes.modifier", compact('plongeur', 'niveaux', 'clubs', 'licence'));
+        return view("dashboard.pages.moniteur.modifier", compact('plongeur', 'niveaux', 'clubs', 'licence'));
     }
 
     /**
@@ -260,7 +261,7 @@ class AthleteController extends Controller
         $niveaux = Level::all();
         $plongeur = Plongeur::where("id", $id_plongeur)->first();
         $suiviPrepa = SuiviPrepa::where("id_plongeur", $id_plongeur)->where("id_niveau", 1)->get();
-        return view("dashboard.pages.athletes.suivi-prepa-niveau1")->with("users", $users)->with("niveaux", $niveaux)->with("plongeur", $plongeur)->with("suiviPrepa", $suiviPrepa);
+        return view("dashboard.pages.moniteur.suivi-prepa-niveau1")->with("users", $users)->with("niveaux", $niveaux)->with("plongeur", $plongeur)->with("suiviPrepa", $suiviPrepa);
     }
 
     public function suiviPrepaNiveau2($id_plongeur)
@@ -269,7 +270,7 @@ class AthleteController extends Controller
         $niveaux = Level::all();
         $plongeur = Plongeur::where("id", $id_plongeur)->first();
         $suiviPrepa = SuiviPrepa::where("id_plongeur", $id_plongeur)->where("id_niveau", 2)->get();
-        return view("dashboard.pages.athletes.suivi-prepa-niveau2")->with("users", $users)->with("niveaux", $niveaux)->with("plongeur", $plongeur)->with("suiviPrepa", $suiviPrepa);
+        return view("dashboard.pages.moniteur.suivi-prepa-niveau2")->with("users", $users)->with("niveaux", $niveaux)->with("plongeur", $plongeur)->with("suiviPrepa", $suiviPrepa);
     }
 
     public function suiviPrepaNiveau3($id_plongeur)
@@ -278,7 +279,7 @@ class AthleteController extends Controller
         $niveaux = Level::all();
         $plongeur = Plongeur::where("id", $id_plongeur)->first();
         $suiviPrepa = SuiviPrepa::where("id_plongeur", $id_plongeur)->where("id_niveau", 3)->get();
-        return view("dashboard.pages.athletes.suivi-prepa-niveau3")->with("users", $users)->with("niveaux", $niveaux)->with("plongeur", $plongeur)->with("suiviPrepa", $suiviPrepa);
+        return view("dashboard.pages.moniteur.suivi-prepa-niveau3")->with("users", $users)->with("niveaux", $niveaux)->with("plongeur", $plongeur)->with("suiviPrepa", $suiviPrepa);
     }
 
     public function suiviPrepaNiveau4($id_plongeur)
@@ -287,7 +288,7 @@ class AthleteController extends Controller
         $niveaux = Level::all();
         $plongeur = Plongeur::where("id", $id_plongeur)->first();
         $suiviPrepa = SuiviPrepa::where("id_plongeur", $id_plongeur)->where("id_niveau", 4)->get();
-        return view("dashboard.pages.athletes.suivi-prepa-niveau4")->with("users", $users)->with("niveaux", $niveaux)->with("plongeur", $plongeur)->with("suiviPrepa", $suiviPrepa);
+        return view("dashboard.pages.moniteur.suivi-prepa-niveau4")->with("users", $users)->with("niveaux", $niveaux)->with("plongeur", $plongeur)->with("suiviPrepa", $suiviPrepa);
     }
 
     public function formationsPlongeur($id_plongeur, $id_niveau)
@@ -321,6 +322,6 @@ class AthleteController extends Controller
         where calendrier_plongeurs.id_plongeur = '.$id_plongeur.' and levels.id = '.$id_niveau.'
         order by  calendrier_exercices.created_at desc'
         );
-        return view("dashboard.pages.athletes.formations")->with("plongeur",$plongeur)->with("exercices", $exercices)->with("niveaux", $niveaux);
+        return view("dashboard.pages.moniteur.formations")->with("plongeur",$plongeur)->with("exercices", $exercices)->with("niveaux", $niveaux);
     }
 }

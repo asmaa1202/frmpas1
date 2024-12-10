@@ -25,7 +25,7 @@ class PlongeurClubController extends Controller
 
     public function index()
     {
-    //   $plongeurs = Plongeur::where('type_club_id', self::type_club_diving_id)->where('club_id', Auth::user()->club->id)->latest()->get();
+    //   $plongeurs = Plongeur::where('type_plongeur_id', self::type_club_diving_id)->where('club_id', Auth::user()->club->id)->latest()->get();
     
       $currentYear = Carbon::now()->year;
         
@@ -36,7 +36,7 @@ class PlongeurClubController extends Controller
                 ->where('statut', self::statut_accepter)
                 ->where('annee', $currentYear);
                 
-            })->where('type_club_id', self::type_club_diving_id)
+            })->where('type_plongeur_id', self::type_club_diving_id)
             ->orderBy('created_at', 'DESC')->with("niveau")->paginate(100);
 
       return view('clubDash.pages.plongeur.index', compact('plongeurs'));
@@ -45,7 +45,7 @@ class PlongeurClubController extends Controller
 
     public function plongeurs_inactifs()
     {
-    //   $plongeurs = Plongeur::where('type_club_id', self::type_club_diving_id)->where('club_id', Auth::user()->club->id)->latest()->get();
+    //   $plongeurs = Plongeur::where('type_plongeur_id', self::type_club_diving_id)->where('club_id', Auth::user()->club->id)->latest()->get();
     
       $currentYear = Carbon::now()->year;
 
@@ -61,7 +61,7 @@ class PlongeurClubController extends Controller
                  ->whereYear('annee', '!=', $currentYear);
            });
        })
-       ->where('type_club_id', self::type_club_diving_id)
+       ->where('type_plongeur_id', self::type_club_diving_id)
        ->orderBy('created_at', 'DESC')
        ->with('niveau')
        ->paginate(100);
@@ -130,7 +130,7 @@ class PlongeurClubController extends Controller
                 $plongeur->image = '/admin/uploads/images/plongeurs/' . $nomImage;
             }
             $plongeur->club_id  = Auth::user()->club->id;
-            $plongeur->type_club_id   = self::type_club_diving_id;
+            $plongeur->type_plongeur_id   = self::type_club_diving_id;
 
             $plongeur->save();
 
