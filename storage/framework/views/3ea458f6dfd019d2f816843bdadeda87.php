@@ -80,6 +80,25 @@
                         </li>
                     </ul>
 
+                    <a class="nav-link dropdown-indicator" href="#moniteurs" role="button" data-bs-toggle="collapse"
+                        aria-expanded="true" aria-controls="moniteurs">
+                        <div class="d-flex align-items-center"><span class="nav-link-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </span>
+                        <span class="nav-link-text ps-2">Moniteurs</span></div>
+                    </a>
+                    <ul class="nav collapse show" id="moniteurs" style="">
+                        <li class="nav-item"><a class="nav-link" href="<?php echo e(route('club.moniteurs.index')); ?>">
+                                <div class="d-flex align-items-center"><span class="nav-link-text ps-2">Liste Moniteurs</span>
+                                </div>
+                            </a><!-- more inner pages-->
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="<?php echo e(route('club.moniteurs.inactifs')); ?>">
+                                <div class="d-flex align-items-center"><span class="nav-link-text ps-2">Moniteurs Inactifs</span></div>
+                            </a><!-- more inner pages-->
+                        </li>
+                    </ul>
+
                     <a class="nav-link dropdown-indicator collapsed" href="#email" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="email">
                         <div class="d-flex align-items-center"><span class="nav-link-icon">
                             <svg class="svg-inline--fa fa-envelope-open fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope-open" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">

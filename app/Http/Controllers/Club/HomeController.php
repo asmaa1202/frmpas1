@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use Elibyy\TCPDF\Facades\TCPDF;
 use Illuminate\Support\Facades\File;
+use App\Constants\ClubStatutConstants;
 
 class HomeController extends Controller
 {
@@ -38,8 +39,39 @@ class HomeController extends Controller
                                     // ->where('annee', 22)
                                     ->where('statut', self::statut_accepter)
                                     ->first();
+
+                                    $remainingDays = Carbon::now()->diffInDays(Carbon::now()->endOfYear());
+
+                                    $currentYear = date('Y');
+
+
+                                    $nombrePlongeursActifs = Plongeur::whereIn('id', function ($query) use ($currentYear) {
+                                        $query->select('plongeur_id')
+                                                ->from('licences')
+                                                ->where('statut', ClubStatutConstants::STATUT_ACCEPTER)
+                                                ->where('annee', $currentYear);
+                                                
+                                    })->where('type_plongeur_id', 2)->count();
+                                    // dd($nombrePlongeursActifs);
+                        
+                        // dd($nombrePlongeursActifs);
+                                    $nombrePlongeursInactifs = Plongeur::where(function ($query) use ($currentYear) {
+                                        // Plongeurs sans aucune licence
+                                        $query->whereNotIn('id', function ($subQuery) {
+                                            $subQuery->select('plongeur_id')->from('licences');
+                                        })
+                                        ->orWhereIn('id', function ($subQuery) use ($currentYear) {
+                                            $subQuery->select('plongeur_id')
+                                                    ->from('licences')
+                                              ->where('statut', ClubStatutConstants::STATUT_ACCEPTER)
+                                              ->whereYear('annee', '!=', $currentYear);
+                                        });
+                                    })
+                                    ->where('type_plongeur_id', 2)
+                                    ->count();
+                        
         // dd(empty($active_adhesion));
-        return view('clubDash.pages.home', compact('active_adhesion', 'remainingDays'));
+        return view('clubDash.pages.home', compact('active_adhesion', 'remainingDays', 'nombrePlongeursActifs', 'nombrePlongeursInactifs'));
     
         // return view('clubDash.pages.home', compact('clubsActifs', 'clubsInactifs', 'remainingDays', 'nombrePlongeurs', 'nombreAthletes'));
     }

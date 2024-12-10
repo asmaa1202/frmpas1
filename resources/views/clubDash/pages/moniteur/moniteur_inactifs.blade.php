@@ -18,11 +18,11 @@
     <div class="card-body position-relative">
         <div class="row">
             <div class="col-lg-8">
-                <h3>Athletes Inactifs</h3>
+                <h3>Moniteurs Inactifs</h3>
                 <p class="mb-0">Rapide, intelligent et vous pouvez voir toutes les analyses sur cette page.</p>
             </div>
             <div class="col-lg-4 d-flex justify-content-end align-items-center">
-                <a href="{{ route('club.athletes.create') }}" role="button" class="btn btn-outline-primary">
+                <a href="{{ route('club.moniteurs.create') }}" role="button" class="btn btn-outline-primary">
                     <span class="fas fa-plus me-1" data-fa-transform="shrink-3"></span>Ajouter
                 </a>
             </div>
@@ -100,22 +100,22 @@
                                     aria-labelledby="order-dropdown-0">
                                     <div class="py-2">
                                         <a class="dropdown-item"
-                                            href="/club/athletes/modifier/{{ $item->id }}">Modifier
+                                            href="/club/moniteurs/modifier/{{ $item->id }}">Modifier
+                                        </a>
+                                        {{-- <a class="dropdown-item"
+                                            href="/dashboard/moniteurs/{{ $item->id }}/formations/niveau/{{$item->id_niveau}}">Formations
                                         </a>
                                         <a class="dropdown-item"
-                                            href="/club/athletes/{{ $item->id }}/formations/niveau/{{$item->id_niveau}}">Formations
-                                        </a>
-                                        <a class="dropdown-item"
-                                            href="/club/athletes/{{ $item->id }}/carnet-de-plongee">Carnet de
+                                            href="/dashboard/moniteurs/{{ $item->id }}/carnet-de-plongee">Carnet de
                                             plongée
                                         </a>
                                         <a class="dropdown-item"
-                                            href="/club/athletes/{{ $item->id }}/niveau/1/suivi-prepa">Fiche de
+                                            href="/dashboard/moniteurs/{{ $item->id }}/niveau/1/suivi-prepa">Fiche de
                                             suivi
                                             prépa
-                                        </a>
+                                        </a> --}}
                                         <a class="dropdown-item"
-                                            href="/club/athletes/{{ $item->id }}/details">Details
+                                            href="/dashboard/moniteurs/{{ $item->id }}/details">Details
                                         </a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item text-danger" role="button" data-bs-toggle="modal"
@@ -169,7 +169,7 @@
             try {
                 const btnClose = document.getElementById(`colseModal${id}`);
                 btnClose.click();
-                const response = await axios.delete(`/club/athletes/${id}`);
+                const response = await axios.delete(`/club/plongeurs/${id}`);
                 if (response.status === 200) {
                     const notif =
                         `<div class="toast-container position-fixed bottom-0 end-0 p-3">

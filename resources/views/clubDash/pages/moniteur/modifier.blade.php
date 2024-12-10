@@ -1,7 +1,9 @@
-@extends('dashboard.layout.master')
+@extends('clubDash.layout.master')
+
 @section('title')
-<title>FRMPAS - Modifier carnet de plongée</title>
+<title>FRMPAS - Modifier plongeur</title>
 @endsection
+
 @section('content')
 <div class="card mb-3">
     <div class="bg-holder d-none d-lg-block bg-card"
@@ -21,7 +23,7 @@
                     <i class="far fa-save me-1"></i>
                     Enregistrer
                 </button>
-                <a href="{{ route('plongeurs.index') }}" role="button" class="btn btn-outline-primary">
+                <a href="{{ route('club.moniteurs.index') }}" role="button" class="btn btn-outline-primary">
                     <span class="pe-1">Retour</span>
                     <span class="fas fa-arrow-right" data-fa-transform="shrink-3"></span>
                 </a>
@@ -63,9 +65,7 @@
             </div>
             <div class="card-body bg-light">
                 <div class="row g-3">
-                    <h6 class="fw-bold">Genre<span class="fs--2 ms-1 text-primary" data-bs-toggle="tooltip"
-                            data-bs-placement="top" title="Only The group of selected people can see your profile"><span
-                                class="fas fa-question-circle"></span></span></h6>
+                    <h6 class="fw-bold">Genre</h6>
                     <div class="ps-2 mt-0">
                         <div class="row mx-2">
                             <div class="form-check mb-0 lh-1 col-2">
@@ -97,10 +97,18 @@
                         <label class="form-label" for="prenom">Prénom</label>
                         <input class="form-control" id="prenom" type="text" value="{{ $plongeur->prenom }}" />
                     </div>
-                    <div class="col-sm-6">
-                        <label for="email">Adresse courriel</label>
-                        <input class="form-control" id="email" data-input-mask='{"mask":"/^\S*@?\S*$/"}'
+                    <div class="col-lg-3">
+                        <label class="form-label" for="cin">CIN</label>
+                        <input class="form-control" id="cin" value="{{ $plongeur->cin }}" type="text" />
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="email-plongeur-edit">Adresse courriel</label>
+                        <input class="form-control" id="email-plongeur-edit" data-input-mask='{"mask":"/^\S*@?\S*$/"}'
                             placeholder="XXXX@XXX.XXX" value="{{ $plongeur->email }}" type="email" />
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="form-label" for="password">Mot de passe</label>
+                        <input class="form-control" id="password" type="password" />
                     </div>
                 </div>
             </div>
@@ -132,16 +140,16 @@
                     </div>
                     <div class="col-sm-6 mt-3">
                         <div class="form-check form-switch">
-                            <input class="form-check-input" id="phone_fixe_diffusable" type="checkbox"
-                                {{ $plongeur->phone_fixe_diffusable ? 'checked' : '' }} />
+                            <input class="form-check-input" id="telephone_fixe_diffusable" type="checkbox"
+                                {{ $plongeur->telephone_fixe_diffusable ? 'checked' : '' }} />
                             <label class="form-check-label" for="telephone_fixe_diffusable">Diffusable aux autres
                                 membres de FRMPAS</label>
                         </div>
                     </div>
                     <div class="col-sm-6 mt-3">
                         <div class="form-check form-switch">
-                            <input class="form-check-input" id="phone_portable_diffusable" type="checkbox"
-                                {{ $plongeur->phone_fixe_diffusable ? 'checked' : '' }} />
+                            <input class="form-check-input" id="telephone_portable_diffusable" type="checkbox"
+                                {{ $plongeur->telephone_portable_diffusable ? 'checked' : '' }} />
                             <label class="form-check-label" for="telephone_portable_diffusable">Diffusable aux autres
                                 membres de FRMPAS</label>
                         </div>
@@ -227,10 +235,15 @@
                 </div>
                 <div class="card-body bg-light">
 
-                    <div class="mb-2">
+                    {{-- <div class="mb-2">
                         <label class="form-label" for="n_licence">N° de Licence</label>
                         <input class="form-control" id="n_licence" type="text" value="{{ $plongeur->n_licence }}" />
+                    </div> --}}
+                    <div class="mb-2">
+                        <label class="form-label" for="n_licence">N° de Licence</label>
+                        <input class="form-control" id="n_licence" type="text" value="{{ $licence->custom_id ?? ' '  }}"  disabled />
                     </div>
+
                     <div class="mb-2">
                         <label class="form-label" for="date_visite_medicale">Date de visite médicale</label>
                         <input class="form-control datetimepicker" id="date_visite_medicale" type="text"
@@ -241,10 +254,10 @@
                         <select class="form-select js-choice" id="niveaux" size="1" name="niveaux"
                             data-options='{"removeItemButton":true,"placeholder":true}'>
                             <option value="">Choisissez le niveau</option>
-                            <option {{ $plongeur->niveaux == 'Niveau 1' ? 'selected' : '' }}>Niveau 1</option>
-                            <option {{ $plongeur->niveaux == 'Niveau 2' ? 'selected' : '' }}>Niveau 2</option>
-                            <option {{ $plongeur->niveaux == 'Niveau 3' ? 'selected' : '' }}>Niveau 3</option>
-                            <option {{ $plongeur->niveaux == 'Niveau 4' ? 'selected' : '' }}>Niveau 4</option>
+                            @foreach ($niveaux as $item)
+                            <option value={{$item->id}} {{ $plongeur->id_niveau == $item->id ? 'selected' : '' }}>
+                                {{$item->label}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="mb-2">
@@ -254,7 +267,7 @@
                             data-options='{"removeItemButton":true,"placeholder":true, "delimiter": ","}'>
                             <option value="">Choisissez le niveau</option>
                             <option
-                                selected={{ array_search('Lundi', explode(',', $plongeur->jour_entrainement)) >= 0 }}>
+                                {{ array_search('Lundi', explode(',', $plongeur->jour_entrainement)) ? '' : 'selected'}}>
                                 Lundi</option>
                             <option
                                 {{ array_search('Mardi', explode(',', $plongeur->jour_entrainement)) == false ? '' : 'selected' }}>
@@ -338,7 +351,8 @@
                 formData.append("nom", document.getElementById("nom").value);
                 formData.append("genre", document.querySelector(".genre:checked").value);
                 formData.append("prenom", document.getElementById("prenom").value);
-                formData.append("email", document.getElementById("email").value);
+                formData.append("email", document.getElementById("email-plongeur-edit").value);
+                formData.append("cin", document.getElementById("cin").value);
                 formData.append("profession", document.getElementById("profession").value);
                 formData.append("date_naissance", document.getElementById("date_naissance").value);
                 formData.append("phone_fix", document.getElementById("phone_fix").value);
@@ -347,9 +361,9 @@
                 formData.append("ville", document.getElementById("ville").value);
                 formData.append("pays", document.getElementById("pays").value);
                 formData.append("phone_portable", document.getElementById("phone_portable").value);
-                formData.append("phone_fixe_diffusable", document.getElementById("phone_fixe_diffusable").checked);
-                formData.append("phone_portable_diffusable", document.getElementById("phone_portable_diffusable")
-                    .checked);
+                formData.append("phone_fixe_diffusable", document.getElementById("telephone_fixe_diffusable").checked ? 1 : 0);
+                formData.append("phone_portable_diffusable", document.getElementById("telephone_portable_diffusable")
+                    .checked ? 1 : 0);
                 formData.append("nom_personne", document.getElementById("nom_personne").value);
                 formData.append("prenom_personne", document.getElementById("prenom_personne").value);
                 formData.append("email_personne", document.getElementById("email_personne").value);
@@ -359,11 +373,11 @@
                 formData.append("n_licence", document.getElementById("n_licence").value);
                 formData.append("date_visite_medicale", document.getElementById("date_visite_medicale").value);
                 formData.append("niveaux", document.getElementById("niveaux").value);
-                formData.append("jour_entrainement", document.getElementById("jour_entrainement").value);
+                formData.append("jour_entrainement", document.getElementById("jour_entrainement").innerText.split(/(?=[A-Z])/).toString().trim().slice(1));
                 formData.append("enseignement", document.getElementById("enseignement").value);
                 formData.append("qualifications", document.getElementById("qualifications").value);
 
-                const res = await axios.post(`/dashboard/plongeurs/modifier/${id}`, formData, {
+                const res = await axios.post(`/club/moniteurs/modifier/${id}`, formData, {
                     headers: {
                         "Content-Type": "multipart/form-data",
                     }
