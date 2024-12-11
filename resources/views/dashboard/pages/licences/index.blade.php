@@ -39,6 +39,7 @@
                     <tr>
                         <th style="width: 60px;">ID</th>
                         <th style="min-width: 200px;">plongeur</th>
+                        <th style="min-width: 200px;">Date Demande</th>
                         <th style="min-width: 280px;">E-mail</th>
                        <th style="min-width: 180px;">Club</th>
                        <th style="min-width: 180px;">Niveau</th>
@@ -63,6 +64,7 @@
                                 </div>
                             </td>
                             {{-- <td class="align-middle">{{ $item->plongeur->nom }}</td> --}}
+                            <td class="align-middle">{{ $item->created_at }}</td>
                             <td class="align-middle">{{ $item->plongeur->email }}</td>
                             <td class="align-middle">{{ optional($item->plongeur->club)->nom ?? '--' }}</td>
                             <td class="align-middle">{{ $item->plongeur->niveau->label }}</td>
