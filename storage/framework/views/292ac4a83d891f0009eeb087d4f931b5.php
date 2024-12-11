@@ -122,7 +122,7 @@
                                                 data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            Êtes-vous sûr de vouloir supprimer le club <strong><?php echo e($club->nom); ?></strong> ?
+                                            Êtes-vous sûr de vouloir supprimer le club <br><strong><?php echo e($club->nom); ?></strong> ?
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Non</button>

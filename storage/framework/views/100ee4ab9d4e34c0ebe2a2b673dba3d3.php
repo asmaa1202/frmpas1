@@ -34,7 +34,7 @@
                                     <?php echo e($clubsActifs); ?>
 
                                 </div><a class="fw-semi-bold fs--1 text-nowrap"
-                                    href="../app/e-commerce/customers.html">Voir tout<span
+                                    href="<?php echo e(route('clubs.index')); ?>">Voir tout<span
                                         class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a>
                             </div>
                         </div>
@@ -51,8 +51,26 @@
                                 <div class="display-4 fs-4 mb-2 fw-normal font-sans-serif text-info">
                                     <?php echo e($clubsInactifs); ?>
 
-                                </div><a class="fw-semi-bold fs--1 text-nowrap" href="#">Voir tout
+                                </div><a class="fw-semi-bold fs--1 text-nowrap" href="<?php echo e(route('clubs.inactifs')); ?>">Voir tout
                                     <span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="card overflow-hidden" style="min-width: 12rem">
+                            <div class="bg-holder bg-card"
+                                style="background-image:url(<?php echo e(asset('dashboard/img/icons/spot-illustrations/corner-5.png')); ?>);">
+                            </div>
+                            <!--/.bg-holder-->
+
+                            <div class="card-body position-relative">
+                                <h6>Plongeurs Actifs</h6>
+                                <div class="display-4 fs-4 mb-2 fw-normal font-sans-serif text-info">
+                                    <?php echo e($nombrePlongeurs); ?>
+
+                                </div><a class="fw-semi-bold fs--1 text-nowrap" href="<?php echo e(route('clubs.index')); ?>">Voir tout
+                                    <span class="fas fa-v-right ms-1" data-fa-transform="down-1"></span> </a>
                             </div>
                         </div>
                     </div>
@@ -64,12 +82,29 @@
                             <!--/.bg-holder-->
 
                             <div class="card-body position-relative">
-                                <h6>Nombre de plongeurs</h6>
+                                <h6>Plongeurs Inactifs</h6>
                                 <div class="display-4 fs-4 mb-2 fw-normal font-sans-serif text-info">
                                     <?php echo e($nombrePlongeurs); ?>
 
-                                </div><a class="fw-semi-bold fs--1 text-nowrap" href="#">Voir tout
+                                </div><a class="fw-semi-bold fs--1 text-nowrap" href="<?php echo e(route('clubs.index')); ?>">Voir tout
                                     <span class="fas fa-v-right ms-1" data-fa-transform="down-1"></span> </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="card overflow-hidden" style="min-width: 12rem">
+                            <div class="bg-holder bg-card"
+                                style="background-image:url(<?php echo e(asset('dashboard/img/icons/spot-illustrations/corner-7.png')); ?>);">
+                            </div>
+                            <!--/.bg-holder-->
+                            <div class="card-body position-relative">
+                                <h6>Athlètes Actifs</h6>
+                                <div class="display-4 fs-4 mb-2 fw-normal font-sans-serif text-info">
+                                    <?php echo e($nombreAthletes); ?>
+
+                                </div><a class="fw-semi-bold fs--1 text-nowrap" href="#">Voir tout
+                                    <span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a>
                             </div>
                         </div>
                     </div>
@@ -80,7 +115,7 @@
                             </div>
                             <!--/.bg-holder-->
                             <div class="card-body position-relative">
-                                <h6>Nombre d'athlètes</h6>
+                                <h6>Athlètes Inactifs</h6>
                                 <div class="display-4 fs-4 mb-2 fw-normal font-sans-serif text-info">
                                     <?php echo e($nombreAthletes); ?>
 
