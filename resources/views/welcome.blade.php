@@ -387,7 +387,7 @@
 				<div class="flexslider">
 					<ul class="slides">
 						<li class="ds cover-image text-center text-lg-left">
-							<img src="{{asset('assets/images/fede1.jpeg')}}" alt="img">
+							<img src="{{asset('assets/images/slide01.jpg')}}" alt="img">
 							<div class="container">
 								<div class="row">
 									<div class="col-12">
@@ -395,7 +395,7 @@
 											<div class="intro_layers">
 												<div class="intro_layer" data-animation="fadeInRight">
 													<div class="divider-90"></div>
-													{{-- <div class="d-inline-block">
+													<div class="d-inline-block">
 														<h3 class="intro_before_featured_word text-center">
 															Découvrez le monde sous-marin avec la
 														</h3>
@@ -405,9 +405,12 @@
 														<h6 class="intro_after_featured_word text-white text-center"  style="line-height: 1.5;">
 															et faites partie d'une communauté passionnée dédiée à l'exploration et à la préservation des merveilles marines du Maroc.
 														</h6>
-													</div> --}}
+													</div>
 												</div>
-												<div class="intro_layer text-center" data-animation="fadeInUp" style="margin-bottom: -18rem;">
+												{{-- <div class="intro_layer text-center" data-animation="fadeInUp" style="margin-bottom: -18rem;">
+													<a href="/" class="btn btn-maincolor btn-slider btn-medium">Plateforme e-learning</a>
+												</div> --}}
+												<div class="intro_layer text-center" data-animation="fadeInUp">
 													<a href="/" class="btn btn-maincolor btn-slider btn-medium">Plateforme e-learning</a>
 												</div>
 											</div> 

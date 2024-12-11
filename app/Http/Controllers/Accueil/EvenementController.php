@@ -19,7 +19,7 @@ class EvenementController extends Controller
         }else{
              $evenements = Evenement::query()->latest()->paginate(4);
         }
-
+// dd($evenements);
         $recentEvenements = Evenement::whereIn('status', [ $this::evenement_status_active, $this::evenement_status_principal])->limit(4)->latest()->get();
        
         return view('accueil.evenements.evenements', compact('evenements', 'recentEvenements'));

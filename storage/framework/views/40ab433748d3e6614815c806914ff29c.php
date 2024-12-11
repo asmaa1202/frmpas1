@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('custom-css'); ?>
 
 <style>
@@ -93,13 +91,14 @@
                                         <time class="entry-date published updated" datetime="2018-03-18T15:15:12+00:00"><?php echo e(\Carbon\Carbon::parse($evenement->date_debut_evenement)->format('d.m.Y')); ?></time>
                                     </a>
                                 </span>
+                                <?php if($evenement->emplacement): ?>
                                 <span>
                                     <i class="fa fa-map-marker"></i>
                                     <a href="#" rel="bookmark">
                                         <span><?php echo e($evenement->emplacement); ?></span>
                                     </a>
                                 </span>
-
+                                <?php endif; ?>
                             </div>
                           
                         </header>
