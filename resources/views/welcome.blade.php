@@ -36,7 +36,7 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-		/* background-color: rgba(61, 61, 61, 0.3);  */
+		background-color: rgba(61, 61, 61, 0.3); 
 		z-index: 1;
 	}
 
@@ -387,7 +387,7 @@
 				<div class="flexslider">
 					<ul class="slides">
 						<li class="ds cover-image text-center text-lg-left">
-							<img src="{{asset('assets/images/federation2.png')}}" alt="img">
+							<img src="{{asset('assets/images/fede1.jpeg')}}" alt="img">
 							<div class="container">
 								<div class="row">
 									<div class="col-12">

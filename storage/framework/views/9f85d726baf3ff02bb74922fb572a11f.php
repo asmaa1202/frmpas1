@@ -100,11 +100,12 @@
                             <!--/.bg-holder-->
 
                             <div class="card-body position-relative">
-                                <h6>Club Actif</h6>
+                                <h6>Athlètes Actifs</h6>
                                 <div class="display-4 fs-4 mb-2 fw-normal font-sans-serif text-warning">
-                                    
+                                    <?php echo e($nombreAthletesActifs); ?>
+
                                 </div><a class="fw-semi-bold fs--1 text-nowrap"
-                                    href="../app/e-commerce/customers.html">Voir tout<span
+                                    href="#">Voir tout<span
                                         class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a>
                             </div>
                         </div>
@@ -117,9 +118,10 @@
                             <!--/.bg-holder-->
 
                             <div class="card-body position-relative">
-                                <h6>Club Inactif</h6>
+                                <h6>Athlètes Inactifs</h6>
                                 <div class="display-4 fs-4 mb-2 fw-normal font-sans-serif text-info">
-                                    
+                                    <?php echo e($nombreAthletesInactifs); ?>
+
                                 </div><a class="fw-semi-bold fs--1 text-nowrap" href="#">Voir tout
                                     <span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a>
                             </div>
@@ -133,11 +135,11 @@
                             <!--/.bg-holder-->
 
                             <div class="card-body position-relative">
-                                <h6>Nombre de plongeurs Actifs</h6>
+                                <h6>Plongeurs Actifs</h6>
                                 <div class="display-4 fs-4 mb-2 fw-normal font-sans-serif text-info">
                                     <?php echo e($nombrePlongeursActifs); ?>
 
-                                </div><a class="fw-semi-bold fs--1 text-nowrap" href="#">Voir tout
+                                </div><a class="fw-semi-bold fs--1 text-nowrap" href="<?php echo e(route("club.plongeurs.index")); ?>">Voir tout
                                     <span class="fas fa-v-right ms-1" data-fa-transform="down-1"></span> </a>
                             </div>
                         </div>
@@ -149,11 +151,44 @@
                             </div>
                             <!--/.bg-holder-->
                             <div class="card-body position-relative">
-                                <h6>Nombre de plongeurs Inactifs</h6>
+                                <h6>Plongeurs Inactifs</h6>
                                 <div class="display-4 fs-4 mb-2 fw-normal font-sans-serif text-info">
                                     <?php echo e($nombrePlongeursInactifs); ?>
 
-                                </div><a class="fw-semi-bold fs--1 text-nowrap" href="#">Voir tout
+                                </div><a class="fw-semi-bold fs--1 text-nowrap" href="<?php echo e(route("club.plongeurs.inactifs")); ?>">Voir tout
+                                    <span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card overflow-hidden" style="min-width: 12rem">
+                            <div class="bg-holder bg-card"
+                                style="background-image:url(<?php echo e(asset('dashboard/img/icons/spot-illustrations/corner-5.png')); ?>);">
+                            </div>
+                            <!--/.bg-holder-->
+
+                            <div class="card-body position-relative">
+                                <h6>Moniteurs Actifs</h6>
+                                <div class="display-4 fs-4 mb-2 fw-normal font-sans-serif text-info">
+                                    <?php echo e($nombreMoniteursActifs); ?>
+
+                                </div><a class="fw-semi-bold fs--1 text-nowrap" href="<?php echo e(route("club.moniteurs.index")); ?>">Voir tout
+                                    <span class="fas fa-v-right ms-1" data-fa-transform="down-1"></span> </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card overflow-hidden" style="min-width: 12rem">
+                            <div class="bg-holder bg-card"
+                                style="background-image:url(<?php echo e(asset('dashboard/img/icons/spot-illustrations/corner-7.png')); ?>);">
+                            </div>
+                            <!--/.bg-holder-->
+                            <div class="card-body position-relative">
+                                <h6>Moniteurs Inactifs</h6>
+                                <div class="display-4 fs-4 mb-2 fw-normal font-sans-serif text-info">
+                                    <?php echo e($nombreMoniteursInactifs); ?>
+
+                                </div><a class="fw-semi-bold fs--1 text-nowrap" href="<?php echo e(route("club.moniteurs.inactifs")); ?>">Voir tout
                                     <span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a>
                             </div>
                         </div>
