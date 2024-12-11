@@ -225,7 +225,7 @@
 										<li class="active">
 											<a href="<?php echo e(route('frmpas.about')); ?>">Frmpas Organisation</a>
 											<ul>
-                                                <li>
+												<li>
 													<a href="<?php echo e(route('frmpas.about')); ?>">Historique</a>
 												</li>
 												<li>
@@ -235,88 +235,100 @@
 													<a href="<?php echo e(route('commissions')); ?>">Commissions</a>
 												</li>
 			
-												
-												
-												
 												<li>
 													<a href="<?php echo e(route('contact')); ?>">Contact</a>
 												</li>
-
 											</ul>
 										</li>
+										<!-- Sport -->
 										<li>
-											<a href="<?php echo e(route('frmpas.about')); ?>">Frmpas</a>
+											<a href="#">Frmpas</a>
 											<ul>
-                                                <li>
-													<a href="<?php echo e(route('frmpas.about')); ?>">Equipe National</a>
-												</li>
-												<li>
-													<a href="<?php echo e(route('frmpas.family')); ?>">Club Sportif</a>
-												</li>
-												<li>
-													<a href="<?php echo e(route('commissions')); ?>">Club Plongée</a>
-												</li>
 			
 												<li>
-													<a href="<?php echo e(route('contact')); ?>">Entraineur</a>
+													<a href="<?php echo e(route('sport.club')); ?>">Equipe National</a>
 												</li>
 												<li>
-													<a href="<?php echo e(route('contact')); ?>">Juge</a>
+													<a href="<?php echo e(route('sport.competition')); ?>">Club Sportif</a>
 												</li>
 												<li>
-													<a href="<?php echo e(route('contact')); ?>">Competition</a>
+													<a href="<?php echo e(route('sport.competition')); ?>">Club Plongée</a>
 												</li>
-
+												<li>
+													<a href="<?php echo e(route('sport.competition')); ?>">Entraineur</a>
+												</li>
+												<li>
+													<a href="<?php echo e(route('sport.competition')); ?>">juge</a>
+												</li>
+												<li>
+													<a href="<?php echo e(route('sport.competition')); ?>">Compétition</a>
+												</li>
+												<li>
+													<a href="<?php echo e(route('sport.competition')); ?>">Communiquer</a>
+												</li>
 											</ul>
 										</li>
 										<!-- Sport -->
 										<li>
 											<a href="#">Sport</a>
 											<ul>
-
+			
 												<li>
-													<a href="<?php echo e(route('sport.club')); ?>">FINSWIMMING</a>
+													<a href="<?php echo e(route('sport.diving')); ?>">nage avec palmes</a>
 												</li>
 												<li>
-													<a href="<?php echo e(route('sport.competition')); ?>">SPORT DIVING</a>
+													<a href="<?php echo e(route('sport.finswimming')); ?>">plongée sportive</a>
 												</li>
 												<li>
-													<a href="<?php echo e(route('sport.competition')); ?>">VISUAL</a>
+													<a href="<?php echo e(route('sport.visual')); ?>">visuelle</a>
 												</li>
 												<li>
-													<a href="<?php echo e(route('sport.competition')); ?>">FREEDIVING</a>
+													<a href="<?php echo e(route('sport.freediving')); ?>">plongée en apnée</a>
 												</li>
-											
 											</ul>
 										</li>
 										<!-- eof blog -->
-
+			
 										<!-- Diving -->
 										<li>
 											<a href="#">Plongée sous marine</a>
-
 											<ul>
 												<li>
 													<a href="<?php echo e(route('plongee.club')); ?>">Club Diving</a>
 												</li>
-												
+									
 												<li>
 													<a href="<?php echo e(route('plongee.formation')); ?>">Formation FRMPAS</a>
 												</li>
 											</ul>
 										</li>
-										
-										<li>
-											<a href="#">Environement et Science</a>
-
-											
-										</li>
 										<!-- eof features -->
-
-                                      	<!-- Événements -->
+			
+			
+										
+			
+										 <!-- Événements -->
+										 <li>
+											<a href="#">Environement et Science</a>
+			
+											<ul>
+												<li>
+													<a href="<?php echo e(route('evenements.index')); ?>">Événements</a>
+												</li>
+												<li>
+													<a href="<?php echo e(route('evenements.index')); ?>">Calendrier</a>
+												</li>
+												<li>
+													<a href="<?php echo e(route('actualites')); ?>">Actualités</a>
+												</li>
+												<li>
+													<a href="<?php echo e(route('galerie')); ?>">Galerie</a>
+												</li>
+											</ul>
+										</li>
 										<li>
 											<a href="#">Événements</a>
-
+			
 											<ul>
 												<li>
 													<a href="<?php echo e(route('evenements.index')); ?>">Calendrier</a>
@@ -329,11 +341,12 @@
 												</li>
 											</ul>
 										</li>
+										
 										<!-- eof Événements -->
-                                        
+										
 									</ul>
-
-
+			
+			
 								</nav>
 								<!-- eof main nav -->
 							</div>
@@ -378,7 +391,7 @@
 				<div class="flexslider">
 					<ul class="slides">
 						<li class="ds cover-image text-center text-lg-left">
-							<img src="<?php echo e(asset('assets/images/slide01.jpg')); ?>" alt="img">
+							<img  src="<?php echo e(asset('assets/images/slide01.jpg')); ?>" alt="img">
 							<div class="container">
 								<div class="row">
 									<div class="col-12">
@@ -465,10 +478,10 @@
 	</div><!-- eof #canvas -->
 
 
+
 	<script src="<?php echo e(asset('assets/js/compressed.js')); ?>"></script>
 	<script src="<?php echo e(asset('assets/js/main.js')); ?>"></script>
 	<script src="<?php echo e(asset('assets/js/switcher.js')); ?>"></script>
-
 </body>
 
 </html><?php /**PATH C:\xampp\htdocs\frmpas\resources\views/welcome.blade.php ENDPATH**/ ?>

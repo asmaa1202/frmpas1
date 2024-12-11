@@ -225,7 +225,7 @@
 										<li class="active">
 											<a href="{{route('frmpas.about')}}">Frmpas Organisation</a>
 											<ul>
-                                                <li>
+												<li>
 													<a href="{{route('frmpas.about')}}">Historique</a>
 												</li>
 												<li>
@@ -235,97 +235,115 @@
 													<a href="{{route('commissions')}}">Commissions</a>
 												</li>
 			
-												
-												{{-- <li>
-													<a href="{{route('accueil')}}#formations">Formations et certifications</a>
-												</li> --}}
-												{{-- <li>
-													<a href="{{route('accueil')}}#clubs">Clubs affiliés et adhésion</a>
-												</li>
-                                                <li>
-													<a href="{{route('accueil')}}#membre">Espace membre</a>
-												</li> --}}
 												<li>
 													<a href="{{route('contact')}}">Contact</a>
 												</li>
-
 											</ul>
 										</li>
+										<!-- Sport -->
 										<li>
-											<a href="{{route('frmpas.about')}}">Frmpas</a>
+											<a href="#">Frmpas</a>
 											<ul>
-                                                <li>
-													<a href="{{route('frmpas.about')}}">Equipe National</a>
-												</li>
-												<li>
-													<a href="{{route('frmpas.family')}}">Club Sportif</a>
-												</li>
-												<li>
-													<a href="{{route('commissions')}}">Club Plongée</a>
-												</li>
 			
 												<li>
-													<a href="{{route('contact')}}">Entraineur</a>
+													<a href="{{route('sport.club')}}">Equipe National</a>
 												</li>
 												<li>
-													<a href="{{route('contact')}}">Juge</a>
+													<a href="{{route('sport.competition')}}">Club Sportif</a>
 												</li>
 												<li>
-													<a href="{{route('contact')}}">Competition</a>
+													<a href="{{route('sport.competition')}}">Club Plongée</a>
 												</li>
-
+												<li>
+													<a href="{{route('sport.competition')}}">Entraineur</a>
+												</li>
+												<li>
+													<a href="{{route('sport.competition')}}">juge</a>
+												</li>
+												<li>
+													<a href="{{route('sport.competition')}}">Compétition</a>
+												</li>
+												<li>
+													<a href="{{route('sport.competition')}}">Communiquer</a>
+												</li>
 											</ul>
 										</li>
 										<!-- Sport -->
 										<li>
 											<a href="#">Sport</a>
 											<ul>
-
+			
 												<li>
-													<a href="{{route('sport.club')}}">FINSWIMMING</a>
+													<a href="{{route('sport.diving')}}">nage avec palmes</a>
 												</li>
 												<li>
-													<a href="{{route('sport.competition')}}">SPORT DIVING</a>
+													<a href="{{route('sport.finswimming')}}">plongée sportive</a>
 												</li>
 												<li>
-													<a href="{{route('sport.competition')}}">VISUAL</a>
+													<a href="{{route('sport.visual')}}">visuelle</a>
 												</li>
 												<li>
-													<a href="{{route('sport.competition')}}">FREEDIVING</a>
+													<a href="{{route('sport.freediving')}}">plongée en apnée</a>
 												</li>
-											
 											</ul>
 										</li>
 										<!-- eof blog -->
-
+			
 										<!-- Diving -->
 										<li>
 											<a href="#">Plongée sous marine</a>
-
 											<ul>
 												<li>
 													<a href="{{route('plongee.club')}}">Club Diving</a>
 												</li>
-												{{-- <li>
-													<a href="index_static.html">Enseignement et accompagnement</a>
-												</li> --}}
+									
 												<li>
 													<a href="{{route('plongee.formation')}}">Formation FRMPAS</a>
 												</li>
 											</ul>
 										</li>
-										
-										<li>
-											<a href="#">Environement et Science</a>
-
-											
-										</li>
 										<!-- eof features -->
-
-                                      	<!-- Événements -->
+			
+			
+										{{-- <li>
+											<a href="{{route('actualites')}}">Actualités</a>
+										</li>
+										<!-- eof pages -->
+			
+									   <!-- Event -->
+										<li>
+											<a href="{{route('evenements.index')}}">Événements</a>
+										</li>
+										<!-- eof Event -->
+			
+										<!-- gallery -->
+										<li>
+											<a href="{{route('galerie')}}">Galerie </a>
+										</li>
+										<!-- eof Gallery --> --}}
+			
+										 <!-- Événements -->
+										 <li>
+											<a href="#">Environement et Science</a>
+			
+											<ul>
+												<li>
+													<a href="{{route('evenements.index')}}">Événements</a>
+												</li>
+												<li>
+													<a href="{{route('evenements.index')}}">Calendrier</a>
+												</li>
+												<li>
+													<a href="{{route('actualites')}}">Actualités</a>
+												</li>
+												<li>
+													<a href="{{route('galerie')}}">Galerie</a>
+												</li>
+											</ul>
+										</li>
 										<li>
 											<a href="#">Événements</a>
-
+			
 											<ul>
 												<li>
 													<a href="{{route('evenements.index')}}">Calendrier</a>
@@ -338,11 +356,12 @@
 												</li>
 											</ul>
 										</li>
+										
 										<!-- eof Événements -->
-                                        
+										
 									</ul>
-
-
+			
+			
 								</nav>
 								<!-- eof main nav -->
 							</div>
@@ -387,7 +406,7 @@
 				<div class="flexslider">
 					<ul class="slides">
 						<li class="ds cover-image text-center text-lg-left">
-							<img src="{{asset('assets/images/slide01.jpg')}}" alt="img">
+							<img  src="{{asset('assets/images/slide01.jpg')}}" alt="img">
 							<div class="container">
 								<div class="row">
 									<div class="col-12">
@@ -472,10 +491,10 @@
 	</div><!-- eof #canvas -->
 
 
+
 	<script src="{{asset('assets/js/compressed.js')}}"></script>
 	<script src="{{asset('assets/js/main.js')}}"></script>
 	<script src="{{asset('assets/js/switcher.js')}}"></script>
-
 </body>
 
 </html>

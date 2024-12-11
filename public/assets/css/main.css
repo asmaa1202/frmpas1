@@ -7807,8 +7807,8 @@ img {
 }
 
 .s-overlay.ds:before {
-	background-color: #0d425e;
-	opacity: 0.9;
+	background-color: #0c3452;
+
 }
 
 .s-overlay.ds.ms:before {
@@ -18760,6 +18760,21 @@ img.absolute_image {
 .page_title.cover-background,
 .page_title.s-parallax {
 	background-image: url("../images/parallax/section_background.jpeg");
+}
+
+.pages_title.cover-background,
+.pages_title.ss-parallax {
+	background-image: url("../images/parallax/diving.jpg");
+}
+
+.finswimming_pages.cover-background,
+.finswimming_pages.finswimming-parallax {
+	background-image: url("../images/parallax/FINSWIMMING.jpeg");
+}
+
+.freediving_pages.cover-background,
+.freediving_pages.freediving-parallax  {
+	background-image: url("../images/parallax/FINSWIMMING.jpeg");
 }
 
 .page_title h1,

@@ -37,10 +37,18 @@ use App\Models\Plongeur;
 use App\Models\Club;
 use Carbon\Carbon;
 use App\Constants\ClubStatutConstants;
+use App\Http\Controllers\SportType;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+
+Route::get('/diving', [SportType::class, 'index'])->name('sport.diving');
+Route::get('/finswimming', [SportType::class, 'ffinswimming'])->name('sport.finswimming');
+Route::get('/freediving', [SportType::class, 'ffreediving'])->name('sport.freediving');
+Route::get('/visual', [SportType::class, 'visual'])->name('sport.visual');
 Route::get('/', [AccueilController::class, 'welcome'])->name('welcome');
 
 /*
