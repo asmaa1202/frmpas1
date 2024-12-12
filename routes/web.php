@@ -256,8 +256,71 @@ Route::middleware(['auth', 'role:1'])->group(function () {
 
         $remainingDays = Carbon::now()->diffInDays(Carbon::now()->endOfYear());
 
-        $nombreAthletes = Plongeur::where('type_plongeur_id', 1)->count();
-        $nombrePlongeurs = Plongeur::where('type_plongeur_id', 2)->count();
+        $nombreAthletesActifs = Plongeur::whereIn('id', function ($query) use ($currentYear) {
+                    $query->select('plongeur_id')
+                                ->from('licences')
+                                ->where('statut', ClubStatutConstants::STATUT_ACCEPTER)
+                                ->where('annee', $currentYear);
+                                
+                    })->where('type_plongeur_id', 1)->count();
+
+        $nombreAthletesInactifs = Plongeur::where(function ($query) use ($currentYear) {
+                $query->whereNotIn('id', function ($subQuery) {
+                    $subQuery->select('plongeur_id')->from('licences');
+                })
+                ->orWhereIn('id', function ($subQuery) use ($currentYear) {
+                        $subQuery->select('plongeur_id')
+                                ->from('licences')
+                            ->where('statut', ClubStatutConstants::STATUT_ACCEPTER)
+                            ->whereYear('annee', '!=', $currentYear);
+                    });
+                })
+                ->where('type_plongeur_id', 1)
+                ->count();
+
+        $nombrePlongeursActifs = Plongeur::whereIn('id', function ($query) use ($currentYear) {
+                $query->select('plongeur_id')
+                            ->from('licences')
+                            ->where('statut', ClubStatutConstants::STATUT_ACCEPTER)
+                            ->where('annee', $currentYear);
+                            
+                })->where('type_plongeur_id', 2)->count();
+        
+        $nombrePlongeursInactifs = Plongeur::where(function ($query) use ($currentYear) {
+                    $query->whereNotIn('id', function ($subQuery) {
+                        $subQuery->select('plongeur_id')->from('licences');
+                    })
+                    ->orWhereIn('id', function ($subQuery) use ($currentYear) {
+                        $subQuery->select('plongeur_id')
+                                ->from('licences')
+                            ->where('statut', ClubStatutConstants::STATUT_ACCEPTER)
+                            ->whereYear('annee', '!=', $currentYear);
+                    });
+                })
+                ->where('type_plongeur_id', 2)
+                ->count();
+
+        $nombreMoniteursActifs = Plongeur::whereIn('id', function ($query) use ($currentYear) {
+            $query->select('plongeur_id')
+                        ->from('licences')
+                        ->where('statut', ClubStatutConstants::STATUT_ACCEPTER)
+                        ->where('annee', $currentYear);
+                        
+            })->where('type_plongeur_id', 3)->count();
+            
+        $nombreMoniteursInactifs = Plongeur::where(function ($query) use ($currentYear) {
+                    $query->whereNotIn('id', function ($subQuery) {
+                        $subQuery->select('plongeur_id')->from('licences');
+                    })
+                    ->orWhereIn('id', function ($subQuery) use ($currentYear) {
+                        $subQuery->select('plongeur_id')
+                                ->from('licences')
+                            ->where('statut', ClubStatutConstants::STATUT_ACCEPTER)
+                            ->whereYear('annee', '!=', $currentYear);
+                    });
+                })
+                ->where('type_plongeur_id', 3)
+                ->count();
     
         return view(
             "dashboard.pages.home",
@@ -272,8 +335,13 @@ Route::middleware(['auth', 'role:1'])->group(function () {
                 'clubsActifs',
                 'clubsInactifs',
                 'remainingDays',
-                'nombreAthletes',
-                'nombrePlongeurs',
+                'nombrePlongeursActifs',
+                'nombrePlongeursInactifs',
+                'nombreAthletesActifs',
+                'nombreAthletesInactifs',
+                'nombreMoniteursActifs',
+                'nombreMoniteursInactifs',
+
             )
         );
     })->name('admin.index');

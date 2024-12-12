@@ -60,6 +60,37 @@
                     <div class="col-sm-6">
                         <div class="card overflow-hidden" style="min-width: 12rem">
                             <div class="bg-holder bg-card"
+                                style="background-image:url({{ asset('dashboard/img/icons/spot-illustrations/corner-7.png') }});">
+                            </div>
+                            <!--/.bg-holder-->
+                            <div class="card-body position-relative">
+                                <h6>Athlètes Actifs</h6>
+                                <div class="display-4 fs-4 mb-2 fw-normal font-sans-serif text-info">
+                                    {{ $nombreAthletesActifs }}
+                                </div><a class="fw-semi-bold fs--1 text-nowrap" href="#">Voir tout
+                                    <span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card overflow-hidden" style="min-width: 12rem">
+                            <div class="bg-holder bg-card"
+                                style="background-image:url({{ asset('dashboard/img/icons/spot-illustrations/corner-7.png') }});">
+                            </div>
+                            <!--/.bg-holder-->
+                            <div class="card-body position-relative">
+                                <h6>Athlètes Inactifs</h6>
+                                <div class="display-4 fs-4 mb-2 fw-normal font-sans-serif text-info">
+                                    {{ $nombreAthletesInactifs }}
+                                </div><a class="fw-semi-bold fs--1 text-nowrap" href="#">Voir tout
+                                    <span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="card overflow-hidden" style="min-width: 12rem">
+                            <div class="bg-holder bg-card"
                                 style="background-image:url({{ asset('dashboard/img/icons/spot-illustrations/corner-5.png') }});">
                             </div>
                             <!--/.bg-holder-->
@@ -67,7 +98,7 @@
                             <div class="card-body position-relative">
                                 <h6>Plongeurs Actifs</h6>
                                 <div class="display-4 fs-4 mb-2 fw-normal font-sans-serif text-info">
-                                    {{ $nombrePlongeurs }}
+                                    {{ $nombrePlongeursActifs }}
                                 </div><a class="fw-semi-bold fs--1 text-nowrap" href="{{route('clubs.index')}}">Voir tout
                                     <span class="fas fa-v-right ms-1" data-fa-transform="down-1"></span> </a>
                             </div>
@@ -83,43 +114,46 @@
                             <div class="card-body position-relative">
                                 <h6>Plongeurs Inactifs</h6>
                                 <div class="display-4 fs-4 mb-2 fw-normal font-sans-serif text-info">
-                                    {{ $nombrePlongeurs }}
+                                    {{ $nombrePlongeursInactifs }}
                                 </div><a class="fw-semi-bold fs--1 text-nowrap" href="{{route('clubs.index')}}">Voir tout
                                     <span class="fas fa-v-right ms-1" data-fa-transform="down-1"></span> </a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-sm-6">
+                                   <div class="col-sm-6">
                         <div class="card overflow-hidden" style="min-width: 12rem">
                             <div class="bg-holder bg-card"
-                                style="background-image:url({{ asset('dashboard/img/icons/spot-illustrations/corner-7.png') }});">
+                                style="background-image:url({{ asset('dashboard/img/icons/spot-illustrations/corner-5.png') }});">
                             </div>
                             <!--/.bg-holder-->
+
                             <div class="card-body position-relative">
-                                <h6>Athlètes Actifs</h6>
+                                <h6>Moniteurs Actifs</h6>
                                 <div class="display-4 fs-4 mb-2 fw-normal font-sans-serif text-info">
-                                    {{ $nombreAthletes }}
-                                </div><a class="fw-semi-bold fs--1 text-nowrap" href="#">Voir tout
-                                    <span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a>
+                                    {{ $nombreMoniteursActifs }}
+                                </div><a class="fw-semi-bold fs--1 text-nowrap" href="{{route('clubs.index')}}">Voir tout
+                                    <span class="fas fa-v-right ms-1" data-fa-transform="down-1"></span> </a>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="card overflow-hidden" style="min-width: 12rem">
                             <div class="bg-holder bg-card"
-                                style="background-image:url({{ asset('dashboard/img/icons/spot-illustrations/corner-7.png') }});">
+                                style="background-image:url({{ asset('dashboard/img/icons/spot-illustrations/corner-5.png') }});">
                             </div>
                             <!--/.bg-holder-->
+
                             <div class="card-body position-relative">
-                                <h6>Athlètes Inactifs</h6>
+                                <h6>Moniteurs Inactifs</h6>
                                 <div class="display-4 fs-4 mb-2 fw-normal font-sans-serif text-info">
-                                    {{ $nombreAthletes }}
-                                </div><a class="fw-semi-bold fs--1 text-nowrap" href="#">Voir tout
-                                    <span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a>
+                                    {{ $nombreMoniteursInactifs }}
+                                </div><a class="fw-semi-bold fs--1 text-nowrap" href="{{route('clubs.index')}}">Voir tout
+                                    <span class="fas fa-v-right ms-1" data-fa-transform="down-1"></span> </a>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
