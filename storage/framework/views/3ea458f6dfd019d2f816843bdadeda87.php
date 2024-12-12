@@ -108,8 +108,27 @@
                             </span><span class="nav-link-text ps-2">Demandes licences</span></div>
                     </a>
                     <ul class="nav collapse show" id="email" style="">
-                        <li class="nav-item"><a class="nav-link" href="<?php echo e(route('club.demandes_licence.index')); ?>">
-                                <div class="d-flex align-items-center"><span class="nav-link-text ps-2">Demandes Licence</span>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo e(route('club.demandes_licence.en_attentes')); ?>">
+                                <div class="d-flex align-items-center"><span class="nav-link-text ps-2">Licences En Attentes</span>
+                                </div>
+                            </a><!-- more inner pages-->
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo e(route('club.demandes_licence.en_cours_validation')); ?>">
+                                <div class="d-flex align-items-center"><span class="nav-link-text ps-2">Licences En cours Validation</span>
+                                </div>
+                            </a><!-- more inner pages-->
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo e(route('club.demandes_licence.acceptees')); ?>">
+                                <div class="d-flex align-items-center"><span class="nav-link-text ps-2">Licences Acceptées</span>
+                                </div>
+                            </a><!-- more inner pages-->
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo e(route('club.demandes_licence.refusees')); ?>">
+                                <div class="d-flex align-items-center"><span class="nav-link-text ps-2">Licences Refusées</span>
                                 </div>
                             </a><!-- more inner pages-->
                         </li>

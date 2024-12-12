@@ -15,9 +15,10 @@ class ClubLicenceController extends Controller
      * Display a listing of the resource.
      */
     const statut_en_cours = 'en cours'; 
+    const statut_en_cours_validation = 'en_cours_validation'; 
     const statut_accepter = 'accepter'; 
     const statut_refuser = 'refuser'; 
-    public function index()
+    public function demandes_en_attentes()
     {
         // $licences = Licence::where('statut', self::statut_en_cours)->orderBy('created_at', 'DESC')->paginate(100);
 
@@ -28,23 +29,37 @@ class ClubLicenceController extends Controller
                     })
                     ->orderBy('created_at', 'DESC')
                     ->paginate(100);
-        return view("clubDash.pages.licences.index")->with("licences", $licences);
+        $statut = 'En Attentes';
+        return view("clubDash.pages.licences.demandes_en_attentes", compact('statut'))->with("licences", $licences);
     }
 
-    public function licence_statut($id, $statut)
+    public function updateLicences(Request $request)
     {
+        try {
+            // dd($request->input());
+            $ids = $request->input('ids');
+            // dd($ids);
 
-        $licence = Licence::findOrFail($id);
+            $statut = $request->input('statut');
+            foreach($ids as $id){
+                $licence = Licence::find($id);
+                $licence->statut = $statut;
+                $licence->save();
+            }
+        } catch (\Exception $e) {
+            return back()->with('error', 'Une erreur est survenue lors de l\'envoie des demandes : ' . $e->getMessage());
+        }
+        // $licence = Licence::findOrFail($id);
 
-        $licence->statut = $statut;
+        // $licence->statut = $statut;
 
-        $licence->save();
+        // $licence->save();
 
-        $licences = Licence::where('statut', self::statut_en_cours)->orderBy('created_at', 'DESC')->paginate(100);
+        // $licences = Licence::where('statut', self::statut_en_cours)->orderBy('created_at', 'DESC')->paginate(100);
 
-        return redirect()->route("demandes_licence.index")
-                        ->with("success", "Le statut de l'adhésion a été mis à jour avec succès.")
-                        ->with("licences", $licences);
+        // return redirect()->route("demandes_licence.index")
+        //                 ->with("success", "Le statut de l'adhésion a été mis à jour avec succès.")
+        //                 ->with("licences", $licences);
         // return response()->json(array('message' => "Le statut de l'adhésion a été mis à jour avec succès."), 200);
         // return response()->json([
         //     'message' => "Le statut de l'adhésion a été mis à jour avec succès.",
@@ -54,6 +69,50 @@ class ClubLicenceController extends Controller
 
     }
 
+    public function demandes_en_cours_validation()
+    {
+        // $licences = Licence::where('statut', self::statut_en_cours)->orderBy('created_at', 'DESC')->paginate(100);
+
+        // $adhesion = Adhesion::orderBy('created_at', 'DESC')->paginate(2);
+        $licences = Licence::where('statut', self::statut_en_cours_validation)
+                    ->whereHas('plongeur', function ($query) {
+                        $query->where('club_id', Auth::user()->club->id);
+                    })
+                    ->orderBy('created_at', 'DESC')
+                    ->paginate(100);
+        $statut = 'En Cours de Validation';
+        return view("clubDash.pages.licences.index", compact('statut'))->with("licences", $licences);
+    }
+
+    public function demandes_acceptees()
+    {
+        // $licences = Licence::where('statut', self::statut_en_cours)->orderBy('created_at', 'DESC')->paginate(100);
+
+        // $adhesion = Adhesion::orderBy('created_at', 'DESC')->paginate(2);
+        $licences = Licence::where('statut', self::statut_accepter)
+                    ->whereHas('plongeur', function ($query) {
+                        $query->where('club_id', Auth::user()->club->id);
+                    })
+                    ->orderBy('created_at', 'DESC')
+                    ->paginate(100);
+        $statut = 'Acceptées';
+        return view("clubDash.pages.licences.index", compact('statut'))->with("licences", $licences);
+    }
+
+    public function demandes_refusees()
+    {
+        // $licences = Licence::where('statut', self::statut_en_cours)->orderBy('created_at', 'DESC')->paginate(100);
+
+        // $adhesion = Adhesion::orderBy('created_at', 'DESC')->paginate(2);
+        $licences = Licence::where('statut', self::statut_refuser)
+                    ->whereHas('plongeur', function ($query) {
+                        $query->where('club_id', Auth::user()->club->id);
+                    })
+                    ->orderBy('created_at', 'DESC')
+                    ->paginate(100);
+        $statut = 'Refusées';
+        return view("clubDash.pages.licences.index", compact('statut'))->with("licences", $licences);
+    }
     /**
      * Show the form for creating a new resource.
      */

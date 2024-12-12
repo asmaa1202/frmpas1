@@ -76,7 +76,7 @@
                 <div class="col-lg-6 d-flex justify-content-end align-items-center flex-wrap">
                     <a href="<?php echo e(route('attestation.licence', Auth::guard('plongeurs')->user()->id)); ?>" class="btn btn-primary" target="__blank"><i class="bi bi-file-earmark-arrow-down-fill"></i> Attestation de licence</a>
                 </div>
-            <?php elseif(isset($active_licence) && $active_licence->statut == 'en cours'): ?>
+            <?php elseif(isset($active_licence) && ($active_licence->statut == 'en cours' || $active_licence->statut == 'en_cours_validation')): ?>
                 <div class="col-lg-6 d-flex justify-content-end align-items-center flex-wrap">
                     <button class="btn" style="background: #279e5b; color: white;">
                         Votre demande a été envoyée

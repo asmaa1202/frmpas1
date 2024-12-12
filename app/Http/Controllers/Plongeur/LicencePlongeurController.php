@@ -16,8 +16,9 @@ class LicencePlongeurController extends Controller
     const statut_accepter = 'accepter'; 
     const statut_refuser = 'refuser'; 
 
-    const type_club_sportif = 1; 
-    const type_club_diving = 2; 
+    const type_membre_athlete = 1; 
+    const type_membre_plongeur = 2; 
+    const type_membre_moniteur = 3; 
     public function demande_licence(Request $request, $id)
     {
       
@@ -26,11 +27,11 @@ class LicencePlongeurController extends Controller
             // dd($id);
             $plongeur = Plongeur::find($id);
             $id_dl = "";
-            // if($plongeur->type_plongeur_id = self::type_club_diving){
+            // if($plongeur->type_plongeur_id = self::type_membre_plongeur){
             //     $id_dl = 'FMP'.date('Y').aleatroire(6 chiffre);
 
             // }
-            if ($plongeur->type_plongeur_id == self::type_club_diving) {
+            if ($plongeur->type_plongeur_id == self::type_membre_plongeur) {
            
                 $lastLicence = Licence::orderBy('id', 'desc')->first();
                 
@@ -40,19 +41,26 @@ class LicencePlongeurController extends Controller
                 $id_dl = 'FMP' . date('Y') . str_pad($nextId, 6, '0', STR_PAD_LEFT);
                 // return response()->json(['message' => $id_dl], 200);
 
-            }elseif($plongeur->type_plongeur_id == self::type_club_sportif){
+            }elseif($plongeur->type_plongeur_id == self::type_membre_athlete){
                 $lastLicence = Licence::orderBy('id', 'desc')->first();
                 $lastId = $lastLicence ? intval(substr($lastLicence->id, -6)) : 0;
                 $nextId = $lastId + 1;
     
                 $id_dl = 'FMA' . date('Y') . str_pad($nextId, 6, '0', STR_PAD_LEFT);
+
+            }elseif($plongeur->type_plongeur_id == self::type_membre_moniteur){
+                $lastLicence = Licence::orderBy('id', 'desc')->first();
+                $lastId = $lastLicence ? intval(substr($lastLicence->id, -6)) : 0;
+                $nextId = $lastId + 1;
+    
+                $id_dl = 'FMM' . date('Y') . str_pad($nextId, 6, '0', STR_PAD_LEFT);
             }
 
 
             $demande_licence = new Licence();
             $demande_licence->custom_id =  $id_dl;
             $demande_licence->plongeur_id = $id;
-            $demande_licence->type_id = 1;
+            $demande_licence->type_id = $plongeur->type_plongeur_id;
             $demande_licence->montant = 1999;
             $demande_licence->annee = date('Y');
             $demande_licence->statut = self::statut_en_cours;

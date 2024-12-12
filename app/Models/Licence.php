@@ -13,4 +13,9 @@ class Licence extends Model
     {
         return $this->belongsTo(Plongeur::class, 'plongeur_id');
     }
+
+    public function type_membre()
+    {
+        return $this->belongsTo(TypePlongeur::class, 'type_id');
+    }
 }

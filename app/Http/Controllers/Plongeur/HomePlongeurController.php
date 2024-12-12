@@ -18,6 +18,7 @@ class HomePlongeurController extends Controller
      */
 
      const statut_en_cours = 'en cours'; 
+     const statut_en_cours_validation = 'en_cours_validation'; 
      const statut_accepter = 'accepter'; 
      const statut_refuser = 'refuser'; 
     // public function index()
@@ -35,7 +36,7 @@ class HomePlongeurController extends Controller
         $active_licence = Licence::where('plongeur_id', $plongeurId)
             ->where('annee', date('Y'))
             // ->where('annee', 22)
-            ->whereIn('statut', [self::statut_accepter, self::statut_en_cours])
+            ->whereNot('statut', self::statut_refuser)
             ->first();
 
         // Calculer les jours restants jusqu'à la fin de l'année
@@ -49,10 +50,10 @@ class HomePlongeurController extends Controller
     {
         $filename = 'attestation-licence.pdf';
 
-// dd($id);
+        // dd($id);
         $plongeur = Plongeur::find($id);
         $licence = Licence::where('plongeur_id', $id)->where('annee', date('Y'))->where('statut', self::statut_accepter)->first();
-// dd($licence);
+        // dd($licence);
         $data = [
 
             'title' => "ATTESTATION DE LICENCE",

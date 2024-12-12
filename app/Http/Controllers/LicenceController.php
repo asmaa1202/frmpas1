@@ -13,11 +13,12 @@ class LicenceController extends Controller
      * Display a listing of the resource.
      */
     const statut_en_cours = 'en cours'; 
+    const statut_en_cours_validation = 'en_cours_validation'; 
     const statut_accepter = 'accepter'; 
     const statut_refuser = 'refuser'; 
     public function index()
     {
-        $licences = Licence::where('statut', self::statut_en_cours)->orderBy('created_at', 'DESC')->paginate(100);
+        $licences = Licence::where('statut', self::statut_en_cours_validation)->orderBy('created_at', 'DESC')->paginate(100);
 
         // $adhesion = Adhesion::orderBy('created_at', 'DESC')->paginate(2);
         return view("dashboard.pages.licences.index")->with("licences", $licences);
@@ -32,10 +33,10 @@ class LicenceController extends Controller
 
         $licence->save();
 
-        $licences = Licence::where('statut', self::statut_en_cours)->orderBy('created_at', 'DESC')->paginate(100);
+        $licences = Licence::where('statut', self::statut_en_cours_validation)->orderBy('created_at', 'DESC')->paginate(100);
 
         return redirect()->route("demandes_licence.index")
-                        ->with("success", "Le statut de l'adhésion a été mis à jour avec succès.")
+                        ->with("success", "Le statut de licence a été mis à jour avec succès.")
                         ->with("licences", $licences);
         // return response()->json(array('message' => "Le statut de l'adhésion a été mis à jour avec succès."), 200);
         // return response()->json([
