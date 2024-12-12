@@ -331,7 +331,8 @@
 													<a href="{{route('evenements.index')}}">Événements</a>
 												</li>
 												<li>
-													<a href="{{route('evenements.index')}}">Calendrier</a>
+													<a href="{{route('calendrier.federale')}}">Calendrier Fédéral
+													</a>
 												</li>
 												<li>
 													<a href="{{route('actualites')}}">Actualités</a>
@@ -426,7 +427,10 @@
 														</h6>
 													</div>
 												</div>
-												<div class="intro_layer text-center my-5" data-animation="fadeInUp">
+												{{-- <div class="intro_layer text-center" data-animation="fadeInUp" style="margin-bottom: -18rem;">
+													<a href="/" class="btn btn-maincolor btn-slider btn-medium">Plateforme e-learning</a>
+												</div> --}}
+												<div class="intro_layer text-center" data-animation="fadeInUp">
 													<a href="/" class="btn btn-maincolor btn-slider btn-medium">Plateforme e-learning</a>
 												</div>
 											</div> 

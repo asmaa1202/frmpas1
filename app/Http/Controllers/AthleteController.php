@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use App\Models\Club;
 use App\Models\Plongeur;
 use App\Models\Level;
+use App\Models\Licence;
 use App\Models\User;
 use App\Models\SuiviPrepa;
 use Illuminate\Http\Request;
@@ -26,7 +27,7 @@ class AthleteController extends Controller
 
     public function index()
     {
-        // $plongeurs = Plongeur::where('type_club_id', self::type_club_sportif_id)->orderBy('created_at', 'DESC')->with("niveau")->paginate(100);
+        // $plongeurs = Plongeur::where('type_plongeur_id', self::type_club_sportif_id)->orderBy('created_at', 'DESC')->with("niveau")->paginate(100);
         $currentYear = Carbon::now()->year;
         
         $plongeurs = Plongeur::whereIn('id', function ($query) use ($currentYear) {
@@ -35,7 +36,7 @@ class AthleteController extends Controller
                   ->where('statut', self::statut_accepter)
                   ->where('annee', $currentYear);
                   
-        })->where('type_club_id', self::type_club_sportif_id)
+        })->where('type_plongeur_id', self::type_club_sportif_id)
         ->orderBy('created_at', 'DESC')->with("niveau")->paginate(100);
         // dd($plongeurs);
         return view("dashboard.pages.athletes.index")->with("plongeurs", $plongeurs);
@@ -43,7 +44,7 @@ class AthleteController extends Controller
 
     public function athletes_inactifs()
     {
-        // $plongeurs = Plongeur::where('type_club_id', self::type_club_sportif_id)->orderBy('created_at', 'DESC')->with("niveau")->paginate(100);
+        // $plongeurs = Plongeur::where('type_plongeur_id', self::type_club_sportif_id)->orderBy('created_at', 'DESC')->with("niveau")->paginate(100);
         $currentYear = Carbon::now()->year;
         
        $plongeurs = Plongeur::where(function ($query) use ($currentYear) {
@@ -58,7 +59,7 @@ class AthleteController extends Controller
                   ->whereYear('annee', '!=', $currentYear);
             });
         })
-        ->where('type_club_id', self::type_club_sportif_id)
+        ->where('type_plongeur_id', self::type_club_sportif_id)
         ->orderBy('created_at', 'DESC')
         ->with('niveau')
         ->paginate(100);
@@ -127,7 +128,7 @@ class AthleteController extends Controller
                 $plongeur->image = '/admin/uploads/images/plongeurs/' . $nomImage;
             }
             $plongeur->club_id  = $request->club;
-            $plongeur->type_club_id   = self::type_club_sportif_id;
+            $plongeur->type_plongeur_id   = self::type_club_sportif_id;
 
             $plongeur->save();
 
@@ -156,8 +157,9 @@ class AthleteController extends Controller
         $plongeur = Plongeur::find($id);
         $niveaux = Level::all();
         $clubs = Club::orderBy('nom', 'desc')->get();
+        $licence = Licence::where('plongeur_id', $id)->where('annee', date('Y'))->where('statut', self::statut_accepter)->first();
 
-        return view("dashboard.pages.athletes.modifier", compact('plongeur', 'niveaux', 'clubs'));
+        return view("dashboard.pages.athletes.modifier", compact('plongeur', 'niveaux', 'clubs', 'licence'));
     }
 
     /**
@@ -189,7 +191,7 @@ class AthleteController extends Controller
             $plongeur->telephone_fixe_persone_cas_urgence  = $request->phone_fixe_personne;
             $plongeur->telephone_portable_persone_cas_urgence = $request->phone_portable_personne;
             $plongeur->lien_parente_persone_cas_urgence = $request->lien_parente_personne;
-            $plongeur->n_licence = $request->n_licence;
+            // $plongeur->n_licence = $request->n_licence;
             $plongeur->date_visite_medicale = $request->date_visite_medicale;
             $plongeur->id_niveau = $request->niveaux;
             $plongeur->enseignement = $request->enseignement;
@@ -203,6 +205,7 @@ class AthleteController extends Controller
                 $image->move(public_path('admin/uploads/images/plongeurs/'), $nomImage);
                 $plongeur->image = '/admin/uploads/images/plongeurs/' . $nomImage;
             }
+            $plongeur->club_id  = $request->club;
             $plongeur->save();
 
             return response()->json(array('message' => "Plongeur est modifiée avec succés",), 200);

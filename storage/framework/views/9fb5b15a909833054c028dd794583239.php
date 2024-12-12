@@ -120,7 +120,7 @@
                                         <a href="<?php echo e(route('evenements.index')); ?>">Événements</a>
                                     </li>
                                     <li>
-                                        <a href="<?php echo e(route('evenements.index')); ?>">Calendrier</a>
+                                        <a href="<?php echo e(route('calendar2.federale')); ?>">Calendrier federale</a>
                                     </li>
                                     <li>
                                         <a href="<?php echo e(route('actualites')); ?>">Actualités</a>

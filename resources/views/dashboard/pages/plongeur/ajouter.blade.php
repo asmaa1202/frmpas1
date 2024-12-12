@@ -37,7 +37,7 @@
             <div class="card-header position-relative min-vh-25 mb-8">
                 <div class="cover-image">
                     <div class="bg-holder rounded-3 rounded-bottom-0"
-                        style="background-image:url(/images/a-female-scuba-diver-watches-a-hawksbill-turtle-swim-lazily-above-a-reef-in-the-cayman-islands--e1634535880681.jpg);">
+                        style="background-image:url(/images/federation.jpg);">
                     </div>
                 </div>
                 <div class="avatar avatar-5xl avatar-profile shadow-sm img-thumbnail rounded-circle">
@@ -101,7 +101,7 @@
                     </div>
                     <div class="col-sm-3">
                         <label for="email">Adresse courriel</label>
-                        <input class="form-control" id="email1" data-input-mask='{"mask":"/^\S*@?\S*$/"}'
+                        <input class="form-control" id="email_plongeur" data-input-mask='{"mask":"/^\S*@?\S*$/"}'
                             placeholder="XXXX@XXX.XXX" type="email" />
                     </div>
                     <div class="col-sm-6">
@@ -229,7 +229,7 @@
                     </div>
                     <div class="mb-2">
                         <label for="jour_entrainement">Club</label>
-                        <select class="form-select js-choice" id="club" size="1" name="club"
+                        <select class="form-select js-choice" id="club_plongeur" size="1" name="club"
                         data-options='{"removeItemButton":true,"placeholder":true}'>
                             <option value="">Choisissez le niveau</option>
                             @foreach ($clubs as $club)
@@ -322,13 +322,13 @@
         async function addplongeur() {
             try {
                 image_card.src = 'http://localhost:8000/dashboard/img/team/avatar.png';
-// alert(document.getElementById("email1").value)
+// alert(document.getElementById("email_plongeur").value)
                 let formData = new FormData();
                 formData.append("image", file);
                 formData.append("nom", document.getElementById("nom").value);
                 formData.append("genre", document.querySelector(".genre:checked").value);
                 formData.append("prenom", document.getElementById("prenom").value);
-                formData.append("email", document.getElementById("email1").value);
+                formData.append("email", document.getElementById("email_plongeur").value);
                 formData.append("cin", document.getElementById("cin").value);
                 formData.append("profession", document.getElementById("profession").value);
                 formData.append("date_naissance", document.getElementById("date_naissance").value);
@@ -353,8 +353,8 @@
                 formData.append("enseignement", document.getElementById("enseignement").value);
                 formData.append("qualifications", document.getElementById("qualifications").value);
                 formData.append("password", document.getElementById("password").value);
-                formData.append("club", document.getElementById("club").value);
-
+                formData.append("club", document.getElementById("club_plongeur").value);
+// alert(document.getElementById("club_plongeur").value);
                 const res = await axios.post('/dashboard/plongeurs', formData, {
                     headers: {
                         "Content-Type": "multipart/form-data",

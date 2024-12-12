@@ -78,7 +78,7 @@
                                         value="{{ $type->type }}" 
                                         name="types[]" 
                                         id="type_sportifs" 
-                                        {{ in_array($type->type, json_decode(auth()->user()->club->types ?? '[]', true)) ? 'checked' : '' }}
+                                        {{ in_array($type->type, array_values(json_decode(auth()->user()->club->types ?? '[]', true))) ? 'checked' : '' }}
                                     />
                                     <label class="form-check-label mb-0" for="{{ $type->type }}">{{ $type->type }}</label>
                                 </div>
@@ -181,7 +181,7 @@
                 const is_federal = document.getElementById("is_federal").checked;
                 const nom = document.getElementById("nom").value;
                 const prenom = document.getElementById("prenom").value;
-                const email = document.getElementById("email").value;
+                const email = document.getElementById("email_club").value;
                 const password = document.getElementById("password").value;
                 const password_confirmation = document.getElementById("password_confirmation").value;
                 const checkedValuesTypes = Array.from(document.querySelectorAll(".types:checked")).map(el => el.value);

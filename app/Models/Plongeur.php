@@ -43,7 +43,7 @@ class Plongeur extends Authenticatable
         'jour_entrainement',
         'cree_par',
         'club_id',
-        'type_club_id'
+        'type_plongeur_id'
     ];
 
     protected $guard = "plongeurs";

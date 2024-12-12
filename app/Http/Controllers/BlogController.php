@@ -13,6 +13,7 @@ class BlogController extends Controller
      */
     public function index()
     {
+        
         $blogs = Blog::orderBy('created_at', 'DESC')->with('createur')->paginate(100);
         return view("dashboard.pages.blogs.index")->with("blogs", $blogs);
     }
@@ -64,11 +65,15 @@ class BlogController extends Controller
                 $image = $request->file('image');
                 $nomImage = time() . '.' . $image->getClientOriginalExtension();
                 $image->move(public_path('admin/uploads/images/blogs/'), $nomImage);
-                $blog->image = 'https://diver.cdma-solution.ma' . '/admin/uploads/images/blogs/' . $nomImage;
+                $blog->image = '/admin/uploads/images/blogs/' . $nomImage;
             }
 
             $blog->save();
 
+            $blog->blog_hash = md5(uniqid($blog->id ?? 0, true));
+
+            $blog->save();
+            
             return response()->json(array('message' => "Blog est ajouté avec succés"), 200);
         } catch (\Exception $err) {
             return response()->json(array('message' => $err), 500);

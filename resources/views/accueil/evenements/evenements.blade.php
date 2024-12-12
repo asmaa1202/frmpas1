@@ -97,13 +97,14 @@
                                         <time class="entry-date published updated" datetime="2018-03-18T15:15:12+00:00">{{ \Carbon\Carbon::parse($evenement->date_debut_evenement)->format('d.m.Y') }}</time>
                                     </a>
                                 </span>
+                                @if($evenement->emplacement)
                                 <span>
                                     <i class="fa fa-map-marker"></i>
                                     <a href="#" rel="bookmark">
                                         <span>{{ $evenement->emplacement }}</span>
                                     </a>
                                 </span>
-
+                                @endif
                             </div>
                           
                         </header>

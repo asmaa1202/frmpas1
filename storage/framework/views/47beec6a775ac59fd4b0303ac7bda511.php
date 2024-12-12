@@ -98,7 +98,7 @@
                                     aria-labelledby="order-dropdown-0">
                                     <div class="py-2">
                                         <a class="dropdown-item"
-                                            href="/dashboard/plongeurs/modifier/<?php echo e($item->id); ?>">Modifier
+                                            href="/club/plongeurs/modifier/<?php echo e($item->id); ?>">Modifier
                                         </a>
                                         <a class="dropdown-item"
                                             href="/dashboard/plongeurs/<?php echo e($item->id); ?>/formations/niveau/<?php echo e($item->id_niveau); ?>">Formations

@@ -38,12 +38,20 @@ use App\Models\Club;
 use Carbon\Carbon;
 use App\Constants\ClubStatutConstants;
 use App\Http\Controllers\SportType;
+use App\Http\Controllers\Club\MoniteurClubController;
+use App\Http\Controllers\MoniteurController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/calendrier-Federale', function () {
+    return view('calendrier');
+})->name('calendrier.federale');
 
+Route::get('/calendar', function () {
+    return view('calendar2');
+})->name('calendar2.federale');
 
 Route::get('/diving', [SportType::class, 'index'])->name('sport.diving');
 Route::get('/finswimming', [SportType::class, 'ffinswimming'])->name('sport.finswimming');
@@ -248,15 +256,22 @@ Route::middleware(['auth', 'role:1'])->group(function () {
                   ->where('annee', $currentYear);
         })->count();
     
+        // $clubsInactifs = Club::whereHas('adhesions', function ($query) use ($currentYear) {
+        //     $query->whereIn('statut', [ClubStatutConstants::STATUT_EN_COURS, ClubStatutConstants::STATUT_REFUSER])
+        //           ->where('annee', $currentYear);
+        // })->count();
+        
         $clubsInactifs = Club::whereHas('adhesions', function ($query) use ($currentYear) {
             $query->whereIn('statut', [ClubStatutConstants::STATUT_EN_COURS, ClubStatutConstants::STATUT_REFUSER])
                   ->where('annee', $currentYear);
-        })->count();
-    
+        })
+        ->orDoesntHave('adhesions') // Inclure les clubs sans adhésions
+        ->count();
+
         $remainingDays = Carbon::now()->diffInDays(Carbon::now()->endOfYear());
 
-        $nombreAthletes = Plongeur::where('type_club_id', 1)->count();
-        $nombrePlongeurs = Plongeur::where('type_club_id', 2)->count();
+        $nombreAthletes = Plongeur::where('type_plongeur_id', 1)->count();
+        $nombrePlongeurs = Plongeur::where('type_plongeur_id', 2)->count();
     
         return view(
             "dashboard.pages.home",
@@ -327,6 +342,18 @@ Route::middleware(['auth', 'role:1'])->group(function () {
     Route::delete('/dashboard/athletes/{id}', [AthleteController::class, 'destroy'])->name('athletes.destroy');
     Route::post('/dashboard/athletes/{id}/toggle-activation', [AthleteController::class, 'toggleActivation'])->name('clubs.toggleActivation');
     Route::get('/dashboard/document/{id}',[AthleteController::class,'readDocument'])->name('athletes.read.document');
+
+
+    // - Moniteurs
+    Route::get("/dashboard/moniteurs", [MoniteurController::class, 'index'])->name('moniteurs.index');
+    Route::get("/dashboard/moniteurs-inactifs", [MoniteurController::class, 'moniteurs_inactifs'])->name('moniteurs.inactifs');
+    Route::get("/dashboard/moniteurs/ajouter", [MoniteurController::class, 'create'])->name('moniteurs.create');
+    Route::post("/dashboard/moniteurs", [MoniteurController::class, 'store'])->name('moniteurs.store');
+    Route::get("/dashboard/moniteurs/modifier/{club}", [MoniteurController::class, 'edit'])->name('moniteurs.edit');
+    Route::post("/dashboard/moniteurs/modifier/{id}", [MoniteurController::class, "update"])->name('moniteurs.update');
+    Route::delete('/dashboard/moniteurs/{id}', [MoniteurController::class, 'destroy'])->name('moniteurs.destroy');
+    Route::post('/dashboard/moniteurs/{id}/toggle-activation', [MoniteurController::class, 'toggleActivation'])->name('clubs.toggleActivation');
+    Route::get('/dashboard/document/{id}',[MoniteurController::class,'readDocument'])->name('moniteurs.read.document');
 
     // - clubs
     Route::get("/dashboard/clubs", [ClubController::class, 'index'])->name('clubs.index');
@@ -423,6 +450,78 @@ Route::group(['prefix'=>'club', 'middleware' => ['auth','role:2']],function () {
         //     return view("clubDash.pages.home");
         // })->name('club.index');
         Route::get("/home", [HomeController::class, "index"])->name('club.index');
+
+        // Route::get("/home", function () {
+        
+        //     $currentYear = date('Y');
+        
+        //     // Clubs actifs : Club ID est présent dans la table adhésions avec statut "accepter"
+        //     // $clubsActifs = Club::whereHas('adhesions', function ($query) use ($currentYear) {
+        //     //     $query->where('statut', ClubStatutConstants::STATUT_ACCEPTER)
+        //     //           ->where('annee', $currentYear);
+        //     // })->count();
+        
+        //     // $clubsInactifs = Club::whereHas('adhesions', function ($query) use ($currentYear) {
+        //     //     $query->whereIn('statut', [ClubStatutConstants::STATUT_EN_COURS, ClubStatutConstants::STATUT_REFUSER])
+        //     //           ->where('annee', $currentYear);
+        //     // })->count();
+            
+        //     // $clubsInactifs = Club::whereHas('adhesions', function ($query) use ($currentYear) {
+        //     //     $query->whereIn('statut', [ClubStatutConstants::STATUT_EN_COURS, ClubStatutConstants::STATUT_REFUSER])
+        //     //           ->where('annee', $currentYear);
+        //     // })
+        //     // ->orDoesntHave('adhesions') // Inclure les clubs sans adhésions
+        //     // ->count();
+    
+        //     $remainingDays = Carbon::now()->diffInDays(Carbon::now()->endOfYear());
+    
+        //     // $nombreAthletes = Plongeur::where('type_plongeur_id', 1)->count();
+        //     // $nombreAthletes = Plongeur::whereHas('licence', function ($query) use ($currentYear) {
+        //     //         $query->where('statut', ClubStatutConstants::STATUT_ACCEPTER)
+        //     //               ->where('annee', $currentYear);
+        //     //     })->count();
+
+
+
+        //     $nombrePlongeursActifs = Plongeur::whereIn('id', function ($query) use ($currentYear) {
+        //         $query->select('plongeur_id')
+        //                 ->from('licences')
+        //                 ->where('statut', ClubStatutConstants::STATUT_ACCEPTER)
+        //                 ->where('annee', $currentYear);
+                        
+        //     })->where('type_plongeur_id', 2)->count();
+        //     // dd($nombrePlongeursActifs);
+
+
+        //     $nombrePlongeursInactifs = Plongeur::where(function ($query) use ($currentYear) {
+        //         // Plongeurs sans aucune licence
+        //         $query->whereNotIn('id', function ($subQuery) {
+        //             $subQuery->select('plongeur_id')->from('licences');
+        //         })
+        //         ->orWhereIn('id', function ($subQuery) use ($currentYear) {
+        //             $subQuery->select('plongeur_id')
+        //                     ->from('licences')
+        //               ->where('statut', ClubStatutConstants::STATUT_ACCEPTER)
+        //               ->whereYear('annee', '!=', $currentYear);
+        //         });
+        //     })
+        //     ->where('type_plongeur_id', 2)
+        //     ->count();
+
+
+        //     // dd($nombrePlongeursInactifs);
+           
+        
+        //     return view(
+        //         "dashboard.pages.home",
+        //         compact(
+        //             'nombrePlongeursActifs',
+        //             'nombrePlongeursInactifs',
+         
+        //         )
+        //     );
+        // })->name('club.index');
+
         // demande adhesion
         Route::post("/demande-adhesion/{id}", [AdhesionClubController::class, "demande_adhesion"])->name('demande.adhesion');
 
@@ -443,6 +542,15 @@ Route::group(['prefix'=>'club', 'middleware' => ['auth','role:2']],function () {
         Route::post("/athletes/modifier/{id}", [AthleteClubController::class, "update"])->name('club.athletes.update');
         Route::delete("/athletes/{id}", [AthleteClubController::class, "destroy"])->name('club.athletes.destroy');
         Route::get("/athletes/modifier/{id}", [AthleteClubController::class, 'edit'])->name('club.athletes.show');
+
+        // moniteurs
+        Route::get("/moniteurs", [MoniteurClubController::class, "index"])->name('club.moniteurs.index');
+        Route::get("/moniteurs-inactifs", [MoniteurClubController::class, "moniteurs_inactifs"])->name('club.moniteurs.inactifs');
+        Route::get("/moniteurs/ajouter", [MoniteurClubController::class, 'create'])->name('club.moniteurs.create');
+        Route::post("/moniteurs", [MoniteurClubController::class, "store"])->name('club.moniteurs.store');
+        Route::post("/moniteurs/modifier/{id}", [MoniteurClubController::class, "update"])->name('club.moniteurs.update');
+        Route::delete("/moniteurs/{id}", [MoniteurClubController::class, "destroy"])->name('club.moniteurs.destroy');
+        Route::get("/moniteurs/modifier/{id}", [MoniteurClubController::class, 'edit'])->name('club.moniteurs.show');
 
         // Route::get("/plongeurs", [PlongeurController::class, 'index'])->name('plongeurs.index');
         // Route::get("/plongeurs/api", [PlongeurController::class, 'getAllPlongeurs']);

@@ -316,7 +316,8 @@
 													<a href="<?php echo e(route('evenements.index')); ?>">Événements</a>
 												</li>
 												<li>
-													<a href="<?php echo e(route('evenements.index')); ?>">Calendrier</a>
+													<a href="<?php echo e(route('calendrier.federale')); ?>">Calendrier Fédéral
+													</a>
 												</li>
 												<li>
 													<a href="<?php echo e(route('actualites')); ?>">Actualités</a>
@@ -411,7 +412,8 @@
 														</h6>
 													</div>
 												</div>
-												<div class="intro_layer text-center my-5" data-animation="fadeInUp">
+												
+												<div class="intro_layer text-center" data-animation="fadeInUp">
 													<a href="/" class="btn btn-maincolor btn-slider btn-medium">Plateforme e-learning</a>
 												</div>
 											</div> 

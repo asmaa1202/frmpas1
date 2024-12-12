@@ -37,7 +37,7 @@
             <div class="card-header position-relative min-vh-25 mb-8">
                 <div class="cover-image">
                     <div class="bg-holder rounded-3 rounded-bottom-0"
-                        style="background-image:url(/images/a-female-scuba-diver-watches-a-hawksbill-turtle-swim-lazily-above-a-reef-in-the-cayman-islands--e1634535880681.jpg);">
+                        style="background-image:url(/images/federation.jpg);">
                     </div>
                 </div>
                 <div class="avatar avatar-5xl avatar-profile shadow-sm img-thumbnail rounded-circle">
@@ -97,7 +97,7 @@
                                         value="{{ $type->type }}" 
                                         name="types[]" 
                                         id="type_sportifs" 
-                                        {{ in_array($type->type, json_decode($club->types ?? '[]', true)) ? 'checked' : '' }}
+                                        {{ in_array($type->type, array_values(json_decode($club->types ?? '[]', true))) ? 'checked' : '' }}
                                     />
                                     <label class="form-check-label mb-0" for="{{ $type->type }}">{{ $type->type }}</label>
                                 </div>
@@ -105,7 +105,7 @@
                         
                             <div class="form-check mb-0 lh-1 col-2">
                                 <div class="form-check form-switch">
-                                    <input class="form-check-input" id="is_federal" type="checkbox" {{ $club->is_federal ? 'checked' : ''}}/>
+                                    <input class="form-check-input" id="is_federal" type="checkbox" {{ $club->is_federal === 1 ? 'checked' : ''}}/>
                                     <label class="form-check-label" for="is_federal">Fédéral</label>
                                 </div>
                             </div>

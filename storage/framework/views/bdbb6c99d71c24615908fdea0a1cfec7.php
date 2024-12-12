@@ -337,9 +337,9 @@
 								</nav>
 								<!-- eof main nav -->
 							</div>
-							
+						
 								<!--<a class="fs-20 links-maincolor-hover" href="tel:+212661140912"><mark>+212</mark> 6 61 14 09 12</a>-->
-							
+							<div style="width: 150px"></div>
 						<?php
 							$isGuest = !Auth::check() && !Auth::guard('plongeurs')->check();
 
@@ -398,7 +398,8 @@
 														</h6>
 													</div>
 												</div>
-												<div class="intro_layer text-center my-5" data-animation="fadeInUp">
+												
+												<div class="intro_layer text-center" data-animation="fadeInUp">
 													<a href="/" class="btn btn-maincolor btn-slider btn-medium">Plateforme e-learning</a>
 												</div>
 											</div> 

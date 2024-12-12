@@ -18,7 +18,7 @@ class AccueilController extends Controller
     // const blog_status_principal = 2 ; 
     public function welcome()
     {
-        $evenements = Evenement::latest()->take(3)->get();
+        $evenements = Evenement::latest()->take(2)->get();
         // dd($evenements);
         return view('welcome', compact('evenements'));
     }

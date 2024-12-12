@@ -1,3 +1,17 @@
+<style>
+    .login-icon {
+    color: #007bff;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 5px;
+	padding-left: 20px;
+    transition: color 0.3s ease;
+}
+
+.login-icon:hover {
+    color: #0056b3;
+}
+</style>
 <div class="header_absolute ds cover-background ">
     <!-- header with three Bootstrap columns - left for logo, center for navigation and right for includes-->
     <header class="page_header ds ms s-overlay">
@@ -91,10 +105,10 @@
                     </nav>
                     <!-- eof main nav -->
                 </div>
-                <div class="col-xl-2 col-lg-3 text-right d-none d-lg-block">
-                    <a class="fs-20 links-maincolor-hover" href="tel:+212661140912"><mark>+212</mark> 6 61 14 09 12</a>
-                </div>
-            </div>
+                <div style="width: 150px"></div>
+                <a href="http://127.0.0.1:8000/login" class="login-icon">
+                    <i class="fa fa-sign-in" aria-hidden="true"></i>
+                </a>
         </div>
         <!-- header toggler -->
         <span class="toggle_menu"><span></span></span>

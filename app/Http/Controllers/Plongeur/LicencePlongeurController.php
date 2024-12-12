@@ -26,11 +26,11 @@ class LicencePlongeurController extends Controller
             // dd($id);
             $plongeur = Plongeur::find($id);
             $id_dl = "";
-            // if($plongeur->type_club_id = self::type_club_diving){
+            // if($plongeur->type_plongeur_id = self::type_club_diving){
             //     $id_dl = 'FMP'.date('Y').aleatroire(6 chiffre);
 
             // }
-            if ($plongeur->type_club_id == self::type_club_diving) {
+            if ($plongeur->type_plongeur_id == self::type_club_diving) {
            
                 $lastLicence = Licence::orderBy('id', 'desc')->first();
                 
@@ -40,7 +40,7 @@ class LicencePlongeurController extends Controller
                 $id_dl = 'FMP' . date('Y') . str_pad($nextId, 6, '0', STR_PAD_LEFT);
                 // return response()->json(['message' => $id_dl], 200);
 
-            }elseif($plongeur->type_club_id == self::type_club_sportif){
+            }elseif($plongeur->type_plongeur_id == self::type_club_sportif){
                 $lastLicence = Licence::orderBy('id', 'desc')->first();
                 $lastId = $lastLicence ? intval(substr($lastLicence->id, -6)) : 0;
                 $nextId = $lastId + 1;

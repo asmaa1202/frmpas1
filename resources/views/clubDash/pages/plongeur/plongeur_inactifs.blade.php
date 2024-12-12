@@ -18,7 +18,7 @@
     <div class="card-body position-relative">
         <div class="row">
             <div class="col-lg-8">
-                <h3>Plongeurs</h3>
+                <h3>Plongeurs Inactifs</h3>
                 <p class="mb-0">Rapide, intelligent et vous pouvez voir toutes les analyses sur cette page.</p>
             </div>
             <div class="col-lg-4 d-flex justify-content-end align-items-center">
@@ -100,7 +100,7 @@
                                     aria-labelledby="order-dropdown-0">
                                     <div class="py-2">
                                         <a class="dropdown-item"
-                                            href="/dashboard/plongeurs/modifier/{{ $item->id }}">Modifier
+                                            href="/club/plongeurs/modifier/{{ $item->id }}">Modifier
                                         </a>
                                         <a class="dropdown-item"
                                             href="/dashboard/plongeurs/{{ $item->id }}/formations/niveau/{{$item->id_niveau}}">Formations

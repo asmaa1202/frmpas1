@@ -44,8 +44,8 @@
                     </div>
                     <div class="mb-3">
                         <div class="min-vh-50">
-                            <label class="form-label" for="content">Contenu :</label>
-                            <textarea class="tinymce d-none" data-tinymce="data-tinymce" id="content"
+                            <label class="form-label" for="content_blog">Contenu :</label>
+                            <textarea class="tinymce d-none" data-tinymce="data-tinymce" id="content_blog"
                                 name="content"></textarea>
                         </div>
                     </div>
@@ -88,7 +88,7 @@
 
                 const tags = document.getElementById("tags").value;
                 const title = document.getElementById("title").value;
-                const content = document.getElementById("content").value;
+                const content = document.getElementById("content_blog").value;
 
                 formData.append("image", file);
                 formData.append("tags", tags);
@@ -124,7 +124,7 @@
                     }
                     document.getElementById("tags").value = "";
                     document.getElementById("title").value = "";
-                    document.getElementById("content").value = "";
+                    document.getElementById("content_blog").value = "";
                 }
             } catch (err) {
                 console.log({

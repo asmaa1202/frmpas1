@@ -38,7 +38,7 @@ class ClubController extends Controller
                   ->where('annee', $currentYear);
                   
         })
-        // ->where('type_club_id', self::type_club_diving_id)
+        // ->where('type_plongeur_id', self::type_club_diving_id)
         ->latest()->paginate(100);
 
         return view("dashboard.pages.clubs.club", compact('clubs'));
@@ -226,11 +226,12 @@ class ClubController extends Controller
     // }
     public function update(Request $request, string $id)
     {
+        //dd($request->input());
         try {
             $club = Club::find($id);
     
             // Vérifier si 'is_federal' est vrai ou faux
-            $test = $request->is_federal ? 1 : 0;
+            $test = $request->is_federal === 'true' ? 1 : 0;
             
             // Mettre à jour les autres champs du club
             $club->nom = $request->nom_club;
@@ -241,6 +242,7 @@ class ClubController extends Controller
             $club->adresse = $request->adresse_club;
             $club->cp = $request->code_postal;
             $club->region = $request->region;
+            $club->types = $request->types;
     
             // Vérification et téléchargement de l'image
             if ($request->hasFile('image_club')) {

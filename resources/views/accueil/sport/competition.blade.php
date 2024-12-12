@@ -56,7 +56,7 @@
                         <select name="type_document" id="billing_country" class="country_to_state country_select  select2-hidden-accessible" autocomplete="country" tabindex="-1" aria-hidden="true">
                             <option value="">Selectionnez type document</option>
                         
-                            <option value="Communique">Communiqué </option>
+                            {{-- <option value="Communique">Communiqué </option> --}}
                             <option value="competition">Compétition Nationale</option>
                             <option value="coupe_du_trone">Coupe du Trône</option>
                             <option value="resultat">Résultat</option>

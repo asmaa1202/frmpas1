@@ -59,7 +59,7 @@ class HomePlongeurController extends Controller
             'clubPresident' => "Abdelaziz ALAZRAK",
             'diver' => $plongeur->nom." ".$plongeur->prenom,
             'saison' => $licence->annee." - ".$licence->annee+1,
-            'number' => $plongeur->id,
+            'number' => $licence->custom_id ,
             'today' => $licence->updated_at->format('d/m/Y'),
 
         ];

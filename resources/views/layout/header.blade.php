@@ -135,7 +135,7 @@
                                         <a href="{{route('evenements.index')}}">Événements</a>
                                     </li>
                                     <li>
-                                        <a href="{{route('evenements.index')}}">Calendrier</a>
+                                        <a href="{{route('calendar2.federale')}}">Calendrier federale</a>
                                     </li>
                                     <li>
                                         <a href="{{route('actualites')}}">Actualités</a>
