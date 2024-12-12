@@ -169,7 +169,7 @@
             try {
                 const btnClose = document.getElementById(`colseModal${id}`);
                 btnClose.click();
-                const response = await axios.delete(`/club/plongeurs/${id}`);
+                const response = await axios.delete(`/dashboard/plongeurs/${id}`);
                 if (response.status === 200) {
                     const notif =
                         `<div class="toast-container position-fixed bottom-0 end-0 p-3">
@@ -196,6 +196,7 @@
                     rowElement.remove();
                 }
             } catch (err) {
+                alert(err);
                 const notif =
                     `<div class="toast-container position-fixed bottom-0 end-0 p-3">
                                 <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">

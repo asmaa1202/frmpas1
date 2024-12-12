@@ -227,6 +227,7 @@ class PlongeurController extends Controller
     public function destroy($id)
     {
         try {
+            // dd($id);
             $deletedPlongeur = Plongeur::where("id", $id)->delete();
             if ($deletedPlongeur <> 0) {
                 return response()->json(array('message' => "Plongeur est supprimé avec succés"), 200);

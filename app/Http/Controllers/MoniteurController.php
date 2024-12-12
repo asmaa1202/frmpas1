@@ -223,7 +223,7 @@ class MoniteurController extends Controller
         try {
             $deletedPlongeur = Plongeur::where("id", $id)->delete();
             if ($deletedPlongeur <> 0) {
-                return response()->json(array('message' => "Plongeur est supprimé avec succés"), 200);
+                return response()->json(array('message' => "Moniteur est supprimé avec succés"), 200);
             } else {
                 return response()->json(array('message' => "Erreur servenu"), 500);
             }

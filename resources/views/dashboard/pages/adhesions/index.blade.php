@@ -40,6 +40,7 @@
                     <tr>
                         <th style="width: 60px;">ID</th>
                         <th style="min-width: 200px;">Club</th>
+                        <th style="min-width: 200px;">Date Demande</th>
                         <th style="min-width: 280px;">Ville</th>
                        <th style="min-width: 180px;">E-mail</th>
                        <th style="min-width: 180px;">Année</th>
@@ -63,6 +64,7 @@
                                 </div>
                             </td>
                             {{-- <td class="align-middle">{{ $item->club->nom }}</td> --}}
+                            <td class="align-middle">{{ $item->created_at }}</td> 
                             <td class="align-middle">{{ $item->email }}</td>
                             <td class="align-middle">{{ $item->ville }}</td>
                             <td class="align-middle">{{ $item->annee }}</td>

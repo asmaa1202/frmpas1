@@ -164,6 +164,7 @@ class ClubController extends Controller
     {
         $user = User::where('club_id', $club->id)->firstOrFail();
         $type_sportifs = TypeClub::all();
+        // dd($club);
         return view("dashboard.pages.clubs.edit", compact('club', 'user', 'type_sportifs'));
     }
 

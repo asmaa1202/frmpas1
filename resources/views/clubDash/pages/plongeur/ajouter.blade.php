@@ -37,7 +37,7 @@
             <div class="card-header position-relative min-vh-25 mb-8">
                 <div class="cover-image">
                     <div class="bg-holder rounded-3 rounded-bottom-0"
-                        style="background-image:url(/images/federation.jpg);">
+                        style="background-image:url(/images/federation.png);">
                     </div>
                 </div>
                 <div class="avatar avatar-5xl avatar-profile shadow-sm img-thumbnail rounded-circle">
