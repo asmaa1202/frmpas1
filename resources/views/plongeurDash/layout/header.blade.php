@@ -303,7 +303,7 @@
                 </div>
             </div>
         </li>
-        @if(isset($active_licence))
+        @if(isset($active_licence) && $active_licence->statut == 'accepter')
         <div class="d-flex align-items-center ms-auto">
             <button class="btn" style="background: #279e5b; color: white;">
                 Active

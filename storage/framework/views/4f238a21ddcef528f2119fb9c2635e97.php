@@ -98,6 +98,24 @@
                         </li>
                     </ul>
 
+                    <a class="nav-link dropdown-indicator" href="#moniteur" role="button" data-bs-toggle="collapse"
+                        aria-expanded="true" aria-controls="moniteur">
+                        <div class="d-flex align-items-center"><span class="nav-link-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </span>
+                        <span class="nav-link-text ps-2">Moniteur</span></div>
+                    </a>
+                    <ul class="nav collapse show" id="moniteur" style="">
+                        <li class="nav-item"><a class="nav-link" href="<?php echo e(route('moniteurs.index')); ?>">
+                                <div class="d-flex align-items-center"><span class="nav-link-text ps-2">Liste Moniteurs</span>
+                                </div>
+                            </a><!-- more inner pages-->
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="<?php echo e(route('moniteurs.inactifs')); ?>">
+                                <div class="d-flex align-items-center"><span class="nav-link-text ps-2">Moniteurs Inactifs</span></div>
+                            </a><!-- more inner pages-->
+                        </li>
+                    </ul>
 
                     <a class="nav-link dropdown-indicator" href="#email" role="button" data-bs-toggle="collapse"
                         aria-expanded="true" aria-controls="email">

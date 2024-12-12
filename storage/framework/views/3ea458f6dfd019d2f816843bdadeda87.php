@@ -108,20 +108,12 @@
                             </span><span class="nav-link-text ps-2">Demandes licences</span></div>
                     </a>
                     <ul class="nav collapse show" id="email" style="">
-                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/dashboard/demandes-adhesion">
-                                <div class="d-flex align-items-center"><span class="nav-link-text ps-2">Licence en cours</span>
+                        <li class="nav-item"><a class="nav-link" href="<?php echo e(route('club.demandes_licence.index')); ?>">
+                                <div class="d-flex align-items-center"><span class="nav-link-text ps-2">Demandes Licence</span>
                                 </div>
                             </a><!-- more inner pages-->
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/dashboard/demandes-licence">
-                                <div class="d-flex align-items-center"><span class="nav-link-text ps-2">Licence </span></div>
-                            </a><!-- more inner pages-->
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/dashboard/pick">
-                                <div class="d-flex align-items-center"><span class="nav-link-text ps-2">Pick</span>
-                                </div>
-                            </a><!-- more inner pages-->
-                        </li>
+                        
                     </ul>
                     
                     

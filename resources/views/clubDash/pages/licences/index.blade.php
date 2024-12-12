@@ -1,15 +1,17 @@
-<?php $__env->startSection('title'); ?>
+@extends('clubDash.layout.master')
+
+@section('title')
 <title>FRMPAS - Demandes</title>
-<?php $__env->stopSection(); ?>
+@endsection
 
-<?php $__env->startSection('css'); ?>
-<link href=<?php echo e(asset('dashboard/vendors/datatables.net-bs5/dataTables.bootstrap5.min.css')); ?> rel="stylesheet">
-<?php $__env->stopSection(); ?>
+@section('css')
+<link href={{ asset('dashboard/vendors/datatables.net-bs5/dataTables.bootstrap5.min.css') }} rel="stylesheet">
+@endsection
 
-<?php $__env->startSection('content'); ?>
+@section('content')
 <div class="card mb-3">
     <div class="bg-holder d-none d-lg-block bg-card"
-        style="background-image:url(<?php echo e(asset('dashboard/img/icons/spot-illustrations/corner-4.png')); ?>);">
+        style="background-image:url({{ asset('dashboard/img/icons/spot-illustrations/corner-4.png') }});">
     </div>
     <!--/.bg-holder-->
 
@@ -25,16 +27,19 @@
 
 <div class="card mb-3">
     <div class="bg-holder d-none d-lg-block bg-card"
-        style="background-image:url(<?php echo e(asset('dashboard/img/icons/spot-illustrations/corner-4.png')); ?>);">
+        style="background-image:url({{ asset('dashboard/img/icons/spot-illustrations/corner-4.png') }});">
     </div>
     <!--/.bg-holder-->
     <div class="card-body position-relative">
         <div class="table-responsive">
             <table id="example" class="table table-bordered data-table table-striped fs--1 mb-0" data-options='{"paging":true,"scrollY":"600px","searching":true,"scrollCollapse":true,"scrollX":true, "language": {
-                "url": "<?php echo e(asset('dashboard/vendors/datatables.net/fr-FR.json')); ?>"
+                "url": "{{asset('dashboard/vendors/datatables.net/fr-FR.json')}}"
             }}'>
                 <thead class="bg-200 text-900">
                     <tr>
+                        <th style="width: 60px;">
+                            <input type="checkbox" id="select_all"> Tous ({{ count($licences) }})
+                        </th>
                         <th style="width: 60px;">ID</th>
                         <th style="min-width: 200px;">plongeur</th>
                         <th style="min-width: 200px;">Date Demande</th>
@@ -47,29 +52,31 @@
                     </tr>
                 </thead>
                 <tbody class="list">
-                    <?php $__currentLoopData = $licences; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <tr id="row<?php echo e($item->id); ?>">
-                            <td class="align-middle text-center"><?php echo e($item->id); ?></td>
+                    @foreach ($licences as $item)
+                        <tr id="row{{ $item->id }}">
+                            <td class="align-middle text-center">
+                                <input type="checkbox" class="demande_check" value="{{ $item->id }}">
+                            </td>
+                            <td class="align-middle text-center">{{ $item->id }}</td>
                             <td class="align-middle white-space-nowrap py-2">
                                 <div class="d-flex d-flex align-items-center">
                                     <div class="avatar avatar-xl me-2">
-                                        <img class="rounded-circle" src=<?php echo e($item->plongeur->image); ?>
-
-                                            alt=<?php echo e($item->plongeur->nom); ?>>
+                                        <img class="rounded-circle" src={{ $item->plongeur->image }}
+                                            alt={{ $item->plongeur->nom }}>
                                     </div>
                                     <div class="flex-1">
-                                        <p class="mb-0 fs--1"><?php echo e($item->plongeur->nom); ?> <?php echo e($item->plongeur->prenom); ?></p>
+                                        <p class="mb-0 fs--1">{{ $item->plongeur->nom }} {{ $item->plongeur->prenom }}</p>
                                     </div>
                                 </div>
                             </td>
-                            
-                            <td class="align-middle"><?php echo e($item->created_at); ?></td>
-                            <td class="align-middle"><?php echo e($item->plongeur->email); ?></td>
-                            <td class="align-middle"><?php echo e(optional($item->plongeur->club)->nom ?? '--'); ?></td>
-                            <td class="align-middle"><?php echo e($item->plongeur->niveau->label); ?></td>
-                            <td class="align-middle"><?php echo e($item->annee); ?></td>
+                            {{-- <td class="align-middle">{{ $item->plongeur->nom }}</td> --}}
+                            <td class="align-middle">{{ $item->created_at }}</td>
+                            <td class="align-middle">{{ $item->plongeur->email }}</td>
+                            <td class="align-middle">{{ optional($item->plongeur->club)->nom ?? '--' }}</td>
+                            <td class="align-middle">{{ $item->plongeur->niveau->label }}</td>
+                            <td class="align-middle">{{ $item->annee }}</td>
                             <td class="align-middle">
-                                <a href="<?php echo e(route('licence.read.document', $item->id)); ?>" target="__blank">
+                                <a href="{{ route('licence.read.document', $item->id) }}" target="__blank">
                                     Attestation de Paiement
                                 </a></td>
                             <td class="py-2 align-middle white-space-nowrap text-center">
@@ -91,24 +98,24 @@
                                         <div class="py-2">
                                           
                                             <button type="button" class="dropdown-item" data-bs-toggle="modal"
-                                                data-bs-target="#staticBackdrop1<?php echo e($item->id); ?>">
+                                                data-bs-target="#staticBackdrop1{{ $item->id }}">
                                                 Accepter
                                             </button>
 
                                             <button type="button" class="dropdown-item" data-bs-toggle="modal"
-                                                data-bs-target="#staticBackdrop2<?php echo e($item->id); ?>">
+                                                data-bs-target="#staticBackdrop2{{ $item->id }}">
                                                 Refuser
                                             </button>
 
                                             <div class="dropdown-divider"></div>
                                                 <a class="dropdown-item text-danger" role="button" data-bs-toggle="modal"
-                                                    data-bs-target="#staticBackdrop<?php echo e($item->id); ?>">Supprimer</a>
+                                                    data-bs-target="#staticBackdrop{{ $item->id }}">Supprimer</a>
                                             </div>
                                     </div>
                                     
                                 </div>
                                                 
-                                <div class="modal fade" id="staticBackdrop<?php echo e($item->id); ?>" tabindex="-1" role="dialog"
+                                <div class="modal fade" id="staticBackdrop{{ $item->id }}" tabindex="-1" role="dialog"
                                     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
@@ -122,16 +129,16 @@
                                                 </button>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" id="colseModal<?php echo e($item->id); ?>"
+                                                <button type="button" class="btn btn-secondary" id="colseModal{{ $item->id }}"
                                                     data-bs-dismiss="modal">Non</button>
                                                 <button type="button" class="btn btn-primary" id="liveToastBtn"
-                                                    onclick="deleteDemande(<?php echo e($item->id); ?>)">Oui</button>
+                                                    onclick="deleteDemande({{ $item->id }})">Oui</button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 
-                                <div class="modal fade" id="staticBackdrop1<?php echo e($item->id); ?>" tabindex="-1" role="dialog"
+                                <div class="modal fade" id="staticBackdrop1{{ $item->id }}" tabindex="-1" role="dialog"
                                     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
@@ -148,8 +155,8 @@
                                                     data-bs-dismiss="modal">Non</button>
                                                 
                                                 <!-- Formulaire pour action Laravel -->
-                                                <form action="<?php echo e(route('demandes_licence.statut', ['id' => $item->id, 'statut' => 'accepter'])); ?>" method="POST">
-                                                    <?php echo csrf_field(); ?>
+                                                <form action="{{ route('demandes_licence.statut', ['id' => $item->id, 'statut' => 'accepter']) }}" method="POST">
+                                                    @csrf
                                                     <button type="submit" class="btn btn-primary">
                                                         Oui
                                                     </button>
@@ -159,7 +166,7 @@
                                     </div>
                                 </div>
                                 
-                                <div class="modal fade" id="staticBackdrop2<?php echo e($item->id); ?>" tabindex="-1" role="dialog"
+                                <div class="modal fade" id="staticBackdrop2{{ $item->id }}" tabindex="-1" role="dialog"
                                     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
@@ -176,8 +183,8 @@
                                                     data-bs-dismiss="modal">Non</button>
                                                 
                                                 <!-- Formulaire pour action Laravel -->
-                                                <form action="<?php echo e(route('demandes_licence.statut', ['id' => $item->id, 'statut' => 'refuser'])); ?>" method="POST">
-                                                    <?php echo csrf_field(); ?>
+                                                <form action="{{ route('demandes_licence.statut', ['id' => $item->id, 'statut' => 'refuser']) }}" method="POST">
+                                                    @csrf
                                                     <button type="submit" class="btn btn-primary">
                                                         Oui
                                                     </button>
@@ -188,20 +195,23 @@
                                 </div>
                             </td>
                         </tr>
-                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    @endforeach
                 </tbody>
             </table>
+            <button id="send_requests" class="btn btn-primary">Envoyer les demandes</button>
+
+
         </div>
     </div>
 </div>
 </div>
 <div id="notification"></div>
-<?php $__env->stopSection(); ?>
+@endsection
 
-<?php $__env->startSection('javascript'); ?>
-<script src=<?php echo e(asset('dashboard/vendors/datatables.net/jquery.dataTables.min.js')); ?>></script>
-<script src=<?php echo e(asset('dashboard/vendors/datatables.net-bs5/dataTables.bootstrap5.min.js')); ?>></script>
-<script src=<?php echo e(asset('dashboard/vendors/datatables.net-fixedcolumns/dataTables.fixedColumns.min.js')); ?>></script>
+@section('javascript')
+<script src={{ asset('dashboard/vendors/datatables.net/jquery.dataTables.min.js') }}></script>
+<script src={{ asset('dashboard/vendors/datatables.net-bs5/dataTables.bootstrap5.min.js') }}></script>
+<script src={{ asset('dashboard/vendors/datatables.net-fixedcolumns/dataTables.fixedColumns.min.js') }}></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
 <script>
     async function deleteDemande(id) {
@@ -260,5 +270,28 @@
 
         }
 </script>
-<?php $__env->stopSection(); ?>
-<?php echo $__env->make('dashboard.layout.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\projets\FRMPAS\resources\views/dashboard/pages/licences/index.blade.php ENDPATH**/ ?>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const selectAllCheckbox = document.getElementById('select_all');
+        const individualCheckboxes = document.querySelectorAll('.demande_check');
+
+      
+        selectAllCheckbox.addEventListener('change', function () {
+            individualCheckboxes.forEach(checkbox => {
+                checkbox.checked = this.checked;
+            });
+        });
+
+        // Récupérer les valeurs cochées
+        document.getElementById('send_requests').addEventListener('click', function () {
+            const selectedValues = Array.from(individualCheckboxes)
+                .filter(checkbox => checkbox.checked)
+                .map(checkbox => checkbox.value);
+
+            console.log(selectedValues); // Affiche les IDs sélectionnés
+            alert('IDs sélectionnés : ' + selectedValues.join(', '));
+        });
+    });
+
+</script>
+@endsection

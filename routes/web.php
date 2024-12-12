@@ -37,12 +37,27 @@ use App\Models\Plongeur;
 use App\Models\Club;
 use Carbon\Carbon;
 use App\Constants\ClubStatutConstants;
+use App\Http\Controllers\Club\ClubLicenceController;
+use App\Http\Controllers\SportType;
 use App\Http\Controllers\Club\MoniteurClubController;
 use App\Http\Controllers\MoniteurController;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/calendrier-Federale', function () {
+    return view('calendrier');
+})->name('calendrier.federale');
+
+Route::get('/calendar', function () {
+    return view('calendar2');
+})->name('calendar2.federale');
+
+Route::get('/diving', [SportType::class, 'index'])->name('sport.diving');
+Route::get('/finswimming', [SportType::class, 'ffinswimming'])->name('sport.finswimming');
+Route::get('/freediving', [SportType::class, 'ffreediving'])->name('sport.freediving');
+Route::get('/visual', [SportType::class, 'visual'])->name('sport.visual');
 Route::get('/', [AccueilController::class, 'welcome'])->name('welcome');
 
 /*
@@ -252,7 +267,7 @@ Route::middleware(['auth', 'role:1'])->group(function () {
                   ->where('annee', $currentYear);
         })
         ->orDoesntHave('adhesions') // Inclure les clubs sans adhésions
-        ->count();
+        ->distinct()->count();
 
         $remainingDays = Carbon::now()->diffInDays(Carbon::now()->endOfYear());
 
@@ -628,7 +643,11 @@ Route::group(['prefix'=>'club', 'middleware' => ['auth','role:2']],function () {
         Route::get("/attestation-affiliation/{id}", [HomeController::class, "attestationAffiliation"])->name('attestation.affiliation');
         Route::get("/autorisation-plonge/{id}", [HomeController::class, "autorisationPlonge"])->name('autorisation.plonge');
 
-
+        // - Licence
+        Route::get("/demandes-licence", [ClubLicenceController::class, 'index'])->name('club.demandes_licence.index');
+        Route::post("/demandes-licence/{id}/{statut}", [ClubLicenceController::class, 'licence_statut'])->name('club.demandes_licence.statut');
+        Route::delete("/demandes-licence/{id}", [ClubLicenceController::class, "destroy"])->name('club.demandes_licence.destroy');
+        Route::get('/document/{id}',[ClubLicenceController::class,'readDocument'])->name('club.licence.read.document');
 
 
 

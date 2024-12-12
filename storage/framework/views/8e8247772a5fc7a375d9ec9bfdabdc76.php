@@ -68,10 +68,9 @@
                    
                     <div class="item-content">
                         <h6><?php echo $evenement->subject_preview; ?></h6>
-
+                        <p><?php echo $evenement->subject_body; ?></p>
                         <div class="entry-content my-3">
 
-                            <br>
                             <h6 style="margin-top:-0.5px !important; color:green;">Informations sur l'événement</h6>
                            
                             <table class="woocommerce-table woocommerce-table--order-details shop_table order_details">

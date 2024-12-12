@@ -27,10 +27,10 @@
                     <nav class="top-nav">
                         <ul class="nav sf-menu">
                             <li class="active">
-                                <a href="<?php echo e(route('frmpas.about')); ?>">Frmpas Family</a>
+                                <a href="<?php echo e(route('frmpas.about')); ?>">Frmpas Organisation</a>
                                 <ul>
                                     <li>
-                                        <a href="<?php echo e(route('frmpas.about')); ?>">Frmpas</a>
+                                        <a href="<?php echo e(route('frmpas.about')); ?>">Historique</a>
                                     </li>
                                     <li>
                                         <a href="<?php echo e(route('frmpas.family')); ?>">Frmpas Family</a>
@@ -38,10 +38,7 @@
                                     <li>
                                         <a href="<?php echo e(route('commissions')); ?>">Commissions</a>
                                     </li>
-                                    <li>
-                                        <a href="<?php echo e(route('activites.subaquatiques')); ?>">Découvrir les activités subaquatiques</a>
-                                    </li>
-                                    
+
                                     <li>
                                         <a href="<?php echo e(route('contact')); ?>">Contact</a>
                                     </li>
@@ -50,14 +47,47 @@
 
                             <!-- Sport -->
                             <li>
-                                <a href="#">Plongée sportive en piscine</a>
+                                <a href="#">Frmpas</a>
                                 <ul>
 
                                     <li>
-                                        <a href="<?php echo e(route('sport.club')); ?>">Club Sportif</a>
+                                        <a href="<?php echo e(route('sport.club')); ?>">Equipe National</a>
                                     </li>
                                     <li>
-                                        <a href="<?php echo e(route('sport.competition')); ?>">Competition FRMPAS</a>
+                                        <a href="<?php echo e(route('sport.competition')); ?>">Club Sportif</a>
+                                    </li>
+                                    <li>
+                                        <a href="<?php echo e(route('sport.competition')); ?>">Club Plongée</a>
+                                    </li>
+                                    <li>
+                                        <a href="<?php echo e(route('sport.competition')); ?>">Entraineur</a>
+                                    </li>
+                                    <li>
+                                        <a href="<?php echo e(route('sport.competition')); ?>">juge</a>
+                                    </li>
+                                    <li>
+                                        <a href="<?php echo e(route('sport.competition')); ?>">Compétition</a>
+                                    </li>
+                                    <li>
+                                        <a href="<?php echo e(route('sport.competition')); ?>">Communiquer</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Sport</a>
+                                <ul>
+
+                                    <li>
+                                        <a href="<?php echo e(route('sport.diving')); ?>">nage avec palmes</a>
+                                    </li>
+                                    <li>
+                                        <a href="<?php echo e(route('sport.finswimming')); ?>">plongée sportive</a>
+                                    </li>
+                                    <li>
+                                        <a href="<?php echo e(route('sport.visual')); ?>">visuelle</a>
+                                    </li>
+                                    <li>
+                                        <a href="<?php echo e(route('sport.freediving')); ?>">plongée en apnée</a>
                                     </li>
                                 </ul>
                             </li>
@@ -82,6 +112,24 @@
                             
 
                              <!-- Événements -->
+                             <li>
+                                <a href="#">Environement et Science</a>
+
+                                <ul>
+                                    <li>
+                                        <a href="<?php echo e(route('evenements.index')); ?>">Événements</a>
+                                    </li>
+                                    <li>
+                                        <a href="<?php echo e(route('calendar2.federale')); ?>">Calendrier federale</a>
+                                    </li>
+                                    <li>
+                                        <a href="<?php echo e(route('actualites')); ?>">Actualités</a>
+                                    </li>
+                                    <li>
+                                        <a href="<?php echo e(route('galerie')); ?>">Galerie</a>
+                                    </li>
+                                </ul>
+                            </li>
                             <li>
                                 <a href="#">Événements</a>
 
@@ -97,6 +145,7 @@
                                     </li>
                                 </ul>
                             </li>
+                            
                             <!-- eof Événements -->
                             
                         </ul>
@@ -115,5 +164,4 @@
     </header>
 
 </div>
-
 <?php /**PATH C:\xampp\htdocs\frmpas\resources\views/layout/header.blade.php ENDPATH**/ ?>

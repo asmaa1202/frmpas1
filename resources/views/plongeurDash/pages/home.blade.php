@@ -80,11 +80,16 @@
             </div>
 
                
-            @if(isset($active_licence))
+            @if(isset($active_licence) && $active_licence->statut == 'accepter')
                 <div class="col-lg-6 d-flex justify-content-end align-items-center flex-wrap">
                     <a href="{{route('attestation.licence', Auth::guard('plongeurs')->user()->id)}}" class="btn btn-primary" target="__blank"><i class="bi bi-file-earmark-arrow-down-fill"></i> Attestation de licence</a>
                 </div>
-            
+            @elseif(isset($active_licence) && $active_licence->statut == 'en cours')
+                <div class="col-lg-6 d-flex justify-content-end align-items-center flex-wrap">
+                    <button class="btn" style="background: #279e5b; color: white;">
+                        Votre demande a été envoyée
+                    </button>
+                </div>
             @elseif(empty($active_licence))
                 <div class="col-lg-4 d-flex justify-content-end align-items-center flex-wrap">   
                     <button class="btn btn-danger signal-button" data-bs-toggle="modal" data-bs-target="#licenceModal">
