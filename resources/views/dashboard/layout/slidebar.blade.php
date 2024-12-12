@@ -144,11 +144,19 @@
                                 </div>
                             </a><!-- more inner pages-->
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('demandes_licence.index') }}">
-                                <div class="d-flex align-items-center"><span class="nav-link-text ps-2">Licence
-                                        detail</span></div>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('demandes_licence.en_cous_validation') }}">
+                                <div class="d-flex align-items-center"><span class="nav-link-text ps-2">Licence En Attentes</span></div>
                             </a><!-- more inner pages-->
                         </li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('demandes_licence.acceptees') }}">
+                                <div class="d-flex align-items-center"><span class="nav-link-text ps-2">Licence Acceptées</span></div>
+                            </a><!-- more inner pages-->
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('demandes_licence.refusees') }}">
+                            <div class="d-flex align-items-center"><span class="nav-link-text ps-2">Licence Refusées</span></div>
+                            </a><!-- more inner pages-->
+                        </li>
+
                         <li class="nav-item"><a class="nav-link" href="{{ route('pick') }}">
                                 <div class="d-flex align-items-center"><span class="nav-link-text ps-2">Pick</span>
                                 </div>

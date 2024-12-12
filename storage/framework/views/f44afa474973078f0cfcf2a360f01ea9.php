@@ -16,7 +16,7 @@
     <div class="card-body position-relative">
         <div class="row">
             <div class="col-lg-8">
-                <h3>Demandes</h3>
+                <h3>Demandes <?php echo e($statut); ?></h3>
                 <p class="mb-0">Rapide, intelligent et vous pouvez voir toutes les analyses sur cette page.</p>
             </div>
         </div>

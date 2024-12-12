@@ -498,7 +498,11 @@ Route::middleware(['auth', 'role:1'])->group(function () {
     Route::get('/dashboard/document/{id}',[AdhesionController::class,'readDocument'])->name('adhesion.read.document');
 
     // - Licence
-    Route::get("/dashboard/demandes-licence", [LicenceController::class, 'index'])->name('demandes_licence.index');
+    Route::get("/dashboard/demandes-licence", [LicenceController::class, 'demandes_en_cours_validation'])->name('demandes_licence.en_cous_validation');
+
+    Route::get("/dashboard/demandes_acceptees", [LicenceController::class, 'demandes_acceptees'])->name('demandes_licence.acceptees');
+    Route::get("/dashboard/demandes_refusees", [LicenceController::class, 'demandes_refusees'])->name('demandes_licence.refusees');
+
     Route::post("/dashboard/demandes-licence/{id}/{statut}", [LicenceController::class, 'licence_statut'])->name('demandes_licence.statut');
     Route::delete("/dashboard/demandes-licence/{id}", [LicenceController::class, "destroy"])->name('demandes_licence.destroy');
     Route::get('/dashboard/document/{id}',[LicenceController::class,'readDocument'])->name('licence.read.document');

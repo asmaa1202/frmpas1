@@ -16,12 +16,12 @@ class LicenceController extends Controller
     const statut_en_cours_validation = 'en_cours_validation'; 
     const statut_accepter = 'accepter'; 
     const statut_refuser = 'refuser'; 
-    public function index()
+    public function demandes_en_cours_validation()
     {
         $licences = Licence::where('statut', self::statut_en_cours_validation)->orderBy('created_at', 'DESC')->paginate(100);
 
         // $adhesion = Adhesion::orderBy('created_at', 'DESC')->paginate(2);
-        return view("dashboard.pages.licences.index")->with("licences", $licences);
+        return view("dashboard.pages.licences.demandes_en_cous_validation")->with("licences", $licences);
     }
 
     public function licence_statut($id, $statut)
@@ -35,7 +35,7 @@ class LicenceController extends Controller
 
         $licences = Licence::where('statut', self::statut_en_cours_validation)->orderBy('created_at', 'DESC')->paginate(100);
 
-        return redirect()->route("demandes_licence.index")
+        return redirect()->route("demandes_licence.en_cous_validation")
                         ->with("success", "Le statut de licence a été mis à jour avec succès.")
                         ->with("licences", $licences);
         // return response()->json(array('message' => "Le statut de l'adhésion a été mis à jour avec succès."), 200);
@@ -47,6 +47,29 @@ class LicenceController extends Controller
 
     }
 
+    public function demandes_acceptees()
+    {
+        // $licences = Licence::where('statut', self::statut_en_cours)->orderBy('created_at', 'DESC')->paginate(100);
+
+        // $adhesion = Adhesion::orderBy('created_at', 'DESC')->paginate(2);
+        $licences = Licence::where('statut', self::statut_accepter)
+                    ->orderBy('created_at', 'DESC')
+                    ->paginate(100);
+        $statut = 'Acceptées';
+        return view("dashboard.pages.licences.index", compact('statut'))->with("licences", $licences);
+    }
+
+    public function demandes_refusees()
+    {
+        // $licences = Licence::where('statut', self::statut_en_cours)->orderBy('created_at', 'DESC')->paginate(100);
+
+        // $adhesion = Adhesion::orderBy('created_at', 'DESC')->paginate(2);
+        $licences = Licence::where('statut', self::statut_refuser)
+                    ->orderBy('created_at', 'DESC')
+                    ->paginate(100);
+        $statut = 'Refusées';
+        return view("dashboard.pages.licences.index", compact('statut'))->with("licences", $licences);
+    }
     /**
      * Show the form for creating a new resource.
      */

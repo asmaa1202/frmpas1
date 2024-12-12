@@ -57,7 +57,7 @@ class ClubLicenceController extends Controller
 
         // $licences = Licence::where('statut', self::statut_en_cours)->orderBy('created_at', 'DESC')->paginate(100);
 
-        // return redirect()->route("demandes_licence.index")
+        // return redirect()->route("demandes_licence.en_cous_validation")
         //                 ->with("success", "Le statut de l'adhésion a été mis à jour avec succès.")
         //                 ->with("licences", $licences);
         // return response()->json(array('message' => "Le statut de l'adhésion a été mis à jour avec succès."), 200);

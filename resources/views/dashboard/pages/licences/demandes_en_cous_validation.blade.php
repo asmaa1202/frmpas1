@@ -18,7 +18,7 @@
     <div class="card-body position-relative">
         <div class="row">
             <div class="col-lg-8">
-                <h3>Demandes</h3>
+                <h3>Demandes Licence</h3>
                 <p class="mb-0">Rapide, intelligent et vous pouvez voir toutes les analyses sur cette page.</p>
             </div>
         </div>
@@ -38,7 +38,8 @@
                 <thead class="bg-200 text-900">
                     <tr>
                         <th style="width: 60px;">ID</th>
-                        <th style="min-width: 200px;">plongeur</th>
+                        <th style="min-width: 200px;">Membre</th>
+                        <th style="min-width: 200px;">Type Membre</th>
                         <th style="min-width: 200px;">Date Demande</th>
                         <th style="min-width: 280px;">E-mail</th>
                        <th style="min-width: 180px;">Club</th>
@@ -63,6 +64,7 @@
                                     </div>
                                 </div>
                             </td>
+                            <td class="align-middle">{{ $item->type_membre->type }}</td>
                             {{-- <td class="align-middle">{{ $item->plongeur->nom }}</td> --}}
                             <td class="align-middle">{{ $item->created_at }}</td>
                             <td class="align-middle">{{ $item->plongeur->email }}</td>
@@ -148,7 +150,6 @@
                                                 <button type="button" class="btn btn-secondary"
                                                     data-bs-dismiss="modal">Non</button>
                                                 
-                                                <!-- Formulaire pour action Laravel -->
                                                 <form action="{{ route('demandes_licence.statut', ['id' => $item->id, 'statut' => 'accepter']) }}" method="POST">
                                                     @csrf
                                                     <button type="submit" class="btn btn-primary">
