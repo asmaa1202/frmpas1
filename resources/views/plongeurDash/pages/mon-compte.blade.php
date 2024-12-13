@@ -8,6 +8,7 @@
                 <div class="card-body">
                     <div class="row g-2 align-items-center">
                         <div class="col-md-6 col-lg-12 text-center">
+                            <p class="fs-1 " style="font-weight:500;">{{ ucfirst($plongeur->type_plongeur->type) }}</p>
                             <img class="img-fluid rounded-2" src={{ $plongeur->image }} alt="" />
                         </div>
                         <div class="col-md-6 col-lg-12">
@@ -17,17 +18,18 @@
                                         @if ($plongeur->genre == 'Homme')
                                         {{ 'M.' . ' ' . $plongeur->nom . ' ' . $plongeur->prenom }}
                                         @elseif ($plongeur->genre == 'Femme')
-                                        {{ 'M.' . ' ' . $plongeur->nom . ' ' . $plongeur->prenom }}
+                                        {{ 'Mme.' . ' ' . $plongeur->nom . ' ' . $plongeur->prenom }}
                                         @elseif ($plongeur->genre == 'Enfant')
                                         {{ $plongeur->nom . ' ' . $plongeur->prenom }}
                                         @endif
                                     </h4>
-                                    <h5 class="mb-1 text-800 fs-0">N° {{ $plongeur->n_licence }} |
+                               
+                                    <h5 class="mb-1 text-800 fs-0">N° {{ $licence->custom_id ?? '--' }} |
                                         {{ $plongeur->niveau->label }}</h5>
-                                    <p class="mb-0 fs--1">{{ $plongeur->email }}</p>
+                                    {{-- <p class="mb-0 fs--1">{{ $plongeur->email }}</p> --}}
                                 </div>
 
-                                <div class="col mt-4 mt-md-5 mt-lg-4">
+                                {{-- <div class="col mt-4 mt-md-5 mt-lg-4">
                                     <div class="row text-center">
                                         <div class="col-6 border-end-sm border-300"><img class="mb-2"
                                                 src="{{ asset("images/icons/user-plus.svg") }}" width="30" alt="" />
@@ -40,7 +42,7 @@
                                             <h6 class="fw-normal mb-0">Carnets de plongée</h6>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
@@ -59,52 +61,52 @@
                         <table class="table table-borderless fs--1 fw-medium mb-0">
                             <tbody>
                                 <tr>
-                                    <td class="p-1" style="width: 35%;">Adresse courriel</td>
+                                    <td class="p-1" style="width: 35%;">Adresse</td>
                                     <td class="p-1">
-                                        : {{ $plongeur->adresse }}
+                                        : {{ $plongeur->adresse ?? '--'}}
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="p-1" style="width: 35%;">Date de visite médicale</td>
                                     <td class="p-1">
-                                        : {{ $plongeur->date_visite_medicale }}
+                                        : {{ $plongeur->date_visite_medicale ?? '--'}}
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="p-1" style="width: 35%;">Jour d'entraînement</td>
                                     <td class="p-1">
-                                        : {{ $plongeur->jour_entrainement }}
+                                        : {{ $plongeur->jour_entrainement ?? '--'}}
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="p-1" style="width: 35%;">Enseignement</td>
                                     <td class="p-1">
-                                        : {{ $plongeur->enseignement }}
+                                        : {{ $plongeur->enseignement ?? '--'}}
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="p-1" style="width: 35%;">Qualifications</td>
                                     <td class="p-1">
-                                        : {{ $plongeur->qualifications }}
+                                        : {{ $plongeur->qualifications ?? '--'}}
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="p-1" style="width: 35%;">Code postal</td>
                                     <td class="p-1">
-                                        : {{ $plongeur->code_postal }}
+                                        : {{ $plongeur->code_postal ?? '--'}}
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="p-1" style="width: 35%;">Ville</td>
-                                    <td class="p-1 text-600">: {{ $plongeur->code_postal }}</td>
+                                    <td class="p-1 text-600">: {{ $plongeur->code_postal ?? '--'}}</td>
                                 </tr>
                                 <tr>
                                     <td class="p-1" style="width: 35%;">Pays</td>
-                                    <td class="p-1 text-600">: {{ $plongeur->pays }}</td>
+                                    <td class="p-1 text-600">: {{ $plongeur->pays ?? '--'}}</td>
                                 </tr>
                                 <tr>
                                     <td class="p-1" style="width: 35%;">Date de naissance</td>
-                                    <td class="p-1 text-600">: {{ $plongeur->date_de_naissance }}</td>
+                                    <td class="p-1 text-600">: {{ $plongeur->date_de_naissance ?? '--'}}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -122,31 +124,37 @@
                                 <tr>
                                     <td class="p-1" style="width: 45%;">Profession</td>
                                     <td class="p-1">
-                                        : {{ $plongeur->profession }}
+                                        : {{ $plongeur->profession  ?? '--'}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="p-1" style="width: 45%;">Email</td>
+                                    <td class="p-1">
+                                        : {{ $plongeur->email  ?? '--'}}
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="p-1" style="width: 45%;">Téléphone fixe</td>
                                     <td class="p-1">
-                                        : {{ $plongeur->telephone_fixe }}
+                                        : {{ $plongeur->telephone_fixe  ?? '--'}}
                                     </td>
                                 </tr>
-                                <tr>
+                                {{-- <tr>
                                     <td class="p-1" style="width: 45%;">Diffusable aux autres membres</td>
                                     <td class="p-1 text-600">:
                                         {{ $plongeur->telephone_fixe_diffusable == 1 ? 'Oui' : 'Non' }}</td>
-                                </tr>
+                                </tr> --}}
                                 <tr>
                                     <td class="p-1" style="width: 45%;">Téléphone portable</td>
-                                    <td class="p-1 text-600">: {{ $plongeur->telephone_portable }}
+                                    <td class="p-1 text-600">: {{ $plongeur->telephone_portable  ?? '--'}}
                                     </td>
                                 </tr>
-                                <tr>
+                                {{-- <tr>
                                     <td class="p-1" style="width: 45%;">Diffusable aux autres membres</td>
                                     <td class="p-1 text-600">:
                                         {{ $plongeur->telephone_portable_diffusable == 1 ? 'Oui' : 'Non' }}
                                     </td>
-                                </tr>
+                                </tr> --}}
                             </tbody>
                         </table>
                     </div>
@@ -167,30 +175,30 @@
                                     <td class="p-1" style="width: 45%;">Nom</td>
                                     <td class="p-1">
                                         :
-                                        {{ $plongeur->nom_persone_cas_urgence . ' ' . $plongeur->prenom_persone_cas_urgence }}
+                                        {{ $plongeur->nom_persone_cas_urgence  ?? '--' . ' ' . $plongeur->prenom_persone_cas_urgence ?? '--'}}
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="p-1" style="width: 45%;">Adresse E-mail</td>
                                     <td class="p-1">
-                                        : {{ $plongeur->email_persone_cas_urgence }}
+                                        : {{ $plongeur->email_persone_cas_urgence ?? '--'}}
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="p-1" style="width: 45%;">Téléphone fixe</td>
                                     <td class="p-1 text-600">:
-                                        {{ $plongeur->telephone_fixe_persone_cas_urgence }}</td>
+                                        {{ $plongeur->telephone_fixe_persone_cas_urgence ?? '--'}}</td>
                                 </tr>
                                 <tr>
                                     <td class="p-1" style="width: 45%;">Téléphone portable</td>
-                                    <td class="p-1 text-600">: {{ $plongeur->telephone_portable_persone_cas_urgence }}
+                                    <td class="p-1 text-600">: {{ $plongeur->telephone_portable_persone_cas_urgence ?? '--'}}
                                     </td>
                                 </tr>
 
                                 <tr>
                                     <td class="p-1" style="width: 45%;">Lien de parenté</td>
                                     <td class="p-1 text-600">:
-                                        {{ $plongeur->lien_parente_persone_cas_urgence }}</td>
+                                        {{ $plongeur->lien_parente_persone_cas_urgence ?? '--'}}</td>
                                 </tr>
                             </tbody>
                         </table>

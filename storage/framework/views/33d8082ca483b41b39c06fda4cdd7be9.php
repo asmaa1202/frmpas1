@@ -312,24 +312,24 @@
 
             // Notification de succès
             if (res.status === 200) {
-                const notif = `
-                    <div class="toast-container position-fixed bottom-0 end-0 p-3">
-                        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                            <div class="toast-header">
-                                <div style="width: 15px;height: 15px;background: green;border-radius: 3px;margin-right: 5px;"></div>
-                                <strong class="me-auto">FRMPAS</strong>
-                                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                            </div>
-                            <div class="toast-body">
-                                ${res.data.message}
-                            </div>
-                        </div>
-                    </div>`;
-                document.getElementById("notification").innerHTML = notif;
+                // const notif = `
+                //     <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                //         <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                //             <div class="toast-header">
+                //                 <div style="width: 15px;height: 15px;background: green;border-radius: 3px;margin-right: 5px;"></div>
+                //                 <strong class="me-auto">FRMPAS</strong>
+                //                 <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                //             </div>
+                //             <div class="toast-body">
+                //                 ${res.data.message}
+                //             </div>
+                //         </div>
+                //     </div>`;
+                // document.getElementById("notification").innerHTML = notif;
 
-                const toastLiveExample = document.getElementById('liveToast');
-                const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
-                toastBootstrap.show();
+                // const toastLiveExample = document.getElementById('liveToast');
+                // const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+                // toastBootstrap.show();
             }
         } catch (err) {
             console.error(err);

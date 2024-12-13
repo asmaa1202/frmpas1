@@ -242,12 +242,15 @@ class PlongeurController extends Controller
     //
     public function infoPersonnel(Request $request)
     {
+        // dd(auth()->user()->id);
         $count_formations = Formation::where('id_plongeur', '=', auth()->user()->id)->get();
         $count_carnets_de_plongee = CarnetPlongee::whereHas('equipePlongeur', function ($query) {
             return $query->where('id_plongeur', '=', auth()->user()->id);
         })->get();
 
-        return view("plongeurDash.pages.mon-compte")->with("plongeur", auth()->user())->with("count_formations", count($count_formations))->with("count_carnets_de_plongee", count($count_carnets_de_plongee));
+        $licence = Licence::where('plongeur_id', auth()->user()->id)->where('annee', date('Y'))->where('statut', self::statut_accepter)->first();
+
+        return view("plongeurDash.pages.mon-compte", compact('licence'))->with("plongeur", auth()->user())->with("count_formations", count($count_formations))->with("count_carnets_de_plongee", count($count_carnets_de_plongee));
     }
 
     public function getAllPlongeurs()
