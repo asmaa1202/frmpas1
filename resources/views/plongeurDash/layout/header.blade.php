@@ -137,7 +137,22 @@
             </div>
         </li>
     </ul>
+
     <ul class="navbar-nav navbar-nav-icons ms-auto flex-row align-items-center">
+        {{-- @if(isset($active_licence) && $active_licence->statut == 'accepter') --}}
+        
+        <div class="d-flex align-items-center ms-auto">
+            {{-- <button class="btn" style="background: #279e5b; color: white;">
+                Active
+            </button>
+            &nbsp;&nbsp;
+            <div class="{{ now()->month !== 12 ? 'highlight' : 'remaining-days-warning' }}">
+                {{ $remainingDays }} jours restants
+            </div> --}}
+        </div>
+        {{-- @endif --}}
+        
+        
         <li class="nav-item dropdown px-2">
             <a href="{{ route('welcome') }}" class="btn btn-circle navbar-toggler-humburger-icon navbar-vertical-toggle"
                 data-bs-toggle="tooltip" data-bs-placement="left" title="www.frmpas.com">
@@ -281,10 +296,11 @@
             </div>
 
         </li>
-        <li class="nav-item dropdown"><a class="nav-link pe-0 ps-2" id="navbarDropdownUser" role="button"
+        <li class="nav-item dropdown">
+            <a class="nav-link pe-0 ps-2" id="navbarDropdownUser" role="button"
                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="avatar avatar-xl d-flex">
-                    <img class="rounded-circle" src={{ asset('dashboard/img/team/3-thumb.png') }} alt="" />
+                    <img class="rounded-circle" src={{ asset( Auth::guard('plongeurs')->user()->image ) }} alt="" />
                 </div>
             </a>
             <div class="dropdown-menu dropdown-caret dropdown-caret dropdown-menu-end py-0"
@@ -303,16 +319,7 @@
                 </div>
             </div>
         </li>
-        @if(isset($active_licence) && $active_licence->statut == 'accepter')
-        <div class="d-flex align-items-center ms-auto">
-            <button class="btn" style="background: #279e5b; color: white;">
-                Active
-            </button>
-            &nbsp;&nbsp;
-            <div class="{{ now()->month !== 12 ? 'highlight' : 'remaining-days-warning' }}">
-                {{ $remainingDays }} jours restants
-            </div>
-        </div>
-        @endif
+
+       
     </ul>
 </nav>

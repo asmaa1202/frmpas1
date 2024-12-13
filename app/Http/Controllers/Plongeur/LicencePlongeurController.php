@@ -21,7 +21,7 @@ class LicencePlongeurController extends Controller
     const type_membre_moniteur = 3; 
     public function demande_licence(Request $request, $id)
     {
-      
+    //   dd(now()->month);
         try {
 
             // dd($id);
@@ -62,7 +62,10 @@ class LicencePlongeurController extends Controller
             $demande_licence->plongeur_id = $id;
             $demande_licence->type_id = $plongeur->type_plongeur_id;
             $demande_licence->montant = 1999;
-            $demande_licence->annee = date('Y');
+            if(now()->month == 12){
+                 $demande_licence->annee = date('Y') + 1;      
+            }
+           
             $demande_licence->statut = self::statut_en_cours;
 
             $file = $request->document;

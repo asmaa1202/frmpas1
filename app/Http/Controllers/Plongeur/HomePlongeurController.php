@@ -39,11 +39,21 @@ class HomePlongeurController extends Controller
             ->whereNot('statut', self::statut_refuser)
             ->first();
 
-        // Calculer les jours restants jusqu'à la fin de l'année
-        $remainingDays = Carbon::now()->diffInDays(Carbon::now()->endOfYear());
 
-        // Passer les variables à la vue
-        return view('plongeurDash.pages.home', compact('active_licence', 'remainingDays'));
+        $active_licence_next_year = Licence::where('plongeur_id', $plongeurId)
+                ->where('annee', date('Y') + 1)
+                ->where('statut', '!=', self::statut_refuser)
+                ->first();
+        // dd(empty($active_licence_next_year));
+
+        $remainingDays = Carbon::now()->diffInDays(Carbon::now()->endOfYear());
+        $adhesion_club = Adhesion::where('club_id', Auth::guard('plongeurs')->user()->club_id)
+        ->where('annee', date('Y'))
+        // ->where('annee', 22)
+        ->where('statut', self::statut_accepter)
+        ->first();
+        
+        return view('plongeurDash.pages.home', compact('active_licence', 'remainingDays', 'adhesion_club', 'active_licence_next_year'));
     }
 
     public function attestationLicence($id)

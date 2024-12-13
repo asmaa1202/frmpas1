@@ -58,32 +58,123 @@
     </div>
     <!--/.bg-holder-->
 
-    {{-- <div class="card-body position-relative">
-        <div class="row">
-            <div class="col-lg-8">
-                <h3>ASAAM</h3>
-                <p class="mb-0">Rapide, intelligent et vous pouvez voir toutes les
-                    analyses sur cette page.</p>
-            </div>
-        </div>
-    </div> --}}
-
 
     <div class="card-body position-relative">
         <div class="row">
-            <div class="{{isset($active_licence) ? 'col-lg-6' : 'col-lg-8' }}">
-                <h3>
-                    {{Auth::guard('plongeurs')->user()->nom}} {{Auth::guard('plongeurs')->user()->prenom}}
-                </h3>
-                <p class="mb-0">Rapide, intelligent et vous pouvez voir toutes les
-                    analyses sur cette page.</p>
-            </div>
+            <div class="{{ isset($active_licence) ? 'col-lg-6' : 'col-lg-8' }}">
+                
+                <div class="d-flex align-items-center">
+                    <img class="rounded me-3" src="{{ Auth::guard('plongeurs')->user()->image }}" alt="" width="100">
+                  
+                    <div class="ms-1 ms-sm-3">
+                        <p class="fw-semi-bold mb-3 mb-sm-2 fs-1"><a href="#">{{ Auth::guard('plongeurs')->user()->nom }} {{ Auth::guard('plongeurs')->user()->prenom }}</a>
+                  
+                        </p>
+                        <div class="row align-items-center gx-0 gy-2">
+                            <div class="col-auto me-2">
+                                <h6 class="client mb-0">
+                                        <svg
+                                            class="svg-inline--fa fa-user fa-w-14" data-fa-transform="shrink-3 up-1" aria-hidden="true"
+                                            focusable="false" data-prefix="fas" data-icon="user" role="img"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""
+                                            style="transform-origin: 0.4375em 0.4375em;">
+                                            <g transform="translate(224 256)">
+                                                <g transform="translate(0, -32)  scale(0.8125, 0.8125)  rotate(0 0 0)">
+                                                    <path fill="currentColor"
+                                                        d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"
+                                                        transform="translate(-224 -256)"></path>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                        <span>{{ ucfirst(Auth::guard('plongeurs')->user()->type_plongeur->type) }}</span>&nbsp;&nbsp;#{{ $active_licence->custom_id  }}
+                                </h6>
+                            </div>
 
+                            <div class="col-auto lh-1 me-3">
+                                @if(isset($active_licence) && $active_licence->statut == 'accepter')
+                                    <small class="badge rounded badge-subtle-success false">Actif</small>
+                                @else
+                                    <small class="badge rounded badge rounded badge-subtle-danger false">Inactif</small>
+                                @endif
+                            </div>
+                                
+                            
+
+
+                            <div class="col-auto">
+                                <h6 class=" {{ now()->month !== 12 ? 'mb-0 text-500' : 'remaining-days-warning' }}">{{ $remainingDays }} jours restants</h6>
+                            </div>
+                        </div>
+
+
+                        <div class="row align-items-center gx-0 gy-2" style="margin-top:.5px;">
+                            <div class="col-auto me-2">
+                                <h6 class="client mb-0">
+                                  
+                                        {{-- <svg
+                                            class="svg-inline--fa fa-user fa-w-14" data-fa-transform="shrink-3 up-1" aria-hidden="true"
+                                            focusable="false" data-prefix="fas" data-icon="user" role="img"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""
+                                            style="transform-origin: 0.4375em 0.4375em;">
+                                            <g transform="translate(224 256)">
+                                                <g transform="translate(0, -32)  scale(0.8125, 0.8125)  rotate(0 0 0)">
+                                                    <path fill="currentColor"
+                                                        d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"
+                                                        transform="translate(-224 -256)"></path>
+                                                </g>
+                                            </g>
+                                        </svg><!-- <span class="fas fa-user" data-fa-transform="shrink-3 up-1"></span> Font Awesome fontawesome.com --> --}}
+                                        <span>{{ Auth::guard('plongeurs')->user()->club->nom }}</span>
+                                   </h6>
+                            </div>
+                            <div class="col-auto lh-1 me-3">
+                                @if(isset($adhesion_club))
+                                    <small class="badge rounded badge-subtle-success false">Actif</small>
+                                @else
+                                    <small class="badge rounded badge rounded badge-subtle-danger false">Inactif</small>
+                                @endif
+                            </div>
+                          
+                        </div>
+
+                      
+
+                    </div>
+                       
+                  
+                        
+                </div>
+                
+            </div>
+            
                
             @if(isset($active_licence) && $active_licence->statut == 'accepter')
-                <div class="col-lg-6 d-flex justify-content-end align-items-center flex-wrap">
-                    <a href="{{route('attestation.licence', Auth::guard('plongeurs')->user()->id)}}" class="btn btn-primary" target="__blank"><i class="bi bi-file-earmark-arrow-down-fill"></i> Attestation de licence</a>
+
+                 <div class="d-flex flex-column justify-content-center align-items-end" style="height: 100%; position: absolute; bottom: 0; right: 0; width: fit-content;">
+                    
+                    @if(empty($active_licence_next_year) && now()->month == 12)
+                    <div class="mb-2">
+                        <button class="btn btn-danger signal-button" data-bs-toggle="modal" data-bs-target="#licenceModal">
+                            Demande de licence
+                        </button>
+                    </div>
+                    @elseif(isset($active_licence_next_year) && now()->month == 12 && ($active_licence_next_year->statut == 'en cours' || $active_licence_next_year->statut == 'en_cours_validation'))
+                    <div class="mb-2">
+                        <button class="btn" style="background: #279e5b; color: white;">
+                            Votre demande a été envoyée
+                        </button>
+                    </div>
+                    @endif
+                    <div>
+                        <a href="{{ route('attestation.licence', Auth::guard('plongeurs')->user()->id) }}" 
+                           class="btn btn-primary" target="__blank">
+                            <i class="bi bi-file-earmark-arrow-down-fill"></i> Attestation de licence
+                        </a>
+                    </div>
+                    
                 </div>
+                
+                
             @elseif(isset($active_licence) && ($active_licence->statut == 'en cours' || $active_licence->statut == 'en_cours_validation'))
                 <div class="col-lg-6 d-flex justify-content-end align-items-center flex-wrap">
                     <button class="btn" style="background: #279e5b; color: white;">
@@ -93,7 +184,7 @@
             @elseif(empty($active_licence))
                 <div class="col-lg-4 d-flex justify-content-end align-items-center flex-wrap">   
                     <button class="btn btn-danger signal-button" data-bs-toggle="modal" data-bs-target="#licenceModal">
-                        Demande d'adhésion
+                        Demande de licence
                     </button>
                 </div>
             @endif
@@ -104,7 +195,7 @@
 
 
 </div>
-<div class="card mb-3">
+{{-- <div class="card mb-3">
     <div class="card-body position-relative">
         <div class="row">
             <div class="col-lg-12">
@@ -175,50 +266,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-12">
-                <div class="card">
-                    <div class="card-header pb-0">
-                        <div class="row flex-between-center g-card">
-                            <div class="col-auto">
-                                <h6 class="mb-0">Report for this week</h6>
-                            </div>
-                            <div class="col-auto d-flex">
-                                <div class="btn btn-sm btn-text d-flex align-items-center p-0 me-3 shadow-none"
-                                    id="echart-bar-report-for-this-week-option-1"> <span
-                                        class="fas fa-circle text-primary fs--2 me-1"></span> <span class="text">This
-                                        Week </span></div>
-                                <div class="btn btn-sm btn-text d-flex align-items-center p-0 shadow-none"
-                                    id="echart-bar-report-for-this-week-option-2"> <span
-                                        class="fas fa-circle text-300 fs--2 me-1"></span> <span class="text">Last
-                                        Week</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body py-0">
-                        <!-- Find the JS file for the following chart at: src/js/charts/echarts/report-for-this-week.js-->
-                        <!-- If you are not using gulp based workflow, you can find the transpiled code at: public/assets/js/theme.js-->
-                        <div class="echart-bar-report-for-this-week" data-echart-responsive="true"
-                            data-chart="{&quot;option1&quot;:&quot;echart-bar-report-for-this-week-option-1&quot;,&quot;option2&quot;:&quot;echart-bar-report-for-this-week-option-2&quot;}"
-                            style="user-select: none; position: relative;" _echarts_instance_="ec_1667649206497">
-                            <div
-                                style="position: relative; width: 818px; height: 295px; padding: 0px; margin: 0px; border-width: 0px;">
-                                <canvas
-                                    style="position: absolute; left: 0px; top: 0px; width: 818px; height: 295px; user-select: none; padding: 0px; margin: 0px; border-width: 0px;"
-                                    data-zr-dom-id="zr_0" width="1227" height="442"></canvas>
-                            </div>
-                            <div class=""></div>
-                        </div>
-                    </div>
-                    <div class="card-footer bg-light p-0"><a class="btn btn-sm btn-link d-block w-100 py-2"
-                            href="#!">Voir
-                            tout projects
-                            <span class="fas fa-chevron-right ms-1 fs--2"></span></a>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
-</div>
+</div> --}}
 <!-- Modal Licence -->
 <div class="modal fade" id="licenceModal" tabindex="-1" aria-labelledby="licenceModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -338,6 +388,7 @@
                 // const toastLiveExample = document.getElementById('liveToast');
                 // const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
                 // toastBootstrap.show();
+                location.reload();
             }
         } catch (err) {
             console.error(err);
