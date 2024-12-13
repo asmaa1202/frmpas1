@@ -38,12 +38,6 @@ class LicenceController extends Controller
         return redirect()->route("demandes_licence.en_cous_validation")
                         ->with("success", "Le statut de licence a été mis à jour avec succès.")
                         ->with("licences", $licences);
-        // return response()->json(array('message' => "Le statut de l'adhésion a été mis à jour avec succès."), 200);
-        // return response()->json([
-        //     'message' => "Le statut de l'adhésion a été mis à jour avec succès.",
-        //     'redirect_url' => route('demandes.index')
-        // ], 200);
-        
 
     }
 

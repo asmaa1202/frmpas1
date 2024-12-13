@@ -49,22 +49,6 @@ class ClubLicenceController extends Controller
         } catch (\Exception $e) {
             return back()->with('error', 'Une erreur est survenue lors de l\'envoie des demandes : ' . $e->getMessage());
         }
-        // $licence = Licence::findOrFail($id);
-
-        // $licence->statut = $statut;
-
-        // $licence->save();
-
-        // $licences = Licence::where('statut', self::statut_en_cours)->orderBy('created_at', 'DESC')->paginate(100);
-
-        // return redirect()->route("demandes_licence.en_cous_validation")
-        //                 ->with("success", "Le statut de l'adhésion a été mis à jour avec succès.")
-        //                 ->with("licences", $licences);
-        // return response()->json(array('message' => "Le statut de l'adhésion a été mis à jour avec succès."), 200);
-        // return response()->json([
-        //     'message' => "Le statut de l'adhésion a été mis à jour avec succès.",
-        //     'redirect_url' => route('demandes.index')
-        // ], 200);
         
 
     }
@@ -187,6 +171,23 @@ class ClubLicenceController extends Controller
 
     }
 
+    public function licence_statut($id, $statut)
+    {
+
+        $licence = Licence::findOrFail($id);
+
+        $licence->statut = $statut;
+
+        $licence->save();
+
+        $licences = Licence::where('statut', self::statut_en_cours)->orderBy('created_at', 'DESC')->paginate(100);
+
+        return redirect()->route("club.demandes_licence.en_attentes")
+                        ->with("success", "Le statut de licence a été mis à jour avec succès.")
+                        ->with("licences", $licences);
+
+    }
+
     /**
      * Display the specified resource.
      */
@@ -219,7 +220,7 @@ class ClubLicenceController extends Controller
         try {
             $deletedDemande = Licence::where("id", $id)->delete();
             if ($deletedDemande <> 0) {
-                return response()->json(array('message' => "Demande est supprimé avec succés"), 200);
+                return response()->json(array('message' => "Demande est supprimée avec succés"), 200);
             } else {
                 return response()->json(array('message' => "Erreur servenu"), 500);
             }

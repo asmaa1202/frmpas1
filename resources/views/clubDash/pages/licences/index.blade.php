@@ -71,7 +71,7 @@
                             <td class="align-middle">{{ $item->plongeur->niveau->label }}</td>
                             <td class="align-middle">{{ $item->annee }}</td>
                             <td class="align-middle">
-                                <a href="{{ route('licence.read.document', $item->id) }}" target="__blank">
+                                <a href="{{ route('club.licence.read.document', $item->id) }}" target="__blank">
                                     Attestation de Paiement
                                 </a>
                             </td>

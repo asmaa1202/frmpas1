@@ -78,7 +78,7 @@
                             <td class="align-middle">{{ $item->plongeur->niveau->label }}</td>
                             <td class="align-middle">{{ $item->annee }}</td>
                             <td class="align-middle">
-                                <a href="{{ route('licence.read.document', $item->id) }}" target="__blank">
+                                <a href="{{ route('club.licence.read.document', $item->id) }}" target="__blank">
                                     Attestation de Paiement
                                 </a></td>
                             <td class="py-2 align-middle white-space-nowrap text-center">
@@ -152,7 +152,7 @@
                                                     data-bs-dismiss="modal">Non</button>
                                                 
                                                 <!-- Formulaire pour action Laravel -->
-                                                <form action="{{ route('demandes_licence.statut', ['id' => $item->id, 'statut' => 'refuser']) }}" method="POST">
+                                                <form action="{{ route('club.demandes_licence.refuser', ['id' => $item->id, 'statut' => 'refuser']) }}" method="POST">
                                                     @csrf
                                                     <button type="submit" class="btn btn-primary">
                                                         Oui
@@ -187,7 +187,7 @@
             try {
                 const btnClose = document.getElementById(`colseModal${id}`);
                 btnClose.click();
-                const response = await axios.delete(`/dashboard/demandes-licence/${id}`);
+                const response = await axios.delete(`/club/demandes-licence/${id}`);
                 if (response.status === 200) {
                     const notif =
                         `<div class="toast-container position-fixed bottom-0 end-0 p-3">
