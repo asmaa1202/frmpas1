@@ -237,7 +237,7 @@
 
                     <div class="mb-2">
                         <label class="form-label" for="n_licence">N° de Licence</label>
-                        <input class="form-control" id="n_licence" type="text" value="{{ $plongeur->n_licence }}" />
+                        <input class="form-control" id="n_licence" type="text" value="{{ $licence->custom_id ?? '' }}" disabled readonly/>
                     </div>
                     <div class="mb-2">
                         <label class="form-label" for="date_visite_medicale">Date de visite médicale</label>
@@ -365,7 +365,7 @@
                 formData.append("phone_fixe_personne", document.getElementById("phone_fixe_personne").value);
                 formData.append("phone_portable_personne", document.getElementById("phone_portable_personne").value);
                 formData.append("lien_parente_personne", document.getElementById("lien_parente_personne").value);
-                formData.append("n_licence", document.getElementById("n_licence").value);
+                // formData.append("n_licence", document.getElementById("n_licence").value);
                 formData.append("date_visite_medicale", document.getElementById("date_visite_medicale").value);
                 formData.append("niveaux", document.getElementById("niveaux").value);
                 formData.append("jour_entrainement", document.getElementById("jour_entrainement").innerText.split(/(?=[A-Z])/).toString().trim().slice(1));

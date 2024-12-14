@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use App\Http\Controllers\Controller;
 use App\Models\Club;
 use App\Models\Level;
+use App\Models\Licence;
 use App\Models\Plongeur;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -157,8 +158,9 @@ class PlongeurClubController extends Controller
         $plongeur = Plongeur::find($id);
         $niveaux = Level::all();
         $clubs = Club::orderBy('nom', 'desc')->get();
+        $licence = Licence::where('plongeur_id', $id)->where('annee', date('Y'))->where('statut', self::statut_accepter)->first();
 
-        return view("clubDash.pages.plongeur.modifier", compact('plongeur', 'niveaux', 'clubs'));
+        return view("clubDash.pages.plongeur.modifier", compact('plongeur', 'niveaux', 'clubs', 'licence'));
     }
 
     /**

@@ -87,7 +87,7 @@
                     </div> 
                     <div class="col-lg-6">
                         <label class="form-label" for="nom">Nom <span class="text-danger">*</span></label>
-                        <input class="form-control" id="nom" type="text" />
+                        <input class="form-control" id="nom" type="text" required/>
                     </div>
                     <div class="col-lg-6">
                         <label class="form-label" for="prenom">Prénom <span class="text-danger">*</span></label>
@@ -258,7 +258,7 @@
                     </div>
                     <div class="mb-2">
                         <label class="form-label" for="qualifications">Qualifications</label>
-                        <input class="form-control" id="qualifications" type="text" />
+                        <input class="form-control" id="qualifications" type="text" required/>
                     </div>
                 </div>
 
@@ -306,6 +306,23 @@
         }
         async function addplongeur() {
             try {
+                const requiredFields = [
+                    "nom", "prenom", "cin", "email-plongeur-club", "password",
+                    "date_naissance", "phone_portable", "nom_personne", "prenom_personne",
+                    "email_personne", "phone_portable_personne", "lien_parente_personne", "adresse", "code_postal", "ville", "pays", "date_visite_medicale", "niveaux"
+                ];
+                let isValid = true;
+
+                requiredFields.forEach((fieldId) => {
+                    const field = document.getElementById(fieldId);
+                    if (!field.value.trim()) {
+                        field.classList.add("is-invalid"); // Ajouter un style pour indiquer l'erreur
+                        isValid = false;
+                    } else {
+                        field.classList.remove("is-invalid");
+                    }
+                });
+                
                 image_card.src = 'http://localhost:8000/dashboard/img/team/avatar.png';
 
                 let formData = new FormData();
