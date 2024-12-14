@@ -64,7 +64,7 @@
             <div class="{{ isset($active_licence) ? 'col-lg-6' : 'col-lg-8' }}">
                 
                 <div class="d-flex align-items-center">
-                    <img class="rounded me-3" src="{{ Auth::guard('plongeurs')->user()->image }}" alt="" width="100">
+                    <img class="rounded me-3" src="{{ asset(Auth::guard('plongeurs')->user()->image ?? 'dashboard/img/team/avatar.png') }}" alt="" width="100">
                   
                     <div class="ms-1 ms-sm-3">
                         <p class="fw-semi-bold mb-3 mb-sm-2 fs-1"><a href="#">{{ Auth::guard('plongeurs')->user()->nom }} {{ Auth::guard('plongeurs')->user()->prenom }}</a>
