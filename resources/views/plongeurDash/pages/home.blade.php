@@ -86,7 +86,7 @@
                                                 </g>
                                             </g>
                                         </svg>
-                                        <span>{{ ucfirst(Auth::guard('plongeurs')->user()->type_plongeur->type) }}</span>&nbsp;&nbsp;#{{ $active_licence->custom_id  }}
+                                        <span>{{ ucfirst(Auth::guard('plongeurs')->user()->type_plongeur->type) ?? '--' }}</span>&nbsp;&nbsp;{{ $active_licence ? '#'.$active_licence->custom_id : '' }}
                                 </h6>
                             </div>
 

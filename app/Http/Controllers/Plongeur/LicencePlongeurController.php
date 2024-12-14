@@ -56,14 +56,21 @@ class LicencePlongeurController extends Controller
                 $id_dl = 'FMM' . date('Y') . str_pad($nextId, 6, '0', STR_PAD_LEFT);
             }
 
-
+            $licence_actuelle =Licence::where('plongeur_id', $id)
+                                        ->where('annee', date('Y'))
+                                        ->whereNot('statut', self::statut_refuser)
+                                        ->first();
+            // dd(isset($licence_actuelle));
+            
             $demande_licence = new Licence();
             $demande_licence->custom_id =  $id_dl;
             $demande_licence->plongeur_id = $id;
             $demande_licence->type_id = $plongeur->type_plongeur_id;
             $demande_licence->montant = 1999;
-            if(now()->month == 12){
+            if(now()->month == 12 && isset($licence_actuelle)){
                  $demande_licence->annee = date('Y') + 1;      
+            }elseif(empty($licence_actuelle)){
+                $demande_licence->annee = date('Y'); 
             }
            
             $demande_licence->statut = self::statut_en_cours;

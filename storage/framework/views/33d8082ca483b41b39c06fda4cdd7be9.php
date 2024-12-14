@@ -85,7 +85,7 @@
                                                 </g>
                                             </g>
                                         </svg>
-                                        <span><?php echo e(ucfirst(Auth::guard('plongeurs')->user()->type_plongeur->type)); ?></span>&nbsp;&nbsp;#<?php echo e($active_licence->custom_id); ?>
+                                        <span><?php echo e(ucfirst(Auth::guard('plongeurs')->user()->type_plongeur->type) ?? '--'); ?></span>&nbsp;&nbsp;<?php echo e($active_licence ? '#'.$active_licence->custom_id : ''); ?>
 
                                 </h6>
                             </div>

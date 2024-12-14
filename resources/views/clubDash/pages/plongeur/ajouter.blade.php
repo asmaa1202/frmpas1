@@ -102,11 +102,11 @@
                     <div class="col-sm-3">
                         <label for="email-plongeur-club">Adresse courriel</label>
                         <input class="form-control" id="email-plongeur-club" data-input-mask='{"mask":"/^\S*@?\S*$/"}'
-                            placeholder="XXXX@XXX.XXX" type="email" />
+                            placeholder="XXXX@XXX.XXX" type="email"/>
                     </div>
                     <div class="col-sm-6">
                         <label class="form-label" for="password">Mot de passe</label>
-                        <input class="form-control" id="password" type="password" />
+                        <input class="form-control" id="password" type="password" autocomplete="new-password" />
                     </div>
                 </div>
             </div>
@@ -223,10 +223,10 @@
                 </div>
                 <div class="card-body bg-light">
 
-                    <div class="mb-2">
+                    {{-- <div class="mb-2">
                         <label class="form-label" for="n_licence">N° de Licence</label>
                         <input class="form-control" id="n_licence" type="text" />
-                    </div>
+                    </div> --}}
                     <div class="mb-2">
                         <label class="form-label" for="date_visite_medicale">Date de visite médicale</label>
                         <input class="form-control datetimepicker" id="date_visite_medicale" type="text"
@@ -336,7 +336,7 @@
                 formData.append("phone_fixe_personne", document.getElementById("phone_fixe_personne").value);
                 formData.append("phone_portable_personne", document.getElementById("phone_portable_personne").value);
                 formData.append("lien_parente_personne", document.getElementById("lien_parente_personne").value);
-                formData.append("n_licence", document.getElementById("n_licence").value);
+                // formData.append("n_licence", document.getElementById("n_licence").value);
                 formData.append("date_visite_medicale", document.getElementById("date_visite_medicale").value);
                 formData.append("niveaux", document.getElementById("niveaux").value);
                 formData.append("jour_entrainement", document.getElementById("jour_entrainement").innerText.split(/(?=[A-Z])/).toString());
@@ -394,7 +394,7 @@
                     document.getElementById("phone_fixe_personne").value = "";
                     document.getElementById("phone_portable_personne").value = "";
                     document.getElementById("lien_parente_personne").value = "";
-                    document.getElementById("n_licence").value = "";
+                    // document.getElementById("n_licence").value = "";
                     document.getElementById("date_visite_medicale").value = "";
                     document.getElementById("niveaux").value = "";
                     document.getElementById("enseignement").value = "";
@@ -407,7 +407,7 @@
                             <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
                                 <div class="toast-header">
                                     <div style="width: 15px;height: 15px;background: red;border-radius: 3px;margin-right: 5px;"></div>
-                                    <strong class="me-auto">ASAAM</strong>
+                                    <strong class="me-auto">FRMPAS</strong>
                                     <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                                 </div>
                                 <div class="toast-body">
