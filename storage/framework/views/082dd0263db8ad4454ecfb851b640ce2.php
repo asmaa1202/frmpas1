@@ -212,7 +212,7 @@ unset($__errorArgs, $__bag); ?>
                     <div class="col-lg-6">
                         <label class="form-label" for="password">Confirmez le mot de passe</label>
                         <input class="form-control" id="password_confirmation" type="password"
-                            name="password_confirmation" autocomplete="current-password">
+                            name="password_confirmation" autocomplete="new-password">
                     </div>
                     <div class="col-12 d-flex justify-content-end">
                         <button class="btn btn-primary" onclick="modifierCompte()"

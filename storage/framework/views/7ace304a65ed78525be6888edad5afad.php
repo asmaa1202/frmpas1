@@ -104,7 +104,7 @@
                     </div>
                     <div class="col-sm-6">
                         <label class="form-label" for="password">Mot de passe</label>
-                        <input class="form-control" id="password" type="password" />
+                        <input class="form-control" id="password" type="password" autocomplete="new-password"/>
                     </div>
                 </div>
             </div>

@@ -35,7 +35,7 @@
             <div class="card-header position-relative min-vh-25 mb-8">
                 <div class="cover-image">
                     <div class="bg-holder rounded-3 rounded-bottom-0"
-                        style="background-image:url(/images/a-female-scuba-diver-watches-a-hawksbill-turtle-swim-lazily-above-a-reef-in-the-cayman-islands--e1634535880681.jpg);">
+                        style="background-image:url(/images/federation.png);">
                     </div>
                 </div>
                 <div class="avatar avatar-5xl avatar-profile shadow-sm img-thumbnail rounded-circle">
@@ -67,19 +67,19 @@
                         <div class="row mx-2">
                             <div class="form-check mb-0 lh-1 col-2">
                                 <input class="form-check-input genre" type="radio" value="Homme" name="genre"
-                                    id="home" />
+                                    id="home" required />
                                 <label class="form-check-label mb-0" for="home">Homme
                                 </label>
                             </div>
                           <div class="form-check mb-0 lh-1 col-2">
                                 <input class="form-check-input genre" type="radio" value="Femme" name="genre" id="femme"
-                                    checked="checked" />
+                                    checked="checked" required />
                                 <label class="form-check-label mb-0" for="femme">Femme
                                 </label>
                             </div>
                             <div class="form-check mb-0 lh-1 col-2">
                                 <input class="form-check-input genre" type="radio" value="Enfant" name="genre"
-                                    id="Enfant" />
+                                    id="Enfant" required />
                                 <label class="form-check-label mb-0" for="only-me">Enfant
                                 </label>
                             </div>
@@ -87,7 +87,7 @@
                     </div> 
                     <div class="col-lg-6">
                         <label class="form-label" for="nom">Nom</label>
-                        <input class="form-control" id="nom" type="text" />
+                        <input class="form-control" id="nom" type="text" required/>
                     </div>
                     <div class="col-lg-6">
                         <label class="form-label" for="prenom">Prénom</label>
@@ -104,7 +104,7 @@
                     </div>
                     <div class="col-sm-6">
                         <label class="form-label" for="password">Mot de passe</label>
-                        <input class="form-control" id="password" type="password" />
+                        <input class="form-control" id="password" type="password" autocomplete="new-password"/>
                     </div>
                 </div>
             </div>
@@ -221,10 +221,7 @@
                 </div>
                 <div class="card-body bg-light">
 
-                    <div class="mb-2">
-                        <label class="form-label" for="n_licence">N° de Licence</label>
-                        <input class="form-control" id="n_licence" type="text" />
-                    </div>
+                    
                     <div class="mb-2">
                         <label class="form-label" for="date_visite_medicale">Date de visite médicale</label>
                         <input class="form-control datetimepicker" id="date_visite_medicale" type="text"
@@ -334,7 +331,7 @@
                 formData.append("phone_fixe_personne", document.getElementById("phone_fixe_personne").value);
                 formData.append("phone_portable_personne", document.getElementById("phone_portable_personne").value);
                 formData.append("lien_parente_personne", document.getElementById("lien_parente_personne").value);
-                formData.append("n_licence", document.getElementById("n_licence").value);
+                // formData.append("n_licence", document.getElementById("n_licence").value);
                 formData.append("date_visite_medicale", document.getElementById("date_visite_medicale").value);
                 formData.append("niveaux", document.getElementById("niveaux").value);
                 formData.append("jour_entrainement", document.getElementById("jour_entrainement").innerText.split(/(?=[A-Z])/).toString());
@@ -353,7 +350,7 @@
                             <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
                                 <div class="toast-header">
                                     <div style="width: 15px;height: 15px;background: green;border-radius: 3px;margin-right: 5px;"></div>
-                                    <strong class="me-auto">ASAAM</strong>
+                                    <strong class="me-auto">FRMPAS</strong>
                                     <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                                 </div>
                                 <div class="toast-body">
@@ -405,7 +402,7 @@
                             <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
                                 <div class="toast-header">
                                     <div style="width: 15px;height: 15px;background: red;border-radius: 3px;margin-right: 5px;"></div>
-                                    <strong class="me-auto">ASAAM</strong>
+                                    <strong class="me-auto">FRMPAS</strong>
                                     <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                                 </div>
                                 <div class="toast-body">

@@ -108,7 +108,7 @@
                             <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
                                 <div class="toast-header">
                                     <div style="width: 15px;height: 15px;background: green;border-radius: 3px;margin-right: 5px;"></div>
-                                    <strong class="me-auto">ASAAM</strong>
+                                    <strong class="me-auto">FRMPAS</strong>
                                     <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                                 </div>
                                 <div class="toast-body">
@@ -132,7 +132,7 @@
                             <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
                                 <div class="toast-header">
                                     <div style="width: 15px;height: 15px;background: red;border-radius: 3px;margin-right: 5px;"></div>
-                                    <strong class="me-auto">ASAAM</strong>
+                                    <strong class="me-auto">FRMPAS</strong>
                                     <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                                 </div>
                                 <div class="toast-body">
