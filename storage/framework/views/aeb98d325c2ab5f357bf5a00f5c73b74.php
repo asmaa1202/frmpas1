@@ -119,7 +119,7 @@ unset($__errorArgs, $__bag); ?>
                         </form>
                         <div class="text-center mt-3">
                             <a href="<?php echo e(route('plongeur.login')); ?>" class="text-primary" style="text-decoration: underline;">
-                                Vous êtes un plongeur ? Cliquez ici pour vous connecter
+                                Vous êtes un membre ? Cliquez ici pour vous connecter
                             </a>
                         </div>
                     </div>
