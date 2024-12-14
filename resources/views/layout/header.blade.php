@@ -26,6 +26,7 @@
                     <!-- main nav start -->
                     <nav class="top-nav">
                         <ul class="nav sf-menu">
+                            <!-- Frmpas Organisation -->
                             <li class="active">
                                 <a href="{{route('frmpas.about')}}">Frmpas Organisation</a>
                                 <ul>
@@ -38,20 +39,18 @@
                                     <li>
                                         <a href="{{route('commissions')}}">Commissions</a>
                                     </li>
-
                                     <li>
                                         <a href="{{route('contact')}}">Contact</a>
                                     </li>
                                 </ul>
                             </li>
-
-                            <!-- Sport -->
+                
+                            <!-- Frmpas -->
                             <li>
                                 <a href="#">Frmpas</a>
                                 <ul>
-
                                     <li>
-                                        <a href="{{route('sport.club')}}">Equipe National</a>
+                                        <a href="{{route('sport.club')}}">Équipe Nationale</a>
                                     </li>
                                     <li>
                                         <a href="{{route('sport.competition')}}">Club Sportif</a>
@@ -60,94 +59,79 @@
                                         <a href="{{route('sport.competition')}}">Club Plongée</a>
                                     </li>
                                     <li>
-                                        <a href="{{route('sport.competition')}}">Entraineur</a>
+                                        <a href="{{route('sport.competition')}}">Entraîneur</a>
                                     </li>
                                     <li>
-                                        <a href="{{route('sport.competition')}}">juge</a>
+                                        <a href="{{route('sport.competition')}}">Juge</a>
                                     </li>
                                     <li>
                                         <a href="{{route('sport.competition')}}">Compétition</a>
                                     </li>
                                     <li>
-                                        <a href="{{route('sport.competition')}}">Communiquer</a>
+                                        <a href="{{route('sport.competition')}}">Communiqué</a>
                                     </li>
                                 </ul>
                             </li>
+                
+                            <!-- Activité -->
                             <li>
-                                <a href="#">Sport</a>
+                                <a href="#">Activité</a>
                                 <ul>
-
+                                    <!-- Sport -->
                                     <li>
-                                        <a href="{{route('sport.diving')}}">nage avec palmes</a>
+                                        <a href="#">Sport</a>
+                                        <ul>
+                                            <li>
+                                                <a href="{{route('sport.diving')}}">Nage avec palmes</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{route('sport.finswimming')}}">Plongée sportive</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{route('sport.visual')}}">Visuelle</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{route('sport.freediving')}}">Plongée en apnée</a>
+                                            </li>
+                                        </ul>
                                     </li>
+                
+                                    <!-- Plongée sous-marine -->
                                     <li>
-                                        <a href="{{route('sport.finswimming')}}">plongée sportive</a>
+                                        <a href="#">Plongée sous-marine</a>
+                                        <ul>
+                                            <li>
+                                                <a href="{{route('plongee.club')}}">Club Diving</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{route('plongee.formation')}}">Formation FRMPAS</a>
+                                            </li>
+                                        </ul>
                                     </li>
+                
+                                    <!-- Environnement et Science -->
                                     <li>
-                                        <a href="{{route('sport.visual')}}">visuelle</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{route('sport.freediving')}}">plongée en apnée</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <!-- eof blog -->
-
-                            <!-- Diving -->
-                            <li>
-                                <a href="#">Plongée sous marine</a>
-                                <ul>
-                                    <li>
-                                        <a href="{{route('plongee.club')}}">Club Diving</a>
-                                    </li>
-                        
-                                    <li>
-                                        <a href="{{route('plongee.formation')}}">Formation FRMPAS</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <!-- eof features -->
-
-
-                            {{-- <li>
-                                <a href="{{route('actualites')}}">Actualités</a>
-                            </li>
-                            <!-- eof pages -->
-
-                           <!-- Event -->
-                            <li>
-                                <a href="{{route('evenements.index')}}">Événements</a>
-                            </li>
-                            <!-- eof Event -->
-
-                            <!-- gallery -->
-                            <li>
-                                <a href="{{route('galerie')}}">Galerie </a>
-                            </li>
-                            <!-- eof Gallery --> --}}
-
-                             <!-- Événements -->
-                             <li>
-                                <a href="#">Environement et Science</a>
-
-                                <ul>
-                                    <li>
-                                        <a href="{{route('evenements.index')}}">Événements</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{route('calendar2.federale')}}">Calendrier federale</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{route('actualites')}}">Actualités</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{route('galerie')}}">Galerie</a>
+                                        <a href="#">Environnement et Science</a>
+                                        <ul>
+                                            <li>
+                                                <a href="{{route('evenements.index')}}">Événements</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{route('actualites')}}">Actualités</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{route('galerie')}}">Galerie</a>
+                                            </li>
+                                        </ul>
                                     </li>
                                 </ul>
                             </li>
+                            <li>
+                                <a href="{{route('calendar2.federale')}}">Calendrier Fédéral</a>
+                            </li>
+                            <!-- Événements -->
                             <li>
                                 <a href="#">Événements</a>
-
                                 <ul>
                                     <li>
                                         <a href="{{route('evenements.index')}}">Calendrier</a>
@@ -160,15 +144,11 @@
                                     </li>
                                 </ul>
                             </li>
-                            
-                            <!-- eof Événements -->
-                            
                         </ul>
-
-
                     </nav>
                     <!-- eof main nav -->
                 </div>
+
                 <div style="width: 150px"></div>
                 <a href="http://127.0.0.1:8000/login" class="login-icon">
                     <i class="fa fa-sign-in" aria-hidden="true"></i>

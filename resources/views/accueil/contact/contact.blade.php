@@ -43,7 +43,7 @@
     </div>
 </section>
 
-<section class="ls s-py-90 s-py-xl-160 c-gutter-50">
+{{-- <section class="ls s-py-90 s-py-xl-160 c-gutter-50">
     <div class="container">
         <div class="row">
             <div class="col-lg-4 mb-50 mb-lg-0 height-100 animate" data-animation="pullDown">
@@ -93,9 +93,9 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 
-<section class="ls bottom-500-xl s-pb-90 s-pb-xl-0 text-center text-lg-left">
+<section class="ls s-py-90 s-py-xl-160 c-gutter-50">
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg-6 col-xl-5 ml-auto mr-auto animate" data-animation="pullDown">
@@ -163,11 +163,63 @@
     </div>
 </section>
 
+<section class="ls bottom-500-xl s-pb-90 s-pb-xl-0 text-center text-lg-left ">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-50 mb-lg-0 height-100 animate" data-animation="pullDown">
+                <div class="inner-wrap p-40 p-xl-70  hero-bg">
+                    <div class="icon-box text-center text-md-center   title-size-medium">
+                        <div class="icon-styled fs-50 color-darkgrey">
+                            <i class="ico ico-call"></i>
+                        </div>
+                        <h5 class="text-center mt-30 color-darkgrey">
+                            <span class="">Phone</span>
+                        </h5>
+                        <p class="color-font">
+                          	<a href="tel:+88003532455">+212 6 61 14 09 12</a>
+                        </p>
+                    </div><!-- .icon-box -->
+                </div>
+            </div>
+            <div class="col-lg-4 mb-50 mb-lg-0 height-100 animate" data-animation="pullDown">
+                <div class="inner-wrap p-40 p-xl-70  hero-bg">
+                    <div class="icon-box text-center text-md-center   title-size-medium">
+                        <div class="icon-styled fs-50 color-darkgrey">
+                            <i class="ico ico-placeholder"></i>
+                        </div>
+                        <h5 class="text-center mt-30 color-darkgrey">
+                            <span class="">Adresse</span>
+                        </h5>
+                        <p class="color-font">
+                            <a href="https://maps.app.goo.gl/EYWVZa4SQKLGEGQo7" target="_blank">350 Lot Lina - 3ème étage - Sidi Maârouf - Casablanca 20520</a>
+                        </p>
+                    </div><!-- .icon-box -->
+                </div>
+            </div>
+            <div class="col-lg-4 height-100 animate" data-animation="pullDown">
+                <div class="inner-wrap p-40 p-xl-70  hero-bg">
+                    <div class="icon-box text-center text-md-center   title-size-medium">
+                        <div class="icon-styled fs-50 color-darkgrey">
+                            <i class="ico ico-email"></i>
+                        </div>
+                        <h5 class="text-center mt-30 color-darkgrey">
+                            <span class="">Email</span>
+                        </h5>
+                        <p class="color-font">
+                            <a href="mailto:frmpas@frmpas.com">frmpas@frmpas.com</a>
+                        </p>
+                    </div><!-- .icon-box -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="ls container-px-0">
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
-                <div class="ls ms page_map" data-draggable="true" data-scrollwheel="true">
+                <div class=" page_map" data-draggable="true" data-scrollwheel="true">
 
 
                     <div class="marker">

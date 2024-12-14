@@ -57,7 +57,7 @@
                 <div class="row min-vh-100 bg-100">
                     <!-- Section gauche avec l'image -->
                     <div class="col-6 d-none d-lg-block p-0 position-relative">
-                        <img src="<?php echo e(asset('plongeur.jpg')); ?>" alt="Plongeur" class="img-fluid w-100 h-100" style="object-fit: cover;">
+                        <img src="<?php echo e(asset('federation_login.jpeg')); ?>" alt="Plongeur" class="img-fluid w-100 h-100" style="object-fit: cover;">
                     </div>
                     <!-- Section droite avec le formulaire -->
                     <div class="col-sm-10 col-md-6 px-sm-0 align-self-center mx-auto py-5">

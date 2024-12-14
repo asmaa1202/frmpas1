@@ -71,6 +71,7 @@
     <ul class="menu vdm_page_menu">
         <li class="item-544"><a href="/sport-diving/how-to-regulations.html">Regulations</a></li>
         <li class="item-540"><a href="/sport-diving/calendar.html">Calendar</a></li>
+        <li class="item-540"><a href="/sport-diving/calendar.html">Commission</a></li>
         <li class="item-543"><a href="/sport-diving/results.html">Results</a></li>
         <li class="item-986"><a href="/gallery/sport-diving/events.html">Gallery</a></li>
     </ul>
