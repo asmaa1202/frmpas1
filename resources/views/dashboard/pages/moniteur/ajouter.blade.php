@@ -64,7 +64,7 @@
             </div>
             <div class="card-body bg-light">
                 <div class="row g-3">
-                    <h6 class="fw-bold">Genre</h6>
+                    <h6 class="fw-bold">Genre <span class="text-danger">*</span></h6>
                     <div class="ps-2 mt-0">
                         <div class="row mx-2">
                             <div class="form-check mb-0 lh-1 col-2">
@@ -88,24 +88,24 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <label class="form-label" for="nom">Nom</label>
+                        <label class="form-label" for="nom">Nom <span class="text-danger">*</span></label>
                         <input class="form-control" id="nom" type="text" />
                     </div>
                     <div class="col-lg-6">
-                        <label class="form-label" for="prenom">Prénom</label>
+                        <label class="form-label" for="prenom">Prénom <span class="text-danger">*</span></label>
                         <input class="form-control" id="prenom" type="text" />
                     </div>
                     <div class="col-lg-3">
-                        <label class="form-label" for="cin">CIN</label>
+                        <label class="form-label" for="cin">CIN <span class="text-danger">*</span></label>
                         <input class="form-control" id="cin" type="text" />
                     </div>
                     <div class="col-sm-3">
-                        <label for="email">Adresse courriel</label>
+                        <label for="email">Adresse courriel <span class="text-danger">*</span></label>
                         <input class="form-control" id="email_moniteur_ajout" data-input-mask='{"mask":"/^\S*@?\S*$/"}'
                             placeholder="XXXX@XXX.XXX" type="email" />
                     </div>
                     <div class="col-sm-6">
-                        <label class="form-label" for="password">Mot de passe</label>
+                        <label class="form-label" for="password">Mot de passe <span class="text-danger">*</span></label>
                         <input class="form-control" id="password" type="password" autocomplete="new-password"/>
                     </div>
                 </div>
@@ -118,7 +118,7 @@
             <div class="card-body bg-light">
                 <div class="row g-2">
                     <div class="col-sm-6">
-                        <label class="form-label" for="date_naissance">Date de naissance</label>
+                        <label class="form-label" for="date_naissance">Date de naissance <span class="text-danger">*</span></label>
                         <input class="form-control datetimepicker" id="date_naissance" type="text"
                             placeholder="d/m/yy" />
                     </div>
@@ -131,7 +131,7 @@
                         <input class="form-control" id="phone_fix" placeholder="+212 XXX-XXX-XXX" type="tel" />
                     </div>
                     <div class="col-sm-6">
-                        <label for="usPhoneInputmask">Téléphone portable</label>
+                        <label for="usPhoneInputmask">Téléphone portable <span class="text-danger">*</span></label>
                         <input class="form-control" id="phone_portable" placeholder="+212 XXX-XXX-XXX" type="tel" />
                     </div>
                     <div class="col-sm-6 mt-3">
@@ -160,30 +160,30 @@
             <div class="card-body bg-light">
                 <div class="row g-3">
                     <div class="col-lg-6">
-                        <label class="form-label" for="nom_personne">Nom</label>
+                        <label class="form-label" for="nom_personne">Nom <span class="text-danger">*</span></label>
                         <input class="form-control" id="nom_personne" type="text" />
                     </div>
                     <div class="col-lg-6">
-                        <label class="form-label" for="prenom_personne">Prénom</label>
+                        <label class="form-label" for="prenom_personne">Prénom <span class="text-danger">*</span></label>
                         <input class="form-control" id="prenom_personne" type="text" />
                     </div>
                     <div class="col-sm-6">
-                        <label for="email_personne">Adresse courriel</label>
+                        <label for="email_personne">Adresse courriel <span class="text-danger">*</span></label>
                         <input class="form-control" id="email_personne" data-input-mask='{"mask":"/^\S*@?\S*$/"}'
                             placeholder="XXXX@XXX.XXX" type="email" />
                     </div>
                     <div class="col-sm-6">
-                        <label for="phone_fixe_personne">Téléphone fixe</label>
+                        <label for="phone_fixe_personne">Téléphone fixe <span class="text-danger">*</span></label>
                         <input class="form-control" id="phone_fixe_personne"
                             data-input-mask='{"mask":"+212 999-999-999"}' placeholder="+212 XXX-XXX-XXX" type="tel" />
                     </div>
                     <div class="col-sm-6">
-                        <label for="phone_portable_personne">Téléphone portable</label>
+                        <label for="phone_portable_personne">Téléphone portable <span class="text-danger">*</span></label>
                         <input class="form-control" id="phone_portable_personne"
                             data-input-mask='{"mask":"+212 999-999-999"}' placeholder="+212 XXX-XXX-XXX" type="tel" />
                     </div>
                     <div class="col-lg-6">
-                        <label class="form-label" for="lien_parente_personne">Lien de parenté</label>
+                        <label class="form-label" for="lien_parente_personne">Lien de parenté <span class="text-danger">*</span></label>
                         <input class="form-control" id="lien_parente_personne" type="text" />
                     </div>
                 </div>
@@ -199,19 +199,19 @@
                 <div class="card-body bg-light">
 
                     <div class="mb-2">
-                        <label class="form-label" for="adresse">Adresse</label>
+                        <label class="form-label" for="adresse">Adresse <span class="text-danger">*</span></label>
                         <input class="form-control" id="adresse" type="text" />
                     </div>
                     <div class="mb-2">
-                        <label class="form-label" for="code_postal">Code postal</label>
+                        <label class="form-label" for="code_postal">Code postal <span class="text-danger">*</span></label>
                         <input class="form-control" id="code_postal" type="text" />
                     </div>
                     <div class="mb-2">
-                        <label class="form-label" for="ville">Ville</label>
+                        <label class="form-label" for="ville">Ville <span class="text-danger">*</span></label>
                         <input class="form-control" id="ville" type="text" />
                     </div>
                     <div class="mb-2">
-                        <label class="form-label" for="pays">Pays</label>
+                        <label class="form-label" for="pays">Pays <span class="text-danger">*</span></label>
                         <input class="form-control" id="pays" type="text" />
                     </div>
                 </div>
@@ -228,7 +228,7 @@
                         <input class="form-control" id="n_licence" type="text" />
                     </div> --}}
                     <div class="mb-2">
-                        <label for="jour_entrainement">Club</label>
+                        <label for="jour_entrainement">Club <span class="text-danger">*</span></label>
                         <select class="form-select js-choice" id="club_plongeur" size="1" name="club"
                         data-options='{"removeItemButton":true,"placeholder":true}'>
                             <option value="">Choisissez le niveau</option>
@@ -238,12 +238,12 @@
                         </select>
                     </div>
                     <div class="mb-2">
-                        <label class="form-label" for="date_visite_medicale">Date de visite médicale</label>
+                        <label class="form-label" for="date_visite_medicale">Date de visite médicale <span class="text-danger">*</span></label>
                         <input class="form-control datetimepicker" id="date_visite_medicale" type="text"
                             placeholder="yy/m/d" />
                     </div>
                     <div class="mb-2">
-                        <label for="niveaux">Niveaux</label>
+                        <label for="niveaux">Niveaux <span class="text-danger">*</span></label>
                         <select class="form-select js-choice" id="niveaux" size="1" name="niveaux"
                             data-options='{"removeItemButton":true,"placeholder":true}'>
                             <option value="">Choisissez le niveau</option>
@@ -321,6 +321,23 @@
         }
         async function addmoniteur() {
             try {
+                const requiredFields = [
+                    "nom", "prenom", "cin", "email_moniteur_ajout", "password",
+                    "date_naissance", "phone_portable", "nom_personne", "prenom_personne",
+                    "email_personne", "phone_portable_personne", "lien_parente_personne", "adresse", "code_postal", "ville", "pays", "date_visite_medicale", "niveaux"
+                ];
+                let isValid = true;
+
+                requiredFields.forEach((fieldId) => {
+                    const field = document.getElementById(fieldId);
+                    if (!field.value.trim()) {
+                        field.classList.add("is-invalid"); // Ajouter un style pour indiquer l'erreur
+                        isValid = false;
+                    } else {
+                        field.classList.remove("is-invalid");
+                    }
+                });
+
                 image_card.src = 'http://localhost:8000/dashboard/img/team/avatar.png';
 // alert(document.getElementById("email_moniteur_ajout").value)
                 let formData = new FormData();

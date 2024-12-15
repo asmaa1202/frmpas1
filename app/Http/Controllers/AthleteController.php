@@ -111,7 +111,7 @@ class AthleteController extends Controller
             $plongeur->telephone_fixe_persone_cas_urgence  = $request->phone_fixe_personne;
             $plongeur->telephone_portable_persone_cas_urgence = $request->phone_portable_personne;
             $plongeur->lien_parente_persone_cas_urgence = $request->lien_parente_personne;
-            $plongeur->n_licence = $request->n_licence;
+            // $plongeur->n_licence = $request->n_licence;
             $plongeur->date_visite_medicale = $request->date_visite_medicale;
             $plongeur->id_niveau = $request->niveaux;
             $plongeur->enseignement = $request->enseignement;
