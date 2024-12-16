@@ -62,7 +62,7 @@
                                         <a href="{{route('sport.competition')}}">Entraîneur</a>
                                     </li>
                                     <li>
-                                        <a href="{{route('sport.competition')}}">Juge</a>
+                                        <a href="{{route('arbitre')}}">Juge</a>
                                     </li>
                                     <li>
                                         <a href="{{route('sport.competition')}}">Compétition</a>

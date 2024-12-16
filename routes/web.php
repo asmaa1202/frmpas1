@@ -41,6 +41,7 @@ use App\Http\Controllers\Club\ClubLicenceController;
 use App\Http\Controllers\SportType;
 use App\Http\Controllers\Club\MoniteurClubController;
 use App\Http\Controllers\MoniteurController;
+use App\Models\Blog;
 
 Route::get('/', function () {
     return view('welcome');
@@ -397,6 +398,19 @@ Route::middleware(['auth', 'role:1'])->group(function () {
     Route::get("/dashboard/cart", function () {
         return view("dashboard.pages.cart");
     })->name('cart');
+
+    Route::get("/commission",function () {
+        return view("frmpas.juge-commission");
+    })->name('juge.commission');
+
+    Route::get("/arbitres", function () {
+
+
+
+        $recentBlogs = Blog::limit(5)->latest()->get();
+        return view("frmpas.juge",compact("recentBlogs"));
+    })->name('arbitre');
+    
     // Route::get("/dashboard/clubs", function () {
     //     return view("dashboard.pages.club");
     // })->name('clubs.index');
