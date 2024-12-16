@@ -87,7 +87,6 @@ class AthleteController extends Controller
                 'prenom' => 'required|string|max:255',
                 'email' => 'required|email|unique:plongeurs,email',
             ]);
-            
             $plongeur = new Plongeur();
             $plongeur->nom = $request->nom;
             $plongeur->genre = $request->genre;

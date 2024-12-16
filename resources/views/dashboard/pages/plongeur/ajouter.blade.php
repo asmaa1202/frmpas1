@@ -327,7 +327,7 @@
                     "email_personne", "phone_portable_personne", "lien_parente_personne", "adresse", "code_postal", "ville", "pays", "date_visite_medicale", "niveaux"
                 ];
                 let isValid = true;
-
+// alert(document.getElementById('club_plongeur').value);
                 requiredFields.forEach((fieldId) => {
                     const field = document.getElementById(fieldId);
                     if (!field.value.trim()) {

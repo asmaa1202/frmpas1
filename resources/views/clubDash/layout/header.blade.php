@@ -284,7 +284,7 @@
         <li class="nav-item dropdown"><a class="nav-link pe-0 ps-2" id="navbarDropdownUser" role="button"
                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="avatar avatar-xl d-flex">
-                    <img class="rounded-circle" src={{ asset('dashboard/img/team/3-thumb.png') }} alt="" />
+                    <img class="rounded-circle" src={{ asset(Auth::guard('plongeurs')->user()->image ?? 'dashboard/img/team/avatar.png') }} alt="" />
                 </div>
             </a>
             <div class="dropdown-menu dropdown-caret dropdown-caret dropdown-menu-end py-0"

@@ -8,7 +8,7 @@
 <div class="card mb-3">
     <div class="card-body d-flex">
         <div>
-            <img class="rounded" src="{{$me->image}}" alt="" width="100">
+            <img class="rounded" src="{{asset($me->image ?? 'dashboard/img/team/avatar.png')}}" alt="" width="100">
         </div>
         <div class="ps-3">
             <h3 class="text-primary">Bonjour </h3>

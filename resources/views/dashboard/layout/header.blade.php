@@ -232,7 +232,7 @@
 
                             </div>
                             <div class="list-group-item">
-                                <a class="border-bottom-0 notification-unread  notification notification-flush"
+                                <a class="border-bottom-0 notification-unread notification notification-flush"
                                     href="#!">
                                     <div class="notification-avatar">
                                         <div class="avatar avatar-xl me-3">
@@ -281,7 +281,7 @@
         <li class="nav-item dropdown"><a class="nav-link pe-0 ps-2" id="navbarDropdownUser" role="button"
                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="avatar avatar-xl d-flex">
-                    <img class="rounded-circle" src={{$me->image}} alt="" />
+                    <img class="rounded-circle" src={{asset($me->image ?? 'dashboard/img/team/avatar.png')}} alt="" />
                 </div>
             </a>
             <div class="dropdown-menu dropdown-caret dropdown-caret dropdown-menu-end py-0"

@@ -229,7 +229,7 @@
                     </div> --}}
                     <div class="mb-2">
                         <label for="jour_entrainement">Club <span class="text-danger">*</span></label>
-                        <select class="form-select js-choice" id="club" size="1" name="club"
+                        <select class="form-select js-choice" id="club_athlete" size="1" name="club"
                         data-options='{"removeItemButton":true,"placeholder":true}'>
                             <option value="">Choisissez le niveau</option>
                             @foreach ($clubs as $club)
@@ -338,7 +338,7 @@
                         field.classList.remove("is-invalid");
                     }
                 });
-
+// alert(document.getElementById("club_athlete").value);
                 image_card.src = 'http://localhost:8000/dashboard/img/team/avatar.png';
 // alert(document.getElementById("email-athlete-admin").value)
                 let formData = new FormData();
@@ -371,7 +371,7 @@
                 formData.append("enseignement", document.getElementById("enseignement").value);
                 formData.append("qualifications", document.getElementById("qualifications").value);
                 formData.append("password", document.getElementById("password").value);
-                formData.append("club", document.getElementById("club").value);
+                formData.append("club", document.getElementById("club_athlete").value);
 
                 const res = await axios.post('/dashboard/athletes', formData, {
                     headers: {
@@ -404,7 +404,7 @@
                     image_card.src = 'http://localhost:8000/dashboard/img/team/avatar.png';
                     document.getElementById("nom").value = "";
                     document.getElementById("prenom").value = "";
-                    document.getElementById("email").value = "";
+                    document.getElementById("email-athlete-admin").value = "";
                     document.getElementById("cin").value = "";
                     document.getElementById("profession").value = "";
                     document.getElementById("date_naissance").value = "";
@@ -428,7 +428,7 @@
                     document.getElementById("niveaux").value = "";
                     document.getElementById("enseignement").value = "";
                     document.getElementById("qualifications").value = "";
-                    document.getElementById("club").value = "";
+                    document.getElementById("club_athlete").value = "";
                 }
 
             } catch (err) {
