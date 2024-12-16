@@ -20,10 +20,20 @@ class AdhesionClubController extends Controller
         try {
 
             // dd($id);
+            $adhesion_actuelle = Adhesion::where('club_id', $id)
+                                        ->where('annee', date('Y'))
+                                        ->whereNot('statut', self::statut_refuser)
+                                        ->first();
+
             $demande_adhesion = new Adhesion();
             $demande_adhesion->club_id = $id;
             $demande_adhesion->montant = 1999;
-            $demande_adhesion->annee = date('Y');
+            if(now()->month == 12 && isset($adhesion_actuelle)){
+                $demande_adhesion->annee = date('Y') + 1;      
+           }elseif(empty($adhesion_actuelle)){
+               $demande_adhesion->annee = date('Y'); 
+           }
+            // $demande_adhesion->annee = date('Y');
             $demande_adhesion->statut = self::statut_en_cours;
 
             $file = $request->document;

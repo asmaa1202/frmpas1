@@ -1,3 +1,8 @@
+@php
+    use App\Models\Licence;
+    use App\Models\Adhesion;
+
+ @endphp
 <nav class="navbar navbar-light navbar-vertical navbar-expand-xl">
     <script>
         var navbarStyle = localStorage.getItem("navbarStyle");
@@ -140,12 +145,12 @@
                     <ul class="nav collapse show" id="email" style="">
                         <li class="nav-item"><a class="nav-link" href="{{ route('demandes.index') }}">
                                 <div class="d-flex align-items-center"><span class="nav-link-text ps-2">Activation
-                                        d'adhésion</span>
+                                        Adhésion</span><span class="badge rounded-pill ms-2 bg-200 text-primary">{{ Adhesion::where('statut', 'en cours')->count()}}</span>
                                 </div>
                             </a><!-- more inner pages-->
                         </li>
                         <li class="nav-item"><a class="nav-link" href="{{ route('demandes_licence.en_cous_validation') }}">
-                                <div class="d-flex align-items-center"><span class="nav-link-text ps-2">Licence En Attentes</span></div>
+                                <div class="d-flex align-items-center"><span class="nav-link-text ps-2">Licence En Attentes</span><span class="badge rounded-pill ms-2 bg-200 text-primary">{{ Licence::where('statut', 'en_cours_validation')->count()}}</span></div>
                             </a><!-- more inner pages-->
                         </li>
                         <li class="nav-item"><a class="nav-link" href="{{ route('demandes_licence.acceptees') }}">
@@ -155,7 +160,7 @@
                         <li class="nav-item"><a class="nav-link" href="{{ route('demandes_licence.refusees') }}">
                             <div class="d-flex align-items-center"><span class="nav-link-text ps-2">Licence Refusées</span></div>
                             </a><!-- more inner pages-->
-                        </li>
+                        </li> 
 
                         <li class="nav-item"><a class="nav-link" href="{{ route('pick') }}">
                                 <div class="d-flex align-items-center"><span class="nav-link-text ps-2">Pick</span>

@@ -68,24 +68,24 @@
             </div>
           
             @if(isset($active_adhesion) && $active_adhesion->statut == 'accepter')
-                <div class="col-lg-6 d-flex justify-content-end align-items-center flex-wrap">
+                {{-- <div class="col-lg-6 d-flex justify-content-end align-items-center flex-wrap">
                     
                     <a href="{{ route('autorisation.plonge', Auth::user()->club_id) }}" class="btn btn-primary" target="__blank"><i class="bi bi-file-earmark-arrow-down-fill"></i> Autorisation de plongée</a>
                     &nbsp;&nbsp;
                     <a href="{{route('attestation.affiliation', Auth::user()->club_id)}}" class="btn btn-primary" target="__blank"><i class="bi bi-file-earmark-arrow-down-fill"></i> Attestation d'affiliation</a>
-                </div>
+                </div> --}}
             
 
 
-                {{-- <div class="d-flex flex-column justify-content-center align-items-end" style="height: 100%; position: absolute; bottom: 0; right: 0; width: fit-content;">
+                <div class="d-flex flex-column justify-content-center align-items-end" style="height: 100%; position: absolute; bottom: 0; right: 0; width: fit-content;">
    
                     @if(empty($active_adhesion_next_year) && now()->month == 12)
                     <div class="mb-2">
                         <button class="btn btn-danger signal-button" data-bs-toggle="modal" data-bs-target="#adhesionModal">
-                            Demande de licence
+                            Demande d'adhésion
                         </button>
                     </div>
-                    @elseif(isset($active_adhesion_next_year) && now()->month == 12 && ($active_adhesion_next_year->statut == 'en cours' || $active_adhesion_next_year->statut == 'en_cours_validation'))
+                    @elseif(isset($active_adhesion_next_year) && now()->month == 12 && $active_adhesion_next_year->statut == 'en cours')
                     <div class="mb-2">
                         <button class="btn" style="background: #279e5b; color: white;">
                             Votre demande a été envoyée
@@ -99,7 +99,7 @@
     
                     </div>
                     
-                 </div> --}}
+                </div>
 
 
 
