@@ -13,6 +13,13 @@
         line-height: 1.5em; 
     }
 
+  
+
+
+.scroll-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
 /* Conteneur principal */
 .team-scroller-wrapper {
     overflow-x: auto; /* Permet le défilement horizontal */
@@ -329,27 +336,8 @@
 
                 <div class="divider-40 divider-xl-60"></div>
 
-                <div class="owl-carousel" data-responsive-lg="4" data-responsive-md="2" data-responsive-sm="1" data-responsive-xs="1" data-nav="false" data-margin="60" data-loop="true">
-                    <div class="vertical-item hero-bg text-center team-layout">
-                        <div class="item-media">
-                            <img src="{{asset('/equipe/Omar Behari.jpg')}}" alt="img">
-                            <div class="media-links">
-                                <a class="abs-link" title="" href="team-single.html"></a>
-                            </div>
-                        </div>
-                        <div class="item-content">
-                            <h5 class="mb-0">
-                                <a href="team-single.html">Omar Behari</a>
-                            </h5>
-
-                            <p class="team-position pb-xl-3">
-                                Secrétaire Général
-                            </p>
-
-                            
-
-                        </div>
-                    </div>
+                <div class="owl-carousel"  data-responsive-lg="4" data-responsive-md="2" data-responsive-sm="1" data-responsive-xs="1" data-nav="false" data-margin="60" data-loop="true">
+                  
                     <div class="vertical-item hero-bg text-center team-layout">
                         <div class="item-media">
                             <img src="{{asset('/equipe/e2.jpg')}}" alt="img">
@@ -363,7 +351,7 @@
                             </h5>
 
                             <p class="team-position pb-xl-3">
-                                1<sup>ere</sup> Vice-Président
+                                 Vice-Président
                             </p>
 
                             
@@ -383,7 +371,27 @@
                             </h5>
 
                             <p class="team-position pb-xl-3">
-                                2<sup>eme</sup> Vice-Président
+                                Vice-Président
+                            </p>
+
+                            
+
+                        </div>
+                    </div>
+                    <div class="vertical-item hero-bg text-center team-layout">
+                        <div class="item-media">
+                            <img src="{{asset('/equipe/Omar Behari.jpg')}}" alt="img">
+                            <div class="media-links">
+                                <a class="abs-link" title="" href="team-single.html"></a>
+                            </div>
+                        </div>
+                        <div class="item-content">
+                            <h5 class="mb-0">
+                                <a href="team-single.html">BEHARI Moulay Omar</a>
+                            </h5>
+
+                            <p class="team-position pb-xl-3">
+                                Secrétaire Général
                             </p>
 
                             
@@ -587,6 +595,7 @@
 
                         </div>
                     </div>
+                   
 
 
                 </div>
@@ -595,6 +604,8 @@
         </div>
     </div>
 </section>
+
+
 
 
 {{-- <div class="divider-40 divider-xl-50"></div> --}}

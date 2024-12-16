@@ -32,6 +32,13 @@ class ClubLicenceController extends Controller
         $statut = 'En Attentes';
         return view("clubDash.pages.licences.demandes_en_attentes", compact('statut'))->with("licences", $licences);
     }
+    // Dans le contrôleur
+        public function index()
+        {
+            $licencesEnAttente = Licence::where('status', 'en_attente')->count();
+            return view('clubDash.layout.slidebar', compact('licencesEnAttente'));
+        }
+
 
     public function updateLicences(Request $request)
     {
