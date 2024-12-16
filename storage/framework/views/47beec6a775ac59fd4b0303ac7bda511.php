@@ -100,21 +100,7 @@
                                         <a class="dropdown-item"
                                             href="/club/plongeurs/modifier/<?php echo e($item->id); ?>">Modifier
                                         </a>
-                                        <a class="dropdown-item"
-                                            href="/dashboard/plongeurs/<?php echo e($item->id); ?>/formations/niveau/<?php echo e($item->id_niveau); ?>">Formations
-                                        </a>
-                                        <a class="dropdown-item"
-                                            href="/dashboard/plongeurs/<?php echo e($item->id); ?>/carnet-de-plongee">Carnet de
-                                            plongée
-                                        </a>
-                                        <a class="dropdown-item"
-                                            href="/dashboard/plongeurs/<?php echo e($item->id); ?>/niveau/1/suivi-prepa">Fiche de
-                                            suivi
-                                            prépa
-                                        </a>
-                                        <a class="dropdown-item"
-                                            href="/dashboard/plongeurs/<?php echo e($item->id); ?>/details">Details
-                                        </a>
+                                        
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item text-danger" role="button" data-bs-toggle="modal"
                                             data-bs-target="#staticBackdrop<?php echo e($item->id); ?>">Supprimer

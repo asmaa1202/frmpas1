@@ -59,20 +59,20 @@
                                             alt={{ $item->club->nom }}>
                                     </div>
                                     <div class="flex-1">
-                                        <p class="mb-0 fs--1">{{ $item->club->nom }}</p>
+                                        <p class="mb-0 fs--1">{{ $item->club->nom ?? '--' }}</p>
                                     </div>
                                 </div>
                             </td>
                             {{-- <td class="align-middle">{{ $item->club->nom }}</td> --}}
-                            <td class="align-middle">{{ $item->created_at }}</td> 
-                            <td class="align-middle">{{ $item->email }}</td>
-                            <td class="align-middle">{{ $item->ville }}</td>
-                            <td class="align-middle">{{ $item->annee }}</td>
+                            <td class="align-middle">{{ $item->created_at ?? '--' }}</td> 
+                            <td class="align-middle">{{ $item->email ?? '--'}}</td>
+                            <td class="align-middle">{{ $item->ville ?? '--' }}</td>
+                            <td class="align-middle">{{ $item->annee ?? '--' }}</td>
            
                             <td class="align-middle">
-                                {{-- <a href="{{ route('adhesion.read.document', $item->id) }}" target="__blank">
+                                <a href="{{ route('adhesion.read.document', $item->id) }}" target="__blank">
                                     Attestation de Paiement
-                                </a></td> --}}
+                                </a></td>
                             <td class="py-2 align-middle white-space-nowrap text-center">
                                 <div class="dropdown font-sans-serif position-static">
                                     <button class="btn btn-link text-600 btn-sm dropdown-toggle btn-reveal"

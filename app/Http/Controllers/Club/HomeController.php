@@ -37,7 +37,12 @@ class HomeController extends Controller
         $active_adhesion = Adhesion::where('club_id', $clubId)
                                     ->where('annee', date('Y'))
                                     // ->where('annee', 22)
-                                    ->where('statut', self::statut_accepter)
+                                    ->whereNot('statut', self::statut_refuser)
+                                    ->first();
+
+        $active_adhesion_next_year = Adhesion::where('club_id', $clubId)
+                                    ->where('annee', date('Y') + 1)
+                                    ->where('statut', '!=', self::statut_refuser)
                                     ->first();
 
         $remainingDays = Carbon::now()->diffInDays(Carbon::now()->endOfYear());
@@ -132,7 +137,8 @@ class HomeController extends Controller
                                                         'nombreAthletesActifs',
                                                         'nombreAthletesInactifs', 
                                                         'nombreMoniteursActifs',
-                                                        'nombreMoniteursInactifs'
+                                                        'nombreMoniteursInactifs',
+                                                        'active_adhesion_next_year'
                                                     ));
     
         // return view('clubDash.pages.home', compact('clubsActifs', 'clubsInactifs', 'remainingDays', 'nombrePlongeurs', 'nombreAthletes'));

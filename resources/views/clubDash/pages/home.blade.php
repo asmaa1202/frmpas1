@@ -66,54 +66,64 @@
                 <p class="mb-0">Rapide, intelligent et vous pouvez voir toutes les
                     analyses sur cette page.</p>
             </div>
-            {{-- 
-            <div class="col-lg-4 d-flex justify-content-end align-items-center">
-                @if(isset($active_adhesion))
-                <button class="btn" style="background: #279e5b; color: white;">
-                    Attestation d'affiliation
-                </button>&nbsp;
-                <button class="btn" style="background: #279e5b; color: white;">
-                    Autorisation de plongée
-                </button>&nbsp;
-                <button class="btn" style="background: #279e5b; color: white;">
-                    Active
-                </button> &nbsp;&nbsp;
-                <div class="remaining-days-warning">
-                    {{ $remainingDays }} jours restants
-                </div>
-
-                @elseif(empty($active_adhesion))
-                <button class="btn btn-outline-primary" onclick="demandeAdhesion({{ Auth::user()->club->id }})">Demande d'adhésion</button>
-                <button class="btn btn-danger signal-button" data-bs-toggle="modal" data-bs-target="#adhesionModal">
-                    Demande d'adhésion
-                </button>
-                     <button class="btn" style="background: #279e5b; color: white;">
-                    Autorisation de plongée
-                </button> 
-                &nbsp;&nbsp;
-                <button class="btn" style="background: #279e5b; color: white;">
-                    Attestation d'affiliation
-                </button>
-                
-                @endif
-            </div> --}}
           
-                @if(isset($active_adhesion))
-                    <div class="col-lg-6 d-flex justify-content-end align-items-center flex-wrap">
-                        
+            @if(isset($active_adhesion) && $active_adhesion->statut == 'accepter')
+                <div class="col-lg-6 d-flex justify-content-end align-items-center flex-wrap">
+                    
+                    <a href="{{ route('autorisation.plonge', Auth::user()->club_id) }}" class="btn btn-primary" target="__blank"><i class="bi bi-file-earmark-arrow-down-fill"></i> Autorisation de plongée</a>
+                    &nbsp;&nbsp;
+                    <a href="{{route('attestation.affiliation', Auth::user()->club_id)}}" class="btn btn-primary" target="__blank"><i class="bi bi-file-earmark-arrow-down-fill"></i> Attestation d'affiliation</a>
+                </div>
+            
+
+
+                {{-- <div class="d-flex flex-column justify-content-center align-items-end" style="height: 100%; position: absolute; bottom: 0; right: 0; width: fit-content;">
+   
+                    @if(empty($active_adhesion_next_year) && now()->month == 12)
+                    <div class="mb-2">
+                        <button class="btn btn-danger signal-button" data-bs-toggle="modal" data-bs-target="#adhesionModal">
+                            Demande de licence
+                        </button>
+                    </div>
+                    @elseif(isset($active_adhesion_next_year) && now()->month == 12 && ($active_adhesion_next_year->statut == 'en cours' || $active_adhesion_next_year->statut == 'en_cours_validation'))
+                    <div class="mb-2">
+                        <button class="btn" style="background: #279e5b; color: white;">
+                            Votre demande a été envoyée
+                        </button>
+                    </div>
+                    @endif
+                    <div>
                         <a href="{{ route('autorisation.plonge', Auth::user()->club_id) }}" class="btn btn-primary" target="__blank"><i class="bi bi-file-earmark-arrow-down-fill"></i> Autorisation de plongée</a>
                         &nbsp;&nbsp;
                         <a href="{{route('attestation.affiliation', Auth::user()->club_id)}}" class="btn btn-primary" target="__blank"><i class="bi bi-file-earmark-arrow-down-fill"></i> Attestation d'affiliation</a>
+    
                     </div>
-              
-                @elseif(empty($active_adhesion))
-                    <div class="col-lg-4 d-flex justify-content-end align-items-center flex-wrap">
-                        <a class="btn btn-danger signal-button" data-bs-toggle="modal" data-bs-target="#adhesionModal">
-                            Demande d'adhésion
-                        </a>
-                    </div>
-            
-                @endif
+                    
+                 </div> --}}
+
+
+
+
+
+
+
+
+
+
+            @elseif(isset($active_adhesion) && $active_adhesion->statut == 'en cours')
+                <div class="col-lg-6 d-flex justify-content-end align-items-center flex-wrap">
+                    <button class="btn" style="background: #279e5b; color: white;">
+                        Votre demande a été envoyée
+                    </button>
+                </div>
+            @elseif(empty($active_adhesion))
+                <div class="col-lg-4 d-flex justify-content-end align-items-center flex-wrap">
+                    <a class="btn btn-danger signal-button" data-bs-toggle="modal" data-bs-target="#adhesionModal">
+                        Demande d'adhésion
+                    </a>
+                </div>
+            @endif
+
             
         </div>
     </div>
@@ -391,24 +401,26 @@
             });
 
             if (res.status === 200) {
-                const notif = `
-                    <div class="toast-container position-fixed bottom-0 end-0 p-3">
-                        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                            <div class="toast-header">
-                                <div style="width: 15px;height: 15px;background: green;border-radius: 3px;margin-right: 5px;"></div>
-                                <strong class="me-auto">FRMPAS</strong>
-                                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                            </div>
-                            <div class="toast-body">
-                                ${res.data.message}
-                            </div>
-                        </div>
-                    </div>`;
-                document.getElementById("notification").innerHTML = notif;
+                // const notif = `
+                //     <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                //         <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                //             <div class="toast-header">
+                //                 <div style="width: 15px;height: 15px;background: green;border-radius: 3px;margin-right: 5px;"></div>
+                //                 <strong class="me-auto">FRMPAS</strong>
+                //                 <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                //             </div>
+                //             <div class="toast-body">
+                //                 ${res.data.message}
+                //             </div>
+                //         </div>
+                //     </div>`;
+                // document.getElementById("notification").innerHTML = notif;
 
-                const toastLiveExample = document.getElementById('liveToast');
-                const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
-                toastBootstrap.show();
+                // const toastLiveExample = document.getElementById('liveToast');
+                // const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+                // toastBootstrap.show();
+                location.reload();
+
             }
         } catch (err) {
             const notif = `

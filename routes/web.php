@@ -495,7 +495,7 @@ Route::middleware(['auth', 'role:1'])->group(function () {
     Route::get("/dashboard/demandes-adhesion", [AdhesionController::class, 'index'])->name('demandes.index');
     Route::post("/dashboard/demandes/{id}/{statut}", [AdhesionController::class, 'adhesion_statut'])->name('adhesion.statut');
     Route::delete("/dashboard/demandes/{id}", [AdhesionController::class, "destroy"])->name('demandes.destroy');
-    Route::get('/dashboard/document/{id}',[AdhesionController::class,'readDocument'])->name('adhesion.read.document');
+    Route::get('/dashboard/adhesion/{id}',[AdhesionController::class,'readDocument'])->name('adhesion.read.document');
 
     // - Licence
     Route::get("/dashboard/demandes-licence", [LicenceController::class, 'demandes_en_cours_validation'])->name('demandes_licence.en_cous_validation');
@@ -505,7 +505,7 @@ Route::middleware(['auth', 'role:1'])->group(function () {
 
     Route::post("/dashboard/demandes-licence/{id}/{statut}", [LicenceController::class, 'licence_statut'])->name('demandes_licence.statut');
     Route::delete("/dashboard/demandes-licence/{id}", [LicenceController::class, "destroy"])->name('demandes_licence.destroy');
-    Route::get('/dashboard/document/{id}',[LicenceController::class,'readDocument'])->name('licence.read.document');
+    Route::get('/dashboard/licence/{id}',[LicenceController::class,'readDocument'])->name('licence.read.document');
     // - Calendrier
     Route::get("/dashboard/calendriers", [CalendrierController::class, 'index'])->name('calendriers.index');
     Route::post("/dashboard/calendriers/ajouter", [CalendrierController::class, "store"])->name('calendrier.store');

@@ -124,7 +124,7 @@
                                                 </g>
                                             </g>
                                         </svg><!-- <span class="fas fa-user" data-fa-transform="shrink-3 up-1"></span> Font Awesome fontawesome.com --> --}}
-                                        <span>{{ Auth::guard('plongeurs')->user()->club->nom }}</span>
+                                        <span>{{ Auth::guard('plongeurs')->user()->club->nom ?? '--' }}</span>
                                    </h6>
                             </div>
                             <div class="col-auto lh-1 me-3">
