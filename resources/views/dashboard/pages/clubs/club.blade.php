@@ -18,7 +18,7 @@
     <div class="card-body position-relative">
         <div class="row">
             <div class="col-lg-8">
-                <h3>Clubs</h3>
+                <h3>Clubs Actifs</h3>
                 <p class="mb-0">Rapide, intelligent et vous pouvez voir toutes les analyses sur cette page.</p>
             </div>
             <div class="col-lg-4 d-flex justify-content-end align-items-center">
@@ -44,6 +44,7 @@
                     <tr>
                         <th style="min-width: 20px;">ID</th>
                         <th style="min-width: 200px;">Nom</th>
+                        <th style="min-width: 200px;">Abrév</th>
                         <th style="min-width: 280px;">E-mail</th>
                         <th style="min-width: 180px;">Ville</th>
                         <th style="min-width: 180px;">Document</th>
@@ -59,7 +60,7 @@
                         <td class="align-middle white-space-nowrap py-2">
                             <div class="d-flex d-flex align-items-center">
                                 <div class="avatar avatar-xl me-2">
-                                    <img class="rounded-circle" src={{ $club->image }}
+                                    <img class="rounded-circle" src={{ asset($club->image ?? 'dashboard/img/team/avatar.png') }}
                                         alt={{ $club->nom }}>
                                 </div>
                                 <div class="flex-1">
@@ -67,6 +68,7 @@
                                 </div>
                             </div>
                         </td>
+                        <td class="align-middle">{{ $club->abreviation }}</td>
                         <td class="align-middle">{{ $club->email }}</td>
                         <td class="align-middle">{{ $club->ville  }}</td>
                         <td class="align-middle">
