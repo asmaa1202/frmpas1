@@ -102,7 +102,7 @@
                                         <a class="dropdown-item"
                                             href="/club/plongeurs/modifier/{{ $item->id }}">Modifier
                                         </a>
-                                        <a class="dropdown-item"
+                                        {{-- <a class="dropdown-item"
                                             href="/dashboard/plongeurs/{{ $item->id }}/formations/niveau/{{$item->id_niveau}}">Formations
                                         </a>
                                         <a class="dropdown-item"
@@ -116,7 +116,7 @@
                                         </a>
                                         <a class="dropdown-item"
                                             href="/dashboard/plongeurs/{{ $item->id }}/details">Details
-                                        </a>
+                                        </a> --}}
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item text-danger" role="button" data-bs-toggle="modal"
                                             data-bs-target="#staticBackdrop{{ $item->id }}">Supprimer

@@ -114,9 +114,9 @@
                                             suivi
                                             prépa
                                         </a> --}}
-                                        <a class="dropdown-item"
+                                        {{-- <a class="dropdown-item"
                                             href="/dashboard/moniteurs/{{ $item->id }}/details">Details
-                                        </a>
+                                        </a> --}}
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item text-danger" role="button" data-bs-toggle="modal"
                                             data-bs-target="#staticBackdrop{{ $item->id }}">Supprimer

@@ -114,8 +114,8 @@
                                             suivi
                                             prépa
                                         </a> --}}
-                                        <a class="dropdown-item"
-                                            href="/dashboard/athletes/{{ $item->id }}/details">Details
+                                        {{-- <a class="dropdown-item"
+                                            href="/dashboard/athletes/{{ $item->id }}/details">Details --}}
                                         </a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item text-danger" role="button" data-bs-toggle="modal"
