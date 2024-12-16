@@ -366,7 +366,7 @@
                 </p>
                 <h3><span style="color: rgb(0, 109, 170)">FORMATEUR</span></h3>
                 <p style="text-align: justify">
-                    Seul les Juges Fédéraux 2ème degré ont la qualification de
+                    Seul les Juges Nationaux  ont la qualification de
                     formateur
                 </p>
                 <p style="text-align: justify">
@@ -377,13 +377,12 @@
                 </p>
                 <p style="text-align: justify">
                     Ils organisent les formations,&nbsp; les évaluations et les
-                    examens de Juge fédéral 1er degré au niveau régional en présence
+                    examens de Juge Régional au niveau régional en présence
                     du président de commisssion de cette dernière ou de son
                     représentant.
                 </p>
                 <p style="text-align: justify">
-                    Ils organisent les évaluations et les examens de Juge fédéral
-                    2ème degré au niveau national en présence du président de
+                    Ils organisent les évaluations et les examens de Juge Nationale au niveau national en présence du président de
                     commission de cette dernière ou de son représentant.
                 </p>
                 <div

@@ -258,7 +258,7 @@
 													<a href="<?php echo e(route('sport.competition')); ?>">Entraîneur</a>
 												</li>
 												<li>
-													<a href="<?php echo e(route('sport.competition')); ?>">Juge</a>
+													<a href="<?php echo e(route('arbitre')); ?>">Juge</a>
 												</li>
 												<li>
 													<a href="<?php echo e(route('sport.competition')); ?>">Compétition</a>
