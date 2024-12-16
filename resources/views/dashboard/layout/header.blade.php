@@ -12,11 +12,11 @@
         <li class="nav-item">
             <div class="search-box" data-list='{"valueNames":["title"]}'>
 
-                {{-- <a href={{ route('admin.index') }}>
+                <a href={{ route('admin.index') }}>
                     <div class="d-flex py-3 px-2">
                         <img src={{ asset('/images/logo.png') }} width="20%" />
                     </div>
-                </a> --}}
+                </a>
 
                 <div class="dropdown-menu border font-base start-0 mt-2 py-0 overflow-hidden w-100">
                     <div class="scrollbar list py-3" style="max-height: 24rem;">
@@ -154,7 +154,7 @@
                         class="fas fa-moon fs-0"></span></label>
             </div>
         </li>
-        <li class="nav-item dropdown">
+        {{-- <li class="nav-item dropdown">
             <a class="nav-link notification-indicator notification-indicator-primary px-0 fa-icon-wait"
                 id="navbarDropdownNotification" role="button" data-bs-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false" data-hide-on-body-scroll="data-hide-on-body-scroll"><span class="fas fa-bell"
@@ -277,7 +277,7 @@
                 </div>
             </div>
 
-        </li>
+        </li> --}}
         <li class="nav-item dropdown"><a class="nav-link pe-0 ps-2" id="navbarDropdownUser" role="button"
                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="avatar avatar-xl d-flex">
@@ -290,7 +290,7 @@
                     <span style="color: black" class="ps-2">{{$me->nom . " " . $me->prenom}}</span>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="/dashboard/mon-compte">Profile</a>
-                    <a class="dropdown-item" href="#">Dashboard</a>
+                    <a class="dropdown-item" href="{{ route('admin.index')}}">Dashboard</a>
                     <a class="dropdown-item" href="#" onclick="event.preventDefault();
                                   document.getElementById('logout-form').submit();">Se
                         déconnecter</a>

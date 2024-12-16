@@ -55,7 +55,7 @@
                             <td class="align-middle white-space-nowrap py-2">
                                 <div class="d-flex d-flex align-items-center">
                                     <div class="avatar avatar-xl me-2">
-                                        <img class="rounded-circle" src={{ $item->club->image }}
+                                        <img class="rounded-circle" src={{ asset($item->club->image ?? 'dashboard/img/team/avatar.png') }}
                                             alt={{ $item->club->nom }}>
                                     </div>
                                     <div class="flex-1">
