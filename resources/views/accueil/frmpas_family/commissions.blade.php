@@ -78,7 +78,7 @@
                         <img src="{{asset('equipe/e1.jpg')}}" alt="img" class="img-fluid">
                     </div>
                     <div class="item-content">
-                        <h5 class="mb-0"><a href="team-single.html">Mohammed Atouani</a></h5>
+                        <h5 class="mb-0"><a href="#">Mohammed Atouani</a></h5>
                         <p class="team-position pb-xl-3">Membre</p>
                     </div>
                 </div>
@@ -94,7 +94,7 @@
                         <img src="{{asset('equipe/TIMOUYASSE Hamza.jpg')}}" alt="img" class="img-fluid">
                     </div>
                     <div class="item-content">
-                        <h5 class="mb-0"><a href="team-single.html">TIMOUYASSE Hamza</a></h5>
+                        <h5 class="mb-0"><a href="#">TIMOUYASSE Hamza</a></h5>
                         <p class="team-position pb-xl-3">Trésorier</p>
                     </div>
                 </div>
@@ -110,7 +110,7 @@
                         <img src="{{asset('equipe/e2.jpg')}}" alt="img" class="img-fluid">
                     </div>
                     <div class="item-content">
-                        <h5 class="mb-0"><a href="team-single.html">MANHI Hamza</a></h5>
+                        <h5 class="mb-0"><a href="#">MANHI Hamza</a></h5>
                         <p class="team-position pb-xl-3">Vice-président</p>
                     </div>
                 </div>
@@ -126,7 +126,7 @@
                         <img src="{{asset('equipe/AHAKKAM Ghizlane.jpg')}}" alt="img" class="img-fluid">
                     </div>
                     <div class="item-content">
-                        <h5 class="mb-0"><a href="team-single.html">AHAKKAM Ghizlane</a></h5>
+                        <h5 class="mb-0"><a href="#">AHAKKAM Ghizlane</a></h5>
                         <p class="team-position pb-xl-3">Membre</p>
                     </div>
                 </div>
@@ -142,7 +142,7 @@
                         <img src="{{asset('equipe/Omar Behari.jpg')}}" alt="img" class="img-fluid">
                     </div>
                     <div class="item-content">
-                        <h5 class="mb-0"><a href="team-single.html">BEHARI Moulay Omar</a></h5>
+                        <h5 class="mb-0"><a href="#">BEHARI Moulay Omar</a></h5>
                         <p class="team-position pb-xl-3">secrétaire général</p>
                     </div>
                 </div>
@@ -155,10 +155,10 @@
                 </h3>
                 <div class="vertical-item text-center team-layout">
                     <div class="item-media">
-                        <img src="{{asset('equipe/TIMOUYASSE Hamza.jpg')}}" alt="img" class="img-fluid">
+                        <img src="{{asset('equipe/FAOUZI Mustapha.jpg')}}" alt="img" class="img-fluid">
                     </div>
                     <div class="item-content">
-                        <h5 class="mb-0"><a href="team-single.html">TIMOUYASSE Hamza</a></h5>
+                        <h5 class="mb-0"><a href="#">FAOUZI Mustapha</a></h5>
                         <p class="team-position pb-xl-3">Trésorier</p>
                     </div>
                 </div>

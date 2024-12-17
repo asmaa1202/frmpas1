@@ -1,3 +1,6 @@
+@php
+    use App\Models\Licence;
+ @endphp
 <nav class="navbar navbar-light navbar-vertical navbar-expand-xl">
     <script>
         var navbarStyle = localStorage.getItem("navbarStyle");
@@ -124,13 +127,18 @@
                     <ul class="nav collapse show" id="email" style="">
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('club.demandes_licence.en_attentes') }}">
-                                <div class="d-flex align-items-center"><span class="nav-link-text ps-2">Licences En Attentes</span>
+                                <div class="d-flex align-items-center"><span class="nav-link-text ps-2">Licences En Attentes<span class="badge rounded-pill ms-2 bg-200 text-primary">{{ Licence::where('statut', 'en cours')->whereHas('plongeur', function ($query) {
+                                                                                                                                                                                                    $query->where('club_id', Auth::user()->club->id);
+                                                                                                                                                                                        })->count()}} </span>
+                                                                                                                                                                                </span>
                                 </div>
                             </a><!-- more inner pages-->
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('club.demandes_licence.en_cours_validation') }}">
-                                <div class="d-flex align-items-center"><span class="nav-link-text ps-2">Licences En cours Validation</span>
+                                <div class="d-flex align-items-center"><span class="nav-link-text ps-2">Licences En cours Validation<span class="badge rounded-pill ms-2 bg-200 text-primary">{{ Licence::where('statut', 'en_cours_validation')->whereHas('plongeur', function ($query) {
+                                                                                                                                                                                                    $query->where('club_id', Auth::user()->club->id);
+                                                                                                                                                                                                })->count()}}</span></span>
                                 </div>
                             </a><!-- more inner pages-->
                         </li>

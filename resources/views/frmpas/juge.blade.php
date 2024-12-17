@@ -154,7 +154,7 @@
                     L’arbitrage des compétitions est confié́ d’une part à des
                     juges-arbitres (juge Nationale)de la direction arbitrale, de
                     l’exactitude de l’enregistrement des résultats, d'autre part, à
-                    des juges (juge Régiona départs, de la surveillance de
+                    des juges (juge Régional départs, de la surveillance de
                     l’arbitrage, assistés d’arbitres de virages, de fonds, de zones
                     ou chronométreurs. Leur formation&nbsp;est confiée à des
                     formateurs.
@@ -482,30 +482,7 @@
             </div>
             <div class="row d-flex d-lg-none">
                 <div class="col-md-6">
-                <div class="contentpage-aside-related">
-                    <h3 class="section-title">Dans la même catégorie</h3>
-                    <ul>
-                    <li>
-                        <a href="/actualites/reglement-des-epreuves">
-                        <div>
-                            <div
-                            class="contentpage-aside-related-image image-fitter"
-                            >
-                            <img
-                                src="https://psp.ffessm.fr/media/cache/default_small_square/uploads/media/default/0001/03/88b3dd4fe37de526f61fdd16ef65a97a4e1f27d3.jpeg"
-                                alt="PHOTO PSP"
-                            />
-                            </div>
-                        </div>
-                        <span>RÈGLEMENT DES ÉPREUVES</span>
-                        </a>
-                    </li>
-                    </ul>
-                    <div class="more-link m-t-lg">
-                    <a href="/actualites">Toutes les actualités</a>
-                    <span></span>
-                    </div>
-                </div>
+
                 <div class="m-b-lg"></div>
                 </div>
                 <div class="col-md-4 offset-md-2">

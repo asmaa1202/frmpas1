@@ -62,7 +62,7 @@
             </div>
             <div class="card-body bg-light">
                 <div class="row g-3">
-                    <h6 class="fw-bold">Genre</h6>
+                    <h6 class="fw-bold">Genre <span class="text-danger">*</span></h6>
                      <div class="ps-2 mt-0">
                         <div class="row mx-2">
                             <div class="form-check mb-0 lh-1 col-2">

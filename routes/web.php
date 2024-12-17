@@ -404,9 +404,6 @@ Route::middleware(['auth', 'role:1'])->group(function () {
     })->name('juge.commission');
 
     Route::get("/arbitres", function () {
-
-
-
         $recentBlogs = Blog::limit(5)->latest()->get();
         return view("frmpas.juge",compact("recentBlogs"));
     })->name('arbitre');

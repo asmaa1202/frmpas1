@@ -246,16 +246,16 @@
 											<a href="#">Frmpas</a>
 											<ul>
 												<li>
-													<a href="{{route('sport.club')}}">Équipe Nationale</a>
+													<a href="#">Équipe Nationale</a>
 												</li>
 												<li>
-													<a href="{{route('sport.competition')}}">Club Sportif</a>
+													<a href="{{route('sport.club')}}">Club Sportif</a>
 												</li>
 												<li>
-													<a href="{{route('sport.competition')}}">Club Plongée</a>
+													<a href="{{route('plongee.club')}}">Club Plongée</a>
 												</li>
 												<li>
-													<a href="{{route('sport.competition')}}">Entraîneur</a>
+													<a href="#">Entraîneur</a>
 												</li>
 												<li>
 													<a href="{{route('arbitre')}}">Juge</a>
@@ -264,7 +264,7 @@
 													<a href="{{route('sport.competition')}}">Compétition</a>
 												</li>
 												<li>
-													<a href="{{route('sport.competition')}}">Communiqué</a>
+													<a href="#">Communiqué</a>
 												</li>
 											</ul>
 										</li>
