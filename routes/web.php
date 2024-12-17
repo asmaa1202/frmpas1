@@ -240,6 +240,13 @@ Route::get("/arbitres", function () {
 //     return view('conditionsGenerales');
 // })->name('conditionsGenerales');
 // ======================================== Dashboard =========================================
+Route::get('finswimmingCommission', function () {
+  return view('sport_commission.finswimming_commission');
+})->name('finswimming.commission');
+
+Route::get('divingCalendar', function () {
+    return view('sport_calendar.diving_calendar');
+  })->name('diving.calendar');
 Auth::routes();
 Route::post('logout', function () {
     Auth::logout();
