@@ -483,8 +483,8 @@
             <div class="row d-flex d-lg-none">
                 <div class="col-md-6">
                 <div class="contentpage-aside-related">
-                    <h3 class="section-title">Dans la même catégorie</h3>
-                    <ul>
+                    <h3 class="section-title">la même catégorie</h3>
+                    <ul>Dans 
                     <li>
                         <a href="/actualites/reglement-des-epreuves">
                         <div>
