@@ -150,9 +150,31 @@
                 </div>
 
                 <div style="width: 150px"></div>
-                <a href="http://127.0.0.1:8000/login" class="login-icon">
-                    <i class="fa fa-sign-in" aria-hidden="true"></i>
-                </a>
+                @php
+                    $isGuest = !Auth::check() && !Auth::guard('plongeurs')->check();
+
+                    $dashboardRoute = null;
+
+                    if (Auth::check()) {
+                        $dashboardRoute = match (auth()->user()->role_id) {
+                            1 => route('admin.index'),
+                            2 => route('club.index'),
+                            default => route('welcome'),
+                        };
+                    } elseif (Auth::guard('plongeurs')->check()) {
+                        $dashboardRoute = route('plongeur.dashboard');
+                    }
+                @endphp
+
+                @if ($isGuest)
+                    <a href="{{ route('login') }}" class="login-icon">
+                        <i class="fa fa-sign-in" aria-hidden="true"></i>
+                    </a>
+                @else
+                    <a href="{{ $dashboardRoute }}" class="login-icon">
+                        <i class="fa fa-sign-in" aria-hidden="true"></i>
+                    </a>
+                @endif
         </div>
         <!-- header toggler -->
         <span class="toggle_menu"><span></span></span>

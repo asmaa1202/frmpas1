@@ -146,35 +146,51 @@
                         <h4 class="mb-0" style="margin-top: 15px !important">Mot du Président</h4>
                         <p class="team-position pb-xl-3 fs-20">
                         </p>
+                        <p style="font-weight:600;">Chères passionnées, chers passionnés de la plongée et des mondes sous-marins,</p>
 
                         <p>
-                            Créée sous sa forme actuelle en 2015 et placée, depuis, sous la tutelle de l'Etat marocain via son Ministère chargé des Sports, la Fédération Royale Marocaine de Plongée et d'Activités Sobaquatiques - FRMPAS - n'est historiquement pas la 1 <sup>ère</sup> instance officielle en la matière au Royaume.
+                            Permettez-moi tout d'abord d’exprimer, au nom de la Fédération Royale Marocaine de Plongée et d'Activités Subaquatiques, notre profonde reconnaissance et gratitude à Sa Majesté le Roi Mohammed VI, que Dieu L’assiste, pour Son engagement et Sa vision éclairée en faveur de la préservation de l’environnement et du développement sportif de notre nation. Sous Sa conduite, le Maroc s'affirme comme un modèle de respect de la nature et de promotion des sports qui valorisent notre patrimoine naturel, notamment marin. Nous nous inspirons de cet engagement pour mener à bien notre mission et renforcer notre action en faveur de la préservation et de la valorisation de notre patrimoine subaquatique.
                         </p>
-
+                        <p style="font-weight:600;">Promotion de la Section Sportive et Représentation Nationale</p>
+                        
                         <p>
-                            En effet, dès 1962, la Confédération Mondiale des Activités Subaquatiques - CMAS -, créée en 1959 et alors présidée par le Commandant Jacques Yves COUSTEAU, a tenu son Assemblée Générale annuelle à Tanger où Feu Sa Majesté le Roi Hassan Il a délégué son Ministre d'Etat Feu Moulay Ahmed ALAOUI avec mission d'accueillir les participants à cette conférence et y annoncer la création d'une Fédération Marocaine de Plongée.
+                            Notre fédération s'engage résolument à développer une section sportive dynamique, visant à former des athlètes de haut niveau capables de représenter fièrement le Maroc sur les scènes nationale, continentale et internationale. En nous inspirant des meilleures pratiques mondiales, notamment celles de la Confédération Mondiale des Activités Subaquatiques (CMAS), nous mettons en place des programmes d'entraînement rigoureux et des infrastructures adaptées pour garantir l'excellence de nos plongeurs sportifs.
+                        </p>
+                        <p style="font-weight:600;">Inspiration des Meilleures Pratiques Mondiales</p>
+
+                        <p> 
+                            Afin de garantir que notre encadrement et nos méthodes soient à la hauteur des standards internationaux, nous adoptons et adaptons les meilleures pratiques mondiales en matière de formation, de sécurité et de gestion des clubs. Cette approche nous permet non seulement d'élever le niveau de notre pratique, mais aussi de renforcer la reconnaissance et la crédibilité de la FRMPAS à l'échelle internationale.
+                        </p>
+                        <p style="font-weight:600;">
+                            Promotion de la Biodiversité Marine et Accessibilité
                         </p>
                         <p> 
-                            Si on retrouve effectivement les traces des lères expériences subaquatiques il y a 25 siècles (en apnée), ce n'est qu'il y a environ 150 ans qu'est apparu le 1<sup>ère</sup> scaphandre permettant de respirer sous l'eau, ouvrant ainsi véritablement la voie à l'exploration des mers par ces Anges que sont les plongeurs
+                            Le Maroc est doté d'une biodiversité marine exceptionnelle, véritable trésor national que nous avons à cœur de promouvoir et de protéger. Nous œuvrons à rendre la pratique de la plongée accessible à tous, en abaissant les barrières financières et en offrant des programmes inclusifs pour divers publics. En démocratisant la plongée, nous sensibilisons un plus grand nombre de personnes à l'importance de la préservation de nos écosystèmes marins, tout en faisant de la plongée un argument d'attraction touristique majeur pour notre pays.
                         </p>
-                        <p style="font-weight:500;">
-                            Aujourd'hui, la FRMPAS, qui comporte plusieurs dizaines d'Associations, Clubs, Ecoles et Centres de plongée et regroupe plusieurs centaines de pratiquants licenciés, a comme objectifs, pour toute cette communauté, de : 
-                        </p>
-                        <p>
-                            <ul>
-                                <li style="font-weight:600;">Garantir la sécurité via une rigueur et une discipline élevée</li>
-                                <li style="font-weight:600;">Veiller à la stricte application des standards en vigueur qu'elle fait régulièrement évoluer</li>
-                                <li style="font-weight:600;">Contribuer activement à la préservation de l'environnement marin et aquatique</li>
-                                <li style="font-weight:600;">Etre le Yeux du Maroc Sous l'Eau avec toute la vigilance et la réactivité requises</li>
-                                <li style="font-weight:600;">Dignement représenter le Maroc qui fait partie des 1ers pays reconnaissant la CMAS</li>
-                            </ul>
+                        <p style="font-weight:600;">
+                            Attraction Touristique et Héritage Durable
                         </p>
                         <p>
-                            Je souhaite à tous nos Amis Plongeurs d'excellentes et mémorables plongées tout le long de notre beau littoral de 3.500 kms de long ainsi que dans toutes les autres destinations mondiales.
+                            En rendant la plongée accessible et en valorisant nos sites subaquatiques, nous contribuons à positionner le Maroc comme une destination incontournable pour les amateurs de plongée du monde entier. Cette stratégie non seulement stimule l'économie locale, mais renforce également notre engagement envers un tourisme durable et respectueux de l'environnement.
                         </p>  
-                        <p style="font-weight:500;">
-                            Abdelaziz ALAZRAK
+                        <p style="font-weight:600;">
+                            Encadrement des Clubs selon les Meilleures Pratiques
                         </p>
+                        <p>
+                            Nous veillons scrupuleusement à ce que tous les clubs affiliés à la FRMPAS soient encadrés selon les normes les plus strictes, garantissant ainsi la sécurité, la qualité de la formation et le bien-être de nos plongeurs. Cet engagement envers l'excellence assure une expérience enrichissante et sécurisée pour tous, tout en renforçant la cohésion et la réputation de notre fédération.
+                        </p>  
+                        <p>
+                            Je tiens également à saluer toutes les associations et partenaires engagés avec nous dans cette aventure collective. Leur appui renforce notre vision et élargit l'impact de nos actions. Ensemble, nous avançons, non seulement pour développer notre passion commune, mais aussi pour laisser un héritage durable aux générations futures.
+                        </p>  
+                        <p>
+                            Merci pour votre engagement et votre soutien. Continuons à explorer, à apprendre, et surtout à protéger notre monde sous-marin.
+                        </p> 
+                        <p style="font-weight:500;">
+                            Avec toute ma reconnaissance et mon amitié, <br>
+                            Abdelaziz ALAZRAK <br>
+                            Le Président de la FRMPAS
+                        </p>
+                       
                         <div class="divider-40"></div>
                        
 

@@ -66,16 +66,38 @@
                 <div class="border-left-custom">
                     <h6>Mission et valeurs </h6>
                     <p>
-                        La FRMPAS s'engage à promouvoir la plongée sous toutes ses formes et à sensibiliser à la préservation de l’écosystème marin. Nous collaborons avec des clubs locaux, des partenaires internationaux (CMAS), et des institutions sportives pour former des plongeurs qualifiés et encourager les activités subaquatiques 
+                        Créée sous sa forme actuelle en 2015 et placée, depuis, sous la tutelle de l'Etat marocain via son Ministère chargé des Sports, la Fédération Royale Marocaine de Plongée et d'Activités Sobaquatiques - FRMPAS - n'est historiquement pas la 1 ère instance officielle en la matière au Royaume.
+
+                        En effet, dès 1962, la Confédération Mondiale des Activités Subaquatiques - CMAS -, créée en 1959 et alors présidée par le Commandant Jacques Yves COUSTEAU, a tenu son Assemblée Générale annuelle à Tanger où Feu Sa Majesté le Roi Hassan Il a délégué son Ministre d'Etat Feu Moulay Ahmed ALAOUI avec mission d'accueillir les participants à cette conférence et y annoncer la création d'une Fédération Marocaine de Plongée.
+                        
+                        Si on retrouve effectivement les traces des lères expériences subaquatiques il y a 25 siècles (en apnée), ce n'est qu'il y a environ 150 ans qu'est apparu le 1ère scaphandre permettant de respirer sous l'eau, ouvrant ainsi véritablement la voie à l'exploration des mers par ces Anges que sont les plongeurs
+                        
+                        Aujourd'hui, la FRMPAS, qui comporte plusieurs dizaines d'Associations, Clubs, Ecoles et Centres de plongée et regroupe plusieurs centaines de pratiquants licenciés, a comme objectifs, pour toute cette communauté, de :
+                        
+                        
+                        {{-- Garantir la sécurité via une rigueur et une discipline élevée
+                        Veiller à la stricte application des standards en vigueur qu'elle fait régulièrement évoluer
+                        Contribuer activement à la préservation de l'environnement marin et aquatique
+                        Etre le Yeux du Maroc Sous l'Eau avec toute la vigilance et la réactivité requises
+                        Dignement représenter le Maroc qui fait partie des 1ers pays reconnaissant la CMAS
+                        Je souhaite à tous nos Amis Plongeurs d'excellentes et mémorables plongées tout le long de notre beau littoral de 3.500 kms de long ainsi que dans toutes les autres destinations mondiales. --}}
                     </p>
-                    <h6>Notre vision  </h6>
+                    <ul>
+                        <li style="font-weight:600;">Garantir la sécurité via une rigueur et une discipline élevée</li>
+                        <li style="font-weight:600;">Veiller à la stricte application des standards en vigueur qu'elle fait régulièrement évoluer</li>
+                        <li style="font-weight:600;">Contribuer activement à la préservation de l'environnement marin et aquatique</li>
+                        <li style="font-weight:600;">Etre le Yeux du Maroc Sous l'Eau avec toute la vigilance et la réactivité requises</li>
+                        <li style="font-weight:600;">Dignement représenter le Maroc qui fait partie des 1ers pays reconnaissant la CMAS</li>
+                    </ul>
+                    <p>Je souhaite à tous nos Amis Plongeurs d'excellentes et mémorables plongées tout le long de notre beau littoral de 3.500 kms de long ainsi que dans toutes les autres destinations mondiales.</p>
+                    {{-- <h6>Notre vision  </h6>
                     <p>
                         Faire du Maroc un centre régional de plongée reconnu, où l'exploration et la protection de la biodiversité sous-marine sont au cœur des pratiques sportives.
                     </p>
                     <h6>Histoire et organisation </h6>
                     <p>
                         Fondée en 1959, FRMPAS est une fédération officielle reconnue par les autorités marocaines, avec des clubs affiliés à travers le pays. Son organisation repose sur des comités régionaux, des instructeurs certifiés, et un réseau de bénévoles passionnés.
-                    </p>
+                    </p> --}}
                 </div>
                 <div class="divider-60 divider-lg-0"></div>
             </div>

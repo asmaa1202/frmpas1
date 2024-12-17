@@ -129,6 +129,25 @@ class AthleteController extends Controller
             $plongeur->club_id  = $request->club;
             $plongeur->type_plongeur_id   = self::type_club_sportif_id;
 
+            $plongeur->titulaire_enfant = $request->titulaire_enfant;
+           
+
+            $file = $request->act_naissance_document;
+            $act_naissance_document = $file->store('act_naissance_document');
+            $plongeur->act_naissance_document = $act_naissance_document ?? null;
+
+            $file = $request->engagement_document;
+            $engagement_document = $file->store('engagement_document');
+            $plongeur->engagement_document = $engagement_document ?? null;
+
+            $file = $request->document_medicale;
+            $document_medicale = $file->store('document_medicale');
+            $plongeur->document_medicale = $document_medicale ?? null;
+
+            $file = $request->cin_document;
+            $cin_document = $file->store('cin_document');
+            $plongeur->cin_document = $cin_document ?? null;
+
             $plongeur->save();
 
             return response()->json(array('message' => "Plongeur est ajouté avec succés"), 200);
