@@ -11,6 +11,7 @@ use App\Models\Level;
 use App\Models\Licence;
 use App\Models\User;
 use App\Models\SuiviPrepa;
+use App\Models\TypeSportAthlete;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
@@ -73,7 +74,8 @@ class AthleteController extends Controller
     {
         $niveaux = Level::all();
         $clubs = Club::orderBy('nom', 'desc')->get();
-        return view("dashboard.pages.athletes.ajouter", compact('niveaux', 'clubs'));
+        $type_sport_athletes = TypeSportAthlete::all();
+        return view("dashboard.pages.athletes.ajouter", compact('niveaux', 'clubs', 'type_sport_athletes'));
     }
 
     /**
@@ -112,7 +114,7 @@ class AthleteController extends Controller
             $plongeur->lien_parente_persone_cas_urgence = $request->lien_parente_personne;
             // $plongeur->n_licence = $request->n_licence;
             $plongeur->date_visite_medicale = $request->date_visite_medicale;
-            $plongeur->id_niveau = $request->niveaux;
+            // $plongeur->id_niveau = $request->niveaux;
             $plongeur->enseignement = $request->enseignement;
             $plongeur->qualifications = $request->qualifications;
             if ($request->password) {
@@ -130,7 +132,6 @@ class AthleteController extends Controller
             $plongeur->type_plongeur_id   = self::type_club_sportif_id;
 
             $plongeur->titulaire_enfant = $request->titulaire_enfant;
-           
 
             $file = $request->act_naissance_document;
             $act_naissance_document = $file->store('act_naissance_document');
@@ -147,6 +148,8 @@ class AthleteController extends Controller
             $file = $request->cin_document;
             $cin_document = $file->store('cin_document');
             $plongeur->cin_document = $cin_document ?? null;
+
+            $plongeur->type_sport_athlete_id = $request->type;
 
             $plongeur->save();
 

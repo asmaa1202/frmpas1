@@ -112,7 +112,7 @@
                                 <input type="text" id="titulaire_enfant" class="form-control"  />
                             </div>
                             <div class="col-lg-6">
-                                <label for="act_naissance_document" class="form-label">Act de naissance <span class="text-danger">*</span></label>
+                                <label for="act_naissance_document" class="form-label">Acte de naissance <span class="text-danger">*</span></label>
                                 <input type="file" id="act_naissance_document" class="form-control" placeholder="Type de document" />
                             </div>
                             <div class="col-lg-6">
@@ -501,7 +501,8 @@
                     image_card.src = 'http://localhost:8000/dashboard/img/team/avatar.png';
                     document.getElementById("nom").value = "";
                     document.getElementById("prenom").value = "";
-                    document.getElementById("email").value = "";
+                    document.getElementById("email_plongeur").value = "";
+                    document.getElementById("password").value = "";
                     document.getElementById("cin").value = "";
                     document.getElementById("profession").value = "";
                     document.getElementById("date_naissance").value = "";

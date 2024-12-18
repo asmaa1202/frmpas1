@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Club;
 use App\Models\Level;
 use App\Models\Plongeur;
+use App\Models\TypeSportAthlete;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -76,7 +77,8 @@ class AthleteClubController extends Controller
     public function create(Request $request)
     {
         $niveaux = Level::all();
-        return view("clubDash.pages.athletes.ajouter")->with("niveaux", $niveaux);
+        $type_sport_athletes = TypeSportAthlete::all();
+        return view("clubDash.pages.athletes.ajouter", compact('type_sport_athletes'))->with("niveaux", $niveaux);
     }
 
     /**
@@ -84,6 +86,7 @@ class AthleteClubController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->input());
         try {
 
             $request->validate([
@@ -117,7 +120,7 @@ class AthleteClubController extends Controller
             $plongeur->lien_parente_persone_cas_urgence = $request->lien_parente_personne;
             // $plongeur->n_licence = $request->n_licence;
             $plongeur->date_visite_medicale = $request->date_visite_medicale;
-            $plongeur->id_niveau = $request->niveaux;
+            // $plongeur->id_niveau = $request->niveaux;
             $plongeur->enseignement = $request->enseignement;
             $plongeur->qualifications = $request->qualifications;
             if ($request->password) {
@@ -133,6 +136,26 @@ class AthleteClubController extends Controller
             }
             $plongeur->club_id  = Auth::user()->club->id;
             $plongeur->type_plongeur_id   = self::type_club_sportif_id;
+
+            $plongeur->titulaire_enfant = $request->titulaire_enfant;
+
+            $file = $request->act_naissance_document;
+            $act_naissance_document = $file->store('act_naissance_document');
+            $plongeur->act_naissance_document = $act_naissance_document ?? null;
+
+            $file = $request->engagement_document;
+            $engagement_document = $file->store('engagement_document');
+            $plongeur->engagement_document = $engagement_document ?? null;
+
+            // $file = $request->document_medicale;
+            // $document_medicale = $file->store('document_medicale');
+            // $plongeur->document_medicale = $document_medicale ?? null;
+
+            // $file = $request->cin_document;
+            // $cin_document = $file->store('cin_document');
+            // $plongeur->cin_document = $cin_document ?? null;
+
+            // $plongeur->type_sport_athlete_id = $request->type;
 
             $plongeur->save();
 

@@ -63,28 +63,60 @@
             <div class="card-body bg-light">
                 <div class="row g-3">
                     <h6 class="fw-bold">Genre <span class="text-danger">*</span></h6>
-                     <div class="ps-2 mt-0">
+                     
+                    <div class="ps-2 mt-0">
                         <div class="row mx-2">
                             <div class="form-check mb-0 lh-1 col-2">
-                                <input class="form-check-input genre" type="radio" value="Homme" name="genre"
-                                    id="home" />
-                                <label class="form-check-label mb-0" for="home">Homme
-                                </label>
-                            </div>
-                          <div class="form-check mb-0 lh-1 col-2">
-                                <input class="form-check-input genre" type="radio" value="Femme" name="genre" id="femme"
-                                    checked="checked" />
-                                <label class="form-check-label mb-0" for="femme">Femme
-                                </label>
+                                <input class="form-check-input genre" type="radio" value="Homme" name="genre" id="homme" />
+                                <label class="form-check-label mb-0" for="homme">Homme</label>
                             </div>
                             <div class="form-check mb-0 lh-1 col-2">
-                                <input class="form-check-input genre" type="radio" value="Enfant" name="genre"
-                                    id="Enfant" />
-                                <label class="form-check-label mb-0" for="only-me">Enfant
-                                </label>
+                                <input class="form-check-input genre" type="radio" value="Femme" name="genre" id="femme" checked="checked" />
+                                <label class="form-check-label mb-0" for="femme">Femme</label>
+                            </div>
+                            <div class="form-check mb-0 lh-1 col-2">
+                                <input class="form-check-input genre" type="radio" value="Enfant" name="genre" id="enfant" />
+                                <label class="form-check-label mb-0" for="enfant">Enfant</label>
                             </div>
                         </div>
-                    </div> 
+                    </div>
+                    
+                    <!-- Champs supplémentaires -->
+                    <div id="extra-fields" style="display: none;" class="mt-3">
+                        <div class="row">
+                            <div class="col-12">
+                                <label for="titulaire_enfant" class="form-label">Titulaire <span class="text-danger">*</span></label>
+                                <input type="text" id="titulaire_enfant" class="form-control"  />
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="act_naissance_document" class="form-label">Act de naissance <span class="text-danger">*</span></label>
+                                <input type="file" id="act_naissance_document" class="form-control" placeholder="Type de document" />
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="engagement_document" class="form-label">Engagement <span class="text-danger">*</span></label>
+                                <input type="file" id="engagement_document" class="form-control" placeholder="Type de document" />
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <script>
+                        // Sélectionner tous les inputs de type radio avec le nom "genre"
+                        const genreInputs = document.querySelectorAll('input[name="genre"]');
+                        const extraFields = document.getElementById('extra-fields');
+                    
+                        // Ajouter un écouteur d'événements à chaque input radio
+                        genreInputs.forEach(input => {
+                            input.addEventListener('change', () => {
+                                // Vérifier si "Enfant" est sélectionné
+                                if (input.value === "Enfant" && input.checked) {
+                                    extraFields.style.display = "block";
+                                } else {
+                                    extraFields.style.display = "none";
+                                }
+                            });
+                        });
+                    </script>
+
                     <div class="col-lg-6">
                         <label class="form-label" for="nom">Nom <span class="text-danger">*</span></label>
                         <input class="form-control" id="nom" type="text" required/>
@@ -93,11 +125,15 @@
                         <label class="form-label" for="prenom">Prénom <span class="text-danger">*</span></label>
                         <input class="form-control" id="prenom" type="text" />
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-lg-6">
                         <label class="form-label" for="cin">CIN <span class="text-danger">*</span></label>
                         <input class="form-control" id="cin" type="text" />
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-lg-6">
+                        <label class="form-label" for="cin_document">CIN Document <span class="text-danger">*</span></label>
+                        <input class="form-control" id="cin_document" type="file" />
+                    </div>
+                    <div class="col-sm-6">
                         <label for="email-plongeur-club">Adresse courriel <span class="text-danger">*</span></label>
                         <input class="form-control" id="email-plongeur-club" data-input-mask='{"mask":"/^\S*@?\S*$/"}'
                             placeholder="XXXX@XXX.XXX" type="email"/>
@@ -228,6 +264,10 @@
                             placeholder="yy/m/d" />
                     </div>
                     <div class="mb-2">
+                        <label class="form-label" for="document_medicale">Visite médicale document <span class="text-danger">*</span></label>
+                        <input class="form-control" id="document_medicale" type="file" >
+                    </div>
+                    <div class="mb-2">
                         <label for="niveaux">Niveaux <span class="text-danger">*</span></label>
                         <select class="form-select js-choice" id="niveaux" size="1" name="niveaux"
                             data-options='{"removeItemButton":true,"placeholder":true}'>
@@ -356,6 +396,33 @@
                 formData.append("qualifications", document.getElementById("qualifications").value);
                 formData.append("password", document.getElementById("password").value);
 
+                
+                formData.append("titulaire_enfant", document.getElementById("titulaire_enfant").value);
+
+                const act_naissance_document = document.getElementById("act_naissance_document").files[0];
+                if (act_naissance_document) {
+                    // alert(act_naissance_document);
+                    formData.append("act_naissance_document", act_naissance_document);
+                }
+               
+                const engagement_document = document.getElementById("engagement_document").files[0];
+                if (engagement_document) {
+                    // alert(engagement_document);
+                    formData.append("engagement_document", engagement_document);
+                }
+               
+                const document_medicale = document.getElementById("document_medicale").files[0];
+                if (document_medicale) {
+                    // alert(document_medicale);
+                    formData.append("document_medicale", document_medicale);
+                }
+               
+                const cin_document = document.getElementById("cin_document").files[0];
+                if (cin_document) {
+                    // alert(cin_document);
+                    formData.append("cin_document", cin_document);
+                }
+
                 const res = await axios.post('/club/plongeurs', formData, {
                     headers: {
                         "Content-Type": "multipart/form-data",
@@ -411,6 +478,14 @@
                     document.getElementById("niveaux").value = "";
                     document.getElementById("enseignement").value = "";
                     document.getElementById("qualifications").value = "";
+                    
+                    document.getElementById("titulaire_enfant").value = "";
+                    document.getElementById("act_naissance_document").value = "";
+                    document.getElementById("engagement_document").value = "";
+                    document.getElementById("document_medicale").value = "";
+                    document.getElementById("cin_document").value = "";
+
+
                 }
 
             } catch (err) {

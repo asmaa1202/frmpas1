@@ -79,12 +79,12 @@
                                 <label class="form-check-label mb-0" for="femme">Femme
                                 </label>
                             </div>
-                            <div class="form-check mb-0 lh-1 col-2">
+                            {{-- <div class="form-check mb-0 lh-1 col-2">
                                 <input class="form-check-input genre" type="radio" value="Enfant" name="genre"
                                     id="Enfant" />
                                 <label class="form-check-label mb-0" for="only-me">Enfant
                                 </label>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                     <div class="col-lg-6">

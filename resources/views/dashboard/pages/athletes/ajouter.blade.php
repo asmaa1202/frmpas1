@@ -112,7 +112,7 @@
                                 <input type="text" id="titulaire_enfant" class="form-control"  />
                             </div>
                             <div class="col-lg-6">
-                                <label for="act_naissance_document" class="form-label">Act de naissance <span class="text-danger">*</span></label>
+                                <label for="act_naissance_document" class="form-label">Acte de naissance <span class="text-danger">*</span></label>
                                 <input type="file" id="act_naissance_document" class="form-control" placeholder="Type de document" />
                             </div>
                             <div class="col-lg-6">
@@ -156,12 +156,12 @@
                         <label class="form-label" for="cin_document">CIN Document <span class="text-danger">*</span></label>
                         <input class="form-control" id="cin_document" type="file" />
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-lg-6">
                         <label for="email">Adresse courriel <span class="text-danger">*</span></label>
                         <input class="form-control" id="email-athlete-admin" data-input-mask='{"mask":"/^\S*@?\S*$/"}'
                             placeholder="XXXX@XXX.XXX" type="email" />
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-lg-6">
                         <label class="form-label" for="password">Mot de passe <span class="text-danger">*</span></label>
                         <input class="form-control" id="password" type="password" autocomplete="new-password"/>
                     </div>
@@ -303,7 +303,7 @@
                         <label class="form-label" for="document_medicale">Visite médicale document <span class="text-danger">*</span></label>
                         <input class="form-control" id="document_medicale" type="file" >
                     </div>
-                    <div class="mb-2">
+                    {{-- <div class="mb-2">
                         <label for="niveaux">Niveaux <span class="text-danger">*</span></label>
                         <select class="form-select js-choice" id="niveaux" size="1" name="niveaux"
                             data-options='{"removeItemButton":true,"placeholder":true}'>
@@ -312,7 +312,19 @@
                             <option value={{$item->id}}>{{$item->label}}</option>
                             @endforeach
                         </select>
+                    </div> --}}
+
+                    <div class="mb-2">
+                        <label for="type_sport_athletes">Type sport <span class="text-danger">*</span></label>
+                        <select class="form-select js-choice" id="type_sport_athletes" size="1" name="type_sport_athletes"
+                            data-options='{"removeItemButton":true,"placeholder":true}'>
+                            <option value="">Choisissez le niveau</option>
+                            @foreach ($type_sport_athletes as $type)
+                            <option value={{$type->id}}>{{$type->abrev}}</option>
+                            @endforeach
+                        </select>
                     </div>
+
                     <div class="mb-2">
                         <label for="jour_entrainement">Jour d'entraînement</label>
                         <select class="form-select js-choice" id="jour_entrainement" size="1" name="jour_entrainement"
@@ -386,7 +398,7 @@
                 const requiredFields = [
                     "nom", "prenom", "cin", "email-athlete-admin", "password",
                     "date_naissance", "phone_portable", "nom_personne", "prenom_personne",
-                    "email_personne", "phone_portable_personne", "lien_parente_personne", "adresse", "code_postal", "ville", "pays", "date_visite_medicale", "niveaux"
+                    "email_personne", "phone_portable_personne", "lien_parente_personne", "adresse", "code_postal", "ville", "pays", "date_visite_medicale"
                 ];
                 let isValid = true;
 
@@ -427,7 +439,7 @@
                 formData.append("lien_parente_personne", document.getElementById("lien_parente_personne").value);
                 // formData.append("n_licence", document.getElementById("n_licence").value);
                 formData.append("date_visite_medicale", document.getElementById("date_visite_medicale").value);
-                formData.append("niveaux", document.getElementById("niveaux").value);
+                // formData.append("niveaux", document.getElementById("niveaux").value);
                 formData.append("jour_entrainement", document.getElementById("jour_entrainement").innerText.split(/(?=[A-Z])/).toString());
                 formData.append("enseignement", document.getElementById("enseignement").value);
                 formData.append("qualifications", document.getElementById("qualifications").value);
@@ -435,6 +447,7 @@
                 formData.append("club", document.getElementById("club_athlete").value);
 
                 formData.append("titulaire_enfant", document.getElementById("titulaire_enfant").value);
+                formData.append("type", document.getElementById("type_sport_athletes").value);
 
                 const act_naissance_document = document.getElementById("act_naissance_document").files[0];
                 if (act_naissance_document) {
@@ -513,7 +526,7 @@
                     document.getElementById("lien_parente_personne").value = "";
                     // document.getElementById("n_licence").value = "";
                     document.getElementById("date_visite_medicale").value = "";
-                    document.getElementById("niveaux").value = "";
+                    // document.getElementById("niveaux").value = "";
                     document.getElementById("enseignement").value = "";
                     document.getElementById("qualifications").value = "";
                     document.getElementById("club_athlete").value = "";
@@ -523,6 +536,7 @@
                     document.getElementById("engagement_document").value = "";
                     document.getElementById("document_medicale").value = "";
                     document.getElementById("cin_document").value = "";
+                    document.getElementById("type_sport_athletes").value = "";
                 }
 
             } catch (err) {
