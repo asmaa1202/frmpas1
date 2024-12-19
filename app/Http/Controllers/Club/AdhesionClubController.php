@@ -27,7 +27,7 @@ class AdhesionClubController extends Controller
 
             $demande_adhesion = new Adhesion();
             $demande_adhesion->club_id = $id;
-            $demande_adhesion->montant = 1999;
+            $demande_adhesion->montant = 3000;
             if(now()->month == 12 && isset($adhesion_actuelle)){
                 $demande_adhesion->annee = date('Y') + 1;      
            }elseif(empty($adhesion_actuelle)){

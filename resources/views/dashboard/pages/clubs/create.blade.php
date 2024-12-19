@@ -65,22 +65,42 @@
             <div class="card-body bg-light">
                 <div class="row g-3">
              
-                    <div class="col-lg-12">
+                    <div class="col-lg-6">
                         <label class="form-label" for="nom_club">Nom du club</label>
                         <input class="form-control" id="nom_club" type="text" name="nom_club"/>
                     </div>
+                    <div class="col-lg-6">
+                        <label class="form-label" for="abreviation">Abréviation</label>
+                        <input class="form-control" id="abreviation" type="text" name="abreviation"/>
+                    </div>
+
                    {{-- <div class="col-sm-12">
                         <label class="form-label" for="adresse">adresse</label>
                         <input class="form-control" id="adresse" type="text" />
                     </div> --}}
+                    {{-- <div class="col-lg-6">
+                        <label class="form-label" for="date_creation">Legal structure</label>
+                        <input class="form-control" id="date_creation" type="date" />
+                    </div> --}}
+                    <div class="col-lg-6">
+                        <label for="legal_structure">Structure légale <span class="text-danger">*</span></label>
+                        <select class="form-select js-choice" id="legal_structure" size="1" name="legal_structure"
+                            data-options='{"removeItemButton":true,"placeholder":true}'>
+                            <option value="">Choisissez la région</option>
+                            
+                            <option value="societe">Société</option>
+                            <option value="association">Association</option>
+                            
+                        </select>
+                    </div>
                     <div class="col-lg-6">
                         <label class="form-label" for="date_creation">Date de création</label>
                         <input class="form-control" id="date_creation" type="date" />
                     </div>
-                    <div class="col-lg-6">
+                    {{-- <div class="col-lg-6">
                         <label class="form-label" for="document">Document</label>
                         <input class="form-control" id="document" type="file" name="document" />
-                    </div>
+                    </div> --}}
                     <div class="col-lg-6">
                         <label class="form-label" for="email_club">Adresse courriel</label>
                         <input class="form-control" id="email_club" type="email" name="email_club" placeholder="XXXX@XXX.XXX"/>
@@ -123,6 +143,18 @@
                 </div>
                 <div class="card-body bg-light">
                     <div class="mb-2">
+                        <label for="region">Région <span class="text-danger">*</span></label>
+                        <select class="form-select js-choice" id="region" size="1" name="region"
+                            data-options='{"removeItemButton":true,"placeholder":true}'>
+                            <option value="">Choisissez la région</option>
+                            
+                            <option value="Nord">Nord</option>
+                            <option value="Centre">Centre</option>
+                            <option value="Sud">Sud</option>
+                            
+                        </select>
+                    </div>
+                    <div class="mb-2">
                         <label class="form-label" for="adresse_club">Adresse</label>
                         <input class="form-control" id="adresse_club" type="text" />
                     </div>
@@ -134,10 +166,11 @@
                         <label class="form-label" for="ville_club">Ville</label>
                         <input class="form-control" id="ville_club" type="text" />
                     </div>
-                    <div class="mb-2">
-                        <label class="form-label" for="region">Region</label>
+                    {{-- <div class="mb-2">
+                        <label class="form-label" for="region">Région</label>
                         <input class="form-control" id="region" type="text" />
-                    </div>
+                    </div> --}}
+                   
                 </div>
 
             </div>
@@ -153,37 +186,37 @@
                 <div class="row g-3">
                 
                     <div class="col-lg-6">
-                        <label class="form-label" for="nom">Statut conforme à la loi 30-09</label>
-                        <input class="form-control" id="nom" type="file" name="nom"/>
+                        <label class="form-label" for="Statut_document">Statut conforme à la loi 30-09</label>
+                        <input class="form-control" id="Statut_document" type="file" name="Statut_document"/>
+                    </div>
+                    <div class="col-lg-6">
+                        <label class="form-label" for="liste_bureau_document">liste de bureau à jour</label>
+                        <input class="form-control" id="liste_bureau_document" type="file" />
                     </div>
                    <div class="col-lg-6">
-                        <label class="form-label" for="prenom">liste de bureau à jour</label>
-                        <input class="form-control" id="prenom" type="file" />
+                        <label class="form-label" for="pv_document">PV de la dernière assemblée générale</label>
+                        <input class="form-control" id="pv_document" type="file" />
                     </div>
                     <div class="col-lg-6">
-                        <label class="form-label" for="cin">PV de la dernière assemblée générale</label>
-                        <input class="form-control" id="cin" type="file" />
-                    </div>
-                    <div class="col-lg-6">
-                        <label class="form-label" for="date_naissance">Récépissé Provisoire ou définitive</label>
-                        <input class="form-control" id="date_naissance" type="file" name="date_naissance"/>
+                        <label class="form-label" for="recepisse_document">Récépissé Provisoire ou définitive</label>
+                        <input class="form-control" id="recepisse_document" type="file" name="recepisse_document"/>
                     </div>
                  
                     <div class="col-lg-6">
-                        <label class="form-label" for="tel_portable">Fiche technique</label>
-                        <input class="form-control" id="tel_portable" type="file" name="tel_portable"/>
+                        <label class="form-label" for="fiche_technique_document">Fiche technique</label>
+                        <input class="form-control" id="fiche_technique_document" type="file" name="fiche_technique_document"/>
                     </div>
                     <div class="col-lg-6">
-                        <label class="form-label" for="tel_fixe">Ompic</label>
-                        <input class="form-control" id="tel_fixe" type="file" name="tel_fixe"/>
+                        <label class="form-label" for="ompic_document">Ompic</label>
+                        <input class="form-control" id="ompic_document" type="file" name="ompic_document"/>
                     </div>
                    <div class="col-lg-6">
-                        <label class="form-label" for="email_personnel">Demande d'accréditation</label>
-                        <input class="form-control" id="email_personnel" type="file" name="email_personnel" placeholder="XXXX@XXX.XXX"/>
+                        <label class="form-label" for="demande_accreditation_document">Demande d'accréditation</label>
+                        <input class="form-control" id="demande_accreditation_document" type="file" name="email_personnel" placeholder="XXXX@XXX.XXX"/>
                     </div>
                     <div class="col-lg-6">
-                        <label class="form-label" for="password">Paiement des frais d4affiliation (3000dhs)</label>
-                        <input class="form-control" id="password" type="file" />
+                        <label class="form-label" for="attetation_paiemeent">Paiement des frais d'affiliation (3000dhs)</label>
+                        <input class="form-control" id="attetation_paiemeent" type="file" />
                     </div>
                     
                 </div>
@@ -200,11 +233,11 @@
                 <div class="row g-3">
                 
                     <div class="col-lg-6">
-                        <label class="form-label" for="nom">Nom</label>
+                        <label class="form-label" for="nom">Nom du président</label>
                         <input class="form-control" id="nom" type="text" name="nom"/>
                     </div>
                    <div class="col-sm-6">
-                        <label class="form-label" for="prenom">Prénom</label>
+                        <label class="form-label" for="prenom">Prénom du président</label>
                         <input class="form-control" id="prenom" type="text" />
                     </div>
                     {{-- <div class="col-lg-6">
@@ -274,11 +307,11 @@
                 let formData = new FormData();
 
  
-                const fileDocument = document.getElementById("document").files[0];
-                if (fileDocument) {
-                    // alert(fileDocument);
-                    formData.append("document", fileDocument);
-                }
+                // const fileDocument = document.getElementById("document").files[0];
+                // if (fileDocument) {
+                //     // alert(fileDocument);
+                //     formData.append("document", fileDocument);
+                // }
                
                 // console.log(document.querySelector(".type:checked").value);
                 image.src = 'http://localhost:8000/dashboard/img/team/avatar.png';
@@ -287,6 +320,8 @@
                 formData.append("image_club", file);
                 // formData.append("document", document.getElementById("document").value);
                 formData.append("nom_club", document.getElementById("nom_club").value);
+                formData.append("abreviation", document.getElementById("abreviation").value);
+                formData.append("legal_structure", document.getElementById("legal_structure").value);
                 formData.append("date_creation", document.getElementById("date_creation").value);
                 formData.append("email_club", document.getElementById("email_club").value);
                 formData.append("tel_club", document.getElementById("tel_club").value);
@@ -306,12 +341,57 @@
                 // formData.append("type", document.querySelectorAll(".type:checked").value);
                 formData.append("is_federal", document.getElementById("is_federal").value);
                 const checkedValuesTypes = Array.from(document.querySelectorAll(".types:checked")).map(el => el.value);
-// alert(checkedValuesTypes);
+                // alert(checkedValuesTypes);
                 // Ajouter le tableau de valeurs à FormData
                 formData.append("types", JSON.stringify(checkedValuesTypes));
 
-            //     const email_club = document.getElementById("email_club").value;
-            //    alert(email_club);
+                const Statut_document = document.getElementById("Statut_document").files[0];
+                if (Statut_document) {
+                    // alert(Statut_document);
+                    formData.append("Statut_document", Statut_document);
+                }
+
+                const liste_bureau_document = document.getElementById("liste_bureau_document").files[0];
+                if (liste_bureau_document) {
+                    // alert(liste_bureau_document);
+                    formData.append("liste_bureau_document", liste_bureau_document);
+                }
+
+                const pv_document = document.getElementById("pv_document").files[0];
+                if (pv_document) {
+                    // alert(pv_document);
+                    formData.append("pv_document", pv_document);
+                }
+
+                const recepisse_document = document.getElementById("recepisse_document").files[0];
+                if (recepisse_document) {
+                    // alert(recepisse_document);
+                    formData.append("recepisse_document", recepisse_document);
+                }
+
+                const fiche_technique_document = document.getElementById("fiche_technique_document").files[0];
+                if (fiche_technique_document) {
+                    // alert(fiche_technique_document);
+                    formData.append("fiche_technique_document", fiche_technique_document);
+                }
+
+                const ompic_document = document.getElementById("ompic_document").files[0];
+                if (ompic_document) {
+                    // alert(ompic_document);
+                    formData.append("ompic_document", ompic_document);
+                }
+
+                const demande_accreditation_document = document.getElementById("demande_accreditation_document").files[0];
+                if (demande_accreditation_document) {
+                    // alert(demande_accreditation_document);
+                    formData.append("demande_accreditation_document", demande_accreditation_document);
+                }
+
+                const attetation_paiemeent = document.getElementById("attetation_paiemeent").files[0];
+                if (attetation_paiemeent) {
+                    // alert(attetation_paiemeent);
+                    formData.append("attetation_paiemeent", attetation_paiemeent);
+                }
                 const res = await axios.post('/dashboard/clubs', formData, {
                     headers: {
                         "Content-Type": "multipart/form-data",
@@ -344,8 +424,10 @@
                   
 
                     document.getElementById("image_club").value = "";
-                    document.getElementById("document").value = "";
+                    // document.getElementById("document").value = "";
                     document.getElementById("nom_club").value = "";
+                    document.getElementById("abreviation").value = "";
+                    document.getElementById("legal_structure").value = "";
                     document.getElementById("date_creation").value = "";
                     document.getElementById("email_club").value = "";
                     document.getElementById("tel_club").value = "";
@@ -368,6 +450,15 @@
                     });
                     // document.querySelector(".type:checked").value = "";
                     // document.getElementById("password").value = "";
+                    document.getElementById("Statut_document").value = "";
+                    document.getElementById("liste_bureau_document").value = "";
+                    document.getElementById("pv_document").value = "";
+                    document.getElementById("recepisse_document").value = "";
+                    document.getElementById("fiche_technique_document").value = "";
+                    document.getElementById("ompic_document").value = "";
+                    document.getElementById("demande_accreditation_document").value = "";
+                    document.getElementById("attetation_paiemeent").value = "";
+
                 }
 
             } catch (err) {

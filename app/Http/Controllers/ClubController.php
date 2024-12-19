@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Adhesion;
 use Carbon\Carbon;
 use App\Models\Club;
 use App\Models\TypeClub;
@@ -20,6 +21,8 @@ class ClubController extends Controller
     const region_sud = 'sud';
     const statut_accepter = 'accepter';
     const statut_refuser = 'refuser';
+    const statut_en_cours = 'en cours'; 
+
     // public function index()
     // {
     //     $clubs = Club::latest()->get();
@@ -84,9 +87,11 @@ class ClubController extends Controller
         try {
                
          
+            $is_federal = $request->is_federal === 'true' ? 1 : 0;
 
             $club = new Club();
             $club->nom = $request->nom_club;
+            $club->abreviation = $request->abreviation;
             $club->email = $request->email_club;
             $club->ville = $request->ville_club;
             $club->date_creation = $request->date_creation;
@@ -94,7 +99,10 @@ class ClubController extends Controller
             $club->adresse = $request->adresse_club;
             $club->cp = $request->code_postal;
             $club->region = $request->region;
-            $club->is_federal = $request->is_federal ? 1 : 0;
+            $club->is_federal = $is_federal;
+            $club->legal_structure = $request->legal_structure;
+            $club->president = $request->nom.' '.$request->prenom;
+            
             $club->is_active = 1;
 
             $club->types = $request->types;
@@ -109,9 +117,37 @@ class ClubController extends Controller
                     return response()->json(['message' => 'L\'image n\'est pas valide.'], 400);
                 }
             }
-            $file = $request->document;
-            $club_document = $file->store('documents');
-            $club->document = $club_document ?? null;
+            // $file = $request->document;
+            // $club_document = $file->store('documents');
+            // $club->document = $club_document ?? null;
+
+            $file = $request->Statut_document;
+            $Statut_document = $file->store('documents');
+            $club->Statut_document = $Statut_document ?? null;
+
+            $file = $request->liste_bureau_document;
+            $liste_bureau_document = $file->store('documents');
+            $club->liste_bureau_document = $liste_bureau_document ?? null;
+
+            $file = $request->pv_document;
+            $pv_document = $file->store('documents');
+            $club->pv_document = $pv_document ?? null;
+
+            $file = $request->recepisse_document;
+            $recepisse_document = $file->store('documents');
+            $club->recepisse_document = $recepisse_document ?? null;
+
+            $file = $request->fiche_technique_document;
+            $fiche_technique_document = $file->store('documents');
+            $club->fiche_technique_document = $fiche_technique_document ?? null;
+
+            $file = $request->ompic_document;
+            $ompic_document = $file->store('documents');
+            $club->ompic_document = $ompic_document ?? null;
+
+            $file = $request->demande_accreditation_document;
+            $demande_accreditation_document = $file->store('documents');
+            $club->demande_accreditation_document = $demande_accreditation_document ?? null;
 
             $club->save();
 
@@ -141,6 +177,21 @@ class ClubController extends Controller
             $user->role_id = 2;
             $user->active = 1;
             $user->save();
+
+
+            $demande_adhesion = new Adhesion();
+            $demande_adhesion->club_id = $club->id;
+            $demande_adhesion->montant = 3000;
+           
+            $demande_adhesion->annee = date('Y'); 
+            
+            $demande_adhesion->statut = self::statut_accepter;
+
+            $file = $request->attetation_paiemeent;
+            $adhesion_document = $file->store('attestation paiement');
+            $demande_adhesion->document = $adhesion_document ?? null;
+            $demande_adhesion->save();
+
     
             return response()->json(['message' => 'Le club a été ajouté avec succès'], 200);
     

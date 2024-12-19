@@ -26,6 +26,27 @@ class CheckRole
         if (Auth::check() && Auth::user()->role_id == $role &&  Auth::user()->active == 1) {
             return $next($request);
         }
+
+        // if (Auth::check() && Auth::user()->active == 1) {
+        //     $role = Auth::user()->role_id;
+        
+        //     
+        //     $roleRedirects = [
+        //         1 => '/dashboard/home',
+        //         2 => '/club/home',
+        //         3 => '/plongeur/home'
+        //     ];
+        
+        //     // Vérifie si une URL existe pour le rôle
+        //     if (array_key_exists($role, $roleRedirects)) {
+        //         return redirect($roleRedirects[$role]);
+        //     }
+        
+        //     
+        //     return redirect('/default');
+        // }
+        
+        // return redirect('/login');
         
         abort(404, 'NOT FOUND');
         

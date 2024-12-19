@@ -23,7 +23,7 @@
                                         @endif
                                     </h4>
                                     <h5 class="mb-1 text-800 fs-0">N° {{ $plongeur->n_licence }} |
-                                        {{ $plongeur->niveau->label }}</h5>
+                                        {{ $plongeur->niveau->label ?? '--' }}</h5>
                                     <p class="mb-0 fs--1">{{ $plongeur->email }}</p>
                                 </div>
 
