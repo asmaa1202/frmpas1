@@ -42,7 +42,7 @@ use App\Http\Controllers\SportType;
 use App\Http\Controllers\Club\MoniteurClubController;
 use App\Http\Controllers\MoniteurController;
 use App\Models\Blog;
-
+use Illuminate\Support\Facades\Storage;
 Route::get('/', function () {
     return view('welcome');
 });
@@ -451,7 +451,22 @@ Route::middleware(['auth', 'role:1'])->group(function () {
     Route::post("/dashboard/clubs/modifier/{id}", [ClubController::class, "update"])->name('clubs.update');
     Route::delete('/dashboard/clubs/{id}', [ClubController::class, 'destroy'])->name('clubs.destroy');
     Route::post('/dashboard/clubs/{id}/toggle-activation', [ClubController::class, 'toggleActivation'])->name('clubs.toggleActivation');
-    Route::get('/dashboard/documentj/{id}',[ClubController::class,'readDocument'])->name('club.read.document');
+    Route::get('/dashboard/document/{id}/{type}',[ClubController::class,'readDocument'])->name('club.read.document');
+
+   
+
+    // Route::get('/pdf/{filename}', function ($filename) {
+    //     $filePath = 'public/pdfs/' . $filename;
+
+    //     if (Storage::exists($filePath)) {
+    //         $file = Storage::path($filePath);
+
+    //         return response()->file($file); // Affiche le PDF dans le navigateur
+    //     }
+
+    //     abort(404, 'Fichier non trouvé.');
+    // })->where('filename', '.*'); // Permet d'accepter des noms avec des espaces ou des caractères spéciaux
+
 
 
 
@@ -542,76 +557,7 @@ Route::group(['prefix'=>'club', 'middleware' => ['auth','role:2']],function () {
         // })->name('club.index');
         Route::get("/home", [HomeController::class, "index"])->name('club.index');
 
-        // Route::get("/home", function () {
-        
-        //     $currentYear = date('Y');
-        
-        //     // Clubs actifs : Club ID est présent dans la table adhésions avec statut "accepter"
-        //     // $clubsActifs = Club::whereHas('adhesions', function ($query) use ($currentYear) {
-        //     //     $query->where('statut', ClubStatutConstants::STATUT_ACCEPTER)
-        //     //           ->where('annee', $currentYear);
-        //     // })->count();
-        
-        //     // $clubsInactifs = Club::whereHas('adhesions', function ($query) use ($currentYear) {
-        //     //     $query->whereIn('statut', [ClubStatutConstants::STATUT_EN_COURS, ClubStatutConstants::STATUT_REFUSER])
-        //     //           ->where('annee', $currentYear);
-        //     // })->count();
-            
-        //     // $clubsInactifs = Club::whereHas('adhesions', function ($query) use ($currentYear) {
-        //     //     $query->whereIn('statut', [ClubStatutConstants::STATUT_EN_COURS, ClubStatutConstants::STATUT_REFUSER])
-        //     //           ->where('annee', $currentYear);
-        //     // })
-        //     // ->orDoesntHave('adhesions') // Inclure les clubs sans adhésions
-        //     // ->count();
-    
-        //     $remainingDays = Carbon::now()->diffInDays(Carbon::now()->endOfYear());
-    
-        //     // $nombreAthletes = Plongeur::where('type_plongeur_id', 1)->count();
-        //     // $nombreAthletes = Plongeur::whereHas('licence', function ($query) use ($currentYear) {
-        //     //         $query->where('statut', ClubStatutConstants::STATUT_ACCEPTER)
-        //     //               ->where('annee', $currentYear);
-        //     //     })->count();
-
-
-
-        //     $nombrePlongeursActifs = Plongeur::whereIn('id', function ($query) use ($currentYear) {
-        //         $query->select('plongeur_id')
-        //                 ->from('licences')
-        //                 ->where('statut', ClubStatutConstants::STATUT_ACCEPTER)
-        //                 ->where('annee', $currentYear);
-                        
-        //     })->where('type_plongeur_id', 2)->count();
-        //     // dd($nombrePlongeursActifs);
-
-
-        //     $nombrePlongeursInactifs = Plongeur::where(function ($query) use ($currentYear) {
-        //         // Plongeurs sans aucune licence
-        //         $query->whereNotIn('id', function ($subQuery) {
-        //             $subQuery->select('plongeur_id')->from('licences');
-        //         })
-        //         ->orWhereIn('id', function ($subQuery) use ($currentYear) {
-        //             $subQuery->select('plongeur_id')
-        //                     ->from('licences')
-        //               ->where('statut', ClubStatutConstants::STATUT_ACCEPTER)
-        //               ->whereYear('annee', '!=', $currentYear);
-        //         });
-        //     })
-        //     ->where('type_plongeur_id', 2)
-        //     ->count();
-
-
-        //     // dd($nombrePlongeursInactifs);
-           
-        
-        //     return view(
-        //         "dashboard.pages.home",
-        //         compact(
-        //             'nombrePlongeursActifs',
-        //             'nombrePlongeursInactifs',
-         
-        //         )
-        //     );
-        // })->name('club.index');
+       
 
         // demande adhesion
         Route::post("/demande-adhesion/{id}", [AdhesionClubController::class, "demande_adhesion"])->name('demande.adhesion');

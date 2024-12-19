@@ -284,7 +284,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="adhesionModalLabel">Formulaire de demande d'adhésion</h5>
+                <h5 class="modal-title" id="adhesionModalLabel">Demande d'adhésion</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -319,11 +319,33 @@
                         </div>
                     </div>
                 </div> --}}
-                <form action="/upload" class="dropzone" id="my-dropzone">
+                {{-- <form action="/upload" class="dropzone" id="my-dropzone">
                     <div class="dz-message">
                         Glissez-déposez ou cliquez pour télécharger l'attestation de paiement (PDF, image).
                     </div>
-                </form>
+                </form> --}}
+                
+                <div class="col-lg-12">
+                    <label class="form-label" for="liste_bureau_document">liste de bureau à jour</label>
+                    <input class="form-control" id="liste_bureau_document" type="file" />
+                </div>
+                <br>
+                <div class="col-lg-12">
+                    <label class="form-label" for="recepisse_document">Récépissé Provisoire ou définitive</label>
+                    <input class="form-control" id="recepisse_document" type="file" name="recepisse_document"/>
+                </div>
+                <br>
+
+                <div class="col-lg-12">
+                    <label class="form-label" for="pv_document">PV de la dernière assemblée générale</label>
+                    <input class="form-control" id="pv_document" type="file" />
+                </div>
+                <br>
+
+                <div class="col-lg-12">
+                    <label class="form-label" for="attestation_paiement">Attestation de paiement</label>
+                    <input class="form-control" id="attestation_paiement" type="file" />
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
@@ -343,48 +365,48 @@
 
 <script>
      // Configuration de Dropzone
-    var myDropzone = new Dropzone("#my-dropzone", {
-        url: "/club/demande-adhesion",  // URL pour l'upload
-        paramName: "file",  // Nom du paramètre pour l'envoi du fichier
-        maxFilesize: 3,  // Taille max du fichier (en Mo)
-        maxFiles: 1,  // Limiter à un seul fichier
-        acceptedFiles: ".jpg,.jpeg,.png,.gif,.pdf",  // Types de fichiers acceptés
-        addRemoveLinks: true,  // Permet d'ajouter des liens de suppression
+    // var myDropzone = new Dropzone("#my-dropzone", {
+    //     url: "/club/demande-adhesion",  // URL pour l'upload
+    //     paramName: "file",  // Nom du paramètre pour l'envoi du fichier
+    //     maxFilesize: 3,  // Taille max du fichier (en Mo)
+    //     maxFiles: 1,  // Limiter à un seul fichier
+    //     acceptedFiles: ".jpg,.jpeg,.png,.gif,.pdf",  // Types de fichiers acceptés
+    //     addRemoveLinks: true,  // Permet d'ajouter des liens de suppression
     
-        init: function () {
-                this.on("maxfilesexceeded", function (file) {
-                    this.removeAllFiles(); // Supprimer le fichier précédent
-                    this.addFile(file); // Ajouter le nouveau fichier
-                });
+    //     init: function () {
+    //             this.on("maxfilesexceeded", function (file) {
+    //                 this.removeAllFiles(); // Supprimer le fichier précédent
+    //                 this.addFile(file); // Ajouter le nouveau fichier
+    //             });
 
-                this.on("thumbnail", function (file) {
-                    if (!file.type.startsWith("image/")) {
-                        // Remplacer l'aperçu par une icône ou une image de dossier
-                        file.previewElement.querySelector("img").src = "{{asset('assets/img/image-file-2.png')}}"; // Remplacez par le chemin de votre icône de dossier
-                    }
-                });
+    //             this.on("thumbnail", function (file) {
+    //                 if (!file.type.startsWith("image/")) {
+    //                     // Remplacer l'aperçu par une icône ou une image de dossier
+    //                     file.previewElement.querySelector("img").src = "{{asset('assets/img/image-file-2.png')}}"; // Remplacez par le chemin de votre icône de dossier
+    //                 }
+    //             });
 
-                this.on("removedfile", function (file) {
-                    console.log("Fichier supprimé : ", file.name);
-                    // Ajoutez ici une requête pour supprimer le fichier côté serveur si nécessaire
-                });
+    //             this.on("removedfile", function (file) {
+    //                 console.log("Fichier supprimé : ", file.name);
+    //                 // Ajoutez ici une requête pour supprimer le fichier côté serveur si nécessaire
+    //             });
 
-                this.on("success", function (file, response) {
-                    console.log("Fichier téléchargé avec succès : ", response);
-                });
+    //             this.on("success", function (file, response) {
+    //                 console.log("Fichier téléchargé avec succès : ", response);
+    //             });
 
-                this.on("error", function (file, errorMessage) {
-                    console.error("Erreur lors du téléchargement : ", errorMessage);
-                });
-            }
+    //             this.on("error", function (file, errorMessage) {
+    //                 console.error("Erreur lors du téléchargement : ", errorMessage);
+    //             });
+    //         }
     
-    });
+    // });
 
   // Supprimer tous les fichiers
-  document.getElementById('remove-all-files').addEventListener('click', function() {
-    myDropzone.removeAllFiles(true);  // true pour forcer la suppression du fichier du DOM
-    console.log("Tous les fichiers ont été supprimés.");
-  });
+//   document.getElementById('remove-all-files').addEventListener('click', function() {
+//     myDropzone.removeAllFiles(true);  // true pour forcer la suppression du fichier du DOM
+//     console.log("Tous les fichiers ont été supprimés.");
+//   });
 
 
     async function demandeAdhesion(id) {
@@ -392,7 +414,31 @@
             const files = myDropzone.getAcceptedFiles();
             
             let formData = new FormData();
-            formData.append("document", files[0]);
+            // formData.append("document", files[0]);
+
+            const liste_bureau_document = document.getElementById("liste_bureau_document").files[0];
+            if (liste_bureau_document) {
+                // alert(liste_bureau_document);
+                formData.append("liste_bureau_document", liste_bureau_document);
+            }
+
+            const pv_document = document.getElementById("pv_document").files[0];
+            if (pv_document) {
+                // alert(pv_document);
+                formData.append("pv_document", pv_document);
+            }
+
+            const recepisse_document = document.getElementById("recepisse_document").files[0];
+            if (recepisse_document) {
+                // alert(recepisse_document);
+                formData.append("recepisse_document", recepisse_document);
+            }
+
+            const attestation_paiement = document.getElementById("attestation_paiement").files[0];
+            if (attestation_paiement) {
+                // alert(attestation_paiement);
+                formData.append("attestation_paiement", attestation_paiement);
+            }
 
             const res = await axios.post(`/club/demande-adhesion/${id}`, formData, {
                 headers: {

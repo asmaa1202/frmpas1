@@ -47,9 +47,17 @@
                         <th style="min-width: 200px;">Abrév</th>
                         <th style="min-width: 280px;">E-mail</th>
                         <th style="min-width: 180px;">Ville</th>
-                        <th style="min-width: 180px;">Document</th>
-                        {{-- <th style="min-width: 180px;">Adhésion</th> --}}
                         <th style="min-width: 180px;">Crée le</th>
+                        <th style="min-width: 180px;">Statut</th>
+                        <th style="min-width: 180px;">Liste de bureau</th>
+                        <th style="min-width: 180px;">PV</th>
+                        <th style="min-width: 180px;">Récépissé</th>
+                        <th style="min-width: 180px;">Fiche technique</th>
+                        <th style="min-width: 180px;">Ompic</th>
+                        <th style="min-width: 180px;">Demande d'accréditation</th>
+
+                        {{-- <th style="min-width: 180px;">Adhésion</th> --}}
+                     
                         <th style="min-width: 180px;">Adhésion</th>
                         <th style="width: 80px;">Actions</th>
                     </tr>
@@ -72,19 +80,54 @@
                         <td class="align-middle">{{ $club->abreviation }}</td>
                         <td class="align-middle">{{ $club->email }}</td>
                         <td class="align-middle">{{ $club->ville  }}</td>
+                        <td class="align-middle">{{ $club->date_creation ?? '--'}}</td>
                         <td class="align-middle">
-                            <a href="{{ route('club.read.document', $club->id) }}" target="__blank">
+                            <a href="{{ route('club.read.document', ['id' => $club->id, 'type'=>'Statut_document']) }}" target="__blank">
                                 <svg class="svg-inline--fa fa-file fa-w-12 text-900 fs-2" aria-hidden="true" focusable="false" data-prefix="far" data-icon="file" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M369.9 97.9L286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 128H256V51.9l76.1 76.1zM48 464V48h160v104c0 13.3 10.7 24 24 24h104v288H48z"></path></svg>
-                            </a></td>
+                            </a>
+                        </td>
 
+                        <td class="align-middle">
+                            <a href="{{ route('club.read.document', ['id' => $club->id, 'type'=>'liste_bureau_document']) }}" target="__blank">
+                                <svg class="svg-inline--fa fa-file fa-w-12 text-900 fs-2" aria-hidden="true" focusable="false" data-prefix="far" data-icon="file" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M369.9 97.9L286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 128H256V51.9l76.1 76.1zM48 464V48h160v104c0 13.3 10.7 24 24 24h104v288H48z"></path></svg>
+                            </a>
+                        </td>
+
+                        <td class="align-middle">
+                            <a href="{{ route('club.read.document', ['id' => $club->id, 'type'=>'pv_document']) }}" target="__blank">
+                                <svg class="svg-inline--fa fa-file fa-w-12 text-900 fs-2" aria-hidden="true" focusable="false" data-prefix="far" data-icon="file" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M369.9 97.9L286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 128H256V51.9l76.1 76.1zM48 464V48h160v104c0 13.3 10.7 24 24 24h104v288H48z"></path></svg>
+                            </a>
+                        </td>
+
+                        <td class="align-middle">
+                            <a href="{{ route('club.read.document', ['id' => $club->id, 'type'=>'recepisse_document']) }}" target="__blank">
+                                <svg class="svg-inline--fa fa-file fa-w-12 text-900 fs-2" aria-hidden="true" focusable="false" data-prefix="far" data-icon="file" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M369.9 97.9L286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 128H256V51.9l76.1 76.1zM48 464V48h160v104c0 13.3 10.7 24 24 24h104v288H48z"></path></svg>
+                            </a>
+                        </td>
+
+                        <td class="align-middle">
+                            <a href="{{ route('club.read.document', ['id' => $club->id, 'type'=>'fiche_technique_document']) }}" target="__blank">
+                                <svg class="svg-inline--fa fa-file fa-w-12 text-900 fs-2" aria-hidden="true" focusable="false" data-prefix="far" data-icon="file" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M369.9 97.9L286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 128H256V51.9l76.1 76.1zM48 464V48h160v104c0 13.3 10.7 24 24 24h104v288H48z"></path></svg>
+                            </a>
+                        </td>
+
+                        <td class="align-middle">
+                            <a href="{{ route('club.read.document', ['id' => $club->id, 'type'=>'ompic_document']) }}" target="__blank">
+                                <svg class="svg-inline--fa fa-file fa-w-12 text-900 fs-2" aria-hidden="true" focusable="false" data-prefix="far" data-icon="file" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M369.9 97.9L286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 128H256V51.9l76.1 76.1zM48 464V48h160v104c0 13.3 10.7 24 24 24h104v288H48z"></path></svg>
+                            </a>
+                        </td>
+
+                        <td class="align-middle">
+                            <a href="{{ route('club.read.document', ['id' => $club->id, 'type'=>'demande_accreditation_document']) }}" target="__blank">
+                                <svg class="svg-inline--fa fa-file fa-w-12 text-900 fs-2" aria-hidden="true" focusable="false" data-prefix="far" data-icon="file" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M369.9 97.9L286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 128H256V51.9l76.1 76.1zM48 464V48h160v104c0 13.3 10.7 24 24 24h104v288H48z"></path></svg>
+                            </a>
+                        </td>
                         {{-- <td class="align-middle"> 
                             {!! $club->has_active_adhesion 
                                 ? '<span class="badge bg-success">Actif</span>' 
                                 : '<span class="badge bg-danger">Inactif</span>' !!}
                         </td> --}}
                         
-                        <td class="align-middle">{{ $club->date_creation ?? '--'}}</td>
-
                         <td class="align-middle"> 
                             <span class="badge bg-danger">Inactif</span>
                         </td>

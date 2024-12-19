@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Club;
 
 use App\Http\Controllers\Controller;
 use App\Models\Adhesion;
+use App\Models\Club;
 use Illuminate\Http\Request;
 
 class AdhesionClubController extends Controller
@@ -18,8 +19,27 @@ class AdhesionClubController extends Controller
     {
       
         try {
-
+// dd($request->liste_bureau_document);
             // dd($id);
+            $club = Club::find($id);
+            // $club->liste_bureau_document
+
+            
+            $file = $request->liste_bureau_document;
+            $liste_bureau_document = $file->store('documents');
+            $club->liste_bureau_document = $liste_bureau_document ?? null;
+
+            $file = $request->pv_document;
+            $pv_document = $file->store('documents');
+            $club->pv_document = $pv_document ?? null;
+
+            $file = $request->recepisse_document;
+            $recepisse_document = $file->store('documents');
+            $club->recepisse_document = $recepisse_document ?? null;
+
+           
+            $club->save();
+
             $adhesion_actuelle = Adhesion::where('club_id', $id)
                                         ->where('annee', date('Y'))
                                         ->whereNot('statut', self::statut_refuser)
@@ -36,7 +56,7 @@ class AdhesionClubController extends Controller
             // $demande_adhesion->annee = date('Y');
             $demande_adhesion->statut = self::statut_en_cours;
 
-            $file = $request->document;
+            $file = $request->attestation_paiement;
             $adhesion_document = $file->store('attestation paiement');
             $demande_adhesion->document = $adhesion_document ?? null;
             $demande_adhesion->save();

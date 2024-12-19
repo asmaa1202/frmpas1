@@ -60,13 +60,13 @@ class ClubController extends Controller
             ->orWhereIn('id', function ($subQuery) use ($currentYear) {
                 $subQuery->select('club_id')
                         ->from('adhesions')
-                        ->whereYear('statut', self::statut_refuser)
-                        ->whereYear('annee', '!=', $currentYear);
+                        ->where('statut', self::statut_refuser)
+                        ->orWhere('annee', '<', $currentYear);
             });
         })
         ->orderBy('created_at', 'DESC')
         ->paginate(100);
-
+        
         return view("dashboard.pages.clubs.club-inactifs", compact('clubs'));
     }
     /**
@@ -382,22 +382,23 @@ class ClubController extends Controller
     //         return back()->with('error', 'An error occurred while creating the SuperAdminLivraison.' . $e->getMessage());
     //     }
     // }
-    public function readDocument(String $id)
+    public function readDocument(String $id, String $type)
     {
         try {
+            
             $club = Club::findOrFail($id);
-
+// dd($club->$type);
             // Vérifiez si le document existe dans la base de données
-            if (empty($club->document)) {
+            if (empty($club->$type)) {
                 return response()->json(['message' => 'Aucun document associé à ce club'], 404);
             }
 
             // Vérifiez si le fichier existe dans le système de stockage
-            if (Storage::exists($club->document)) {
-                $content = Storage::get($club->document);
+            if (Storage::exists($club->$type)) {
+                $content = Storage::get($club->$type);
                 return response($content)
-                    ->header('Content-Type', Storage::mimeType($club->document))
-                    ->header('Content-Disposition', 'inline; filename="' . basename($club->document) . '"');
+                    ->header('Content-Type', Storage::mimeType($club->$type))
+                    ->header('Content-Disposition', 'inline; filename="' . basename($club->$type) . '"');
             } else {
                 return response()->json(['message' => 'Fichier introuvable'], 404);
             }
