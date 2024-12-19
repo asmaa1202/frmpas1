@@ -44,7 +44,11 @@
                         <th style="min-width: 280px;">Ville</th>
                        <th style="min-width: 180px;">E-mail</th>
                        <th style="min-width: 180px;">Année</th>
-                       <th style="min-width: 180px;">Document</th>
+                       <th style="min-width: 180px;">Liste de bureau</th>
+                       <th style="min-width: 180px;">PV</th>
+                       <th style="min-width: 180px;">Récépissé</th>
+                       <th style="min-width: 180px;">Attestation paiement</th>
+
                         <th style="width: 80px;">Actions</th>
                     </tr>
                 </thead>
@@ -70,9 +74,29 @@
                             <td class="align-middle">{{ $item->annee ?? '--' }}</td>
            
                             <td class="align-middle">
-                                <a href="{{ route('adhesion.read.document', $item->id) }}" target="__blank">
+                                <a href="{{ route('club.read.document', ['id' => $item->club->id, 'type'=>'liste_bureau_document']) }}" target="_blank">
+                                    <svg class="svg-inline--fa fa-file fa-w-12 text-900 fs-2" aria-hidden="true" focusable="false" data-prefix="far" data-icon="file" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M369.9 97.9L286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 128H256V51.9l76.1 76.1zM48 464V48h160v104c0 13.3 10.7 24 24 24h104v288H48z"></path></svg>
+                                </a>
+                            </td>
+    
+                            <td class="align-middle">
+                                <a href="{{ route('club.read.document', ['id' => $item->club->id, 'type'=>'pv_document']) }}" target="_blank">
+                                    <svg class="svg-inline--fa fa-file fa-w-12 text-900 fs-2" aria-hidden="true" focusable="false" data-prefix="far" data-icon="file" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M369.9 97.9L286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 128H256V51.9l76.1 76.1zM48 464V48h160v104c0 13.3 10.7 24 24 24h104v288H48z"></path></svg>
+                                </a>
+                            </td>
+    
+                            <td class="align-middle">
+                                <a href="{{ route('club.read.document', ['id' => $item->club->id, 'type'=>'recepisse_document']) }}" target="_blank">
+                                    <svg class="svg-inline--fa fa-file fa-w-12 text-900 fs-2" aria-hidden="true" focusable="false" data-prefix="far" data-icon="file" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M369.9 97.9L286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 128H256V51.9l76.1 76.1zM48 464V48h160v104c0 13.3 10.7 24 24 24h104v288H48z"></path></svg>
+                                </a>
+                            </td>
+    
+                            <td class="align-middle">
+                                <a href="{{ route('adhesion.read.document', $item->id) }}" target="_blank">
                                     Attestation de Paiement
-                                </a></td>
+                                </a>
+                            </td>
+
                             <td class="py-2 align-middle white-space-nowrap text-center">
                                 <div class="dropdown font-sans-serif position-static">
                                     <button class="btn btn-link text-600 btn-sm dropdown-toggle btn-reveal"

@@ -411,7 +411,7 @@
 
     async function demandeAdhesion(id) {
         try {
-            const files = myDropzone.getAcceptedFiles();
+            // const files = myDropzone.getAcceptedFiles();
             
             let formData = new FormData();
             // formData.append("document", files[0]);
