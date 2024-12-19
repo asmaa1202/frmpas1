@@ -86,7 +86,7 @@ class AthleteClubController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->input());
+        // dd($request->type);
         try {
 
             $request->validate([
@@ -147,15 +147,15 @@ class AthleteClubController extends Controller
             $engagement_document = $file->store('engagement_document');
             $plongeur->engagement_document = $engagement_document ?? null;
 
-            // $file = $request->document_medicale;
-            // $document_medicale = $file->store('document_medicale');
-            // $plongeur->document_medicale = $document_medicale ?? null;
+            $file = $request->document_medicale;
+            $document_medicale = $file->store('document_medicale');
+            $plongeur->document_medicale = $document_medicale ?? null;
 
-            // $file = $request->cin_document;
-            // $cin_document = $file->store('cin_document');
-            // $plongeur->cin_document = $cin_document ?? null;
+            $file = $request->cin_document;
+            $cin_document = $file->store('cin_document');
+            $plongeur->cin_document = $cin_document ?? null;
 
-            // $plongeur->type_sport_athlete_id = $request->type;
+            $plongeur->type_sport_athlete_id = $request->type;
 
             $plongeur->save();
 

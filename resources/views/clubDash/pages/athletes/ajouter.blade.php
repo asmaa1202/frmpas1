@@ -151,6 +151,10 @@
                         <label class="form-label" for="cin">CIN <span class="text-danger">*</span></label>
                         <input class="form-control" id="cin" type="text" />
                     </div>
+                    <div class="col-lg-6">
+                        <label class="form-label" for="cin_document">CIN Document <span class="text-danger">*</span></label>
+                        <input class="form-control" id="cin_document" type="file" />
+                    </div>
                     <div class="col-sm-3">
                         <label for="email-athlete-club">Adresse courriel <span class="text-danger">*</span></label>
                         <input class="form-control" id="email-athlete-club" data-input-mask='{"mask":"/^\S*@?\S*$/"}'
@@ -284,6 +288,11 @@
                         <input class="form-control datetimepicker" id="date_visite_medicale" type="text"
                             placeholder="yy/m/d" />
                     </div>
+                    <div class="mb-2">
+                        <label class="form-label" for="document_medicale">Visite médicale document <span class="text-danger">*</span></label>
+                        <input class="form-control" id="document_medicale" type="file" >
+                    </div>
+
                     {{-- <div class="mb-2">
                         <label for="niveaux">Niveaux <span class="text-danger">*</span></label>
                         <select class="form-select js-choice" id="niveaux" size="1" name="niveaux"
@@ -294,6 +303,18 @@
                             @endforeach
                         </select>
                     </div> --}}
+
+                    <div class="mb-2">
+                        <label for="type_sport_athletes">Type sport <span class="text-danger">*</span></label>
+                        <select class="form-select js-choice" id="type_sport_athletes" size="1" name="type_sport_athletes"
+                            data-options='{"removeItemButton":true,"placeholder":true}'>
+                            <option value="">Choisissez le niveau</option>
+                            @foreach ($type_sport_athletes as $type)
+                            <option value={{$type->id}}>{{$type->abrev}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
                     <div class="mb-2">
                         <label for="jour_entrainement">Jour d'entraînement</label>
                         <select class="form-select js-choice" id="jour_entrainement" size="1" name="jour_entrainement"
@@ -413,6 +434,7 @@
                 formData.append("qualifications", document.getElementById("qualifications").value);
                 formData.append("password", document.getElementById("password").value);
                 formData.append("titulaire_enfant", document.getElementById("titulaire_enfant").value);
+                formData.append("type", document.getElementById("type_sport_athletes").value);
 
                 const act_naissance_document = document.getElementById("act_naissance_document").files[0];
                 if (act_naissance_document) {
@@ -426,11 +448,24 @@
                     formData.append("engagement_document", engagement_document);
                 }
 
+                const document_medicale = document.getElementById("document_medicale").files[0];
+                if (document_medicale) {
+                    // alert(document_medicale);
+                    formData.append("document_medicale", document_medicale);
+                }
+
+                const cin_document = document.getElementById("cin_document").files[0];
+                if (cin_document) {
+                    // alert(cin_document);
+                    formData.append("cin_document", cin_document);
+                }
+
                 const res = await axios.post('/club/athletes', formData, {
                     headers: {
                         "Content-Type": "multipart/form-data",
                     }
                 });
+
                 if (res.status === 200) {
                     const notif =
                         `<div class="toast-container position-fixed bottom-0 end-0 p-3">
@@ -483,6 +518,10 @@
                     document.getElementById("qualifications").value = "";
                     document.getElementById("titulaire_enfant").value = "";
                     document.getElementById("act_naissance_document").value = "";
+                    document.getElementById("engagement_document").value = "";
+                    document.getElementById("document_medicale").value = "";
+                    document.getElementById("cin_document").value = "";
+                    document.getElementById("type_sport_athletes").value = "";
 
                 }
 
