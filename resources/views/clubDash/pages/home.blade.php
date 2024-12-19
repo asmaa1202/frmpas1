@@ -145,7 +145,7 @@
                                 <div class="display-4 fs-4 mb-2 fw-normal font-sans-serif text-warning">
                                     {{$nombreAthletesActifs}}
                                 </div><a class="fw-semi-bold fs--1 text-nowrap"
-                                    href="#">Voir tout<span
+                                    href="{{ route("club.athletes.index") }}">Voir tout<span
                                         class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a>
                             </div>
                         </div>
@@ -161,7 +161,7 @@
                                 <h6>Athlètes Inactifs</h6>
                                 <div class="display-4 fs-4 mb-2 fw-normal font-sans-serif text-info">
                                     {{$nombreAthletesInactifs}}
-                                </div><a class="fw-semi-bold fs--1 text-nowrap" href="#">Voir tout
+                                </div><a class="fw-semi-bold fs--1 text-nowrap" href="{{ route("club.athletes.inactifs") }}">Voir tout
                                     <span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a>
                             </div>
                         </div>
