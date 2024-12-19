@@ -147,6 +147,53 @@
     <div class="col-lg-12 pe-lg-2">
         <div class="card mb-3">
             <div class="card-header">
+                <h5 class="mb-0">Documents d'affiliations</h5>
+            </div>
+            <div class="card-body bg-light">
+                <div class="row g-3">
+                
+                    <div class="col-lg-6">
+                        <label class="form-label" for="nom">Statut conforme à la loi 30-09</label>
+                        <input class="form-control" id="nom" type="file" name="nom"/>
+                    </div>
+                   <div class="col-lg-6">
+                        <label class="form-label" for="prenom">liste de bureau à jour</label>
+                        <input class="form-control" id="prenom" type="file" />
+                    </div>
+                    <div class="col-lg-6">
+                        <label class="form-label" for="cin">PV de la dernière assemblée générale</label>
+                        <input class="form-control" id="cin" type="file" />
+                    </div>
+                    <div class="col-lg-6">
+                        <label class="form-label" for="date_naissance">Récépissé Provisoire ou définitive</label>
+                        <input class="form-control" id="date_naissance" type="file" name="date_naissance"/>
+                    </div>
+                 
+                    <div class="col-lg-6">
+                        <label class="form-label" for="tel_portable">Fiche technique</label>
+                        <input class="form-control" id="tel_portable" type="file" name="tel_portable"/>
+                    </div>
+                    <div class="col-lg-6">
+                        <label class="form-label" for="tel_fixe">Ompic</label>
+                        <input class="form-control" id="tel_fixe" type="file" name="tel_fixe"/>
+                    </div>
+                   <div class="col-lg-6">
+                        <label class="form-label" for="email_personnel">Demande d'accréditation</label>
+                        <input class="form-control" id="email_personnel" type="file" name="email_personnel" placeholder="XXXX@XXX.XXX"/>
+                    </div>
+                    <div class="col-lg-6">
+                        <label class="form-label" for="password">Paiement des frais d4affiliation (3000dhs)</label>
+                        <input class="form-control" id="password" type="file" />
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-12 pe-lg-2">
+        <div class="card mb-3">
+            <div class="card-header">
                 <h5 class="mb-0">Information personnels</h5>
             </div>
             <div class="card-body bg-light">

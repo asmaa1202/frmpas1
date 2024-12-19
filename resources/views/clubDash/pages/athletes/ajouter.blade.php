@@ -492,7 +492,8 @@
                     image_card.src = 'http://localhost:8000/dashboard/img/team/avatar.png';
                     document.getElementById("nom").value = "";
                     document.getElementById("prenom").value = "";
-                    document.getElementById("email").value = "";
+                    document.getElementById("email-athlete-club").value = "";
+                    document.getElementById("password").value = "";
                     document.getElementById("cin").value = "";
                     document.getElementById("profession").value = "";
                     document.getElementById("date_naissance").value = "";

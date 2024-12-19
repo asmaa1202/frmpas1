@@ -89,16 +89,21 @@
                         <label class="form-label" for="prenom">Prénom <span class="text-danger">*</span></label>
                         <input class="form-control" id="prenom" type="text" />
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-lg-6">
                         <label class="form-label" for="cin">CIN <span class="text-danger">*</span></label>
                         <input class="form-control" id="cin" type="text" />
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-lg-6">
+                        <label class="form-label" for="cin_document">CIN Document <span class="text-danger">*</span></label>
+                        <input class="form-control" id="cin_document" type="file" />
+                    </div>
+
+                    <div class="col-lg-6">
                         <label for="email-moniteur-club">Adresse courriel <span class="text-danger">*</span></label>
                         <input class="form-control" id="email-moniteur-club" data-input-mask='{"mask":"/^\S*@?\S*$/"}'
                             placeholder="XXXX@XXX.XXX" type="email" />
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-lg-6">
                         <label class="form-label" for="password">Mot de passe <span class="text-danger">*</span></label>
                         <input class="form-control" id="password" type="password" autocomplete="new-password"/>
                     </div>
@@ -225,6 +230,10 @@
                         <label class="form-label" for="date_visite_medicale">Date de visite médicale <span class="text-danger">*</span></label>
                         <input class="form-control datetimepicker" id="date_visite_medicale" type="text"
                             placeholder="yy/m/d" />
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-label" for="document_medicale">Visite médicale document <span class="text-danger">*</span></label>
+                        <input class="form-control" id="document_medicale" type="file" >
                     </div>
                     <div class="mb-2">
                         <label for="niveaux">Niveaux <span class="text-danger">*</span></label>
@@ -355,6 +364,18 @@
                 formData.append("qualifications", document.getElementById("qualifications").value);
                 formData.append("password", document.getElementById("password").value);
 
+                const cin_document = document.getElementById("cin_document").files[0];
+                if (cin_document) {
+                    // alert(cin_document);
+                    formData.append("cin_document", cin_document);
+                }
+
+                const document_medicale = document.getElementById("document_medicale").files[0];
+                if (document_medicale) {
+                    // alert(document_medicale);
+                    formData.append("document_medicale", document_medicale);
+                }
+
                 const res = await axios.post('/club/moniteurs', formData, {
                     headers: {
                         "Content-Type": "multipart/form-data",
@@ -405,11 +426,14 @@
                     document.getElementById("phone_fixe_personne").value = "";
                     document.getElementById("phone_portable_personne").value = "";
                     document.getElementById("lien_parente_personne").value = "";
-                    document.getElementById("n_licence").value = "";
+                    // document.getElementById("n_licence").value = "";
                     document.getElementById("date_visite_medicale").value = "";
                     document.getElementById("niveaux").value = "";
                     document.getElementById("enseignement").value = "";
                     document.getElementById("qualifications").value = "";
+                    document.getElementById("cin_document").value = "";
+                    document.getElementById("document_medicale").value = "";
+
                 }
 
             } catch (err) {

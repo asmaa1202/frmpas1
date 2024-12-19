@@ -131,6 +131,14 @@ class MoniteurController extends Controller
             $plongeur->club_id  = $request->club;
             $plongeur->type_plongeur_id   = self::type_plongeur_moniteur_id;
 
+            $file = $request->cin_document;
+            $cin_document = $file->store('cin_document');
+            $plongeur->cin_document = $cin_document ?? null;
+
+            $file = $request->document_medicale;
+            $document_medicale = $file->store('document_medicale');
+            $plongeur->document_medicale = $document_medicale ?? null;
+
             $plongeur->save();
 
             return response()->json(array('message' => "Plongeur est ajouté avec succés"), 200);
