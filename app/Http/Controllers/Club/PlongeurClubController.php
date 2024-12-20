@@ -84,7 +84,7 @@ class PlongeurClubController extends Controller
     public function store(Request $request)
     {
         try {
-// dd($request->input());
+// dd($request->engagement_document);
             $request->validate([
                 'nom' => 'required|string|max:255',
                 'prenom' => 'required|string|max:255',
@@ -135,22 +135,31 @@ class PlongeurClubController extends Controller
 
             $plongeur->titulaire_enfant = $request->titulaire_enfant;
 
-            $file = $request->act_naissance_document;
-            $act_naissance_document = $file->store('act_naissance_document');
-            $plongeur->act_naissance_document = $act_naissance_document ?? null;
+            if ($request->hasFile('act_naissance_document')) {
 
-            $file = $request->engagement_document;
-            $engagement_document = $file->store('engagement_document');
-            $plongeur->engagement_document = $engagement_document ?? null;
+                $file = $request->act_naissance_document;
+                $act_naissance_document = $file->store('act_naissance_document');
+                $plongeur->act_naissance_document = $act_naissance_document ?? null;
+            }
+            if ($request->hasFile('engagement_document')) {
 
-            $file = $request->document_medicale;
-            $document_medicale = $file->store('document_medicale');
-            $plongeur->document_medicale = $document_medicale ?? null;
+                $file = $request->engagement_document;
+                $engagement_document = $file->store('engagement_document');
+                $plongeur->engagement_document = $engagement_document ?? null;
+            }
 
-            $file = $request->cin_document;
-            $cin_document = $file->store('cin_document');
-            $plongeur->cin_document = $cin_document ?? null;
+            if ($request->hasFile('document_medicale')) {
 
+                $file = $request->document_medicale;
+                $document_medicale = $file->store('document_medicale');
+                $plongeur->document_medicale = $document_medicale ?? null;
+            }
+
+            if ($request->hasFile('document_medicale')) {
+                $file = $request->cin_document;
+                $cin_document = $file->store('cin_document');
+                $plongeur->cin_document = $cin_document ?? null;
+            }
 
             $plongeur->save();
 

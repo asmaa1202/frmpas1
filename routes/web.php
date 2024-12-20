@@ -612,6 +612,7 @@ Route::group(['prefix'=>'club', 'middleware' => ['auth','role:2']],function () {
         Route::get("/autorisation-plonge/{id}", [HomeController::class, "autorisationPlonge"])->name('autorisation.plonge');
 
         // - Licence
+        Route::get("/plongeurs_non_licencies", [ClubLicenceController::class, 'plongeurs_non_licencies'])->name('club.plongeurs.non_licencies');
         Route::get("/demandes_en_attentes", [ClubLicenceController::class, 'demandes_en_attentes'])->name('club.demandes_licence.en_attentes');
         Route::get("/demandes_en_cous_validation", [ClubLicenceController::class, 'demandes_en_cours_validation'])->name('club.demandes_licence.en_cours_validation');
         Route::get("/demandes_acceptees", [ClubLicenceController::class, 'demandes_acceptees'])->name('club.demandes_licence.acceptees');

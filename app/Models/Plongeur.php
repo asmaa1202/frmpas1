@@ -90,7 +90,7 @@ class Plongeur extends Authenticatable
 
     public function licence()
     {
-        return $this->belongsTo(Licence::class, 'plongeur_id');
+        return $this->hasMany(Licence::class, 'plongeur_id');
     }
 
     public function type_plongeur()

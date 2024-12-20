@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers\Club;
 
+use App\Constants\ClubStatutConstants;
 use App\Http\Controllers\Controller;
 use App\Models\Adhesion;
+use App\Models\Club;
 use App\Models\Licence;
+use App\Models\Plongeur;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -18,6 +21,27 @@ class ClubLicenceController extends Controller
     const statut_en_cours_validation = 'en_cours_validation'; 
     const statut_accepter = 'accepter'; 
     const statut_refuser = 'refuser'; 
+
+    public function plongeurs_non_licencies()
+    {
+        // $licences = Licence::where('statut', self::statut_en_cours)->orderBy('created_at', 'DESC')->paginate(100);
+
+        // $adhesion = Adhesion::orderBy('created_at', 'DESC')->paginate(2);
+        $licences = Licence::where('statut', self::statut_en_cours)
+                    ->whereHas('plongeur', function ($query) {
+                        $query->where('club_id', Auth::user()->club->id);
+                    })
+                    ->orderBy('created_at', 'DESC')
+                    ->paginate(100);
+        $statut = 'En Attentes';
+
+        $currentYear = date('Y');
+
+        $plongeursSansLicence = Plongeur::doesntHave('licence')->distinct()->get();
+        // dd($plongeursSansLicence);
+        return view("clubDash.pages.licences.plongeurs_non_licencies", compact('statut', 'plongeursSansLicence'));
+    }
+
     public function demandes_en_attentes()
     {
         // $licences = Licence::where('statut', self::statut_en_cours)->orderBy('created_at', 'DESC')->paginate(100);

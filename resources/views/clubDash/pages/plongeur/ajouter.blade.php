@@ -372,6 +372,8 @@
         }
         async function addplongeur() {
             try {
+                // alert(document.getElementById("engagement_document").files[0]);
+
                 const requiredFields = [
                     "nom", "prenom", "cin", "email-plongeur-club", "password",
                     "date_naissance", "phone_portable", "nom_personne", "prenom_personne",
@@ -427,7 +429,7 @@
 
                 const act_naissance_document = document.getElementById("act_naissance_document").files[0];
                 if (act_naissance_document) {
-                    // alert(act_naissance_document);
+                    alert(act_naissance_document);
                     formData.append("act_naissance_document", act_naissance_document);
                 }
                
@@ -512,7 +514,10 @@
                     document.getElementById("cin_document").value = "";
 
 
-                }
+                }else {
+        // Message d'erreur en cas de problème
+        // alert('Une erreur est survenue lors de l\'enregistrement');
+    }
 
             } catch (err) {
                 const notif =
