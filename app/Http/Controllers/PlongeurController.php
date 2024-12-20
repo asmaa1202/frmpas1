@@ -140,23 +140,30 @@ class PlongeurController extends Controller
             
             $plongeur->titulaire_enfant = $request->titulaire_enfant;
            
+            if ($request->hasFile('act_naissance_document')) {
+                $file = $request->act_naissance_document;
+                $act_naissance_document = $file->store('act_naissance_document');
+                $plongeur->act_naissance_document = $act_naissance_document ?? null;
+            }
 
-            $file = $request->act_naissance_document;
-            $act_naissance_document = $file->store('act_naissance_document');
-            $plongeur->act_naissance_document = $act_naissance_document ?? null;
+            if ($request->hasFile('engagement_document')) {
+                $file = $request->engagement_document;
+                $engagement_document = $file->store('engagement_document');
+                $plongeur->engagement_document = $engagement_document ?? null;
+            }
 
-            $file = $request->engagement_document;
-            $engagement_document = $file->store('engagement_document');
-            $plongeur->engagement_document = $engagement_document ?? null;
+            if ($request->hasFile('document_medicale')) {
+                $file = $request->document_medicale;
+                $document_medicale = $file->store('document_medicale');
+                $plongeur->document_medicale = $document_medicale ?? null;
+            }
 
-            $file = $request->document_medicale;
-            $document_medicale = $file->store('document_medicale');
-            $plongeur->document_medicale = $document_medicale ?? null;
-
-            $file = $request->cin_document;
-            $cin_document = $file->store('cin_document');
-            $plongeur->cin_document = $cin_document ?? null;
-
+            if ($request->hasFile('cin_document')) {
+                $file = $request->cin_document;
+                $cin_document = $file->store('cin_document');
+                $plongeur->cin_document = $cin_document ?? null;
+            }
+            
             $plongeur->save();
 
             return response()->json(array('message' => "Plongeur est ajouté avec succés"), 200);

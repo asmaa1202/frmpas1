@@ -130,16 +130,21 @@ class MoniteurClubController extends Controller
                 $image->move(public_path('admin/uploads/images/plongeurs/'), $nomImage);
                 $plongeur->image = '/admin/uploads/images/plongeurs/' . $nomImage;
             }
+            
             $plongeur->club_id  = Auth::user()->club->id;
             $plongeur->type_plongeur_id   = self::type_club_moniteur_id;
 
-            $file = $request->cin_document;
-            $cin_document = $file->store('cin_document');
-            $plongeur->cin_document = $cin_document ?? null;
+            if ($request->hasFile('cin_document')) {
+                $file = $request->cin_document;
+                $cin_document = $file->store('cin_document');
+                $plongeur->cin_document = $cin_document ?? null;
+            }
 
-            $file = $request->document_medicale;
-            $document_medicale = $file->store('document_medicale');
-            $plongeur->document_medicale = $document_medicale ?? null;
+            if ($request->hasFile('document_medicale')) {
+                $file = $request->document_medicale;
+                $document_medicale = $file->store('document_medicale');
+                $plongeur->document_medicale = $document_medicale ?? null;
+            }
 
             $plongeur->save();
 

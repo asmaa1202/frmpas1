@@ -64,12 +64,12 @@
                                     </div>
                                 </div>
                             </td>
-                            <td class="align-middle">{{ $item->type_membre->type }}</td>
+                            <td class="align-middle">{{ $item->type_membre->type ?? '--'}}</td>
                             {{-- <td class="align-middle">{{ $item->plongeur->nom }}</td> --}}
                             <td class="align-middle">{{ $item->created_at }}</td>
                             <td class="align-middle">{{ $item->plongeur->email }}</td>
                             <td class="align-middle">{{ optional($item->plongeur->club)->nom ?? '--' }}</td>
-                            <td class="align-middle">{{ $item->plongeur->niveau->label }}</td>
+                            <td class="align-middle">{{ $item->plongeur->niveau->label ?? '--'}}</td>
                             <td class="align-middle">{{ $item->annee }}</td>
                             <td class="align-middle">
                                 <a href="{{ route('licence.read.document', $item->id) }}" target="__blank">

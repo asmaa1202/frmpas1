@@ -27,19 +27,18 @@ class ClubLicenceController extends Controller
         // $licences = Licence::where('statut', self::statut_en_cours)->orderBy('created_at', 'DESC')->paginate(100);
 
         // $adhesion = Adhesion::orderBy('created_at', 'DESC')->paginate(2);
-        $licences = Licence::where('statut', self::statut_en_cours)
-                    ->whereHas('plongeur', function ($query) {
-                        $query->where('club_id', Auth::user()->club->id);
-                    })
-                    ->orderBy('created_at', 'DESC')
-                    ->paginate(100);
-        $statut = 'En Attentes';
+        // $licences = Licence::where('statut', self::statut_en_cours)
+        //             ->whereHas('plongeur', function ($query) {
+        //                 $query->where('club_id', Auth::user()->club->id);
+        //             })
+        //             ->orderBy('created_at', 'DESC')
+        //             ->paginate(100);
 
         $currentYear = date('Y');
 
-        $plongeursSansLicence = Plongeur::doesntHave('licence')->distinct()->get();
+        $plongeursSansLicence = Plongeur::where('club_id', Auth::user()->club->id)->doesntHave('licence')->distinct()->get();
         // dd($plongeursSansLicence);
-        return view("clubDash.pages.licences.plongeurs_non_licencies", compact('statut', 'plongeursSansLicence'));
+        return view("clubDash.pages.licences.plongeurs_non_licencies", compact('plongeursSansLicence'));
     }
 
     public function demandes_en_attentes()
@@ -83,6 +82,62 @@ class ClubLicenceController extends Controller
         
 
     }
+
+    // public function updateLicencesNonLicencies(Request $request)
+    // {
+    //     try {
+    //         dd($request->input());
+    //         $ids = $request->input('ids');
+    //         // dd($ids);
+
+    //         if ($request->hasFile('attestation_paiement')) {
+    //             $file = $request->attestation_paiement;
+    //             $attestation_paiement = $file->store('attestation_paiement');
+    //         }
+
+    //         $statut = $request->input('statut');
+    //         foreach($ids as $id){
+    //             $licence = Licence::find($id);
+    //             $licence->statut = $statut;
+    //             $licence->attestation_paiement = $attestation_paiement ?? null;
+
+    //             $licence->save();
+    //         }
+    //     } catch (\Exception $e) {
+    //         return back()->with('error', 'Une erreur est survenue lors de l\'envoie des demandes : ' . $e->getMessage());
+    //     }
+        
+
+    // }
+
+    public function updateLicencesNonLicencies(Request $request)
+    {
+        try {
+          
+            $ids = json_decode($request->input('ids'), true);
+            
+            //   dd($ids);
+            if ($request->hasFile('attestation_paiement')) {
+                $file = $request->file('attestation_paiement');
+                $attestation_paiement = $file->store('attestation_paiement');  // Stockage du fichier
+            }
+
+            foreach ($ids as $id) {
+                $licence = new Licence();
+                $licence->plongeur_id = $id;
+                $licence->annee = date('Y');
+                $licence->statut = self::statut_en_cours_validation;
+                $licence->document = $attestation_paiement ?? null;
+                $licence->save();
+               
+            }
+
+            return response()->json(['status' => 'success'], 200);
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Une erreur est survenue lors de l\'envoi des demandes: ' . $e->getMessage()], 500);
+        }
+    }
+
 
     public function demandes_en_cours_validation()
     {

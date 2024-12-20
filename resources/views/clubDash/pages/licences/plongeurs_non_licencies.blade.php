@@ -48,7 +48,7 @@
                        <th style="min-width: 180px;">Club</th>
                        <th style="min-width: 180px;">Niveau</th>
                        <th style="min-width: 180px;">Année</th>
-                       <th style="min-width: 180px;">Document</th>
+                       {{-- <th style="min-width: 180px;">Document</th> --}}
                         <th style="width: 80px;">Actions</th>
                     </tr>
                 </thead>
@@ -75,12 +75,13 @@
                             <td class="align-middle">{{ $item->cin }}</td>
                             <td class="align-middle">{{ $item->email }}</td>
                             <td class="align-middle">{{ optional($item->club)->nom ?? '--' }}</td>
-                            <td class="align-middle">{{ $item->niveau->label }}</td>
+                            <td class="align-middle">{{ $item->niveau->label ?? '--' }}</td>
                             <td class="align-middle">{{ $item->annee }}</td>
-                            <td class="align-middle">
+                            {{-- <td class="align-middle">
                                 <a href="{{ route('club.licence.read.document', $item->id) }}" target="_blank">
                                     Certificat médical
-                                </a></td>
+                                </a>
+                            </td> --}}
                             <td class="py-2 align-middle white-space-nowrap text-center">
                                 <div class="dropdown font-sans-serif position-static">
                                     <button class="btn btn-link text-600 btn-sm dropdown-toggle btn-reveal"
@@ -98,13 +99,6 @@
                                     <div class="dropdown-menu dropdown-menu-end border py-0"
                                         aria-labelledby="order-dropdown-0">
                                         <div class="py-2">
-                                          
-                                            <button type="button" class="dropdown-item" data-bs-toggle="modal"
-                                                data-bs-target="#staticBackdrop2{{ $item->id }}">
-                                                Refuser
-                                            </button>
-
-                                            <div class="dropdown-divider"></div>
                                                 <a class="dropdown-item text-danger" role="button" data-bs-toggle="modal"
                                                     data-bs-target="#staticBackdrop{{ $item->id }}">Supprimer</a>
                                             </div>
@@ -135,33 +129,7 @@
                                     </div>
                                 </div>
                                                                 
-                                <div class="modal fade" id="staticBackdrop2{{ $item->id }}" tabindex="-1" role="dialog"
-                                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalCenterTitle">
-                                                    Voulez-vous refuser cette demande ?
-                                                </h5>
-                                                <button type="button"
-                                                    class="btn-close btn btn-sm btn-circle d-flex flex-center transition-base"
-                                                    data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal">Non</button>
-                                                
-                                                <!-- Formulaire pour action Laravel -->
-                                                <form action="{{ route('club.demandes_licence.refuser', ['id' => $item->id, 'statut' => 'refuser']) }}" method="POST">
-                                                    @csrf
-                                                    <button type="submit" class="btn btn-primary">
-                                                        Oui
-                                                    </button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                               
                             </td>
                         </tr>
                     @endforeach
@@ -176,7 +144,6 @@
 </div>
 
 
-
 <!-- Modal Licence -->
 <div class="modal fade" id="licenceModal" tabindex="-1" aria-labelledby="licenceModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -186,15 +153,16 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="/upload" class="dropzone" id="my-dropzone">
-                    <div class="dz-message">
-                        Glissez-déposez ou cliquez pour télécharger l'attestation de paiement (PDF, image).
-                    </div>
-                </form>
+                   
+                        <div class="col-lg-12">
+                          
+                            <input class="form-control" id="attestation_paiement" type="file" required/>
+                        </div>
+                
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                <button type="button" class="btn btn-primary" onclick="demandeLicence()">Envoyer</button>
+                <button type="button" class="btn btn-primary" onclick="demandeLicences()">Envoyer</button>
             </div>
         </div>
     </div>
@@ -207,6 +175,7 @@
 <script src="{{ asset('dashboard/vendors/datatables.net-bs5/dataTables.bootstrap5.min.js') }}"></script>
 <script src="{{ asset('dashboard/vendors/datatables.net-fixedcolumns/dataTables.fixedColumns.min.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -224,7 +193,6 @@
         const selectedIds = Array.from(document.querySelectorAll('.demande_check:checked')).map(checkbox => checkbox.value);
 
         if (selectedIds.length === 0) {
-            // Affichage de la notification si aucune demande n'est sélectionnée
             const notif =
                 `<div class="toast-container position-fixed bottom-0 end-0 p-3">
                     <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
@@ -250,156 +218,29 @@
             return; // Ne pas ouvrir le modal si aucune case n'est sélectionnée
         }
 
-        // Si au moins une demande est sélectionnée, ouvrir le modal
         const licenceModal = new bootstrap.Modal(document.getElementById('licenceModal'));
         licenceModal.show();
     });
-</script>
-@endsection
 
-{{-- <!-- Modal Licence -->
-<div class="modal fade" id="licenceModal" tabindex="-1" aria-labelledby="licenceModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="licenceModalLabel">Télécharger l'attestation de paiement</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-         
-                <form action="/upload" class="dropzone" id="my-dropzone">
-                    <div class="dz-message">
-                        Glissez-déposez ou cliquez pour télécharger l'attestation de paiement (PDF, image).
-                    </div>
-                </form>
-                
-            
-                
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                <button type="button" class="btn btn-primary" onclick="demandeLicence()">Envoyer</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div id="notification"></div>
-@endsection
-
-@section('javascript')
-<script src={{ asset('dashboard/vendors/datatables.net/jquery.dataTables.min.js') }}></script>
-<script src={{ asset('dashboard/vendors/datatables.net-bs5/dataTables.bootstrap5.min.js') }}></script>
-<script src={{ asset('dashboard/vendors/datatables.net-fixedcolumns/dataTables.fixedColumns.min.js') }}></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
-<script>
-    async function deleteDemande(id) {
-            try {
-                const btnClose = document.getElementById(`colseModal${id}`);
-                btnClose.click();
-                const response = await axios.delete(`/club/demandes-licence/${id}`);
-                if (response.status === 200) {
-                    const notif =
-                        `<div class="toast-container position-fixed bottom-0 end-0 p-3">
-                            <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                                <div class="toast-header">
-                                    <div style="width: 15px;height: 15px;background: green;border-radius: 3px;margin-right: 5px;"></div>
-                                    <strong class="me-auto">FRMPAS</strong>
-                                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                                </div>
-                                <div class="toast-body">
-                                    ${response.data.message}
-                                </div>
-                            </div>
-                        </div>`;
-                    const notElement = document.getElementById("notification");
-                    notElement.innerHTML = notif;
-                    const toastTrigger = document.getElementById('liveToastBtn')
-                    const toastLiveExample = document.getElementById('liveToast')
-                    if (toastTrigger) {
-                        const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
-                        toastBootstrap.show();
-                    }
-                    const rowElement = document.getElementById(`row${id}`);
-                    rowElement.remove();
-                }
-            } catch (err) {
-                const notif =
-                    `<div class="toast-container position-fixed bottom-0 end-0 p-3">
-                    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                        <div class="toast-header">
-                            <div style="width: 15px;height: 15px;background: red;border-radius: 3px;margin-right: 5px;"></div>
-                            <strong class="me-auto">FRMPAS</strong>
-                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                        </div>
-                        <div class="toast-body">
-                            Erreur servenu
-                        </div>
-                    </div>
-                </div>`;
-                const notElement = document.getElementById("notification");
-                notElement.innerHTML = notif;
-                const toastTrigger = document.getElementById('liveToastBtn')
-                const toastLiveExample = document.getElementById('liveToast')
-                if (toastTrigger) {
-                    const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
-                    toastBootstrap.show();
-                }
-            }
-
-        }
-</script>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const selectAllCheckbox = document.getElementById('select_all');
-        const individualCheckboxes = document.querySelectorAll('.demande_check');
-
-      
-        selectAllCheckbox.addEventListener('change', function () {
-            individualCheckboxes.forEach(checkbox => {
-                checkbox.checked = this.checked;
-            });
-        });
-
-    });
-
-        document.getElementById('send_requests').addEventListener('click', async function () {
-   
-        const selectedIds = Array.from(document.querySelectorAll('.demande_check:checked')).map(checkbox => checkbox.value);
-
-        if (selectedIds.length === 0) {
-          
-              const notif =
-                        `<div class="toast-container position-fixed bottom-0 end-0 p-3">
-                            <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                                <div class="toast-header">
-                                    <div style="width: 15px;height: 15px;background: red;border-radius: 3px;margin-right: 5px;"></div>
-                                    <strong class="me-auto">FRMPAS</strong>
-                                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                                </div>
-                                <div class="toast-body">
-                                    ${'Veuillez sélectionner au moins une demande.'}
-                                </div>
-                            </div>
-                        </div>`;
-                const notElement = document.getElementById("notification");
-                notElement.innerHTML = notif;
-                const toastTrigger = document.getElementById('liveToastBtn')
-                const toastLiveExample = document.getElementById('liveToast')
-                if (toastTrigger) {
-                    const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
-                    toastBootstrap.show();
-                }
-                return;
-        }
-
+    async function demandeLicences() {
         try {
-            const response = await axios.post('/club/update-licences', {
-                ids: selectedIds,
-                statut: 'en_cours_validation'
+            const selectedIds = Array.from(document.querySelectorAll('.demande_check:checked')).map(checkbox => checkbox.value);
+
+            let formData = new FormData();
+            
+            const attestation_paiement = document.getElementById("attestation_paiement").files[0];
+            if (attestation_paiement) {
+                formData.append("attestation_paiement", attestation_paiement);
+            }
+            formData.append("ids", JSON.stringify(selectedIds));
+
+            const res = await axios.post(`/club/demandes_licences_pour_non_licencies`, formData, {
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                },
             });
 
-            if (response.status === 200) {
-                // alert('Les licences ont été mises à jour avec succès.');
+            if (res.status === 200) {
                 const notif =
                         `<div class="toast-container position-fixed bottom-0 end-0 p-3">
                             <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
@@ -421,8 +262,14 @@
                     const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
                     toastBootstrap.show();
                 }
-                // location.reload();
-                // const rowElement = document.getElementById(`row${id}`);
+
+                // Fermeture du modal après soumission du formulaire
+                const licenceModal = bootstrap.Modal.getInstance(document.getElementById('licenceModal'));
+                if (licenceModal) {
+                    licenceModal.hide(); // Ferme le modal
+                }
+
+
                 selectedIds.forEach(id => {
                     const rowElement = document.getElementById(`row${id}`);
                     rowElement.remove();
@@ -430,34 +277,34 @@
                 let counter = $('#request-counter');
                 let requestCounter = parseInt(counter.text());
                 counter.text(parseInt(requestCounter - selectedIds.length));
-
                 
             }
-        } catch (error) {
-            // console.error(error);
-            const notif =
-                        `<div class="toast-container position-fixed bottom-0 end-0 p-3">
-                            <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                                <div class="toast-header">
-                                    <div style="width: 15px;height: 15px;background: red;border-radius: 3px;margin-right: 5px;"></div>
-                                    <strong class="me-auto">FRMPAS</strong>
-                                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                                </div>
-                                <div class="toast-body">
-                                    ${'Une erreur s\'est produite lors de la mise à jour.'}
-                                </div>
-                            </div>
-                        </div>`;
-                const notElement = document.getElementById("notification");
-                notElement.innerHTML = notif;
-                const toastTrigger = document.getElementById('liveToastBtn')
-                const toastLiveExample = document.getElementById('liveToast')
-                if (toastTrigger) {
-                    const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
-                    toastBootstrap.show();
-                }
-            // alert("Une erreur s'est produite lors de la mise à jour.");
+        } catch (err) {
+            const notif = `
+                <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header">
+                            <div style="width: 15px;height: 15px;background: red;border-radius: 3px;margin-right: 5px;"></div>
+                            <strong class="me-auto">FRMPAS</strong>
+                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
+                            Erreur survenue lors de l'envoi de la demande.
+                        </div>
+                    </div>
+                </div>`;
+            document.getElementById("notification").innerHTML = notif;
+
+            const toastLiveExample = document.getElementById('liveToast');
+            const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+            toastBootstrap.show();
         }
-    });
+    }
 </script>
-@endsection --}}
+
+
+
+
+
+
+@endsection

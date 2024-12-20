@@ -89,7 +89,7 @@
                                 <input type="text" id="titulaire_enfant" class="form-control"  />
                             </div>
                             <div class="col-lg-6">
-                                <label for="act_naissance_document" class="form-label">Act de naissance <span class="text-danger">*</span></label>
+                                <label for="act_naissance_document" class="form-label">Acte de naissance <span class="text-danger">*</span></label>
                                 <input type="file" id="act_naissance_document" class="form-control" placeholder="Type de document" />
                             </div>
                             <div class="col-lg-6">
@@ -346,6 +346,8 @@
         }
         async function addplongeur() {
             try {
+                // alert(document.getElementById("engagement_document").files[0]);
+
                 const requiredFields = [
                     "nom", "prenom", "cin", "email-plongeur-club", "password",
                     "date_naissance", "phone_portable", "nom_personne", "prenom_personne",
@@ -401,7 +403,7 @@
 
                 const act_naissance_document = document.getElementById("act_naissance_document").files[0];
                 if (act_naissance_document) {
-                    // alert(act_naissance_document);
+                    alert(act_naissance_document);
                     formData.append("act_naissance_document", act_naissance_document);
                 }
                
@@ -486,7 +488,10 @@
                     document.getElementById("cin_document").value = "";
 
 
-                }
+                }else {
+        // Message d'erreur en cas de problème
+        // alert('Une erreur est survenue lors de l\'enregistrement');
+    }
 
             } catch (err) {
                 const notif =

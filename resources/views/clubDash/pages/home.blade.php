@@ -364,7 +364,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
 
 <script>
-     // Configuration de Dropzone
+    // Configuration de Dropzone
     // var myDropzone = new Dropzone("#my-dropzone", {
     //     url: "/club/demande-adhesion",  // URL pour l'upload
     //     paramName: "file",  // Nom du paramètre pour l'envoi du fichier
@@ -402,11 +402,11 @@
     
     // });
 
-  // Supprimer tous les fichiers
-//   document.getElementById('remove-all-files').addEventListener('click', function() {
-//     myDropzone.removeAllFiles(true);  // true pour forcer la suppression du fichier du DOM
-//     console.log("Tous les fichiers ont été supprimés.");
-//   });
+    // Supprimer tous les fichiers
+    //   document.getElementById('remove-all-files').addEventListener('click', function() {
+    //     myDropzone.removeAllFiles(true);  // true pour forcer la suppression du fichier du DOM
+    //     console.log("Tous les fichiers ont été supprimés.");
+    //   });
 
 
     async function demandeAdhesion(id) {

@@ -619,6 +619,8 @@ Route::group(['prefix'=>'club', 'middleware' => ['auth','role:2']],function () {
         Route::get("/demandes_refusees", [ClubLicenceController::class, 'demandes_refusees'])->name('club.demandes_licence.refusees');
         Route::post("/demandes-licence/{id}/{statut}", [ClubLicenceController::class, 'licence_statut'])->name('club.demandes_licence.refuser');
         Route::post("/update-licences", [ClubLicenceController::class, 'updateLicences'])->name('club.demandes_licence.statut');
+      
+        Route::post("/demandes_licences_pour_non_licencies", [ClubLicenceController::class, 'updateLicencesNonLicencies'])->name('club.demandes_licences_non_licencies.statut');
 
 
         Route::delete("/demandes-licence/{id}", [ClubLicenceController::class, "destroy"])->name('club.demandes_licence.destroy');
