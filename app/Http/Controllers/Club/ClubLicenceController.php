@@ -22,6 +22,10 @@ class ClubLicenceController extends Controller
     const statut_accepter = 'accepter'; 
     const statut_refuser = 'refuser'; 
 
+    const type_membre_athlete = 1; 
+    const type_membre_plongeur = 2; 
+    const type_membre_moniteur = 3; 
+
     public function plongeurs_non_licencies()
     {
         // $licences = Licence::where('statut', self::statut_en_cours)->orderBy('created_at', 'DESC')->paginate(100);
@@ -123,8 +127,35 @@ class ClubLicenceController extends Controller
             }
 
             foreach ($ids as $id) {
+                $plongeur = Plongeur::find($id);
+                $lastLicence = Licence::orderBy('id', 'desc')->first();
+                $id_dl = "";
+                
+                if ($plongeur->type_plongeur_id == self::type_membre_plongeur) {
+               
+                    $lastId = $lastLicence ? intval(substr($lastLicence->id, -6)) : 0;
+                    $nextId = $lastId + 1;
+        
+                    $id_dl = 'FMP' . date('Y') . str_pad($nextId, 6, '0', STR_PAD_LEFT);
+                    // return response()->json(['message' => $id_dl], 200);
+    
+                }elseif($plongeur->type_plongeur_id == self::type_membre_athlete){
+                    $lastId = $lastLicence ? intval(substr($lastLicence->id, -6)) : 0;
+                    $nextId = $lastId + 1;
+        
+                    $id_dl = 'FMA' . date('Y') . str_pad($nextId, 6, '0', STR_PAD_LEFT);
+    
+                }elseif($plongeur->type_plongeur_id == self::type_membre_moniteur){
+                    $lastId = $lastLicence ? intval(substr($lastLicence->id, -6)) : 0;
+                    $nextId = $lastId + 1;
+        
+                    $id_dl = 'FMM' . date('Y') . str_pad($nextId, 6, '0', STR_PAD_LEFT);
+                }
+    
                 $licence = new Licence();
+                $licence->custom_id =  $id_dl;
                 $licence->plongeur_id = $id;
+                $licence->type_id = $plongeur->type_plongeur_id;
                 $licence->annee = date('Y');
                 $licence->statut = self::statut_en_cours_validation;
                 $licence->document = $attestation_paiement ?? null;

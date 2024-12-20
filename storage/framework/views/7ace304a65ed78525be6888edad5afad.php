@@ -89,7 +89,7 @@
                                 <input type="text" id="titulaire_enfant" class="form-control"  />
                             </div>
                             <div class="col-lg-6">
-                                <label for="act_naissance_document" class="form-label">Act de naissance <span class="text-danger">*</span></label>
+                                <label for="act_naissance_document" class="form-label">Acte de naissance <span class="text-danger">*</span></label>
                                 <input type="file" id="act_naissance_document" class="form-control" placeholder="Type de document" />
                             </div>
                             <div class="col-lg-6">
@@ -278,7 +278,16 @@
                         <label class="form-label" for="document_medicale">Visite médicale document <span class="text-danger">*</span></label>
                         <input class="form-control" id="document_medicale" type="file" >
                     </div>
-                    
+                    <div class="mb-2">
+                        <label for="niveaux">Niveaux <span class="text-danger">*</span></label>
+                        <select class="form-select js-choice" id="niveaux" size="1" name="niveaux"
+                            data-options='{"removeItemButton":true,"placeholder":true}'>
+                            <option value="">Choisissez le niveau</option>
+                            <?php $__currentLoopData = $niveaux; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <option value=<?php echo e($item->id); ?>><?php echo e($item->label); ?></option>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        </select>
+                    </div>
                     <div class="mb-2">
                         <label for="jour_entrainement">Jour d'entraînement</label>
                         <select class="form-select js-choice" id="jour_entrainement" size="1" name="jour_entrainement"
@@ -351,7 +360,7 @@
                 const requiredFields = [
                     "nom", "prenom", "cin", "email_plongeur", "password",
                     "date_naissance", "phone_portable", "nom_personne", "prenom_personne",
-                    "email_personne", "phone_portable_personne", "lien_parente_personne", "adresse", "code_postal", "ville", "pays", "date_visite_medicale"
+                    "email_personne", "phone_portable_personne", "lien_parente_personne", "adresse", "code_postal", "ville", "pays", "date_visite_medicale", "niveaux"
                 ];
                 let isValid = true;
 // alert(document.getElementById('club_plongeur').value);
@@ -392,7 +401,7 @@
                 formData.append("lien_parente_personne", document.getElementById("lien_parente_personne").value);
                 // formData.append("n_licence", document.getElementById("n_licence").value);
                 formData.append("date_visite_medicale", document.getElementById("date_visite_medicale").value);
-                // formData.append("niveaux", document.getElementById("niveaux").value);
+                formData.append("niveaux", document.getElementById("niveaux").value);
                 formData.append("jour_entrainement", document.getElementById("jour_entrainement").innerText.split(/(?=[A-Z])/).toString());
                 formData.append("enseignement", document.getElementById("enseignement").value);
                 formData.append("qualifications", document.getElementById("qualifications").value);
@@ -488,7 +497,7 @@
                     document.getElementById("lien_parente_personne").value = "";
                     // document.getElementById("n_licence").value = "";
                     document.getElementById("date_visite_medicale").value = "";
-                    // document.getElementById("niveaux").value = "";
+                    document.getElementById("niveaux").value = "";
                     document.getElementById("enseignement").value = "";
                     document.getElementById("qualifications").value = "";
                     document.getElementById("club").value = "";
